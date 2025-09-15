@@ -13,7 +13,33 @@ export default {
       },
     },
     extend: {
+      fontFamily: {
+        'lato': ['Lato', '-apple-system', 'Roboto', 'Helvetica', 'sans-serif'],
+      },
       colors: {
+        // Wayzor brand colors
+        'wayzor': {
+          'green': '#78BE20',
+          'green-dark': '#528116',
+          'purple': '#332634',
+        },
+        // Content colors
+        'content': {
+          'dark-strong': '#262E2F',
+          'dark-medium': '#363F41',
+          'bodytext': '#171C1D',
+          'label': '#6D7679',
+          'invert': '#FFF',
+        },
+        // Background colors
+        'bg': {
+          'light-soft': '#F8FAFA',
+          'light-medium': '#EEF2F4',
+          'overlay-black-10': 'rgba(0, 0, 0, 0.10)',
+          'overlay-black-05': 'rgba(0, 0, 0, 0.05)',
+          'overlay-white-10': 'rgba(255, 255, 255, 0.10)',
+        },
+        // Keep existing shadcn colors for compatibility
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
@@ -46,16 +72,6 @@ export default {
         card: {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
-        },
-        sidebar: {
-          DEFAULT: "hsl(var(--sidebar-background))",
-          foreground: "hsl(var(--sidebar-foreground))",
-          primary: "hsl(var(--sidebar-primary))",
-          "primary-foreground": "hsl(var(--sidebar-primary-foreground))",
-          accent: "hsl(var(--sidebar-accent))",
-          "accent-foreground": "hsl(var(--sidebar-accent-foreground))",
-          border: "hsl(var(--sidebar-border))",
-          ring: "hsl(var(--sidebar-ring))",
         },
       },
       borderRadius: {
