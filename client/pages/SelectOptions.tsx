@@ -219,10 +219,10 @@ const SelectOptions = () => {
           {/* Connector 3 */}
           <div className="flex w-[171px] justify-center items-start gap-0 flex-shrink-0">
             <div className="flex py-[18px] px-4 flex-col items-start gap-0 flex-1">
-              <div className="w-[99px] h-0.5 bg-stroke-color-border-light-high"></div>
+              <div className="w-[99px] h-0.5 bg-[#DCE3E5]"></div>
             </div>
             <div className="flex flex-col items-start gap-3">
-              <div className="flex p-3 flex-col items-start rounded-[40px] bg-stroke-color-border-light-high">
+              <div className="flex p-3 flex-col items-start rounded-[40px] bg-[#DCE3E5]">
                 <div className="w-3.5 h-3.5 overflow-hidden">
                   <span className="text-black text-center font-lato text-sm font-normal leading-[100%]">
                     4
@@ -240,10 +240,10 @@ const SelectOptions = () => {
           {/* Connector 4 */}
           <div className="flex w-[171px] justify-center items-start gap-0 flex-shrink-0">
             <div className="flex py-[18px] px-4 flex-col items-start gap-0 flex-1">
-              <div className="w-[99px] h-0.5 bg-stroke-color-border-light-high"></div>
+              <div className="w-[99px] h-0.5 bg-[#DCE3E5]"></div>
             </div>
             <div className="flex flex-col items-start gap-3">
-              <div className="flex p-3 flex-col items-start rounded-[40px] bg-stroke-color-border-light-high">
+              <div className="flex p-3 flex-col items-start rounded-[40px] bg-[#DCE3E5]">
                 <div className="w-3.5 h-3.5 overflow-hidden">
                   <span className="text-black text-center font-lato text-sm font-normal leading-[100%]">
                     5
