@@ -17,7 +17,7 @@ const Nudger: React.FC<NudgerProps> = ({ value, onChange }) => {
   };
 
   return (
-    <div className="flex p-1 items-center gap-3 rounded-lg bg-wayzor-bg-light-soft">
+    <div className="flex p-1 items-center gap-3 rounded-lg bg-bg-light-soft">
       <button
         onClick={handleDecrement}
         className="flex p-1.5 items-start gap-2 rounded-full hover:bg-gray-200 transition-colors"
