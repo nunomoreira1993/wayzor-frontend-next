@@ -108,7 +108,7 @@ const ProductItem: React.FC<ProductItemProps> = ({ title, price, showHelp = true
           <div className="flex w-[115px] flex-col items-start gap-2.5">
             <Nudger value={quantity} onChange={setQuantity} />
           </div>
-          <div className="text-wayzor-content-dark-medium font-lato text-base font-normal leading-[150%]">
+          <div className="text-content-dark-medium font-lato text-base font-normal leading-[150%]">
             <span className="font-bold">{price}</span> / month
           </div>
           <button className="flex w-[92px] py-2.5 px-4 flex-col justify-center items-center gap-0 rounded-full bg-wayzor-green hover:bg-wayzor-green/80 transition-colors">
