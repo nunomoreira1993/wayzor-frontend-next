@@ -16,7 +16,39 @@ const PartnersSection = () => {
     <section className="py-16 bg-white">
       <div className="container mx-auto px-4 lg:px-8">
         <div className="max-w-7xl mx-auto">
-          <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-16">
+          {/* Mobile Layout */}
+          <div className="flex flex-col items-center gap-6 lg:hidden">
+            <div className="text-center max-w-sm">
+              <h2 className="text-2xl font-lato font-bold text-content-bodytext mb-6 leading-tight">
+                Appreciated by Our Partners
+              </h2>
+              <button className="inline-flex items-center px-5 py-3 border-2 border-wayzor-green-dark rounded-full hover:bg-wayzor-green-dark hover:text-white transition-all duration-300">
+                <span className="text-wayzor-green-dark hover:text-white font-lato font-medium text-sm">
+                  Meet Our Partners
+                </span>
+              </button>
+            </div>
+
+            {/* Mobile Partner Logos Grid */}
+            <div className="w-full max-w-sm grid grid-cols-2 gap-4">
+              {partnerLogos.slice(0, 4).map((logo, index) => (
+                <div
+                  key={index}
+                  className="flex items-center justify-center p-3 hover:scale-105 transition-transform duration-300"
+                >
+                  <img
+                    src={logo}
+                    alt={`Partner ${index + 1}`}
+                    className="max-w-full h-auto opacity-90 hover:opacity-100 transition-opacity duration-300"
+                    style={{ maxHeight: "60px" }}
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Desktop Layout */}
+          <div className="hidden lg:flex lg:flex-row items-center gap-8 lg:gap-16">
             {/* Left Column - Text and Button */}
             <div className="lg:w-1/3 text-center lg:text-left">
               <h2 className="text-3xl lg:text-4xl font-lato font-bold text-content-bodytext mb-6 leading-tight">

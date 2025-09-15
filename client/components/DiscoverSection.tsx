@@ -16,16 +16,16 @@ const DiscoverSection = () => {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 container mx-auto px-4 lg:px-8">
-        <div className="max-w-2xl pl-4 lg:pl-48">
-          <h2 className="text-4xl lg:text-5xl font-lato font-bold text-bg-light-soft leading-tight mb-4">
+      <div className="relative z-10 w-full px-5 lg:px-8">
+        <div className="max-w-2xl lg:pl-48">
+          <h2 className="text-3xl lg:text-5xl font-lato font-bold text-white leading-tight mb-4">
             Discover the Azores your way
           </h2>
-          <p className="text-white font-lato mb-8 max-w-lg leading-relaxed">
+          <p className="text-white font-lato mb-8 max-w-lg leading-relaxed text-sm lg:text-base">
             Explore breathtaking landscapes with total freedom. Check out our
             fleet and find the perfect car for your adventure.
           </p>
-          <button className="inline-flex items-center px-8 py-4 border-2 border-wayzor-green rounded-full bg-bg-overlay-black-05 backdrop-blur-sm hover:bg-wayzor-green hover:text-black transition-all duration-300">
+          <button className="inline-flex items-center px-6 py-3 lg:px-8 lg:py-4 border-2 border-wayzor-green rounded-full bg-bg-overlay-black-05 backdrop-blur-sm hover:bg-wayzor-green hover:text-black transition-all duration-300">
             <span className="text-white hover:text-black font-lato font-bold text-sm">
               Explore our Fleet
             </span>
