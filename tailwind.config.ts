@@ -30,6 +30,7 @@ export default {
           bodytext: "#171C1D",
           label: "#6D7679",
           invert: "#FFF",
+          "text-color": "#4E8000",
         },
         // Background colors
         bg: {
