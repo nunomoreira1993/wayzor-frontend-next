@@ -40,6 +40,10 @@ export default {
           "overlay-black-05": "rgba(0, 0, 0, 0.05)",
           "overlay-white-10": "rgba(255, 255, 255, 0.10)",
         },
+        // Stroke colors
+        stroke: {
+          "color-border-light-high": "#DCE3E5",
+        },
         // Keep existing shadcn colors for compatibility
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
