@@ -1,12 +1,12 @@
-import React from 'react';
+import React from "react";
 
 const HeroSection = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0 w-full h-full">
-        <img 
-          src="https://api.builder.io/api/v1/image/assets/TEMP/57a037179d6c85c633005116e350ede4ccf0590c?width=3370" 
+        <img
+          src="https://api.builder.io/api/v1/image/assets/TEMP/57a037179d6c85c633005116e350ede4ccf0590c?width=3370"
           alt="Azores landscape"
           className="w-full h-full object-cover"
         />
@@ -48,8 +48,19 @@ const HeroSection = () => {
 
       {/* Navigation Arrow */}
       <button className="absolute bottom-32 right-16 lg:right-32 w-23 h-23 rounded-full bg-bg-overlay-black-10 backdrop-blur-sm hover:bg-white hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center">
-        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path fillRule="evenodd" clipRule="evenodd" d="M21.4538 9.25628C21.7923 8.91457 22.341 8.91457 22.6795 9.25628L28.7462 15.3813C29.0846 15.723 29.0846 16.277 28.7462 16.6187L22.6795 22.7437C22.341 23.0854 21.7923 23.0854 21.4538 22.7437C21.1154 22.402 21.1154 21.848 21.4538 21.5063L26.041 16.875H3.86667C3.38802 16.875 3 16.4832 3 16C3 15.5168 3.38802 15.125 3.86667 15.125L26.041 15.125L21.4538 10.4937C21.1154 10.152 21.1154 9.59799 21.4538 9.25628Z" fill="white"/>
+        <svg
+          width="32"
+          height="32"
+          viewBox="0 0 32 32"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            fillRule="evenodd"
+            clipRule="evenodd"
+            d="M21.4538 9.25628C21.7923 8.91457 22.341 8.91457 22.6795 9.25628L28.7462 15.3813C29.0846 15.723 29.0846 16.277 28.7462 16.6187L22.6795 22.7437C22.341 23.0854 21.7923 23.0854 21.4538 22.7437C21.1154 22.402 21.1154 21.848 21.4538 21.5063L26.041 16.875H3.86667C3.38802 16.875 3 16.4832 3 16C3 15.5168 3.38802 15.125 3.86667 15.125L26.041 15.125L21.4538 10.4937C21.1154 10.152 21.1154 9.59799 21.4538 9.25628Z"
+            fill="white"
+          />
         </svg>
       </button>
     </section>

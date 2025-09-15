@@ -14,30 +14,30 @@ export default {
     },
     extend: {
       fontFamily: {
-        'lato': ['Lato', '-apple-system', 'Roboto', 'Helvetica', 'sans-serif'],
+        lato: ["Lato", "-apple-system", "Roboto", "Helvetica", "sans-serif"],
       },
       colors: {
         // Wayzor brand colors
-        'wayzor': {
-          'green': '#78BE20',
-          'green-dark': '#528116',
-          'purple': '#332634',
+        wayzor: {
+          green: "#78BE20",
+          "green-dark": "#528116",
+          purple: "#332634",
         },
         // Content colors
-        'content': {
-          'dark-strong': '#262E2F',
-          'dark-medium': '#363F41',
-          'bodytext': '#171C1D',
-          'label': '#6D7679',
-          'invert': '#FFF',
+        content: {
+          "dark-strong": "#262E2F",
+          "dark-medium": "#363F41",
+          bodytext: "#171C1D",
+          label: "#6D7679",
+          invert: "#FFF",
         },
         // Background colors
-        'bg': {
-          'light-soft': '#F8FAFA',
-          'light-medium': '#EEF2F4',
-          'overlay-black-10': 'rgba(0, 0, 0, 0.10)',
-          'overlay-black-05': 'rgba(0, 0, 0, 0.05)',
-          'overlay-white-10': 'rgba(255, 255, 255, 0.10)',
+        bg: {
+          "light-soft": "#F8FAFA",
+          "light-medium": "#EEF2F4",
+          "overlay-black-10": "rgba(0, 0, 0, 0.10)",
+          "overlay-black-05": "rgba(0, 0, 0, 0.05)",
+          "overlay-white-10": "rgba(255, 255, 255, 0.10)",
         },
         // Keep existing shadcn colors for compatibility
         border: "hsl(var(--border))",

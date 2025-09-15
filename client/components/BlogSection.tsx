@@ -1,28 +1,34 @@
-import React from 'react';
+import React from "react";
 
 const BlogSection = () => {
   const blogPosts = [
     {
-      image: "https://api.builder.io/api/v1/image/assets/TEMP/f5dccee1f060b2667b6023b1980e509254d0ce5b?width=1052",
+      image:
+        "https://api.builder.io/api/v1/image/assets/TEMP/f5dccee1f060b2667b6023b1980e509254d0ce5b?width=1052",
       category: "Driving Tips",
       title: "Family holidays made easy",
-      description: "Planning a weekend getaway or a longer adventure with the kids? The perfect car brings comfort, safety, and peace of mind to every mile.",
-      size: "large"
+      description:
+        "Planning a weekend getaway or a longer adventure with the kids? The perfect car brings comfort, safety, and peace of mind to every mile.",
+      size: "large",
     },
     {
-      image: "https://api.builder.io/api/v1/image/assets/TEMP/f2048b43251d7614b1851d781e2f6a9b126852e5?width=720",
+      image:
+        "https://api.builder.io/api/v1/image/assets/TEMP/f2048b43251d7614b1851d781e2f6a9b126852e5?width=720",
       category: "Driving Tips",
       title: "Visit Azores in 3 days",
-      description: "There are endless reasons to explore São Miguel in the Azores. From shimmering lagoons to emerald-green mountains, every turn reveals a breathtaking moment you'll never forget.",
-      size: "medium"
+      description:
+        "There are endless reasons to explore São Miguel in the Azores. From shimmering lagoons to emerald-green mountains, every turn reveals a breathtaking moment you'll never forget.",
+      size: "medium",
     },
     {
-      image: "https://api.builder.io/api/v1/image/assets/TEMP/e1c090ab8df2648a4f81f7e37fdee75da6eeb0ab?width=720",
+      image:
+        "https://api.builder.io/api/v1/image/assets/TEMP/e1c090ab8df2648a4f81f7e37fdee75da6eeb0ab?width=720",
       category: "waYzor business",
       title: "Drive your Business forward",
-      description: "Discover how your company can stay ahead with smart, flexible mobility solutions, fully digital and tailored to your business needs.",
-      size: "medium"
-    }
+      description:
+        "Discover how your company can stay ahead with smart, flexible mobility solutions, fully digital and tailored to your business needs.",
+      size: "medium",
+    },
   ];
 
   return (
@@ -34,7 +40,8 @@ const BlogSection = () => {
             Highlights that move with you
           </h2>
           <p className="text-xl text-content-dark-strong font-lato">
-            Travel tips, exclusive deals, and Azores highlights, all in one place.
+            Travel tips, exclusive deals, and Azores highlights, all in one
+            place.
           </p>
         </div>
 
@@ -45,7 +52,7 @@ const BlogSection = () => {
             <div className="lg:col-span-2">
               <article className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 h-full">
                 <div className="aspect-[16/9] overflow-hidden">
-                  <img 
+                  <img
                     src={blogPosts[0].image}
                     alt={blogPosts[0].title}
                     className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
@@ -73,9 +80,12 @@ const BlogSection = () => {
             {/* Smaller Cards */}
             <div className="space-y-8">
               {blogPosts.slice(1).map((post, index) => (
-                <article key={index} className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300">
+                <article
+                  key={index}
+                  className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300"
+                >
                   <div className="aspect-[16/9] overflow-hidden">
-                    <img 
+                    <img
                       src={post.image}
                       alt={post.title}
                       className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"

@@ -1,13 +1,14 @@
-import React from 'react';
+import React from "react";
 
 const DiscoverSection = () => {
   return (
     <section className="relative py-32 overflow-hidden">
       {/* Background Image */}
-      <div 
+      <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: 'url("https://api.builder.io/api/v1/image/assets/TEMP/f2048b43251d7614b1851d781e2f6a9b126852e5?width=720")',
+          backgroundImage:
+            'url("https://api.builder.io/api/v1/image/assets/TEMP/f2048b43251d7614b1851d781e2f6a9b126852e5?width=720")',
         }}
       >
         {/* Gradient overlay */}
@@ -21,8 +22,8 @@ const DiscoverSection = () => {
             Discover the Azores your way
           </h2>
           <p className="text-white font-lato mb-8 max-w-lg leading-relaxed">
-            Explore breathtaking landscapes with total freedom.
-            Check out our fleet and find the perfect car for your adventure.
+            Explore breathtaking landscapes with total freedom. Check out our
+            fleet and find the perfect car for your adventure.
           </p>
           <button className="inline-flex items-center px-8 py-4 border-2 border-wayzor-green rounded-full bg-bg-overlay-black-05 backdrop-blur-sm hover:bg-wayzor-green hover:text-black transition-all duration-300">
             <span className="text-white hover:text-black font-lato font-bold text-sm">
