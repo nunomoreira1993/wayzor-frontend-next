@@ -267,17 +267,17 @@ const SelectOptions = () => {
             <div className="flex flex-col items-start gap-12 self-stretch">
               <div className="flex flex-col items-start gap-18 self-stretch">
                 <div className="flex w-[864px] flex-col items-start gap-2">
-                  <h1 className="w-[742px] text-wayzor-content-dark-strong font-lato text-[32px] font-bold leading-[125%]">
+                  <h1 className="w-[742px] text-content-dark-strong font-lato text-[32px] font-bold leading-[125%]">
                     Pick your coverage and travel stress-free
                   </h1>
-                  <p className="w-[749px] text-wayzor-content-dark-strong font-lato text-base font-normal leading-[150%]">
+                  <p className="w-[749px] text-content-dark-strong font-lato text-base font-normal leading-[150%]">
                     Accidents happen. Wayzor keeps you covered against damage, glass breakage, vandalism, and theft,
                     so you can drive worry-free.
                   </p>
                 </div>
               </div>
               <div className="flex flex-col items-start gap-6 self-stretch">
-                <h2 className="self-stretch text-wayzor-content-dark-strong font-lato text-2xl font-bold leading-[130%]">
+                <h2 className="self-stretch text-content-dark-strong font-lato text-2xl font-bold leading-[130%]">
                   Complementary products
                 </h2>
               </div>
@@ -285,7 +285,7 @@ const SelectOptions = () => {
             <div className="flex flex-col items-start gap-8 self-stretch">
               {/* Protection Section */}
               <div className="flex flex-col items-start gap-4 self-stretch">
-                <h3 className="self-stretch text-wayzor-content-dark-strong font-lato text-lg font-bold leading-[140%]">
+                <h3 className="self-stretch text-content-dark-strong font-lato text-lg font-bold leading-[140%]">
                   Protection
                 </h3>
                 <div className="flex flex-col items-start gap-0 self-stretch">
@@ -300,7 +300,7 @@ const SelectOptions = () => {
 
               {/* Comfort Section */}
               <div className="flex flex-col items-start gap-4 self-stretch">
-                <h3 className="self-stretch text-wayzor-content-dark-strong font-lato text-lg font-bold leading-[140%]">
+                <h3 className="self-stretch text-content-dark-strong font-lato text-lg font-bold leading-[140%]">
                   Comfort
                 </h3>
                 <div className="flex flex-col items-start gap-0 self-stretch">
