@@ -126,7 +126,7 @@ const SelectOptions = () => {
   const [showMore, setShowMore] = useState(false);
 
   return (
-    <div className="min-h-screen bg-wayzor-bg-light-soft">
+    <div className="min-h-screen bg-bg-light-soft">
       {/* Progress Stepper */}
       <div className="flex flex-col items-center gap-18 pt-24 pb-18">
         <div className="flex w-[980px] justify-center items-start">
