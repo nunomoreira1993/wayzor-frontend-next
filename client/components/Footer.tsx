@@ -204,7 +204,7 @@ const Footer = () => {
             {/* Collapsible Sections */}
             <div className="flex flex-col items-start gap-6 self-stretch">
               {/* Site Map */}
-              <div className="flex pb-4 justify-between items-center self-stretch border-b border-white/10">
+              <div className="pb-4 self-stretch border-b border-white/10">
                 <button
                   onClick={() => toggleSection("sitemap")}
                   className="flex items-center justify-between w-full"
@@ -212,11 +212,11 @@ const Footer = () => {
                   <span className="text-white font-lato font-bold text-base leading-[140%]">
                     Site Map
                   </span>
-                  <svg 
-                    width="16" 
-                    height="17" 
-                    viewBox="0 0 16 17" 
-                    fill="none" 
+                  <svg
+                    width="16"
+                    height="17"
+                    viewBox="0 0 16 17"
+                    fill="none"
                     className={`transition-transform duration-200 ${openSections.sitemap ? "rotate-180" : ""}`}
                   >
                     <path fillRule="evenodd" clipRule="evenodd" d="M1.42385 5.40463C1.68903 5.08642 2.16195 5.04343 2.48016 5.3086L8.00002 9.90848L13.5199 5.3086C13.8381 5.04343 14.311 5.08642 14.5762 5.40463C14.8414 5.72284 14.7984 6.19576 14.4802 6.46093L8.48016 11.4609C8.20202 11.6927 7.79801 11.6927 7.51988 11.4609L1.51988 6.46093C1.20167 6.19576 1.15868 5.72284 1.42385 5.40463Z" fill="white"/>
