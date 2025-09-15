@@ -327,7 +327,7 @@ const SelectOptions = () => {
                 fill="#4E8000"
               />
             </svg>
-            <span className="text-wayzor-content-text-color font-lato text-base font-medium leading-[100%]">
+            <span className="text-content-text-color font-lato text-base font-medium leading-[100%]">
               See more
             </span>
           </button>
