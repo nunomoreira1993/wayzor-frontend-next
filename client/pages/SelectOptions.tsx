@@ -78,7 +78,7 @@ const ProductItem: React.FC<ProductItemProps> = ({ title, price, showHelp = true
     <div className="flex py-4 px-0 pl-4 items-center gap-2.5 self-stretch rounded-lg border border-[#B9DD8B]">
       <div className="flex w-full justify-between items-center">
         <div className="flex items-center gap-2">
-          <h3 className="text-wayzor-content-bodytext font-lato text-base font-semibold leading-[150%]">
+          <h3 className="text-content-bodytext font-lato text-base font-semibold leading-[150%]">
             {title}
           </h3>
           {showHelp && (
