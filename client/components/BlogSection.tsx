@@ -35,11 +35,11 @@ const BlogSection = () => {
     <section className="py-20 bg-bg-light-soft">
       <div className="container mx-auto px-4 lg:px-8">
         {/* Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-3xl lg:text-4xl font-lato font-bold text-content-dark-strong mb-2">
+        <div className="text-center mb-12 lg:mb-16 px-5 lg:px-0">
+          <h2 className="text-2xl lg:text-4xl font-lato font-bold text-content-dark-strong mb-2">
             Highlights that move with you
           </h2>
-          <p className="text-xl text-content-dark-strong font-lato">
+          <p className="text-base lg:text-xl text-content-dark-strong font-lato">
             Travel tips, exclusive deals, and Azores highlights, all in one
             place.
           </p>
@@ -47,7 +47,42 @@ const BlogSection = () => {
 
         {/* Blog Cards Grid */}
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          {/* Mobile: Single Column Layout */}
+          <div className="flex flex-col space-y-8 lg:hidden">
+            {blogPosts.map((post, index) => (
+              <article
+                key={index}
+                className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 w-full max-w-sm mx-auto"
+              >
+                <div className="aspect-[5/4] overflow-hidden">
+                  <img
+                    src={post.image}
+                    alt={post.title}
+                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                  />
+                </div>
+                <div className="p-4">
+                  <div className="mb-2">
+                    <span className="text-xs font-lato font-bold text-wayzor-green-dark uppercase tracking-wider">
+                      {post.category}
+                    </span>
+                  </div>
+                  <h3 className="text-xl font-lato font-bold text-content-dark-strong mb-3 leading-tight">
+                    {post.title}
+                  </h3>
+                  <p className="text-content-dark-strong font-lato leading-relaxed mb-4 text-sm">
+                    {post.description}
+                  </p>
+                  <button className="text-wayzor-green-dark font-lato font-bold hover:text-wayzor-green transition-colors duration-300 text-sm">
+                    Read more
+                  </button>
+                </div>
+              </article>
+            ))}
+          </div>
+
+          {/* Desktop: Grid Layout */}
+          <div className="hidden lg:grid lg:grid-cols-3 lg:gap-8">
             {/* Large Featured Card */}
             <div className="lg:col-span-2">
               <article className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 h-full">

@@ -15,39 +15,39 @@ const HeroSection = () => {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 container mx-auto px-4 lg:px-8 pt-24 pb-16">
+      <div className="relative z-10 w-full px-5 lg:px-8 pt-20 lg:pt-24 pb-16">
         <div className="max-w-6xl mx-auto">
-          <div className="flex flex-col lg:flex-row items-center gap-8">
+          <div className="flex flex-col lg:flex-row items-start lg:items-center gap-8">
             {/* Left Column - Text Content */}
-            <div className="lg:w-1/2 text-center lg:text-left">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-lato font-bold text-white leading-tight mb-4">
+            <div className="w-full lg:w-1/2 text-left">
+              <h1 className="text-[40px] leading-[48px] lg:text-6xl lg:leading-tight font-lato font-bold text-white mb-2">
                 Your journey, your rules, your Azores.
               </h1>
-              <p className="text-lg text-white font-lato font-medium mb-8 max-w-md">
+              <p className="text-base lg:text-lg text-white font-lato font-medium mb-6 lg:mb-8">
                 Wayzor. Freedom starts here.
               </p>
-              <button className="inline-flex items-center px-10 py-5 border-2 border-wayzor-green rounded-full bg-bg-overlay-black-10 backdrop-blur-sm hover:bg-wayzor-green hover:text-black transition-all duration-300">
-                <span className="text-white hover:text-black font-lato font-bold text-base">
+              <button className="inline-flex items-center px-8 lg:px-10 py-4 lg:py-5 border-2 border-wayzor-green rounded-full bg-bg-overlay-black-05 backdrop-blur-sm hover:bg-wayzor-green hover:text-black transition-all duration-300">
+                <span className="text-white hover:text-black font-lato font-bold text-sm lg:text-base">
                   More about us
                 </span>
               </button>
             </div>
 
             {/* Right Column - Empty space for layout balance */}
-            <div className="lg:w-1/2"></div>
+            <div className="hidden lg:block lg:w-1/2"></div>
           </div>
         </div>
       </div>
 
       {/* Carousel Indicators */}
-      <div className="absolute bottom-32 left-1/2 transform -translate-x-1/2 flex space-x-2.5">
+      <div className="absolute bottom-40 lg:bottom-32 left-1/2 transform -translate-x-1/2 flex space-x-2.5">
         <div className="w-10 h-1 bg-white rounded-full"></div>
         <div className="w-10 h-1 bg-white bg-opacity-50 rounded-full"></div>
         <div className="w-10 h-1 bg-white bg-opacity-50 rounded-full"></div>
       </div>
 
       {/* Navigation Arrow */}
-      <button className="absolute bottom-32 right-16 lg:right-32 w-23 h-23 rounded-full bg-bg-overlay-black-10 backdrop-blur-sm hover:bg-white hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center">
+      <button className="absolute bottom-40 lg:bottom-32 right-8 lg:right-32 w-16 h-16 lg:w-23 lg:h-23 rounded-full bg-bg-overlay-black-10 backdrop-blur-sm hover:bg-white hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center">
         <svg
           width="32"
           height="32"
