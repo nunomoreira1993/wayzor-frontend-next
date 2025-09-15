@@ -126,27 +126,27 @@ const FeaturesSection = () => {
     <section className="py-20 bg-white">
       <div className="container mx-auto px-4 lg:px-8">
         {/* Header */}
-        <div className="text-center mb-12 lg:mb-16 px-5 lg:px-0">
-          <h2 className="text-2xl lg:text-4xl font-lato font-bold text-content-dark-strong mb-2">
+        <div className="text-center mb-16">
+          <h2 className="text-3xl lg:text-4xl font-lato font-bold text-content-dark-strong mb-2">
             Thinking of renting?
           </h2>
-          <p className="text-base lg:text-xl text-content-dark-strong font-lato">
+          <p className="text-xl text-content-dark-strong font-lato">
             Here's why Wayzor's got you covered
           </p>
         </div>
 
         {/* Features Grid */}
-        <div className="flex flex-col space-y-6 lg:grid lg:grid-cols-4 lg:gap-8 lg:space-y-0">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {features.map((feature, index) => (
             <div
               key={index}
-              className="bg-white rounded-xl p-6 text-center shadow-sm hover:shadow-md transition-shadow duration-300 w-full max-w-sm mx-auto lg:max-w-none lg:mx-0"
+              className="bg-white rounded-xl p-6 text-center shadow-sm hover:shadow-md transition-shadow duration-300"
             >
               <div className="flex justify-center mb-4">{feature.icon}</div>
-              <h3 className="text-lg lg:text-xl font-lato font-bold text-content-dark-strong mb-2">
+              <h3 className="text-xl font-lato font-bold text-content-dark-strong mb-2">
                 {feature.title}
               </h3>
-              <p className="text-sm lg:text-base text-content-dark-medium font-lato leading-relaxed">
+              <p className="text-content-dark-medium font-lato leading-relaxed">
                 {feature.description}
               </p>
             </div>

@@ -12,16 +12,15 @@ const SocialSection = () => {
     <section className="py-20 bg-bg-light-soft">
       <div className="container mx-auto px-4 lg:px-16">
         {/* Header */}
-        <div className="text-center mb-8 lg:mb-16 px-5 lg:px-0">
-          <h2 className="text-2xl lg:text-4xl font-lato font-bold text-content-dark-strong mb-4">
+        <div className="text-center mb-16">
+          <h2 className="text-3xl lg:text-4xl font-lato font-bold text-content-dark-strong mb-4">
             Get Inspired. Follow @wayzorrentacar
           </h2>
           <div className="max-w-4xl mx-auto">
-            <p className="text-base lg:text-xl text-content-dark-strong font-lato leading-relaxed">
+            <p className="text-xl text-content-dark-strong font-lato leading-relaxed">
               Capture your best adventures and tag{" "}
               <span className="font-bold">@wayzorrentacar</span>.
-              <br className="hidden lg:block" />
-              <span className="lg:hidden"> </span>
+              <br />
               Use <span className="font-bold">#AzoresYourWay</span> and show the
               world what freedom on the road really looks like.
             </p>
@@ -30,24 +29,7 @@ const SocialSection = () => {
 
         {/* Instagram Feed Grid */}
         <div className="max-w-5xl mx-auto mb-8">
-          {/* Mobile: Single column, larger images */}
-          <div className="flex flex-col space-y-4 md:hidden">
-            {instagramPosts.slice(0, 1).map((image, index) => (
-              <div
-                key={index}
-                className="aspect-[4/5] bg-gray-200 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 cursor-pointer group max-w-xs mx-auto"
-              >
-                <img
-                  src={image}
-                  alt={`Instagram post ${index + 1}`}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                />
-              </div>
-            ))}
-          </div>
-
-          {/* Desktop: Grid layout */}
-          <div className="hidden md:grid md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {instagramPosts.map((image, index) => (
               <div
                 key={index}

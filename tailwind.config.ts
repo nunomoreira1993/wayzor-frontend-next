@@ -22,15 +22,8 @@ export default {
           green: "#78BE20",
           "green-dark": "#528116",
           purple: "#332634",
-          "content-dark-strong": "#262E2F",
-          "content-dark-medium": "#363F41",
-          "content-bodytext": "#171C1D",
-          "content-label": "#6D7679",
-          "bg-light-soft": "#F8FAFA",
-          "bg-light-medium": "#EEF2F4",
-          "footer-purple-button-default": "#4B384C",
         },
-        // Content colors (for backward compatibility)
+        // Content colors
         content: {
           "dark-strong": "#262E2F",
           "dark-medium": "#363F41",
@@ -38,7 +31,7 @@ export default {
           label: "#6D7679",
           invert: "#FFF",
         },
-        // Background colors (for backward compatibility)
+        // Background colors
         bg: {
           "light-soft": "#F8FAFA",
           "light-medium": "#EEF2F4",
