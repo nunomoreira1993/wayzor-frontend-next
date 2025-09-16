@@ -1,3 +1,5 @@
+
+
 .footer { background:$color-purple; color:#fff; padding:5rem 0; font-family:$font-base; }
 /* Desktop */
 .footer__desktop { display:none; }
@@ -9,7 +11,7 @@
 .footer__stations-cols { display:flex; gap:2.5rem; }
 /* High-fidelity footer stations spacing like TSX: outer group gap-16 (64px), column gap-10 (40px), link vertical gap-4 (16px) */
 .footer__stations { display:flex; flex-direction:column;  width: 352px; }
-.footer__stations .footer__title {  }
+
 .footer__stations-cols > div { display:flex; flex-direction:column; }
 .footer__stations-cols { gap:2.5rem; }
 .footer__stations a { line-height:150%; }

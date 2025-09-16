@@ -1,6 +1,8 @@
 // High-fidelity search widget extracted from React component structure
 // Uses new BEM namespace: .searchw__ to avoid collision with legacy .search-widget__ styles
 
+
+
 .search-widget { // adjust vertical offset for hero overlay
   margin-top:-70px;
   @media (max-width:1023px){ margin-top:24px; }

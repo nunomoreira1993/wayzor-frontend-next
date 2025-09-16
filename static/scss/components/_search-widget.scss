@@ -1,4 +1,6 @@
 // Search widget styles (simplified approximation from Tailwind utilities)
+
+
 .search-widget { position:relative; margin-top:-140px; z-index:20; }
 @media (max-width:1023px){ .search-widget { margin-top:2rem; } }
 .search-widget__desktop { display:none; }
