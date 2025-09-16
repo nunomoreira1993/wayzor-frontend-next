@@ -1,0 +1,38 @@
+// Shared layout utilities
+.container-1312 { max-width:$container-max; margin:0 auto; padding:0 1.5rem; }
+@media (min-width:1024px){ .container-1312 { padding:0 2rem; } }
+
+/* Apply to major sections */
+.hero__inner, .features__header, .features__grid, .blog__header, .blog__cards, .partners__inner, .social__header, .footer__grid { @extend .container-1312; }
+
+/* Inline styles migration utilities */
+.u-hidden { display:none !important; }
+
+/* Buttons / variants */
+.btn--outline-green { @include button-base; background:transparent; color:$color-green; border-color:$color-green; }
+.header--transparent .btn--outline-green { color:#fff; border-color:#fff; }
+
+/* Partners spacing */
+.partners__title--spaced { margin-bottom:2rem !important; }
+
+/* Footer replacements */
+.footer__logo-img { width:188px; height:58px; object-fit:contain; }
+.footer__bottom--spaced { margin-top:2rem !important; }
+.footer__bottom--stack { flex-direction:column; align-items:flex-start; gap:1rem; }
+.footer__logo-img--mobile { width:188px; height:58px; object-fit:contain; margin-bottom:2rem; }
+.footer__social--spaced { margin:2rem 0; }
+.footer__social-icons--spaced { margin-top:1rem; }
+
+/* Blog fixed widths (desktop only) */
+@media (min-width:1024px){
+	.blog__card--w526 { width:526px !important; }
+	.blog__card--w360 { width:360px !important; }
+}
+
+/* Features composite icon structure */
+.features__icon-composite { position:relative; width:56px; height:56px; }
+.features__icon-composite-circle { position:absolute; left:24px; top:24px; width:32px; height:32px; background:#B9DD8B; opacity:.3; border-radius:50%; }
+.features__icon-composite-img { position:absolute; left:4px; top:8px; width:44px; height:40px; object-fit:contain; }
+
+/* Discover background (was inline) */
+.discover__bg--image { background-image:url('https://api.builder.io/api/v1/image/assets/TEMP/f2048b43251d7614b1851d781e2f6a9b126852e5?width=720'); }

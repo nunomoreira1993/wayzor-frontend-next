@@ -1,0 +1,17 @@
+@import 'variables';
+@import 'mixins';
+@import 'reset';
+@import 'components/hero';
+@import 'components/header';
+@import 'components/layout';
+@import 'components/search-widget';
+@import 'components/search-widget-fidelity';
+@import 'components/features';
+@import 'components/discover';
+@import 'components/blog';
+@import 'components/partners';
+@import 'components/social';
+@import 'components/footer';
+
+body { background:#fff; }
+.main { font-family:$font-base; }

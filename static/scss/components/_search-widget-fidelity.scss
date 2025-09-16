@@ -1,0 +1,96 @@
+// High-fidelity search widget extracted from React component structure
+// Uses new BEM namespace: .searchw__ to avoid collision with legacy .search-widget__ styles
+
+.search-widget { // adjust vertical offset for hero overlay
+  margin-top:-70px;
+  @media (max-width:1023px){ margin-top:24px; }
+}
+
+.search-widget__container {
+  /* Align search widget width with global 1312px container */
+  max-width:$container-max;
+  margin:0 auto;
+  padding:0 1.5rem;
+  @media (min-width:1024px){ padding:0 2rem; }
+}
+
+.searchw--panel {
+  background:#fff;
+  border:1px solid #E2E8EA;
+  border-radius:20px;
+  padding:28px 32px 32px;
+  box-shadow:0 8px 32px -4px rgba(16,24,40,0.08);
+}
+
+.searchw__group { display:flex; gap:24px; }
+.searchw__group--row1 { margin-bottom:28px; }
+
+.searchw__field {
+  position:relative;
+  flex:1;
+  background:#fff;
+  border:1px solid #D5DCDD;
+  border-radius:14px;
+  height:72px;
+  padding:14px 18px 10px;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-end;
+}
+
+.searchw__field--narrow { flex:0 0 220px; }
+
+.searchw__floating-label {
+  position:absolute;
+  top:-9px;
+  left:14px;
+  background:#fff;
+  padding:0 6px;
+  font-size:12px;
+  line-height:18px;
+  font-weight:600;
+  color:#2E3132;
+  letter-spacing:0.2px;
+}
+
+.searchw__inner { display:flex; align-items:center; gap:8px; font-size:15px; line-height:24px; font-weight:500; color:#2E3132; }
+.searchw__inner--split { justify-content:space-between; gap:20px; }
+.searchw__split { display:flex; align-items:center; gap:6px; }
+.searchw__icon { flex-shrink:0; color:$color-green; }
+.searchw__value { white-space:nowrap; font-weight:600; font-size:15px; letter-spacing:0.2px; }
+
+.searchw__submit {
+  align-self:flex-end;
+  background:$color-green;
+  color:#fff;
+  border:none;
+  border-radius:14px;
+  padding:0 34px;
+  font-size:16px;
+  font-weight:600;
+  height:72px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  margin-left:auto;
+  box-shadow:0 4px 14px -2px rgba(82,129,22,0.45);
+  cursor:pointer;
+  transition:background .2s;
+  &:hover { background:$color-green-dark; }
+}
+
+.searchw__mobile-note { display:none; margin-top:16px; font-size:14px; text-align:center; color:#6D7679; }
+
+@media (max-width:1100px){
+  .searchw__group { flex-wrap:wrap; }
+  .searchw__field--narrow { flex:1 1 180px; }
+  .searchw__submit { margin-top:12px; width:100%; }
+}
+
+@media (max-width:860px){
+  .searchw--panel { padding:20px 20px 24px; }
+  .searchw__group--row1 { margin-bottom:18px; }
+  .searchw__field { height:66px; }
+  .searchw__submit { height:66px; }
+  .searchw__mobile-note { display:block; }
+}

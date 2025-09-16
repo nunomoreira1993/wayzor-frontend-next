@@ -1,0 +1,34 @@
+// Search widget styles (simplified approximation from Tailwind utilities)
+.search-widget { position:relative; margin-top:-140px; z-index:20; }
+@media (max-width:1023px){ .search-widget { margin-top:2rem; } }
+.search-widget__desktop { display:none; }
+@media (min-width:1024px){ .search-widget__desktop { display:block; } }
+.search-widget__panel { background:#fff; box-shadow:0 10px 40px -10px rgba(0,0,0,.15); border-radius:24px; padding:2rem; }
+.search-widget__row { display:flex; gap:1rem; flex-wrap:nowrap; }
+.search-widget__field { flex:1; background:#F5F7F6; border:1px solid #E2E5E4; border-radius:16px; padding:1rem; display:flex; flex-direction:column; gap:.25rem; font-family:$font-base; font-size:.875rem; }
+.search-widget__field--highlight { border:2px solid $color-green; background:#fff; }
+.search-widget__label { font-weight:600; font-size:.75rem; color:#636F71; text-transform:uppercase; letter-spacing:.5px; }
+.search-widget__btn { @include button-base; height:56px; padding:0 2rem; font-size:1rem; font-weight:600; }
+
+/* Mobile */
+.search-widget__mobile { display:block; }
+@media (min-width:1024px){ .search-widget__mobile { display:none; } }
+.search-widget__mobile-collapsed { display:flex; align-items:center; gap:1rem; }
+.search-widget__panel.is-hidden { display:none; }
+.search-widget__panel.is-expanded { display:block; }.search-widget { position:relative; margin-top:-8rem; z-index:20; padding:0 1.25rem; }
+@media (min-width:1024px){ .search-widget { margin-top:-8rem; padding:0 5rem; } }
+.search-widget__panel { background:#fff; border-radius:1rem; box-shadow:0 10px 25px -5px rgba(0,0,0,.1); padding:1.5rem; }
+.search-widget__row { display:flex; gap:1.5rem; }
+.search-widget__field { flex:1; position:relative; height:3.5rem; border:1.5px solid rgba(0,0,0,0.1); border-radius:.75rem; background:#fff; display:flex; align-items:center; padding:0 .75rem; font-size:.95rem; }
+.search-widget__label { position:absolute; left:.75rem; top:-.65rem; background:#fff; padding:0 .25rem; font-size:.75rem; font-weight:700; }
+.search-widget__btn { @include button-base; width:100%; height:3.375rem; background:$color-green; color:#000; border:none; font-size:1rem; }
+.search-widget__btn:hover { background:$color-green-dark; }
+@media (max-width:1023px){
+  .search-widget__desktop { display:none; }
+}
+@media (min-width:1024px){
+  .search-widget__mobile { display:none; }
+}
+/* Mobile simplified -- placeholder */
+.search-widget__mobile-collapsed { background:#fff; border-radius:1rem; padding:1.5rem; display:flex; flex-direction:column; gap:1.5rem; }
+.search-widget__field--highlight { border:2px solid $color-green; cursor:pointer; }
