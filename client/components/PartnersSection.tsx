@@ -17,30 +17,30 @@ const PartnersSection = () => {
       <div className="w-full max-w-[1680px] mx-auto px-4 md:px-8 lg:px-[120px]">
         <div className="max-w-[1440px] mx-auto">
           {/* Mobile Layout */}
-          <div className="flex flex-col items-center gap-6 lg:hidden">
+          <div className="flex flex-col items-center gap-8 lg:hidden">
             <div className="text-center max-w-sm">
-              <h2 className="text-2xl font-lato font-bold text-content-bodytext mb-6 leading-tight">
+              <h2 className="text-3xl font-lato font-bold text-content-dark-medium mb-8 leading-tight">
                 Appreciated by Our Partners
               </h2>
-              <button className="inline-flex items-center px-5 py-3 border-2 border-wayzor-green-dark rounded-full hover:bg-wayzor-green-dark hover:text-white transition-all duration-300">
-                <span className="text-wayzor-green-dark hover:text-white font-lato font-medium text-sm">
+              <button className="inline-flex items-center px-6 py-4 border-2 border-wayzor-green rounded-full hover:bg-wayzor-green hover:text-black transition-all duration-300">
+                <span className="text-wayzor-green hover:text-black font-lato font-semibold text-base">
                   Meet Our Partners
                 </span>
               </button>
             </div>
 
             {/* Mobile Partner Logos Grid */}
-            <div className="w-full max-w-sm grid grid-cols-2 gap-4">
+            <div className="w-full max-w-sm grid grid-cols-2 gap-6">
               {partnerLogos.slice(0, 4).map((logo, index) => (
                 <div
                   key={index}
-                  className="flex items-center justify-center p-3 hover:scale-105 transition-transform duration-300"
+                  className="flex items-center justify-center p-4 rounded-lg bg-gray-50 hover:bg-gray-100 hover:scale-105 transition-all duration-300"
                 >
                   <img
                     src={logo}
                     alt={`Partner ${index + 1}`}
-                    className="max-w-full h-auto opacity-90 hover:opacity-100 transition-opacity duration-300"
-                    style={{ maxHeight: "60px" }}
+                    className="max-w-full h-auto opacity-80 hover:opacity-100 transition-opacity duration-300"
+                    style={{ maxHeight: "50px" }}
                   />
                 </div>
               ))}
