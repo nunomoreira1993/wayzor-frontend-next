@@ -83,11 +83,11 @@ const Header = () => {
                 </a>
                 <a
                   href="#"
-                  className={`font-lato font-bold text-base hover:text-wayzor-green transition-colors ${
+                  className={`font-lato font-bold text-base hover:text-wayzor-green transition-colors leading-tight ${
                     isWhite ? "text-content-dark-medium" : "text-white"
                   }`}
                 >
-                  About us
+                  About<br />us
                 </a>
               </div>
 
