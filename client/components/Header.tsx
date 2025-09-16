@@ -5,6 +5,7 @@ const Header = () => {
   const location = useLocation();
   const isHomePage = location.pathname === "/";
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
