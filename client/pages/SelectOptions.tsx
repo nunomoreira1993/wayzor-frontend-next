@@ -262,16 +262,17 @@ const SelectOptions = () => {
       </div>
 
       {/* Main Content */}
-      <div className="flex flex-col items-center gap-6 px-[185px] pb-16">
-        <div className="flex w-[750px] flex-col items-center gap-6">
+      <div className="flex justify-center gap-8 px-[120px] pb-16">
+        {/* Left Column - Options */}
+        <div className="flex w-[750px] flex-col items-start gap-6">
           <div className="flex flex-col items-start gap-4 self-stretch">
             <div className="flex flex-col items-start gap-12 self-stretch">
               <div className="flex flex-col items-start gap-18 self-stretch">
-                <div className="flex w-[864px] flex-col items-start gap-2">
-                  <h1 className="w-[742px] text-content-dark-strong font-lato text-[32px] font-bold leading-[125%]">
+                <div className="flex flex-col items-start gap-2 self-stretch">
+                  <h1 className="text-content-dark-strong font-lato text-[32px] font-bold leading-[125%]">
                     Pick your coverage and travel stress-free
                   </h1>
-                  <p className="w-[749px] text-content-dark-strong font-lato text-base font-normal leading-[150%]">
+                  <p className="text-content-dark-strong font-lato text-base font-normal leading-[150%]">
                     Accidents happen. Wayzor keeps you covered against damage, glass breakage, vandalism, and theft,
                     so you can drive worry-free.
                   </p>
@@ -332,6 +333,11 @@ const SelectOptions = () => {
               See more
             </span>
           </button>
+        </div>
+
+        {/* Right Column - Car Card */}
+        <div className="flex-shrink-0">
+          <CarCard />
         </div>
       </div>
     </div>
