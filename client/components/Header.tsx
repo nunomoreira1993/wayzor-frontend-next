@@ -217,6 +217,7 @@ const Header = () => {
 
               {/* Mobile Menu Button */}
               <button
+                onClick={() => setIsMobileMenuOpen(true)}
                 className={`${isWhite ? "text-content-dark-medium" : "text-white"}`}
               >
                 <svg
