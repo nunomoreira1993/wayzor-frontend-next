@@ -72,7 +72,11 @@ interface ProductItemProps {
   showHelp?: boolean;
 }
 
-const ProductItem: React.FC<ProductItemProps> = ({ title, price, showHelp = true }) => {
+const ProductItem: React.FC<ProductItemProps> = ({
+  title,
+  price,
+  showHelp = true,
+}) => {
   const [quantity, setQuantity] = useState(1);
 
   return (
@@ -206,7 +210,12 @@ const SelectOptions = () => {
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
                 >
-                  <path d="M1 1H9" stroke="black" strokeWidth="1.5" strokeLinecap="round" />
+                  <path
+                    d="M1 1H9"
+                    stroke="black"
+                    strokeWidth="1.5"
+                    strokeLinecap="round"
+                  />
                 </svg>
               </div>
               <div className="flex w-10 h-[21px] justify-center items-center relative">
@@ -273,8 +282,9 @@ const SelectOptions = () => {
                     Pick your coverage and travel stress-free
                   </h1>
                   <p className="text-content-dark-strong font-lato text-base font-normal leading-[150%]">
-                    Accidents happen. Wayzor keeps you covered against damage, glass breakage, vandalism, and theft,
-                    so you can drive worry-free.
+                    Accidents happen. Wayzor keeps you covered against damage,
+                    glass breakage, vandalism, and theft, so you can drive
+                    worry-free.
                   </p>
                 </div>
               </div>
@@ -291,10 +301,19 @@ const SelectOptions = () => {
                   Protection
                 </h3>
                 <div className="flex flex-col items-start gap-0 self-stretch">
-                  <ProductItem title="Premium Road Assistance" price="14,02 €" />
-                  <ProductItem title="Total Car Rental Protection" price="38,27 €" />
+                  <ProductItem
+                    title="Premium Road Assistance"
+                    price="14,02 €"
+                  />
+                  <ProductItem
+                    title="Total Car Rental Protection"
+                    price="38,27 €"
+                  />
                   <ProductItem title="Excess Reduction" price="18,99 €" />
-                  <ProductItem title="Protection of the driver and occupants..." price="15,01€" />
+                  <ProductItem
+                    title="Protection of the driver and occupants..."
+                    price="15,01€"
+                  />
                   <ProductItem title="Adicional Driver" price="18,01€" />
                   <ProductItem title="Young Driver" price="20,02€" />
                 </div>
