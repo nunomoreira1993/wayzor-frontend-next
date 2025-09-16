@@ -82,37 +82,36 @@ const PartnersSection = () => {
           </div>
 
           {/* Navigation Arrows */}
-          <div className="flex justify-center items-center mt-8 space-x-6">
-            <button className="w-8 h-8 flex items-center justify-center hover:bg-gray-100 rounded-full transition-colors duration-300">
+          <div className="flex justify-center items-center mt-12 space-x-4">
+            <button className="w-12 h-12 flex items-center justify-center hover:bg-gray-100 rounded-full transition-all duration-300 border border-gray-200">
               <svg
-                width="32"
-                height="32"
-                viewBox="0 0 32 32"
+                width="20"
+                height="20"
+                viewBox="0 0 20 20"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
                   fillRule="evenodd"
                   clipRule="evenodd"
-                  d="M10.5462 22.7437C10.2077 23.0854 9.65896 23.0854 9.32051 22.7437L3.25384 16.6187C2.91539 16.277 2.91539 15.723 3.25384 15.3813L9.32051 9.25628C9.65896 8.91457 10.2077 8.91457 10.5462 9.25628C10.8846 9.59799 10.8846 10.152 10.5462 10.4937L5.95899 15.125L28.1333 15.125C28.612 15.125 29 15.5168 29 16C29 16.4832 28.612 16.875 28.1333 16.875L5.95898 16.875L10.5462 21.5063C10.8846 21.848 10.8846 22.402 10.5462 22.7437Z"
-                  fill="black"
-                  fillOpacity="0.3"
+                  d="M6.59144 13.4038C6.33109 13.6641 5.90891 13.6641 5.64856 13.4038L1.65856 9.41378C1.39821 9.15343 1.39821 8.73124 1.65856 8.47089L5.64856 4.48089C5.90891 4.22054 6.33109 4.22054 6.59144 4.48089C6.85179 4.74124 6.85179 5.16343 6.59144 5.42378L3.68022 8.33499L17.75 8.33499C18.1297 8.33499 18.4375 8.64277 18.4375 9.02234C18.4375 9.4019 18.1297 9.70968 17.75 9.70968L3.68022 9.70968L6.59144 12.6209C6.85179 12.8812 6.85179 13.3034 6.59144 13.4038Z"
+                  fill="#6B7280"
                 />
               </svg>
             </button>
-            <button className="w-8 h-8 flex items-center justify-center hover:bg-wayzor-green hover:text-white rounded-full transition-colors duration-300">
+            <button className="w-12 h-12 flex items-center justify-center bg-wayzor-green hover:bg-wayzor-green-dark rounded-full transition-all duration-300 group">
               <svg
-                width="32"
-                height="32"
-                viewBox="0 0 32 32"
+                width="20"
+                height="20"
+                viewBox="0 0 20 20"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
                   fillRule="evenodd"
                   clipRule="evenodd"
-                  d="M21.4538 9.25628C21.7923 8.91457 22.341 8.91457 22.6795 9.25628L28.7462 15.3813C29.0846 15.723 29.0846 16.277 28.7462 16.6187L22.6795 22.7437C22.341 23.0854 21.7923 23.0854 21.4538 22.7437C21.1154 22.402 21.1154 21.848 21.4538 21.5063L26.041 16.875H3.86667C3.38802 16.875 3 16.4832 3 16C3 15.5168 3.38802 15.125 3.86667 15.125L26.041 15.125L21.4538 10.4937C21.1154 10.152 21.1154 9.59799 21.4538 9.25628Z"
-                  fill="#528116"
+                  d="M13.4086 4.48089C13.6689 4.22054 14.0911 4.22054 14.3514 4.48089L18.3414 8.47089C18.6018 8.73124 18.6018 9.15343 18.3414 9.41378L14.3514 13.4038C14.0911 13.6641 13.6689 13.6641 13.4086 13.4038C13.1482 13.1434 13.1482 12.7212 13.4086 12.4609L16.3198 9.54968H2.25C1.87043 9.54968 1.5625 9.2419 1.5625 8.86234C1.5625 8.48277 1.87043 8.17499 2.25 8.17499H16.3198L13.4086 5.26378C13.1482 5.00343 13.1482 4.58124 13.4086 4.48089Z"
+                  fill="black"
                 />
               </svg>
             </button>
