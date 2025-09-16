@@ -48,14 +48,14 @@ const PartnersSection = () => {
           </div>
 
           {/* Desktop Layout */}
-          <div className="hidden lg:flex lg:flex-row items-center gap-8 lg:gap-16">
+          <div className="hidden lg:flex lg:flex-row items-center gap-16 xl:gap-20">
             {/* Left Column - Text and Button */}
-            <div className="lg:w-1/3 text-center lg:text-left">
-              <h2 className="text-3xl lg:text-4xl font-lato font-bold text-content-bodytext mb-6 leading-tight">
+            <div className="lg:w-1/3 text-left">
+              <h2 className="text-4xl xl:text-5xl font-lato font-bold text-content-dark-medium mb-8 leading-tight">
                 Appreciated by Our Partners
               </h2>
-              <button className="inline-flex items-center px-6 py-4 border-2 border-wayzor-green-dark rounded-full hover:bg-wayzor-green-dark hover:text-white transition-all duration-300">
-                <span className="text-wayzor-green-dark hover:text-white font-lato font-medium">
+              <button className="inline-flex items-center px-8 py-4 border-2 border-wayzor-green rounded-full hover:bg-wayzor-green hover:text-black transition-all duration-300 group">
+                <span className="text-wayzor-green group-hover:text-black font-lato font-semibold text-lg">
                   Meet Our Partners
                 </span>
               </button>
@@ -63,17 +63,17 @@ const PartnersSection = () => {
 
             {/* Right Column - Partner Logos */}
             <div className="lg:w-2/3">
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-6 lg:gap-8">
+              <div className="grid grid-cols-4 gap-8 xl:gap-10">
                 {partnerLogos.map((logo, index) => (
                   <div
                     key={index}
-                    className="flex items-center justify-center p-4 hover:scale-105 transition-transform duration-300"
+                    className="flex items-center justify-center p-6 rounded-xl bg-gray-50 hover:bg-gray-100 hover:scale-105 transition-all duration-300 min-h-[100px]"
                   >
                     <img
                       src={logo}
                       alt={`Partner ${index + 1}`}
-                      className="max-w-full h-auto opacity-90 hover:opacity-100 transition-opacity duration-300"
-                      style={{ maxHeight: "80px" }}
+                      className="max-w-full h-auto opacity-80 hover:opacity-100 transition-opacity duration-300"
+                      style={{ maxHeight: "60px" }}
                     />
                   </div>
                 ))}
