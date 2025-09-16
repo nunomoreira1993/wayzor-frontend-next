@@ -13,9 +13,9 @@ const PartnersSection = () => {
   ];
 
   return (
-    <section className="py-16 bg-white">
-      <div className="container mx-auto px-4 lg:px-8">
-        <div className="max-w-7xl mx-auto">
+    <section className="py-20 bg-white">
+      <div className="w-full max-w-[1680px] mx-auto px-4 md:px-8 lg:px-[120px]">
+        <div className="max-w-[1440px] mx-auto">
           {/* Mobile Layout */}
           <div className="flex flex-col items-center gap-6 lg:hidden">
             <div className="text-center max-w-sm">
