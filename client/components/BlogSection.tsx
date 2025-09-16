@@ -9,7 +9,7 @@ const BlogSection = () => {
       title: "Family holidays made easy",
       description:
         "Planning a weekend getaway or a longer adventure with the kids? The perfect car brings comfort, safety, and peace of mind to every mile.",
-      size: "large",
+      width: "526px",
     },
     {
       image:
@@ -18,7 +18,7 @@ const BlogSection = () => {
       title: "Visit Azores in 3 days",
       description:
         "There are endless reasons to explore São Miguel in the Azores. From shimmering lagoons to emerald-green mountains, every turn reveals a breathtaking moment you'll never forget.",
-      size: "medium",
+      width: "360px",
     },
     {
       image:
@@ -27,124 +27,108 @@ const BlogSection = () => {
       title: "Drive your Business forward",
       description:
         "Discover how your company can stay ahead with smart, flexible mobility solutions, fully digital and tailored to your business needs.",
-      size: "medium",
+      width: "360px",
     },
   ];
 
   return (
     <section className="py-20 bg-bg-light-soft">
-      <div className="container mx-auto px-4 lg:px-8">
+      <div className="w-full flex flex-col items-center">
         {/* Header */}
-        <div className="text-center mb-12 lg:mb-16 px-5 lg:px-0">
-          <h2 className="text-2xl lg:text-4xl font-lato font-bold text-content-dark-strong mb-2">
+        <div className="flex flex-col items-center gap-4 mb-16 max-w-[864px] text-center">
+          <h2 className="text-[40px] font-lato font-bold text-content-dark-strong leading-[125%]">
             Highlights that move with you
           </h2>
-          <p className="text-base lg:text-xl text-content-dark-strong font-lato">
-            Travel tips, exclusive deals, and Azores highlights, all in one
-            place.
+          <p className="text-[20px] font-lato font-normal text-content-dark-strong leading-[140%]">
+            Travel tips, exclusive deals, and Azores highlights, all in one place.
           </p>
         </div>
 
-        {/* Blog Cards Grid */}
-        <div className="max-w-7xl mx-auto">
-          {/* Mobile: Single Column Layout */}
-          <div className="flex flex-col space-y-8 lg:hidden">
+        {/* Blog Cards Container */}
+        <div className="w-full max-w-[1310px] flex flex-col items-center gap-10">
+          {/* Desktop: 3 Cards in a Row */}
+          <div className="hidden lg:flex items-start gap-8 w-full justify-center">
             {blogPosts.map((post, index) => (
               <article
                 key={index}
-                className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 w-full max-w-sm mx-auto"
+                className="flex flex-col gap-4"
+                style={{ width: post.width }}
               >
-                <div className="aspect-[5/4] overflow-hidden">
+                {/* Image */}
+                <div className="w-full h-[304px] rounded-xl overflow-hidden">
                   <img
                     src={post.image}
                     alt={post.title}
                     className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
                   />
                 </div>
-                <div className="p-4">
-                  <div className="mb-2">
-                    <span className="text-xs font-lato font-bold text-wayzor-green-dark uppercase tracking-wider">
+
+                {/* Content */}
+                <div className="flex flex-col gap-2">
+                  {/* Category and Title */}
+                  <div className="flex flex-col gap-1">
+                    <span className="text-xs font-lato font-bold text-wayzor-green uppercase tracking-wider leading-[150%]">
                       {post.category}
                     </span>
+                    <h3 className="text-2xl font-lato font-bold text-content-dark-strong leading-[130%]">
+                      {post.title}
+                    </h3>
                   </div>
-                  <h3 className="text-xl font-lato font-bold text-content-dark-strong mb-3 leading-tight">
-                    {post.title}
-                  </h3>
-                  <p className="text-content-dark-strong font-lato leading-relaxed mb-4 text-sm">
-                    {post.description}
-                  </p>
-                  <button className="text-wayzor-green-dark font-lato font-bold hover:text-wayzor-green transition-colors duration-300 text-sm">
-                    Read more
-                  </button>
+
+                  {/* Description and Button */}
+                  <div className="flex flex-col gap-2">
+                    <p className="text-base font-lato font-normal text-content-dark-strong leading-[150%]">
+                      {post.description}
+                    </p>
+                    <button className="text-base font-lato font-semibold text-wayzor-green hover:text-wayzor-green-dark transition-colors duration-300 text-left leading-[150%]">
+                      Read more
+                    </button>
+                  </div>
                 </div>
               </article>
             ))}
           </div>
 
-          {/* Desktop: Grid Layout */}
-          <div className="hidden lg:grid lg:grid-cols-3 lg:gap-8">
-            {/* Large Featured Card */}
-            <div className="lg:col-span-2">
-              <article className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 h-full">
-                <div className="aspect-[16/9] overflow-hidden">
+          {/* Mobile: Stacked Cards */}
+          <div className="flex flex-col gap-8 lg:hidden px-4">
+            {blogPosts.map((post, index) => (
+              <article
+                key={index}
+                className="flex flex-col gap-4 max-w-sm mx-auto w-full"
+              >
+                {/* Image */}
+                <div className="w-full h-[240px] rounded-xl overflow-hidden">
                   <img
-                    src={blogPosts[0].image}
-                    alt={blogPosts[0].title}
+                    src={post.image}
+                    alt={post.title}
                     className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
                   />
                 </div>
-                <div className="p-6 lg:p-8">
-                  <div className="mb-2">
-                    <span className="text-xs font-lato font-bold text-wayzor-green-dark uppercase tracking-wider">
-                      {blogPosts[0].category}
-                    </span>
-                  </div>
-                  <h3 className="text-2xl font-lato font-bold text-content-dark-strong mb-3 leading-tight">
-                    {blogPosts[0].title}
-                  </h3>
-                  <p className="text-content-dark-strong font-lato leading-relaxed mb-6">
-                    {blogPosts[0].description}
-                  </p>
-                  <button className="text-wayzor-green-dark font-lato font-bold hover:text-wayzor-green transition-colors duration-300">
-                    Read more
-                  </button>
-                </div>
-              </article>
-            </div>
 
-            {/* Smaller Cards */}
-            <div className="space-y-8">
-              {blogPosts.slice(1).map((post, index) => (
-                <article
-                  key={index}
-                  className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300"
-                >
-                  <div className="aspect-[16/9] overflow-hidden">
-                    <img
-                      src={post.image}
-                      alt={post.title}
-                      className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-                    />
-                  </div>
-                  <div className="p-6">
-                    <div className="mb-2">
-                      <span className="text-xs font-lato font-bold text-wayzor-green-dark uppercase tracking-wider">
-                        {post.category}
-                      </span>
-                    </div>
-                    <h3 className="text-xl font-lato font-bold text-content-dark-strong mb-3 leading-tight">
+                {/* Content */}
+                <div className="flex flex-col gap-2">
+                  {/* Category and Title */}
+                  <div className="flex flex-col gap-1">
+                    <span className="text-xs font-lato font-bold text-wayzor-green uppercase tracking-wider leading-[150%]">
+                      {post.category}
+                    </span>
+                    <h3 className="text-xl font-lato font-bold text-content-dark-strong leading-[130%]">
                       {post.title}
                     </h3>
-                    <p className="text-content-dark-strong font-lato leading-relaxed mb-4 text-sm">
+                  </div>
+
+                  {/* Description and Button */}
+                  <div className="flex flex-col gap-2">
+                    <p className="text-sm font-lato font-normal text-content-dark-strong leading-[150%]">
                       {post.description}
                     </p>
-                    <button className="text-wayzor-green-dark font-lato font-bold hover:text-wayzor-green transition-colors duration-300">
+                    <button className="text-sm font-lato font-semibold text-wayzor-green hover:text-wayzor-green-dark transition-colors duration-300 text-left leading-[150%]">
                       Read more
                     </button>
                   </div>
-                </article>
-              ))}
-            </div>
+                </div>
+              </article>
+            ))}
           </div>
         </div>
       </div>

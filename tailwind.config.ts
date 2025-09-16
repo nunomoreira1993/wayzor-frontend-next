@@ -30,6 +30,7 @@ export default {
           bodytext: "#171C1D",
           label: "#6D7679",
           invert: "#FFF",
+          "text-color": "#4E8000",
         },
         // Background colors
         bg: {
@@ -38,6 +39,10 @@ export default {
           "overlay-black-10": "rgba(0, 0, 0, 0.10)",
           "overlay-black-05": "rgba(0, 0, 0, 0.05)",
           "overlay-white-10": "rgba(255, 255, 255, 0.10)",
+        },
+        // Stroke colors
+        stroke: {
+          "color-border-light-high": "#DCE3E5",
         },
         // Keep existing shadcn colors for compatibility
         border: "hsl(var(--border))",
