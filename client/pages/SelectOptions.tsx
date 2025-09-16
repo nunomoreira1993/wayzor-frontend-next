@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import CarCard from "../components/CarCard";
 
 interface NudgerProps {
   value: number;
