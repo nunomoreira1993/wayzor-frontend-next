@@ -1301,11 +1301,6 @@ button {
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
-  transition: transform 0.5s;
-}
-
-.blog__image img:hover {
-  transform: scale(1.05);
 }
 
 .blog__category {
