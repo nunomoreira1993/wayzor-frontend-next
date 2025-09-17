@@ -50,19 +50,26 @@
   if(menuCloseBtn) menuCloseBtn.addEventListener('click', closeMenu);
   overlay && overlay.addEventListener('click', (e)=>{ if(e.target === overlay) closeMenu(); });
 
-  // Footer mobile accordions
-  document.querySelectorAll('[data-footer-toggle]').forEach(btn=>{
-    btn.addEventListener('click', ()=>{
-      const panel = btn.parentElement.querySelector('.footer__collapse-panel');
-      if(!panel) return;
-      const hidden = panel.hasAttribute('hidden');
-      if(hidden){
-        panel.removeAttribute('hidden');
-        btn.querySelector('span[aria-hidden]')?.classList.add('rotated');
-      } else {
-        panel.setAttribute('hidden','');
-        btn.querySelector('span[aria-hidden]')?.classList.remove('rotated');
-      }
+  // Footer unificado responsivo
+  (function(){
+    const BP = 1024;
+    const sections = () => document.querySelectorAll('.footer__section[data-collapse]');
+    function apply(){
+      const desktop = window.innerWidth >= BP;
+      sections().forEach(d=>{
+        if(desktop){
+          d.setAttribute('open','');         
+        } else if(!d.hasAttribute('data-user')){
+          d.removeAttribute('open');          
+        }
+      });
+    }
+    sections().forEach(d=>{
+      d.addEventListener('toggle', ()=>{
+        if(d.open) d.setAttribute('data-user',''); else d.removeAttribute('data-user');
+      });
     });
-  });
+    window.addEventListener('resize', apply);
+    apply();
+  })();
 })();
