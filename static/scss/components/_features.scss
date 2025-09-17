@@ -10,7 +10,7 @@
 @media (min-width:1024px){ .features__card { max-width:100%; } }
 
 .features__icon { display:flex; justify-content:center; margin-bottom:1rem; }
-.features__icon img { width:56px; height:56px; display:block; } /* novo: tamanho consistente */
+.features__icon img { width:56px; height:56px; display:block; } 
 .features__card-title { font-size:1.125rem; font-weight:700; margin:0 0 .5rem; }
 @media (min-width:1024px){ .features__card-title { font-size:1.25rem; } }
 .features__desc { font-size:.875rem; line-height:1.5; }
