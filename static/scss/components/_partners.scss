@@ -2,8 +2,6 @@
   padding: 64px 0;
   margin-left: 300px;
   align-items: center;
-   
-
 }
 
 .partners-container {
@@ -21,6 +19,10 @@
     font-weight: 700;
     line-height: 1.25;
     margin-bottom: 24px;
+
+    .partners-title__break {
+      display: block; // always break on a new line (desktop + mobile)
+    }
   }
 }
 
@@ -50,7 +52,7 @@
     max-height: 131px;
     object-fit: contain;
     opacity: 0.9;
-    
+
     transition: all 0.3s ease;
   }
 
@@ -75,22 +77,18 @@
   cursor: pointer;
 }
 
-
 .partners__btn {
   @include button-base;
   background: transparent;
   color: $color-green;
   border-color: $color-green;
-
 }
 
 .partners__btn:hover {
   background: transparent;
   color: $color-green;
   border-color: $color-green;
-  
 }
-
 
 @media (max-width: 992px) {
   .partners-section {
@@ -118,7 +116,8 @@
 
   .partners-logos {
     width: 100%;
-    justify-content: center; /* center logo row */
+    /* Changed: start from first logo */
+    justify-content: flex-start;
     flex-wrap: nowrap;       /* keep a single row with scroll */
     overflow-x: auto;
     margin-top: 16px;

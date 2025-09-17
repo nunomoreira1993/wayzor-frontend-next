@@ -1389,6 +1389,9 @@ button {
   line-height: 1.25;
   margin-bottom: 24px;
 }
+.partners-info h2 .partners-title__break {
+  display: block;
+}
 
 .partners-logos {
   display: flex;
@@ -1487,7 +1490,8 @@ button {
   }
   .partners-logos {
     width: 100%;
-    justify-content: center; /* center logo row */
+    /* Changed: start from first logo */
+    justify-content: flex-start;
     flex-wrap: nowrap; /* keep a single row with scroll */
     overflow-x: auto;
     margin-top: 16px;

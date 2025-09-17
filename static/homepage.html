@@ -317,12 +317,12 @@
 
   <!-- Partners -->
 <section id="section-partners" class="partners-section">
-    <div class="container partners-container">
-        <div class="partners-info">
-            <h2>Appreciated by Our Partners</h2>
-            <a href="#" class="partners__btn">Meet Our Partners</a>
-        </div>
-        <div class="partners-logos" data-partners-logos>
+  <div class="container partners-container">
+    <div class="partners-info">
+      <h2>Appreciated by <span class="partners-title__break">Our Partners</span></h2>
+      <a href="#" class="partners__btn">Meet Our Partners</a>
+    </div>
+    <div class="partners-logos" data-partners-logos>
             <div class="logo-item"><img src="/images/partner_1.png" alt="Partner logo 1"></div>
             <div class="logo-item"><img src="/images/partner_2.png" alt="Partner logo 2"></div>
             <div class="logo-item"><img src="/images/partner_3.png" alt="Partner logo 3"></div>
@@ -461,6 +461,9 @@
       const prevBtn = document.querySelector('[data-partners-prev]');
       const nextBtn = document.querySelector('[data-partners-next]');
       if (!container || !prevBtn || !nextBtn) return;
+
+      // Ensure we start at the first logo
+      container.scrollLeft = 0;
 
       const getStep = () => {
         const item = container.querySelector('.logo-item');
