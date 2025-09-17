@@ -1367,128 +1367,113 @@ button {
   font-size: 0.875rem;
 }
 
-.partners {
-  background: #fff;
-  padding: 5rem 0;
+.partners-section {
+  padding: 64px;
+  margin-left: 120px;
+  margin-right: 130px;
 }
 
-.partners__inner { /* width managed by container utility via _layout.scss */
-  padding: 0 1.5rem;
-}
-
-@media (min-width: 768px) {
-  .partners__inner {
-    padding: 0 2rem;
-  }
-}
-.partners__desktop {
-  display: none;
-}
-
-@media (min-width: 1024px) {
-  .partners__desktop {
-    display: flex;
-    align-items: center;
-    gap: 4rem;
-  }
-}
-.partners__mobile {
+.partners-container {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  gap: 2rem;
+  gap: 32px;
 }
 
-@media (min-width: 1024px) {
-  .partners__mobile {
-    display: none;
-  }
+.partners-info {
+  flex-shrink: 0;
+  width: 294px;
 }
-.partners__title {
-  font-size: 2.25rem;
+.partners-info h2 {
+  font-size: 40px;
   font-weight: 700;
-  margin: 0 0 2rem;
+  line-height: 1.25;
+  margin-bottom: 24px;
 }
 
-@media (min-width: 1280px) {
-  .partners__title {
-    font-size: 3rem;
+.partners-logos {
+  display: flex;
+  gap: 32px;
+  align-items: center;
+  overflow-x: auto; /* For smaller screens, allows scrolling */
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+.partners-logos::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+.logo-item {
+  flex-shrink: 0;
+  width: 156px;
+  height: 156px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.logo-item img {
+  max-width: 130px;
+  max-height: 130px;
+  -o-object-fit: contain;
+     object-fit: contain;
+  opacity: 0.9;
+  transition: all 0.3s ease;
+}
+.logo-item:hover img {
+  opacity: 1;
+  filter: grayscale(0%);
+}
+
+.partners-nav {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  margin-top: 24px;
+}
+
+.partner-arrow {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.partners__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Lato", Arial, sans-serif;
+  font-weight: 700;
+  font-size: 0.875rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 9999px;
+  border: 2px solid #528116;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: transparent;
+  color: #528116;
+  border-color: #528116;
+}
+.partners__btn:hover {
+  background: #528116;
+  color: #000;
+}
+
+.partners__btn:hover {
+  background: transparent;
+  color: #528116;
+  border-color: #528116;
+}
+
+@media (max-width: 992px) {
+  .partners-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .partners-info {
+    width: 100%;
+    text-align: center;
   }
 }
-.partners__logos-grid {
-  width: 100%;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1.5rem;
-  max-width: 20rem;
-}
-
-.partners__logo-item {
-  background: #f9fafb;
-  border-radius: 0.75rem;
-  padding: 1rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: 0.3s;
-}
-
-.partners__logo-item:hover {
-  background: #f3f4f6;
-  transform: scale(1.05);
-}
-
-.partners__logos-grid--desktop {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 2rem;
-}
-
-.partners__logo-item--desktop {
-  min-height: 100px;
-  background: #f9fafb;
-  border-radius: 1rem;
-  padding: 1.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: 0.3s;
-}
-
-.partners__logo-item--desktop:hover {
-  background: #f3f4f6;
-  transform: scale(1.05);
-}
-
-.partners__nav {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  margin-top: 3rem;
-}
-
-.partners__nav-btn {
-  width: 3rem;
-  height: 3rem;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 1px solid #e5e7eb;
-  background: #fff;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.partners__nav-btn--primary {
-  background: #528116;
-  border: none;
-}
-
-.partners__nav-btn--primary:hover {
-  background: #3d6110;
-}
-
 .social {
   background: #F5F7F5;
   padding: 5rem 0;
