@@ -9,6 +9,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import Fleet from "./pages/Fleet";
 import SelectOptions from "./pages/SelectOptions";
+import PersonalData from "./pages/PersonalData";
 import NotFound from "./pages/NotFound";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -26,6 +27,7 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/fleet" element={<Fleet />} />
           <Route path="/select-options" element={<SelectOptions />} />
+          <Route path="/personal-data" element={<PersonalData />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
