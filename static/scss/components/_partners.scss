@@ -1,12 +1,21 @@
 .partners-section {
   padding: 64px 0;
-  margin-left: 300px;
-  align-items: center;
+  margin-left: 220px;
+  margin-right: 0; // ensure no external right spacing
+}
+
+
+.partners-section > .container {
+  max-width: none;
+  width: 100%;
+  margin-right: 0;
+  margin-left: 0;
+  padding-right: 0;
+  padding-left: 0;
 }
 
 .partners-container {
   display: flex;
-  align-items: center;
   gap: 32px;
 }
 
@@ -21,7 +30,7 @@
     margin-bottom: 24px;
 
     .partners-title__break {
-      display: block; // always break on a new line (desktop + mobile)
+      display: block; 
     }
   }
 }
@@ -95,7 +104,7 @@
     /* remove large gutters and add inner padding for mobile */
     margin-left: 0;
     margin-right: 0;
-    padding: 40px 16px;
+   
   }
 
   .partners-container {
