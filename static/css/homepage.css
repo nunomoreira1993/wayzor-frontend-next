@@ -1679,7 +1679,7 @@ button {
 .footer__bottom {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: right;
   font-size: 0.75rem;
   color: rgba(255, 255, 255, 0.6);
 }
@@ -1732,6 +1732,7 @@ button {
 
 .footer .container {
   max-width: 1312px;
+  padding: 0 1.5rem;
 }
 
 body {
