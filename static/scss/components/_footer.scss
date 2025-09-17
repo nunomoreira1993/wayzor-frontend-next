@@ -184,5 +184,11 @@
     justify-content:space-between;
     align-items:center;
   }
+  .footer__links a {
+    white-space:nowrap;        /* evita quebra dentro do link */
+  }
+  .footer__stations-cols a {
+    white-space:nowrap;        /* garante também nas estações */
+  }
 }
 
