@@ -769,7 +769,22 @@ const PersonalData = () => {
 
         {/* Right Column - Car Card */}
         <div className="hidden lg:block flex-shrink-0">
-          <CarCard />
+          <CarCard car={{
+            id: 1,
+            class: "CLASS: D - COMPACT",
+            name: "Volkswagen Taig",
+            similar: "or similar*",
+            image: "https://api.builder.io/api/v1/image/assets/TEMP/dca0708bcc7ca2e230f908f71e104db024a7151e?width=596",
+            price: "€ 44,52",
+            currency: "*",
+            priceColor: "text-content-dark-medium",
+            dailyPrice: "€ 44,52 / day",
+            passengers: "5 passengers",
+            doors: "5 doors",
+            transmission: "Manual",
+            fuel: "Petrol",
+            description: "* At the time of pick up the vehicle: - € 600,00 Security Deposit on the same physical credit card as the online payment, on behalf of the driver. - Security Deposit will be returned upon termination of contract."
+          }} />
         </div>
       </div>
     </div>
