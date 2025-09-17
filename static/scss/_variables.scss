@@ -10,6 +10,16 @@ $color-overlay-black-05: rgba(0,0,0,0.05);
 $color-overlay-black-10: rgba(0,0,0,0.10);
 $color-overlay-black-20: rgba(0,0,0,0.20);
 
+// Derived accent variations
+
+
 $font-base: 'Lato', Arial, sans-serif;
+
+// Font weights
+$font-weight-semibold: 600; // semibold
+
+// Typography scale additions
+// Slightly smaller default for header nav links / meta items
+$header-text-size: 0.8125rem; // 13px
 
 $container-max: 1312px;
