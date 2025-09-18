@@ -3,26 +3,23 @@
   &__main { min-height:100vh; background:$color-bg-light-soft; padding-bottom:4rem; }
 
   /* Stepper fidelity */
-  &__stepper { display:flex; flex-direction:column; align-items:center; padding-top:$sp-72; padding-bottom:$sp-48; }
+  &__stepper { display:flex; flex-direction:column; align-items:center; padding-top:6rem; padding-bottom:4.5rem; }
   &__steps { display:flex; width:980px; justify-content:center; align-items:flex-start; }
   &__steps--fidelity { gap:0; }
   &__step { position:relative; display:flex; flex-direction:column; align-items:center; min-width:171px; }
   &__step-node { position:relative; display:flex; align-items:center; justify-content:center; width:48px; height:48px; border-radius:40px; background:#DCE3E5; font-size:14px; font-weight:500; font-family:$font-base; }
-  &__step-node--complete { background:$color-green; position:relative; }
-  &__step-node--complete::after { content:""; position:absolute; inset:0; background:linear-gradient(to bottom, rgba(0,0,0,0.10), rgba(0,0,0,0.10)); mix-blend-mode:overlay; border-radius:inherit; }
-  &__step-node--active { background:rgba($color-green,0.7); position:relative; }
-  &__step-node--active::after { content:""; position:absolute; inset:0; background:linear-gradient(to bottom, rgba(0,0,0,0.10), rgba(0,0,0,0.10)); mix-blend-mode:overlay; border-radius:inherit; }
+  &__step-node--complete { background:$color-green; }
+  &__step-node--active { background:rgba($color-green,0.7); }
   &__step-underline { position:absolute; left:16px; bottom:-10px; }
-  &__connector { height:2px; width:99px; align-self:center; background:#DCE3E5; margin:0 36px; position:relative; overflow:hidden; }
-  &__connector--complete { background:$color-green; }
-  &__connector--complete::after { content:""; position:absolute; inset:0; background:linear-gradient(to right, rgba(0,0,0,0.10), rgba(0,0,0,0.10)); mix-blend-mode:overlay; }
+  &__connector { height:2px; width:99px; align-self:center; background:#DCE3E5; margin:0 36px 0 36px; }
+  &__connector--complete { background:linear-gradient(to right, rgba(0,0,0,0.1), rgba(0,0,0,0.1)), $color-green; }
   &__step-label-wrap { position:relative; width:40px; height:21px; display:flex; justify-content:center; }
   &__step-label { position:absolute; left:50%; transform:translateX(-50%); width:180px; text-align:center; font-size:14px; line-height:150%; font-weight:400; color:#000; font-family:$font-base; }
   &__step-label--active { font-weight:600; }
 
   /* Layout */
-  &__content { display:flex; justify-content:center; gap:$sp-32; padding:0 120px $sp-64; }
-  &__left { width:750px; display:flex; flex-direction:column; gap:$sp-24; }
+  &__content { display:flex; justify-content:center; gap:2rem; padding:0 120px 4rem; }
+  &__left { width:750px; display:flex; flex-direction:column; gap:24px; }
   &__right { flex-shrink:0; }
 
   /* Headings / copy fidelity */
@@ -33,16 +30,16 @@
   &__subheading { font-size:18px; line-height:140%; font-weight:700; color:$color-dark-strong; margin:0; }
 
   /* Product groups */
-  &__group-wrapper { display:flex; flex-direction:column; gap:$sp-32; }
-  &__group { display:flex; flex-direction:column; gap:$sp-16; }
+  &__group-wrapper { display:flex; flex-direction:column; gap:32px; }
+  &__group { display:flex; flex-direction:column; gap:16px; }
   &__products { display:flex; flex-direction:column; gap:0; }
-  &__product { display:flex; padding:$sp-16 0 $sp-16 $sp-16; align-items:center; gap:10px; border:1px solid #B9DD8B; border-radius:8px; background:transparent; }
+  &__product { display:flex; padding:16px 0 16px 16px; align-items:center; gap:10px; border:1px solid #B9DD8B; border-radius:8px; background:transparent; }
   &__product + &__product { margin-top:0; }
   &__product-inner { width:100%; display:flex; justify-content:space-between; align-items:center; }
   &__product-left { display:flex; align-items:center; gap:8px; }
   &__product-title { font-size:16px; line-height:150%; font-weight:600; color:$color-bodytext; margin:0; }
   &__product-help { display:flex; align-items:center; gap:6px; padding-top:2px; }
-  &__product-right { display:flex; align-items:center; gap:$sp-24; }
+  &__product-right { display:flex; align-items:center; gap:24px; }
   &__price { font-size:16px; line-height:150%; font-weight:400; color:$color-dark-medium; }
   &__price-bold { font-weight:700; }
   &__add-btn { width:92px; padding:10px 16px; border-radius:999px; background:$color-green; display:flex; justify-content:center; align-items:center; cursor:pointer; transition:background .2s; }
