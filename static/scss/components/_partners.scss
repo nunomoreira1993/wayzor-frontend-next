@@ -71,6 +71,15 @@
 .partner-arrow:focus-visible img { filter: brightness(1.15); }
 .partner-arrow:active img { transform: scale(.9) rotate(var(--rot,0deg)); }
 
+/* Disabled state (JS set via disabled attr) */
+.partner-arrow:disabled {
+  opacity: .35;
+  filter: grayscale(100%);
+  cursor: default;
+}
+.partner-arrow:disabled img { filter: grayscale(100%) brightness(.8); }
+.partner-arrow:disabled:hover img { filter: grayscale(100%) brightness(.8); }
+
 .partners__btn {
   @include button-base;
   background: transparent;

@@ -1475,6 +1475,21 @@ button {
   transform: scale(0.9) rotate(var(--rot, 0deg));
 }
 
+/* Disabled state (JS set via disabled attr) */
+.partner-arrow:disabled {
+  opacity: 0.35;
+  filter: grayscale(100%);
+  cursor: default;
+}
+
+.partner-arrow:disabled img {
+  filter: grayscale(100%) brightness(0.8);
+}
+
+.partner-arrow:disabled:hover img {
+  filter: grayscale(100%) brightness(0.8);
+}
+
 .partners__btn {
   display: inline-flex;
   align-items: center;

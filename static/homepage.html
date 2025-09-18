@@ -337,10 +337,10 @@
     </div>
   </div>
   <div class="container partners-nav">
-    <button class="partner-arrow swiper-button-prev" type="button" aria-label="Previous partners">
-      <img src="/images/ic_arrow_right_big.svg" alt="Previous">
+    <button class="partner-arrow" data-partners-prev aria-label="Previous partners">
+      <img src="/images/ic_arrow_left_big_green.svg" alt="Previous">
     </button>
-    <button class="partner-arrow swiper-button-next" type="button" aria-label="Next partners">
+    <button class="partner-arrow" data-partners-next aria-label="Next partners">
       <img src="/images/ic_arrow_right_big_green.svg" alt="Next">
     </button>
   </div>
@@ -470,35 +470,50 @@
   <script>
     (function(){
       const track = document.querySelector('[data-partners-scroll]');
-      const prev = document.querySelector('.swiper-button-prev');
-      const next = document.querySelector('.swiper-button-next');
       if(!track) return;
+      let prev = document.querySelector('[data-partners-prev]');
+      let next = document.querySelector('[data-partners-next]');
+      // Fallback: if data attributes missing, pick first two .partner-arrow
+      if(!prev || !next){
+        const arrows = document.querySelectorAll('.partner-arrow');
+        if(arrows.length >= 2){
+          prev = arrows[0];
+          next = arrows[1];
+        }
+      }
+
+      function getGap(){
+        const gapVar = getComputedStyle(track).getPropertyValue('--partners-gap');
+        const num = parseFloat(gapVar);
+        return isNaN(num) ? 32 : num;
+      }
 
       function step(){
         const item = track.querySelector('.logo-item');
         if(!item) return 200;
-        const gap = 32; // sync with CSS
-        return item.getBoundingClientRect().width + gap;
+        return item.getBoundingClientRect().width + getGap();
       }
 
       function updateButtons(){
         if(!prev || !next) return;
+        const fullyVisible = track.scrollWidth <= track.clientWidth + 1; // all items fit
+        if(fullyVisible){
+          prev.disabled = true;
+          next.disabled = true;
+          return;
+        }
         prev.disabled = track.scrollLeft <= 0;
         next.disabled = track.scrollLeft + track.clientWidth >= track.scrollWidth - 1;
       }
 
-      prev && prev.addEventListener('click', ()=>{
-        track.scrollBy({ left: -step(), behavior: 'smooth'});
-      });
-      next && next.addEventListener('click', ()=>{
-        track.scrollBy({ left: step(), behavior: 'smooth'});
-      });
+      prev && prev.addEventListener('click', ()=> track.scrollBy({ left: -step(), behavior: 'smooth'}));
+      next && next.addEventListener('click', ()=> track.scrollBy({ left: step(), behavior: 'smooth'}));
 
       // wheel (touchpad) horizontal conversion
       track.addEventListener('wheel', e => {
-        if(Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
-          track.scrollLeft += e.deltaY;
+        if(Math.abs(e.deltaY) > Math.abs(e.deltaX)){
           e.preventDefault();
+          track.scrollLeft += e.deltaY;
         }
       }, { passive:false });
 
@@ -517,6 +532,10 @@
 
       track.addEventListener('scroll', updateButtons);
       window.addEventListener('resize', updateButtons);
+      window.addEventListener('load', updateButtons);
+      if('ResizeObserver' in window){
+        new ResizeObserver(updateButtons).observe(track);
+      }
       updateButtons();
     })();
   </script>
