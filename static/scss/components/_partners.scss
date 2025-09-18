@@ -2,8 +2,7 @@
 
 .partners-section {
   margin-top: 64px;
-  overflow: hidden;
-  position: relative;
+  overflow: hidden; /* hides overflow from looping */
 }
 
 .partners-container {
@@ -29,79 +28,48 @@
   }
 }
 
-/* Wrapper interno que continua dentro do fluxo e permite ocultar overflow externo */
-.partners-scroll-wrapper {
-  flex: 1;
-  position: relative;
-  overflow: hidden; /* oculta scrollbars reais */
-  /* fades opcionais quando scrollável (ativar futuramente via JS) */
-  &::before,&::after {
-    content: '';
-    position: absolute;
-    top: 0; bottom: 0;
-    width: 56px;
-    pointer-events: none;
-    z-index: 2;
-    opacity: 0;
-    transition: opacity .3s ease;
-  }
-  &::before { left: 0; background: linear-gradient(90deg,#fff 0%,rgba(255,255,255,0) 70%); }
-  &::after { right:0; background: linear-gradient(-90deg,#fff 0%,rgba(255,255,255,0) 70%); }
-  &.is-scrollable::before,&.is-scrollable::after { opacity: 1; }
+/* Outer container retained for layout spacing */
+.partners-logos.swiper {
+  width: 100%;
+  padding: 8px 0 16px;
+  margin-left: 32px; /* space after info column on desktop */
 }
 
-.partners-logos {
+/* Inner scroll track */
+.partners-logos .partners-scroll {
   display: flex;
   gap: 32px;
   align-items: center;
   overflow-x: auto;
-  padding: 8px 4px 16px;
   scroll-behavior: smooth;
-  scroll-snap-type: x mandatory;
   -ms-overflow-style: none;
   scrollbar-width: none;
-
-  &::-webkit-scrollbar { display: none; }
+  cursor: grab;
+  padding-bottom: 4px;
 }
+.partners-logos .partners-scroll:active { cursor: grabbing; }
+.partners-logos .partners-scroll::-webkit-scrollbar { display: none; }
 
-.logo-item {
-  flex-shrink: 0;
-  width: 156px;
-  height: 156px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.partners-logos .logo-item { width:156px; height:156px; flex:0 0 156px; display:flex; justify-content:center; align-items:center; }
 
-  img {
-    max-width: 131px;
-    max-height: 131px;
-    object-fit: contain;
-    opacity: 0.9;
+.logo-item img { max-width:131px; max-height:131px; object-fit:contain; opacity:.9; transition:all .3s ease; }
+.logo-item:hover img { opacity:1; filter:grayscale(0%); }
 
-    transition: all 0.3s ease;
-  }
-
-  &:hover {
-    img {
-      opacity: 1;
-      filter: grayscale(0%);
-    }
-  }
-}
-
-.partners-nav {
-  display: flex;
-  justify-content: center;
-  gap: 24px;
-  margin: 24px;
-  position: relative;
-}
+.partners-nav { display:flex; justify-content:center; gap:24px; margin:24px 0 0; }
 
 .partner-arrow {
   background: none;
   border: none;
   cursor: pointer;
 }
+
+/* Enhance arrow visuals for Swiper navigation */
+.partner-arrow img { transition: transform .3s ease, filter .3s ease; }
+/* Rotate previous arrow image (re-using same right arrow asset) */
+.swiper-button-prev img { transform: rotate(180deg); }
+.partner-arrow:hover img,
+.partner-arrow:focus-visible img { filter: brightness(1.15); }
+.partner-arrow:active img { transform: scale(.9) rotate(var(--rot,0deg)); }
 
 .partners__btn {
   @include button-base;
@@ -117,47 +85,13 @@
 }
 
 @media (max-width: 992px) {
-  .partners-section {
-    /* remove large gutters and add inner padding for mobile */
-    margin-left: 0;
-    margin-right: 0;
-   
-  }
-
-  .partners-container {
-    flex-direction: column;
-    align-items: center; /* center horizontally */
-    justify-content: center; /* center vertically within section space */
-    text-align: center;
-  
-   
-  }
-
-  .partners-info {
-    /* force full width on mobile */
-    flex: 0 0 100%;
-    width: 100%;
-    text-align: center;
-    margin: 0 auto;
-  }
-
-  .partners-scroll-wrapper { width: 100%; }
-  .partners-logos { width: 100%; gap: 24px; }
+  .partners-container { flex-direction: column; align-items: center; text-align:center; }
+  .partners-info { flex:0 0 100%; width:100%; margin:0 auto 24px; }
+  .partners-logos.swiper { margin-left:0; width:100%; }
 }
 
 /* Very small screens: reduce logo size and spacing for better fit */
 @media (max-width: 576px) {
-  .partners-logos {
-    gap: 16px;
-  }
-
-  .logo-item {
-    width: 120px;
-    height: 120px;
-  }
-
-  .logo-item img {
-    max-width: 100%;
-    max-height: 100%;
-  }
+  .partners-logos .logo-item { width:120px; height:120px; flex:0 0 120px; }
+  .logo-item img { max-width:100%; max-height:100%; }
 }

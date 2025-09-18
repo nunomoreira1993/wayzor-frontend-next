@@ -10,6 +10,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;500;600;700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./css/homepage.css" />
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
   <!-- Removed inline style block; container handled via SCSS utilities -->
 </head>
 <body class="main font-lato">
@@ -315,15 +317,15 @@
     </div>
   </section>
 
-  <!-- Partners -->
+  <!-- Partners (Swiper) -->
 <section id="section-partners" class="partners-section">
   <div class="container partners-container">
     <div class="partners-info">
       <h2>Appreciated by <span class="partners-title__break">Our Partners</span></h2>
       <a href="#" class="partners__btn">Meet Our Partners</a>
     </div>
-    <div class="partners-scroll-wrapper" data-partners-wrapper>
-      <div class="partners-logos" data-partners-logos>
+    <div class="partners-logos swiper" aria-label="Partners logos carousel">
+      <div class="partners-scroll" data-partners-scroll>
         <div class="logo-item"><img src="/images/partner_1.png" alt="Partner logo 1"></div>
         <div class="logo-item"><img src="/images/partner_2.png" alt="Partner logo 2"></div>
         <div class="logo-item"><img src="/images/partner_3.png" alt="Partner logo 3"></div>
@@ -333,15 +335,15 @@
         <div class="logo-item"><img src="/images/partner_7.png" alt="Partner logo 7"></div>
       </div>
     </div>
-    </div>
-    <div class="container partners-nav">
-        <button class="partner-arrow" type="button" data-partners-prev aria-label="Previous">
-            <img src="/images/ic_arrow_right_big.svg" alt="Previous">
-        </button>
-        <button class="partner-arrow" type="button" data-partners-next aria-label="Next">
-            <img src="/images/ic_arrow_right_big_green.svg" alt="Next">
-        </button>
-    </div>
+  </div>
+  <div class="container partners-nav">
+    <button class="partner-arrow swiper-button-prev" type="button" aria-label="Previous partners">
+      <img src="/images/ic_arrow_right_big.svg" alt="Previous">
+    </button>
+    <button class="partner-arrow swiper-button-next" type="button" aria-label="Next partners">
+      <img src="/images/ic_arrow_right_big_green.svg" alt="Next">
+    </button>
+  </div>
 </section>
 
   <!-- Social -->
@@ -373,58 +375,6 @@
     </div>
   </section>
 
-  <script>
-    // Partners scroll logic
-    (function(){
-      const wrapper = document.querySelector('[data-partners-wrapper]');
-      const track = document.querySelector('[data-partners-logos]');
-      const prev = document.querySelector('[data-partners-prev]');
-      const next = document.querySelector('[data-partners-next]');
-      if(!wrapper || !track) return;
-
-      function updateState(){
-        const scrollable = track.scrollWidth > track.clientWidth + 2;
-        wrapper.classList.toggle('is-scrollable', scrollable);
-        if(prev) prev.disabled = !scrollable || track.scrollLeft <= 0;
-        if(next) next.disabled = !scrollable || track.scrollLeft + track.clientWidth >= track.scrollWidth - 1;
-      }
-
-      function step(){
-        const item = track.querySelector('.logo-item');
-        const gap = parseFloat(getComputedStyle(track).gap)||0;
-        const w = item? item.getBoundingClientRect().width : 160;
-        return w + gap;
-      }
-
-      prev && prev.addEventListener('click', ()=> track.scrollBy({left: -step(), behavior:'smooth'}));
-      next && next.addEventListener('click', ()=> track.scrollBy({left: step(), behavior:'smooth'}));
-
-      // Wheel horizontal (se movimento vertical predominante)
-      track.addEventListener('wheel', (e)=>{
-        if(Math.abs(e.deltaY) > Math.abs(e.deltaX)){
-          track.scrollLeft += e.deltaY;
-          e.preventDefault();
-        }
-      }, { passive:false });
-
-      // Drag
-      let down=false,startX=0,startScroll=0;
-      const start = (x)=>{ down=true; startX=x; startScroll=track.scrollLeft; track.classList.add('is-dragging'); };
-      const move = (x)=>{ if(!down) return; track.scrollLeft = startScroll - (x-startX); };
-      const end = ()=>{ down=false; track.classList.remove('is-dragging'); };
-      track.addEventListener('mousedown', e=> start(e.clientX));
-      window.addEventListener('mousemove', e=> move(e.clientX));
-      window.addEventListener('mouseup', end);
-      track.addEventListener('mouseleave', end);
-      track.addEventListener('touchstart', e=> start(e.touches[0].clientX), { passive:true });
-      track.addEventListener('touchmove', e=> move(e.touches[0].clientX), { passive:true });
-      track.addEventListener('touchend', end);
-
-      track.addEventListener('scroll', updateState);
-      window.addEventListener('resize', updateState);
-      updateState();
-    })();
-  </script>
 
   <!-- Footer -->
   <footer class="footer">
@@ -517,40 +467,58 @@
   </footer>
 
   <script src="./js/homepage.js"></script>
-  <!-- New: partners arrows behavior -->
   <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      const container = document.querySelector('[data-partners-logos]');
-      const prevBtn = document.querySelector('[data-partners-prev]');
-      const nextBtn = document.querySelector('[data-partners-next]');
-      if (!container || !prevBtn || !nextBtn) return;
+    (function(){
+      const track = document.querySelector('[data-partners-scroll]');
+      const prev = document.querySelector('.swiper-button-prev');
+      const next = document.querySelector('.swiper-button-next');
+      if(!track) return;
 
-      // Ensure we start at the first logo
-      container.scrollLeft = 0;
+      function step(){
+        const item = track.querySelector('.logo-item');
+        if(!item) return 200;
+        const gap = 32; // sync with CSS
+        return item.getBoundingClientRect().width + gap;
+      }
 
-      const getStep = () => {
-        const item = container.querySelector('.logo-item');
-        const gap = parseFloat(getComputedStyle(container).gap) || 0;
-        const width = item ? item.getBoundingClientRect().width : 156;
-        return Math.max(width + gap, container.clientWidth * 0.8);
-      };
+      function updateButtons(){
+        if(!prev || !next) return;
+        prev.disabled = track.scrollLeft <= 0;
+        next.disabled = track.scrollLeft + track.clientWidth >= track.scrollWidth - 1;
+      }
 
-      const updateButtons = () => {
-        const max = container.scrollWidth - container.clientWidth - 1;
-        prevBtn.disabled = container.scrollLeft <= 0;
-        nextBtn.disabled = container.scrollLeft >= max;
-      };
+      prev && prev.addEventListener('click', ()=>{
+        track.scrollBy({ left: -step(), behavior: 'smooth'});
+      });
+      next && next.addEventListener('click', ()=>{
+        track.scrollBy({ left: step(), behavior: 'smooth'});
+      });
 
-      const scrollByDir = (dir) => {
-        container.scrollBy({ left: dir * getStep(), behavior: 'smooth' });
-      };
+      // wheel (touchpad) horizontal conversion
+      track.addEventListener('wheel', e => {
+        if(Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
+          track.scrollLeft += e.deltaY;
+          e.preventDefault();
+        }
+      }, { passive:false });
 
-      prevBtn.addEventListener('click', () => scrollByDir(-1));
-      nextBtn.addEventListener('click', () => scrollByDir(1));
-      container.addEventListener('scroll', updateButtons);
+      // drag
+      let isDown=false,startX=0,startScroll=0;
+      const start = x => { isDown=true; startX=x; startScroll=track.scrollLeft; track.classList.add('is-dragging'); };
+      const move = x => { if(!isDown) return; track.scrollLeft = startScroll - (x-startX); };
+      const end = () => { isDown=false; track.classList.remove('is-dragging'); };
+      track.addEventListener('mousedown', e=> start(e.clientX));
+      window.addEventListener('mousemove', e=> move(e.clientX));
+      window.addEventListener('mouseup', end);
+      track.addEventListener('mouseleave', end);
+      track.addEventListener('touchstart', e=> start(e.touches[0].clientX), { passive:true });
+      track.addEventListener('touchmove', e=> move(e.touches[0].clientX), { passive:true });
+      track.addEventListener('touchend', end);
+
+      track.addEventListener('scroll', updateButtons);
       window.addEventListener('resize', updateButtons);
       updateButtons();
-    });
+    })();
   </script>
 </body>
 </html>
