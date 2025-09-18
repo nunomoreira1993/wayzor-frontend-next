@@ -345,8 +345,8 @@ button {
   font-weight: 700;
   font-size: 0.875rem;
   background: transparent;
-  color: #78BE20;
-  border-color: #78BE20;
+  color: #528116;
+  border-color: #528116;
   border-width: 2px;
   transition: color 0.25s, background 0.25s, box-shadow 0.25s, filter 0.25s;
 }
@@ -1504,8 +1504,8 @@ button {
   cursor: pointer;
   transition: all 0.3s ease;
   background: transparent;
-  color: #78BE20;
-  border-color: #78BE20;
+  color: #528116;
+  border-color: #528116;
 }
 .partners__btn:hover {
   background: #78BE20;
@@ -1514,8 +1514,8 @@ button {
 
 .partners__btn:hover {
   background: transparent;
-  color: #78BE20;
-  border-color: #78BE20;
+  color: #528116;
+  border-color: #528116;
 }
 
 @media (max-width: 2560px) {
@@ -1685,10 +1685,18 @@ button {
   transition: all 0.3s ease;
   border-color: #528116;
   color: #528116;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 .social__share-btn:hover {
   background: #78BE20;
   color: #000;
+}
+.social__share-btn .social__share-icon {
+  width: 18px;
+  height: 18px;
+  display: inline-block;
 }
 .social__share-btn:hover {
   background: #528116;

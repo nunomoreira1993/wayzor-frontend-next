@@ -108,6 +108,15 @@
         @include button-base;
         border-color: $color-green-dark;
         color: $color-green-dark;
+        display: inline-flex;
+        align-items: center;
+        gap: .5rem;
+
+        .social__share-icon {
+            width: 18px;
+            height: 18px;
+            display: inline-block;
+        }
 
         &:hover {
             background: $color-green-dark;

@@ -313,8 +313,8 @@ button {
   font-weight: 700;
   font-size: 0.875rem;
   background: transparent;
-  color: #78BE20;
-  border-color: #78BE20;
+  color: #528116;
+  border-color: #528116;
   border-width: 2px;
   transition: color 0.25s, background 0.25s, box-shadow 0.25s, filter 0.25s;
 }
