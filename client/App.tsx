@@ -11,6 +11,7 @@ import Fleet from "./pages/Fleet";
 import SelectOptions from "./pages/SelectOptions";
 import PersonalData from "./pages/PersonalData";
 import ReservationConfirmed from "./pages/ReservationConfirmed";
+import StationDetails from "./pages/StationDetails";
 import NotFound from "./pages/NotFound";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -30,6 +31,7 @@ const App = () => (
           <Route path="/select-options" element={<SelectOptions />} />
           <Route path="/personal-data" element={<PersonalData />} />
           <Route path="/reservation-confirmed" element={<ReservationConfirmed />} />
+          <Route path="/station-details" element={<StationDetails />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
