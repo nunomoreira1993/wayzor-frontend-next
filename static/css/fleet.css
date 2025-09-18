@@ -190,13 +190,22 @@ button {
 .header--white .header__link::after {
   content: "";
   display: block;
-  width: 1px;
-  height: 40px;
-  background: #E0E0E0;
-  margin: 0;
-  display: inline-block;
-  align-self: stretch;
-  z-index: 1;
+  width: 100%;
+  height: 2px;
+  background: transparent;
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  transition: background 0.25s;
+}
+
+.header--white .header__link:hover::after {
+  background: #528116;
+}
+
+.header__underline {
+  position: absolute;
+  left: 0;
   bottom: -8px;
   width: 60px;
   height: 2px;
@@ -391,14 +400,61 @@ button {
   background: #fff;
 }
 
-.container-1312, .fleet__body, .fleet__header, .hero__inner, .features__header, .features__grid, .blog__header, .blog__cards, .partners__inner, .social__header, .footer__grid {
+.header__mobile-user {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.25s, border-color 0.25s;
+}
+.header__mobile-user img {
+  width: 24px;
+  height: 24px;
+  display: block;
+}
+
+.icon, .header__overlay-icon {
+  display: inline-block;
+  vertical-align: middle;
+  flex: 0 0 auto;
+}
+
+.icon--18 {
+  width: 18px;
+  height: 18px;
+}
+
+.icon--20 {
+  width: 20px;
+  height: 20px;
+}
+
+.icon--32 {
+  width: 32px;
+  height: 32px;
+}
+
+.u-underline {
+  text-decoration: underline;
+}
+
+.header__user .icon,
+.header__lang .icon {
+  position: relative;
+  top: 0;
+}
+
+.container-1312, .fleet__body, .fleet__header, .hero__inner, .features__header, .features__grid, .blog__header, .blog__cards, .partners-container, .social__header, .footer__grid {
   max-width: 1312px;
   margin: 0 auto;
   padding: 0 1.5rem;
 }
 
 @media (min-width: 1024px) {
-  .container-1312, .fleet__body, .fleet__header, .hero__inner, .features__header, .features__grid, .blog__header, .blog__cards, .partners__inner, .social__header, .footer__grid {
+  .container-1312, .fleet__body, .fleet__header, .hero__inner, .features__header, .features__grid, .blog__header, .blog__cards, .partners-container, .social__header, .footer__grid {
     padding: 0 2rem;
   }
 }
@@ -1334,12 +1390,13 @@ button {
     justify-content: space-between;
     align-items: center;
   }
+  .footer__links a {
+    white-space: nowrap; /* evita quebra dentro do link */
+  }
+  .footer__stations-cols a {
+    white-space: nowrap; /* garante também nas estações */
+  }
 }
-
-.fleetfilter__inputgroup .fleetfilter__inputwrap:last-child .fleetfilter__input:focus {
-  border-color: #78BE20;
-}
-
 body {
   background: #fff;
 }

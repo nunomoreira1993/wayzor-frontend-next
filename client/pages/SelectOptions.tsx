@@ -356,7 +356,22 @@ const SelectOptions = () => {
 
         {/* Right Column - Car Card */}
         <div className="flex-shrink-0">
-          <CarCard />
+          <CarCard car={{
+            id: 1,
+            class: "CLASS: D - COMPACT",
+            name: "Volkswagen Taig",
+            similar: "or similar*",
+            image: "https://api.builder.io/api/v1/image/assets/TEMP/dca0708bcc7ca2e230f908f71e104db024a7151e?width=596",
+            price: "€ 44,52",
+            currency: "*",
+            priceColor: "text-content-dark-medium",
+            dailyPrice: "€ 44,52 / day",
+            passengers: "5 passengers",
+            doors: "5 doors",
+            transmission: "Manual",
+            fuel: "Petrol",
+            description: "Pick your coverage and travel stress-free. Accidents happen. Wayzor keeps you covered against damage, glass breakage, vandalism, and theft, so you can drive worry-free."
+          }} />
         </div>
       </div>
     </div>
