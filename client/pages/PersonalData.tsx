@@ -3,7 +3,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import CarCard from "../components/CarCard";
+import PersonalDataCarCard from "../components/PersonalDataCarCard";
 
 const PersonalData = () => {
   const [formData, setFormData] = useState({
@@ -187,7 +187,7 @@ const PersonalData = () => {
       {/* Main Content */}
       <div className="flex justify-center gap-8 px-4 lg:px-[120px] pb-16">
         {/* Left Column - Form */}
-        <div className="flex w-full max-w-[750px] flex-col items-start gap-6">
+        <div className="flex w-full max-w-[750px] flex-col items-start gap-8">
           {/* Main Form Card */}
           <Card className="w-full border-[#4B384C]/20">
             <CardContent className="p-8">
@@ -734,57 +734,11 @@ const PersonalData = () => {
             </CardContent>
           </Card>
 
-          {/* Promocode Section */}
-          <Card className="w-full border-[#4B384C]/20">
-            <CardContent className="p-6">
-              <div className="flex flex-col gap-4">
-                <h4 className="text-content-bodytext font-lato text-sm font-bold leading-[150%]">
-                  Do you have a promotional code?
-                </h4>
-                <div className="flex flex-col md:flex-row gap-4">
-                  <Input
-                    placeholder="Promocode"
-                    value={formData.promocode}
-                    onChange={(e) => handleInputChange("promocode", e.target.value)}
-                    className="flex-1 h-12 rounded-lg border-[#000]/10 placeholder:text-content-label"
-                  />
-                  <Button
-                    variant="outline"
-                    className="border-wayzor-green-dark text-wayzor-green-dark hover:bg-wayzor-green-dark hover:text-white rounded-full px-6 h-10"
-                  >
-                    Validate
-                  </Button>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-
-          {/* Continue Button */}
-          <div className="flex justify-end">
-            <Button className="bg-wayzor-green hover:bg-wayzor-green-dark text-black font-bold text-base px-10 py-4 rounded-full h-[54px]">
-              Continue to payment
-            </Button>
-          </div>
         </div>
 
         {/* Right Column - Car Card */}
-        <div className="hidden lg:block flex-shrink-0">
-          <CarCard car={{
-            id: 1,
-            class: "CLASS: D - COMPACT",
-            name: "Volkswagen Taig",
-            similar: "or similar*",
-            image: "https://api.builder.io/api/v1/image/assets/TEMP/dca0708bcc7ca2e230f908f71e104db024a7151e?width=596",
-            price: "€ 44,52",
-            currency: "*",
-            priceColor: "text-content-dark-medium",
-            dailyPrice: "€ 44,52 / day",
-            passengers: "5 passengers",
-            doors: "5 doors",
-            transmission: "Manual",
-            fuel: "Petrol",
-            description: "* At the time of pick up the vehicle: - € 600,00 Security Deposit on the same physical credit card as the online payment, on behalf of the driver. - Security Deposit will be returned upon termination of contract."
-          }} />
+        <div className="hidden lg:block">
+          <PersonalDataCarCard />
         </div>
       </div>
     </div>
