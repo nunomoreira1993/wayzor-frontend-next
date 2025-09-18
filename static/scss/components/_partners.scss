@@ -14,7 +14,7 @@
 
 .partners-info {
   flex-shrink: 0;
-  width: 294px;
+  width: 200px;
 
   h2 {
     font-size: 28px;
@@ -32,7 +32,7 @@
 .partners-logos.swiper {
   width: 100%;
   padding: 8px 0 16px;
-  margin-left: 32px; /* space after info column on desktop */
+  /* space after info column on desktop */
 }
 
 /* Inner scroll track */
@@ -55,7 +55,7 @@
 .logo-item img { max-width:131px; max-height:131px; object-fit:contain; opacity:.9; transition:all .3s ease; }
 .logo-item:hover img { opacity:1; filter:grayscale(0%); }
 
-.partners-nav { display:flex; justify-content:center; gap:24px; margin:24px 0 0; }
+.partners-nav { display:flex; justify-content:center; gap:24px; margin:24px auto; }
 
 .partner-arrow {
   background: none;
@@ -91,6 +91,20 @@
   background: transparent;
   color: $color-green;
   border-color: $color-green;
+}
+
+
+
+@media (max-width: 1440px) {
+   .partners-logos.swiper {
+    width: calc(100% - 150px);
+   }
+}
+
+@media (max-width: 1312px) {
+   .partners-logos.swiper {
+    width: calc(100% - 250px);
+   }
 }
 
 @media (max-width: 992px) {

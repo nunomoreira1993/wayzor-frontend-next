@@ -8,7 +8,7 @@ html, body {
   margin: 0;
   padding: 0;
   font-family: "Lato", Arial, sans-serif;
-  color: #171C1D;
+  color: #262E2F;
 }
 
 img {
@@ -115,7 +115,7 @@ button {
   font-size: 0.875rem;
   padding: 0.75rem 1.5rem;
   border-radius: 9999px;
-  border: 2px solid #528116;
+  border: 2px solid #78BE20;
   background: transparent;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -125,12 +125,12 @@ button {
   color: #fff;
 }
 .hero__btn:hover {
-  background: #528116;
+  background: #78BE20;
   color: #000;
 }
 
 .hero__btn:hover {
-  background: #528116;
+  background: #78BE20;
   color: #000;
 }
 
@@ -280,7 +280,7 @@ button {
 }
 
 .header__link:hover {
-  color: #528116;
+  color: #78BE20;
 }
 
 .header--transparent .header__link:hover {
@@ -288,7 +288,7 @@ button {
 }
 
 .header--white .header__link:hover {
-  color: #528116;
+  color: #78BE20;
 }
 
 .header--white .header__link {
@@ -308,7 +308,7 @@ button {
 }
 
 .header--white .header__link:hover::after {
-  background: #528116;
+  background: #78BE20;
 }
 
 .header__underline {
@@ -317,7 +317,7 @@ button {
   bottom: -8px;
   width: 60px;
   height: 2px;
-  background: #528116;
+  background: #78BE20;
   border-radius: 2px;
 }
 
@@ -336,7 +336,7 @@ button {
   font-size: 0.875rem;
   padding: 0.75rem 1.5rem;
   border-radius: 9999px;
-  border: 2px solid #528116;
+  border: 2px solid #78BE20;
   background: transparent;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -345,41 +345,41 @@ button {
   font-weight: 700;
   font-size: 0.875rem;
   background: transparent;
-  color: #528116;
-  border-color: #528116;
+  color: #78BE20;
+  border-color: #78BE20;
   border-width: 2px;
   transition: color 0.25s, background 0.25s, box-shadow 0.25s, filter 0.25s;
 }
 .header__btn:hover {
-  background: #528116;
+  background: #78BE20;
   color: #000;
 }
 
 .header--transparent .header__btn {
   background: transparent;
   color: #fff;
-  border-color: #528116;
+  border-color: #78BE20;
 }
 
 .header--transparent .header__btn:hover {
   background: rgba(0, 0, 0, 0.35);
   color: #fff;
-  border-color: #528116;
+  border-color: #78BE20;
   filter: none;
 }
 
 .header--white .header__btn {
   background: transparent;
-  color: #528116;
-  border-color: #528116;
+  color: #78BE20;
+  border-color: #78BE20;
   filter: none;
 }
 
 .header--white .header__btn:hover {
   background: transparent;
-  color: #528116;
-  border-color: #528116;
-  box-shadow: 0 0 0 1px rgba(82, 129, 22, 0.35);
+  color: #78BE20;
+  border-color: #78BE20;
+  box-shadow: 0 0 0 1px rgba(120, 190, 32, 0.35);
 }
 
 .header__phone {
@@ -582,16 +582,16 @@ button {
   font-size: 0.875rem;
   padding: 0.75rem 1.5rem;
   border-radius: 9999px;
-  border: 2px solid #528116;
+  border: 2px solid #78BE20;
   background: transparent;
   cursor: pointer;
   transition: all 0.3s ease;
   background: transparent;
-  color: #528116;
-  border-color: #528116;
+  color: #78BE20;
+  border-color: #78BE20;
 }
 .btn--outline-green:hover {
-  background: #528116;
+  background: #78BE20;
   color: #000;
 }
 
@@ -728,7 +728,7 @@ button {
 }
 
 .search-widget__field--highlight {
-  border: 2px solid #528116;
+  border: 2px solid #78BE20;
   background: #fff;
 }
 
@@ -749,7 +749,7 @@ button {
   font-size: 0.875rem;
   padding: 0.75rem 1.5rem;
   border-radius: 9999px;
-  border: 2px solid #528116;
+  border: 2px solid #78BE20;
   background: transparent;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -759,7 +759,7 @@ button {
   font-weight: 600;
 }
 .search-widget__btn:hover {
-  background: #528116;
+  background: #78BE20;
   color: #000;
 }
 
@@ -844,24 +844,24 @@ button {
   font-size: 0.875rem;
   padding: 0.75rem 1.5rem;
   border-radius: 9999px;
-  border: 2px solid #528116;
+  border: 2px solid #78BE20;
   background: transparent;
   cursor: pointer;
   transition: all 0.3s ease;
   width: 100%;
   height: 3.375rem;
-  background: #528116;
+  background: #78BE20;
   color: #000;
   border: none;
   font-size: 1rem;
 }
 .search-widget__btn:hover {
-  background: #528116;
+  background: #78BE20;
   color: #000;
 }
 
 .search-widget__btn:hover {
-  background: #3d6110;
+  background: #528116;
 }
 
 @media (max-width: 1023px) {
@@ -885,7 +885,7 @@ button {
 }
 
 .search-widget__field--highlight {
-  border: 2px solid #528116;
+  border: 2px solid #78BE20;
   cursor: pointer;
 }
 
@@ -980,7 +980,7 @@ button {
 
 .searchw__icon {
   flex-shrink: 0;
-  color: #528116;
+  color: #78BE20;
 }
 
 .searchw__value {
@@ -992,7 +992,7 @@ button {
 
 .searchw__submit {
   align-self: flex-end;
-  background: #528116;
+  background: #78BE20;
   color: #fff;
   border: none;
   border-radius: 14px;
@@ -1009,7 +1009,7 @@ button {
   transition: background 0.2s;
 }
 .searchw__submit:hover {
-  background: #3d6110;
+  background: #528116;
 }
 
 .searchw__mobile-note {
@@ -1210,7 +1210,7 @@ button {
   font-size: 0.875rem;
   padding: 0.75rem 1.5rem;
   border-radius: 9999px;
-  border: 2px solid #528116;
+  border: 2px solid #78BE20;
   background: transparent;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -1219,7 +1219,7 @@ button {
   border-color: #78BE20;
 }
 .discover__btn:hover {
-  background: #528116;
+  background: #78BE20;
   color: #000;
 }
 
@@ -1241,7 +1241,7 @@ button {
 }
 
 .blog {
-  background: #F5F7F5;
+  background: #F8FAFA;
   padding: 5rem 0;
 }
 
@@ -1308,7 +1308,7 @@ button {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  color: #528116;
+  color: #78BE20;
 }
 
 .blog__card-title {
@@ -1325,7 +1325,7 @@ button {
 .blog__readmore {
   font-size: 1rem;
   font-weight: 600;
-  color: #528116;
+  color: #78BE20;
   background: none;
   border: none;
   padding: 0;
@@ -1335,7 +1335,7 @@ button {
 }
 
 .blog__readmore:hover {
-  color: #3d6110;
+  color: #528116;
 }
 
 /* Mobile stack */
@@ -1380,7 +1380,7 @@ button {
 
 .partners-info {
   flex-shrink: 0;
-  width: 294px;
+  width: 200px;
 }
 .partners-info h2 {
   font-size: 28px;
@@ -1396,7 +1396,7 @@ button {
 .partners-logos.swiper {
   width: 100%;
   padding: 8px 0 16px;
-  margin-left: 32px; /* space after info column on desktop */
+  /* space after info column on desktop */
 }
 
 /* Inner scroll track */
@@ -1447,7 +1447,7 @@ button {
   display: flex;
   justify-content: center;
   gap: 24px;
-  margin: 24px 0 0;
+  margin: 24px auto;
 }
 
 .partner-arrow {
@@ -1499,25 +1499,35 @@ button {
   font-size: 0.875rem;
   padding: 0.75rem 1.5rem;
   border-radius: 9999px;
-  border: 2px solid #528116;
+  border: 2px solid #78BE20;
   background: transparent;
   cursor: pointer;
   transition: all 0.3s ease;
   background: transparent;
-  color: #528116;
-  border-color: #528116;
+  color: #78BE20;
+  border-color: #78BE20;
 }
 .partners__btn:hover {
-  background: #528116;
+  background: #78BE20;
   color: #000;
 }
 
 .partners__btn:hover {
   background: transparent;
-  color: #528116;
-  border-color: #528116;
+  color: #78BE20;
+  border-color: #78BE20;
 }
 
+@media (max-width: 1440px) {
+  .partners-logos.swiper {
+    width: calc(100% - 150px);
+  }
+}
+@media (max-width: 1312px) {
+  .partners-logos.swiper {
+    width: calc(100% - 250px);
+  }
+}
 @media (max-width: 992px) {
   .partners-container {
     flex-direction: column;
@@ -1547,7 +1557,7 @@ button {
   }
 }
 .social {
-  background: #F5F7F5;
+  background: #F8FAFA;
   padding: 5rem 0;
   display: flex;
   flex-wrap: wrap;
@@ -1631,19 +1641,19 @@ button {
   font-size: 0.875rem;
   padding: 0.75rem 1.5rem;
   border-radius: 9999px;
-  border: 2px solid #528116;
+  border: 2px solid #78BE20;
   background: transparent;
   cursor: pointer;
   transition: all 0.3s ease;
-  border-color: #3d6110;
-  color: #3d6110;
+  border-color: #528116;
+  color: #528116;
 }
 .social__share-btn:hover {
-  background: #528116;
+  background: #78BE20;
   color: #000;
 }
 .social__share-btn:hover {
-  background: #3d6110;
+  background: #528116;
   color: #fff;
 }
 
@@ -1755,7 +1765,7 @@ button {
 }
 
 .footer a:hover {
-  color: #528116;
+  color: #78BE20;
 }
 
 .footer__links {
@@ -1875,7 +1885,7 @@ button {
 body {
   background: #fff;
   font-family: "Lato", Arial, sans-serif;
-  color: #171C1D;
+  color: #262E2F;
 }
 
 .main {
