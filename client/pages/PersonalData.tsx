@@ -185,9 +185,9 @@ const PersonalData = () => {
       </div>
 
       {/* Main Content */}
-      <div className="flex justify-center gap-8 px-4 lg:px-[120px] pb-16">
+      <div className="flex justify-center gap-8 px-4 lg:px-[120px] pb-16 w-full max-w-[1406px] mx-auto">
         {/* Left Column - Form */}
-        <div className="flex w-full max-w-[750px] flex-col items-start gap-8">
+        <div className="flex w-[750px] flex-col items-start gap-8">
           {/* Main Form Card */}
           <Card className="w-full border-[#4B384C]/20">
             <CardContent className="p-8">
@@ -737,7 +737,7 @@ const PersonalData = () => {
         </div>
 
         {/* Right Column - Car Card */}
-        <div className="hidden lg:block">
+        <div className="hidden lg:block w-[528px] flex-shrink-0">
           <PersonalDataCarCard />
         </div>
       </div>
