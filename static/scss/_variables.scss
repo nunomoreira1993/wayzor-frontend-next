@@ -1,10 +1,19 @@
-// Color variables (approximations of Tailwind theme used in project)
-$color-green: #528116;
-$color-green-dark: #3d6110;
+// Color variables aligned to Tailwind theme tokens
+// Tailwind extend.colors mapping (see tailwind.config.ts)
+// wayzor.green      -> #78BE20 (brand primary bright)
+// wayzor.green-dark -> #528116 (darker brand accent)
+// content.dark-strong -> #262E2F
+// content.dark-medium -> #363F41
+// content.bodytext -> #171C1D
+// bg.light-soft -> #F8FAFA
+
+$color-green: #78BE20; // brand green (was using dark variant before)
+$color-green-dark: #528116; // dark green
 $color-purple: #332634;
-$color-bg-light-soft: #F5F7F5;
-$color-dark-strong: #171C1D;
-$color-dark-medium: #262E2F;
+$color-bg-light-soft: #F8FAFA; // corrected from #F5F7F5
+$color-dark-strong: #262E2F; // corrected (previously bodytext color)
+$color-dark-medium: #363F41; // corrected (previously dark-strong)
+$color-bodytext: #171C1D; // additional token
 $color-white: #ffffff;
 $color-overlay-black-05: rgba(0,0,0,0.05);
 $color-overlay-black-10: rgba(0,0,0,0.10);
@@ -23,3 +32,13 @@ $font-weight-semibold: 600; // semibold
 $header-text-size: 0.8125rem; // 13px
 
 $container-max: 1312px;
+
+// Spacing scale (Tailwind parity for values used on SelectOptions)
+$sp-72: 4.5rem; // gap-18 (72px)
+$sp-64: 4rem;   // pb-16 etc
+$sp-48: 3rem;   // gap-12
+$sp-32: 2rem;   // gap-8
+$sp-24: 1.5rem; // gap-6
+$sp-16: 1rem;   // gap-4
+$sp-12: 0.75rem; // gap-3 (not used yet but handy)
+$sp-8: 0.5rem;  // gap-2
