@@ -94,7 +94,11 @@
 }
 
 
-
+@media (max-width: 2560px) {
+   .partners-logos.swiper {
+    width: 150%;
+   }
+}
 @media (max-width: 1440px) {
    .partners-logos.swiper {
     width: calc(100% - 150px);
