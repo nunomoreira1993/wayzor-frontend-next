@@ -322,15 +322,17 @@
       <h2>Appreciated by <span class="partners-title__break">Our Partners</span></h2>
       <a href="#" class="partners__btn">Meet Our Partners</a>
     </div>
-    <div class="partners-logos" data-partners-logos>
-            <div class="logo-item"><img src="/images/partner_1.png" alt="Partner logo 1"></div>
-            <div class="logo-item"><img src="/images/partner_2.png" alt="Partner logo 2"></div>
-            <div class="logo-item"><img src="/images/partner_3.png" alt="Partner logo 3"></div>
-            <div class="logo-item"><img src="/images/partner_4.png" alt="Partner logo 4"></div>
-            <div class="logo-item"><img src="/images/partner_5.png" alt="Partner logo 5"></div>
-            <div class="logo-item"><img src="/images/partner_6.png" alt="Partner logo 6"></div>
-            <div class="logo-item"><img src="/images/partner_7.png" alt="Partner logo 7"></div>
-        </div>
+    <div class="partners-scroll-wrapper" data-partners-wrapper>
+      <div class="partners-logos" data-partners-logos>
+        <div class="logo-item"><img src="/images/partner_1.png" alt="Partner logo 1"></div>
+        <div class="logo-item"><img src="/images/partner_2.png" alt="Partner logo 2"></div>
+        <div class="logo-item"><img src="/images/partner_3.png" alt="Partner logo 3"></div>
+        <div class="logo-item"><img src="/images/partner_4.png" alt="Partner logo 4"></div>
+        <div class="logo-item"><img src="/images/partner_5.png" alt="Partner logo 5"></div>
+        <div class="logo-item"><img src="/images/partner_6.png" alt="Partner logo 6"></div>
+        <div class="logo-item"><img src="/images/partner_7.png" alt="Partner logo 7"></div>
+      </div>
+    </div>
     </div>
     <div class="container partners-nav">
         <button class="partner-arrow" type="button" data-partners-prev aria-label="Previous">
@@ -350,18 +352,79 @@
     </div>
     <div class="container">
       <div class="social__grid-mobile">
-        <div class="social__img-wrap"><img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=600&fit=crop" alt="Instagram 1" /></div>
+        <div class="social__img-wrap">
+          <video src="videos/reel01.mp4" autoplay muted loop playsinline></video>
+        </div>
       </div>
       <div class="social__grid-desktop">
-        <div class="social__img-wrap"><img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=600&fit=crop" alt="Instagram 1" /></div>
-        <div class="social__img-wrap"><img src="https://images.unsplash.com/photo-1527004013197-933c4bb611b3?w=400&h=600&fit=crop" alt="Instagram 2" /></div>
-        <div class="social__img-wrap"><img src="https://images.unsplash.com/photo-1508739773434-c26b3d09e071?w=400&h=600&fit=crop" alt="Instagram 3" /></div>
+        <div class="social__img-wrap">
+          <video src="videos/reel01.mp4" autoplay muted loop playsinline></video>
+        </div>
+        <div class="social__img-wrap">
+          <video src="videos/reel02.mp4" autoplay muted loop playsinline></video>
+        </div>
+        <div class="social__img-wrap">
+          <video src="videos/reel03.mp4" autoplay muted loop playsinline></video>
+        </div>
       </div>
       <div class="social__share">
         <button class="social__share-btn">Share</button>
       </div>
     </div>
   </section>
+
+  <script>
+    // Partners scroll logic
+    (function(){
+      const wrapper = document.querySelector('[data-partners-wrapper]');
+      const track = document.querySelector('[data-partners-logos]');
+      const prev = document.querySelector('[data-partners-prev]');
+      const next = document.querySelector('[data-partners-next]');
+      if(!wrapper || !track) return;
+
+      function updateState(){
+        const scrollable = track.scrollWidth > track.clientWidth + 2;
+        wrapper.classList.toggle('is-scrollable', scrollable);
+        if(prev) prev.disabled = !scrollable || track.scrollLeft <= 0;
+        if(next) next.disabled = !scrollable || track.scrollLeft + track.clientWidth >= track.scrollWidth - 1;
+      }
+
+      function step(){
+        const item = track.querySelector('.logo-item');
+        const gap = parseFloat(getComputedStyle(track).gap)||0;
+        const w = item? item.getBoundingClientRect().width : 160;
+        return w + gap;
+      }
+
+      prev && prev.addEventListener('click', ()=> track.scrollBy({left: -step(), behavior:'smooth'}));
+      next && next.addEventListener('click', ()=> track.scrollBy({left: step(), behavior:'smooth'}));
+
+      // Wheel horizontal (se movimento vertical predominante)
+      track.addEventListener('wheel', (e)=>{
+        if(Math.abs(e.deltaY) > Math.abs(e.deltaX)){
+          track.scrollLeft += e.deltaY;
+          e.preventDefault();
+        }
+      }, { passive:false });
+
+      // Drag
+      let down=false,startX=0,startScroll=0;
+      const start = (x)=>{ down=true; startX=x; startScroll=track.scrollLeft; track.classList.add('is-dragging'); };
+      const move = (x)=>{ if(!down) return; track.scrollLeft = startScroll - (x-startX); };
+      const end = ()=>{ down=false; track.classList.remove('is-dragging'); };
+      track.addEventListener('mousedown', e=> start(e.clientX));
+      window.addEventListener('mousemove', e=> move(e.clientX));
+      window.addEventListener('mouseup', end);
+      track.addEventListener('mouseleave', end);
+      track.addEventListener('touchstart', e=> start(e.touches[0].clientX), { passive:true });
+      track.addEventListener('touchmove', e=> move(e.touches[0].clientX), { passive:true });
+      track.addEventListener('touchend', end);
+
+      track.addEventListener('scroll', updateState);
+      window.addEventListener('resize', updateState);
+      updateState();
+    })();
+  </script>
 
   <!-- Footer -->
   <footer class="footer">

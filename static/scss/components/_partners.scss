@@ -1,22 +1,16 @@
+
+
 .partners-section {
-  padding: 64px 0;
-  margin-left: 220px;
-  margin-right: 0; // ensure no external right spacing
-}
-
-
-.partners-section > .container {
-  max-width: none;
-  width: 100%;
-  margin-right: 0;
-  margin-left: 0;
-  padding-right: 0;
-  padding-left: 0;
+  margin-top: 64px;
+  overflow: hidden;
+  position: relative;
 }
 
 .partners-container {
   display: flex;
   gap: 32px;
+  position: relative;
+  
 }
 
 .partners-info {
@@ -35,17 +29,39 @@
   }
 }
 
+/* Wrapper interno que continua dentro do fluxo e permite ocultar overflow externo */
+.partners-scroll-wrapper {
+  flex: 1;
+  position: relative;
+  overflow: hidden; /* oculta scrollbars reais */
+  /* fades opcionais quando scrollável (ativar futuramente via JS) */
+  &::before,&::after {
+    content: '';
+    position: absolute;
+    top: 0; bottom: 0;
+    width: 56px;
+    pointer-events: none;
+    z-index: 2;
+    opacity: 0;
+    transition: opacity .3s ease;
+  }
+  &::before { left: 0; background: linear-gradient(90deg,#fff 0%,rgba(255,255,255,0) 70%); }
+  &::after { right:0; background: linear-gradient(-90deg,#fff 0%,rgba(255,255,255,0) 70%); }
+  &.is-scrollable::before,&.is-scrollable::after { opacity: 1; }
+}
+
 .partners-logos {
   display: flex;
   gap: 32px;
   align-items: center;
-  overflow-x: auto; /* For smaller screens, allows scrolling */
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
+  overflow-x: auto;
+  padding: 8px 4px 16px;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 
-  &::-webkit-scrollbar {
-    display: none; /* Chrome, Safari, Opera */
-  }
+  &::-webkit-scrollbar { display: none; }
 }
 
 .logo-item {
@@ -77,7 +93,7 @@
   display: flex;
   justify-content: center;
   gap: 24px;
-  margin-top: 24px;
+  margin: 24px;
 }
 
 .partner-arrow {
@@ -112,7 +128,8 @@
     align-items: center; /* center horizontally */
     justify-content: center; /* center vertically within section space */
     text-align: center;
-    width: 100%; /* ensure container spans full width */
+  
+   
   }
 
   .partners-info {
@@ -123,14 +140,8 @@
     margin: 0 auto;
   }
 
-  .partners-logos {
-    width: 100%;
-    /* Changed: start from first logo */
-    justify-content: flex-start;
-    flex-wrap: nowrap;       /* keep a single row with scroll */
-    overflow-x: auto;
-    margin-top: 16px;
-  }
+  .partners-scroll-wrapper { width: 100%; }
+  .partners-logos { width: 100%; gap: 24px; }
 }
 
 /* Very small screens: reduce logo size and spacing for better fit */

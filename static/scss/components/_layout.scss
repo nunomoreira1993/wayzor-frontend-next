@@ -5,7 +5,7 @@
 @media (min-width:1024px){ .container-1312 { padding:0 2rem; } }
 
 /* Apply to major sections */
-.hero__inner, .features__header, .features__grid, .blog__header, .blog__cards, .partners__inner, .social__header, .footer__grid { @extend .container-1312; }
+.hero__inner, .features__header, .features__grid, .blog__header, .blog__cards, .partners-container, .social__header, .footer__grid { @extend .container-1312; }
 
 /* Inline styles migration utilities */
 .u-hidden { display:none !important; }

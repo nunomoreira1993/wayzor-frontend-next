@@ -555,14 +555,14 @@ button {
   top: 0;
 }
 
-.container-1312, .hero__inner, .features__header, .features__grid, .blog__header, .blog__cards, .partners__inner, .social__header, .footer__grid {
+.container-1312, .hero__inner, .features__header, .features__grid, .blog__header, .blog__cards, .partners-container, .social__header, .footer__grid {
   max-width: 1312px;
   margin: 0 auto;
   padding: 0 1.5rem;
 }
 
 @media (min-width: 1024px) {
-  .container-1312, .hero__inner, .features__header, .features__grid, .blog__header, .blog__cards, .partners__inner, .social__header, .footer__grid {
+  .container-1312, .hero__inner, .features__header, .features__grid, .blog__header, .blog__cards, .partners-container, .social__header, .footer__grid {
     padding: 0 2rem;
   }
 }
@@ -1368,23 +1368,15 @@ button {
 }
 
 .partners-section {
-  padding: 64px 0;
-  margin-left: 220px;
-  margin-right: 0;
-}
-
-.partners-section > .container {
-  max-width: none;
-  width: 100%;
-  margin-right: 0;
-  margin-left: 0;
-  padding-right: 0;
-  padding-left: 0;
+  margin-top: 64px;
+  overflow: hidden;
+  position: relative;
 }
 
 .partners-container {
   display: flex;
   gap: 32px;
+  position: relative;
 }
 
 .partners-info {
@@ -1401,16 +1393,49 @@ button {
   display: block;
 }
 
+/* Wrapper interno que continua dentro do fluxo e permite ocultar overflow externo */
+.partners-scroll-wrapper {
+  flex: 1;
+  position: relative;
+  overflow: hidden; /* oculta scrollbars reais */
+  /* fades opcionais quando scrollável (ativar futuramente via JS) */
+}
+.partners-scroll-wrapper::before, .partners-scroll-wrapper::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 56px;
+  pointer-events: none;
+  z-index: 2;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.partners-scroll-wrapper::before {
+  left: 0;
+  background: linear-gradient(90deg, #fff 0%, rgba(255, 255, 255, 0) 70%);
+}
+.partners-scroll-wrapper::after {
+  right: 0;
+  background: linear-gradient(-90deg, #fff 0%, rgba(255, 255, 255, 0) 70%);
+}
+.partners-scroll-wrapper.is-scrollable::before, .partners-scroll-wrapper.is-scrollable::after {
+  opacity: 1;
+}
+
 .partners-logos {
   display: flex;
   gap: 32px;
   align-items: center;
-  overflow-x: auto; /* For smaller screens, allows scrolling */
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
+  overflow-x: auto;
+  padding: 8px 4px 16px;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 .partners-logos::-webkit-scrollbar {
-  display: none; /* Chrome, Safari, Opera */
+  display: none;
 }
 
 .logo-item {
@@ -1438,7 +1463,7 @@ button {
   display: flex;
   justify-content: center;
   gap: 24px;
-  margin-top: 24px;
+  margin: 24px;
 }
 
 .partner-arrow {
@@ -1486,7 +1511,6 @@ button {
     align-items: center; /* center horizontally */
     justify-content: center; /* center vertically within section space */
     text-align: center;
-    width: 100%; /* ensure container spans full width */
   }
   .partners-info {
     /* force full width on mobile */
@@ -1495,13 +1519,12 @@ button {
     text-align: center;
     margin: 0 auto;
   }
+  .partners-scroll-wrapper {
+    width: 100%;
+  }
   .partners-logos {
     width: 100%;
-    /* Changed: start from first logo */
-    justify-content: flex-start;
-    flex-wrap: nowrap; /* keep a single row with scroll */
-    overflow-x: auto;
-    margin-top: 16px;
+    gap: 24px;
   }
 }
 /* Very small screens: reduce logo size and spacing for better fit */
@@ -1525,18 +1548,15 @@ button {
   flex-wrap: wrap;
   justify-content: center;
 }
-
 .social__header {
   text-align: center;
   margin: 0 auto 3rem;
 }
-
 .social__title {
   font-size: 1.75rem;
   font-weight: 700;
   margin: 0 0 1rem;
 }
-
 @media (min-width: 1024px) {
   .social__title {
     font-size: 2.5rem;
@@ -1548,13 +1568,11 @@ button {
   font-size: 1rem;
   line-height: 1.6;
 }
-
 .social__grid-mobile {
   display: flex;
   flex-direction: column;
   gap: 1rem;
 }
-
 @media (min-width: 768px) {
   .social__grid-mobile {
     display: none;
@@ -1563,7 +1581,6 @@ button {
 .social__grid-desktop {
   display: none;
 }
-
 @media (min-width: 768px) {
   .social__grid-desktop {
     display: grid;
@@ -1578,31 +1595,28 @@ button {
   overflow: hidden;
   position: relative;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-  transition: box-shadow 0.3s;
   cursor: pointer;
 }
-
-.social__img-wrap:hover {
-  box-shadow: 0 8px 20px -6px rgba(0, 0, 0, 0.2);
-}
-
 .social__img-wrap img {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
-  transition: transform 0.5s;
+  display: block;
 }
-
-.social__img-wrap:hover img {
-  transform: scale(1.05);
+.social__img-wrap video {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  display: block;
+  border: 0;
+  outline: 0;
 }
-
 .social__share {
   text-align: center;
   margin-top: 2rem;
 }
-
 .social__share-btn {
   display: inline-flex;
   align-items: center;
@@ -1623,7 +1637,6 @@ button {
   background: #528116;
   color: #000;
 }
-
 .social__share-btn:hover {
   background: #3d6110;
   color: #fff;
