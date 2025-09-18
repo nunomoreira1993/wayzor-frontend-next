@@ -1464,6 +1464,7 @@ button {
   justify-content: center;
   gap: 24px;
   margin: 24px;
+  position: relative;
 }
 
 .partner-arrow {
