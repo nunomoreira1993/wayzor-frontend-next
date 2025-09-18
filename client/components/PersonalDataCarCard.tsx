@@ -27,7 +27,7 @@ const PersonalDataCarCard = () => {
                   </span>
                 </div>
               </div>
-              
+
               <div className="flex items-center gap-1">
                 <svg
                   width="16"
@@ -89,7 +89,7 @@ const PersonalDataCarCard = () => {
                 </div>
               </div>
             </div>
-            
+
             <div className="flex-1 px-6">
               <div className="flex flex-col gap-1">
                 <div className="text-content-bodytext font-lato text-sm font-bold leading-[150%]">
@@ -401,10 +401,13 @@ const PersonalDataCarCard = () => {
           <Button className="w-full bg-wayzor-green hover:bg-wayzor-green-dark text-black font-bold text-base h-[54px] rounded-full mb-6">
             Continue the reserve
           </Button>
-          
+
           {/* Disclaimer */}
           <div className="text-content-label font-lato text-sm font-normal leading-[150%]">
-            * At the time of pick up the vehicle: - € 600,00 Security Deposit on the same physical credit card as the online payment, on behalf of the driver. - Security Deposit will be returned upon termination of contract.
+            * At the time of pick up the vehicle: - € 600,00 Security Deposit on
+            the same physical credit card as the online payment, on behalf of
+            the driver. - Security Deposit will be returned upon termination of
+            contract.
           </div>
         </div>
       </CardContent>

@@ -9,7 +9,7 @@ import ReservationSummaryBar from "../components/ReservationSummaryBar";
 const PersonalData = () => {
   const [formData, setFormData] = useState({
     firstName: "",
-    lastName: "", 
+    lastName: "",
     email: "",
     dateOfBirth: "",
     country: "",
@@ -27,13 +27,13 @@ const PersonalData = () => {
     agreeTerms: false,
     receiveMarketing: false,
     paymentMethod: "cards",
-    promocode: ""
+    promocode: "",
   });
 
   const [showPromocode, setShowPromocode] = useState(false);
 
   const handleInputChange = (field: string, value: string | boolean) => {
-    setFormData(prev => ({ ...prev, [field]: value }));
+    setFormData((prev) => ({ ...prev, [field]: value }));
   };
 
   return (
@@ -201,29 +201,39 @@ const PersonalData = () => {
                   <h1 className="text-content-dark-strong font-lato text-[32px] font-bold leading-[125%]">
                     Your details
                   </h1>
-                  
+
                   <div className="flex flex-col gap-6">
                     {/* First Row - First Name, Last Name */}
                     <div className="flex flex-col md:flex-row gap-4">
                       <div className="flex-1">
-                        <Label htmlFor="firstName" className="text-content-bodytext font-lato text-sm font-semibold">
+                        <Label
+                          htmlFor="firstName"
+                          className="text-content-bodytext font-lato text-sm font-semibold"
+                        >
                           First name
                         </Label>
                         <Input
                           id="firstName"
                           value={formData.firstName}
-                          onChange={(e) => handleInputChange("firstName", e.target.value)}
+                          onChange={(e) =>
+                            handleInputChange("firstName", e.target.value)
+                          }
                           className="mt-2 h-12 rounded-lg border-[#000]/10"
                         />
                       </div>
                       <div className="flex-1">
-                        <Label htmlFor="lastName" className="text-content-bodytext font-lato text-sm font-semibold">
+                        <Label
+                          htmlFor="lastName"
+                          className="text-content-bodytext font-lato text-sm font-semibold"
+                        >
                           Last name
                         </Label>
                         <Input
                           id="lastName"
                           value={formData.lastName}
-                          onChange={(e) => handleInputChange("lastName", e.target.value)}
+                          onChange={(e) =>
+                            handleInputChange("lastName", e.target.value)
+                          }
                           className="mt-2 h-12 rounded-lg border-[#000]/10"
                         />
                       </div>
@@ -232,26 +242,36 @@ const PersonalData = () => {
                     {/* Second Row - Email, Date of Birth */}
                     <div className="flex flex-col md:flex-row gap-4">
                       <div className="flex-1">
-                        <Label htmlFor="email" className="text-content-bodytext font-lato text-sm font-semibold">
+                        <Label
+                          htmlFor="email"
+                          className="text-content-bodytext font-lato text-sm font-semibold"
+                        >
                           Email
                         </Label>
                         <Input
                           id="email"
                           type="email"
                           value={formData.email}
-                          onChange={(e) => handleInputChange("email", e.target.value)}
+                          onChange={(e) =>
+                            handleInputChange("email", e.target.value)
+                          }
                           className="mt-2 h-12 rounded-lg border-[#000]/10"
                         />
                       </div>
                       <div className="flex-1">
-                        <Label htmlFor="dateOfBirth" className="text-content-bodytext font-lato text-sm font-semibold">
+                        <Label
+                          htmlFor="dateOfBirth"
+                          className="text-content-bodytext font-lato text-sm font-semibold"
+                        >
                           Date of birth
                         </Label>
                         <Input
                           id="dateOfBirth"
                           placeholder="MM/DD/YYYY"
                           value={formData.dateOfBirth}
-                          onChange={(e) => handleInputChange("dateOfBirth", e.target.value)}
+                          onChange={(e) =>
+                            handleInputChange("dateOfBirth", e.target.value)
+                          }
                           className="mt-2 h-12 rounded-lg border-[#000]/10 placeholder:text-content-label"
                         />
                       </div>
@@ -260,7 +280,10 @@ const PersonalData = () => {
                     {/* Third Row - Country, NIF */}
                     <div className="flex flex-col md:flex-row gap-4">
                       <div className="flex-1">
-                        <Label htmlFor="country" className="text-content-bodytext font-lato text-sm font-semibold">
+                        <Label
+                          htmlFor="country"
+                          className="text-content-bodytext font-lato text-sm font-semibold"
+                        >
                           Country
                         </Label>
                         <div className="relative">
@@ -268,7 +291,9 @@ const PersonalData = () => {
                             id="country"
                             placeholder="Choose a country"
                             value={formData.country}
-                            onChange={(e) => handleInputChange("country", e.target.value)}
+                            onChange={(e) =>
+                              handleInputChange("country", e.target.value)
+                            }
                             className="mt-2 h-12 rounded-lg border-[#000]/10 placeholder:text-content-label pr-10"
                           />
                           <svg
@@ -289,13 +314,21 @@ const PersonalData = () => {
                         </div>
                       </div>
                       <div className="flex-1">
-                        <Label htmlFor="nif" className="text-content-bodytext font-lato text-sm font-semibold">
-                          NIF <span className="text-content-label font-normal">(optional)</span>
+                        <Label
+                          htmlFor="nif"
+                          className="text-content-bodytext font-lato text-sm font-semibold"
+                        >
+                          NIF{" "}
+                          <span className="text-content-label font-normal">
+                            (optional)
+                          </span>
                         </Label>
                         <Input
                           id="nif"
                           value={formData.nif}
-                          onChange={(e) => handleInputChange("nif", e.target.value)}
+                          onChange={(e) =>
+                            handleInputChange("nif", e.target.value)
+                          }
                           className="mt-2 h-12 rounded-lg border-[#000]/10"
                         />
                       </div>
@@ -304,14 +337,26 @@ const PersonalData = () => {
                     {/* Add to billing details checkbox */}
                     <div className="flex items-center gap-3">
                       <div className="flex items-center">
-                        <div 
+                        <div
                           className={`w-[18px] h-[18px] rounded border-2 border-wayzor-green flex items-center justify-center cursor-pointer ${
-                            formData.addToBilling ? 'bg-wayzor-green' : 'bg-white'
+                            formData.addToBilling
+                              ? "bg-wayzor-green"
+                              : "bg-white"
                           }`}
-                          onClick={() => handleInputChange("addToBilling", !formData.addToBilling)}
+                          onClick={() =>
+                            handleInputChange(
+                              "addToBilling",
+                              !formData.addToBilling,
+                            )
+                          }
                         >
                           {formData.addToBilling && (
-                            <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                            <svg
+                              width="12"
+                              height="12"
+                              viewBox="0 0 12 12"
+                              fill="none"
+                            >
                               <path
                                 fillRule="evenodd"
                                 clipRule="evenodd"
@@ -335,7 +380,8 @@ const PersonalData = () => {
                     Save time!
                   </h2>
                   <p className="text-content-dark-strong font-lato text-base font-normal leading-[150%]">
-                    Fill in all the required information for your rental now, and simply pick up your vehicle at a Wayzor station.
+                    Fill in all the required information for your rental now,
+                    and simply pick up your vehicle at a Wayzor station.
                   </p>
                 </div>
 
@@ -344,17 +390,22 @@ const PersonalData = () => {
                   <h3 className="text-content-dark-strong font-lato text-lg font-bold leading-[140%]">
                     Home details
                   </h3>
-                  
+
                   <div className="flex flex-col gap-4">
                     {/* Street Address */}
                     <div>
-                      <Label htmlFor="streetAddress" className="text-content-bodytext font-lato text-sm font-semibold">
+                      <Label
+                        htmlFor="streetAddress"
+                        className="text-content-bodytext font-lato text-sm font-semibold"
+                      >
                         Street address
                       </Label>
                       <Input
                         id="streetAddress"
                         value={formData.streetAddress}
-                        onChange={(e) => handleInputChange("streetAddress", e.target.value)}
+                        onChange={(e) =>
+                          handleInputChange("streetAddress", e.target.value)
+                        }
                         className="mt-2 h-12 rounded-lg border-[#000]/10"
                       />
                     </div>
@@ -362,24 +413,34 @@ const PersonalData = () => {
                     {/* Zip and City */}
                     <div className="flex flex-col md:flex-row gap-4">
                       <div className="flex-1">
-                        <Label htmlFor="zip" className="text-content-bodytext font-lato text-sm font-semibold">
+                        <Label
+                          htmlFor="zip"
+                          className="text-content-bodytext font-lato text-sm font-semibold"
+                        >
                           Zip
                         </Label>
                         <Input
                           id="zip"
                           value={formData.zip}
-                          onChange={(e) => handleInputChange("zip", e.target.value)}
+                          onChange={(e) =>
+                            handleInputChange("zip", e.target.value)
+                          }
                           className="mt-2 h-12 rounded-lg border-[#000]/10"
                         />
                       </div>
                       <div className="flex-1">
-                        <Label htmlFor="city" className="text-content-bodytext font-lato text-sm font-semibold">
+                        <Label
+                          htmlFor="city"
+                          className="text-content-bodytext font-lato text-sm font-semibold"
+                        >
                           City
                         </Label>
                         <Input
                           id="city"
                           value={formData.city}
-                          onChange={(e) => handleInputChange("city", e.target.value)}
+                          onChange={(e) =>
+                            handleInputChange("city", e.target.value)
+                          }
                           className="mt-2 h-12 rounded-lg border-[#000]/10"
                         />
                       </div>
@@ -392,28 +453,38 @@ const PersonalData = () => {
                   <h3 className="text-content-dark-strong font-lato text-lg font-bold leading-[140%]">
                     Citizen Card
                   </h3>
-                  
+
                   <div className="flex flex-col md:flex-row gap-4">
                     <div className="flex-1">
-                      <Label htmlFor="citizenCardNumber" className="text-content-bodytext font-lato text-sm font-semibold">
+                      <Label
+                        htmlFor="citizenCardNumber"
+                        className="text-content-bodytext font-lato text-sm font-semibold"
+                      >
                         Citizen card number
                       </Label>
                       <Input
                         id="citizenCardNumber"
                         value={formData.citizenCardNumber}
-                        onChange={(e) => handleInputChange("citizenCardNumber", e.target.value)}
+                        onChange={(e) =>
+                          handleInputChange("citizenCardNumber", e.target.value)
+                        }
                         className="mt-2 h-12 rounded-lg border-[#000]/10"
                       />
                     </div>
                     <div className="flex-1">
-                      <Label htmlFor="citizenCardExpiry" className="text-content-bodytext font-lato text-sm font-semibold">
+                      <Label
+                        htmlFor="citizenCardExpiry"
+                        className="text-content-bodytext font-lato text-sm font-semibold"
+                      >
                         Expiry date
                       </Label>
                       <Input
                         id="citizenCardExpiry"
                         placeholder="MM/DD/YYYY"
                         value={formData.citizenCardExpiry}
-                        onChange={(e) => handleInputChange("citizenCardExpiry", e.target.value)}
+                        onChange={(e) =>
+                          handleInputChange("citizenCardExpiry", e.target.value)
+                        }
                         className="mt-2 h-12 rounded-lg border-[#000]/10 placeholder:text-content-label"
                       />
                     </div>
@@ -425,44 +496,59 @@ const PersonalData = () => {
                   <h3 className="text-content-dark-strong font-lato text-lg font-bold leading-[140%]">
                     Driving license
                   </h3>
-                  
+
                   <div className="flex flex-col gap-4">
                     <div className="flex flex-col md:flex-row gap-4">
                       <div className="flex-1">
-                        <Label htmlFor="driverNumber" className="text-content-bodytext font-lato text-sm font-semibold">
+                        <Label
+                          htmlFor="driverNumber"
+                          className="text-content-bodytext font-lato text-sm font-semibold"
+                        >
                           Driver´s number
                         </Label>
                         <Input
                           id="driverNumber"
                           value={formData.driverNumber}
-                          onChange={(e) => handleInputChange("driverNumber", e.target.value)}
+                          onChange={(e) =>
+                            handleInputChange("driverNumber", e.target.value)
+                          }
                           className="mt-2 h-12 rounded-lg border-[#000]/10"
                         />
                       </div>
                       <div className="flex-1">
-                        <Label htmlFor="issueDate" className="text-content-bodytext font-lato text-sm font-semibold">
+                        <Label
+                          htmlFor="issueDate"
+                          className="text-content-bodytext font-lato text-sm font-semibold"
+                        >
                           Issue date
                         </Label>
                         <Input
                           id="issueDate"
                           placeholder="MM/DD/YYYY"
                           value={formData.issueDate}
-                          onChange={(e) => handleInputChange("issueDate", e.target.value)}
+                          onChange={(e) =>
+                            handleInputChange("issueDate", e.target.value)
+                          }
                           className="mt-2 h-12 rounded-lg border-[#000]/10 placeholder:text-content-label"
                         />
                       </div>
                     </div>
-                    
+
                     <div className="flex flex-col md:flex-row gap-4">
                       <div className="flex-1">
-                        <Label htmlFor="licenseExpiry" className="text-content-bodytext font-lato text-sm font-semibold">
+                        <Label
+                          htmlFor="licenseExpiry"
+                          className="text-content-bodytext font-lato text-sm font-semibold"
+                        >
                           Expiry date
                         </Label>
                         <Input
                           id="licenseExpiry"
                           placeholder="MM/DD/YYYY"
                           value={formData.licenseExpiry}
-                          onChange={(e) => handleInputChange("licenseExpiry", e.target.value)}
+                          onChange={(e) =>
+                            handleInputChange("licenseExpiry", e.target.value)
+                          }
                           className="mt-2 h-12 rounded-lg border-[#000]/10 placeholder:text-content-label"
                         />
                       </div>
@@ -475,14 +561,26 @@ const PersonalData = () => {
                 <div className="flex flex-col gap-4">
                   {/* Create Account */}
                   <div className="flex items-start gap-3">
-                    <div 
+                    <div
                       className={`w-[18px] h-[18px] min-w-[18px] mt-0.5 rounded border-2 border-wayzor-green-dark flex items-center justify-center cursor-pointer ${
-                        formData.createAccount ? 'bg-wayzor-green-dark' : 'bg-white'
+                        formData.createAccount
+                          ? "bg-wayzor-green-dark"
+                          : "bg-white"
                       }`}
-                      onClick={() => handleInputChange("createAccount", !formData.createAccount)}
+                      onClick={() =>
+                        handleInputChange(
+                          "createAccount",
+                          !formData.createAccount,
+                        )
+                      }
                     >
                       {formData.createAccount && (
-                        <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                        <svg
+                          width="12"
+                          height="12"
+                          viewBox="0 0 12 12"
+                          fill="none"
+                        >
                           <path
                             fillRule="evenodd"
                             clipRule="evenodd"
@@ -493,21 +591,32 @@ const PersonalData = () => {
                       )}
                     </div>
                     <span className="text-content-label font-lato text-xs font-medium leading-[110%]">
-                      <span className="text-wayzor-green-dark underline font-bold">Create an account</span>{" "}
+                      <span className="text-wayzor-green-dark underline font-bold">
+                        Create an account
+                      </span>{" "}
                       with the entered details to access the Reserved Area.
                     </span>
                   </div>
 
                   {/* Terms and Conditions */}
                   <div className="flex items-start gap-3">
-                    <div 
+                    <div
                       className={`w-[18px] h-[18px] min-w-[18px] mt-0.5 rounded border-2 border-wayzor-green-dark flex items-center justify-center cursor-pointer ${
-                        formData.agreeTerms ? 'bg-wayzor-green-dark' : 'bg-white'
+                        formData.agreeTerms
+                          ? "bg-wayzor-green-dark"
+                          : "bg-white"
                       }`}
-                      onClick={() => handleInputChange("agreeTerms", !formData.agreeTerms)}
+                      onClick={() =>
+                        handleInputChange("agreeTerms", !formData.agreeTerms)
+                      }
                     >
                       {formData.agreeTerms && (
-                        <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                        <svg
+                          width="12"
+                          height="12"
+                          viewBox="0 0 12 12"
+                          fill="none"
+                        >
                           <path
                             fillRule="evenodd"
                             clipRule="evenodd"
@@ -519,22 +628,43 @@ const PersonalData = () => {
                     </div>
                     <span className="text-content-label font-lato text-xs font-medium leading-[110%]">
                       I have read and agree to the{" "}
-                      <span className="text-wayzor-green-dark underline font-bold">Privacy and Security Policy</span>,{" "}
-                      <span className="text-wayzor-green-dark underline font-bold">Terms and Conditions</span>, and{" "}
-                      <span className="text-wayzor-green-dark underline font-bold">Web Terms and Conditions</span>.
+                      <span className="text-wayzor-green-dark underline font-bold">
+                        Privacy and Security Policy
+                      </span>
+                      ,{" "}
+                      <span className="text-wayzor-green-dark underline font-bold">
+                        Terms and Conditions
+                      </span>
+                      , and{" "}
+                      <span className="text-wayzor-green-dark underline font-bold">
+                        Web Terms and Conditions
+                      </span>
+                      .
                     </span>
                   </div>
 
                   {/* Marketing Communications */}
                   <div className="flex items-start gap-3">
-                    <div 
+                    <div
                       className={`w-[18px] h-[18px] min-w-[18px] mt-0.5 rounded border-2 border-wayzor-green-dark flex items-center justify-center cursor-pointer ${
-                        formData.receiveMarketing ? 'bg-wayzor-green-dark' : 'bg-white'
+                        formData.receiveMarketing
+                          ? "bg-wayzor-green-dark"
+                          : "bg-white"
                       }`}
-                      onClick={() => handleInputChange("receiveMarketing", !formData.receiveMarketing)}
+                      onClick={() =>
+                        handleInputChange(
+                          "receiveMarketing",
+                          !formData.receiveMarketing,
+                        )
+                      }
                     >
                       {formData.receiveMarketing && (
-                        <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                        <svg
+                          width="12"
+                          height="12"
+                          viewBox="0 0 12 12"
+                          fill="none"
+                        >
                           <path
                             fillRule="evenodd"
                             clipRule="evenodd"
@@ -545,7 +675,10 @@ const PersonalData = () => {
                       )}
                     </div>
                     <span className="text-content-label font-lato text-xs font-medium leading-[110%] max-w-[647px]">
-                      I would like to receive marketing communications, namely about promotions, events, and new mobility products from Wayzor and its subsidiaries, whether by e-mail, telephone, or SMS.
+                      I would like to receive marketing communications, namely
+                      about promotions, events, and new mobility products from
+                      Wayzor and its subsidiaries, whether by e-mail, telephone,
+                      or SMS.
                     </span>
                   </div>
                 </div>
@@ -582,10 +715,13 @@ const PersonalData = () => {
                     Your booking is not fully covered
                   </h3>
                   <p className="text-white font-lato text-sm font-normal leading-[150%] mb-4">
-                    If the vehicle is damaged, stolen, you lose the keys and/or need a tow, you may have to pay an excedd charge of up to 3 300 euros.
+                    If the vehicle is damaged, stolen, you lose the keys and/or
+                    need a tow, you may have to pay an excedd charge of up to 3
+                    300 euros.
                   </p>
                   <p className="text-white font-lato text-[15px] font-normal leading-[150%] mb-4">
-                    Reduce your responsibility by just <span className="font-bold">38,27 €</span>
+                    Reduce your responsibility by just{" "}
+                    <span className="font-bold">38,27 €</span>
                   </p>
                   <Button
                     variant="outline"
@@ -605,26 +741,33 @@ const PersonalData = () => {
                 <h3 className="text-content-dark-strong font-lato text-lg font-bold leading-[140%]">
                   Choose payment method
                 </h3>
-                
+
                 <div className="flex flex-col md:flex-row gap-4">
                   {/* Other Cards */}
-                  <div 
+                  <div
                     className={`flex-1 p-4 rounded-lg border-2 cursor-pointer transition-colors ${
-                      formData.paymentMethod === "cards" 
-                        ? "border-wayzor-green bg-bg-light-medium" 
+                      formData.paymentMethod === "cards"
+                        ? "border-wayzor-green bg-bg-light-medium"
                         : "border-gray-200 bg-white"
                     }`}
                     onClick={() => handleInputChange("paymentMethod", "cards")}
                   >
                     <div className="flex items-center justify-between">
                       <div className="flex items-center gap-3">
-                        <div className={`w-[18px] h-[18px] rounded-full border-2 flex items-center justify-center ${
-                          formData.paymentMethod === "cards" 
-                            ? "border-wayzor-green bg-wayzor-green" 
-                            : "border-wayzor-green-dark bg-white"
-                        }`}>
+                        <div
+                          className={`w-[18px] h-[18px] rounded-full border-2 flex items-center justify-center ${
+                            formData.paymentMethod === "cards"
+                              ? "border-wayzor-green bg-wayzor-green"
+                              : "border-wayzor-green-dark bg-white"
+                          }`}
+                        >
                           {formData.paymentMethod === "cards" && (
-                            <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                            <svg
+                              width="12"
+                              height="12"
+                              viewBox="0 0 12 12"
+                              fill="none"
+                            >
                               <path
                                 fillRule="evenodd"
                                 clipRule="evenodd"
@@ -641,7 +784,12 @@ const PersonalData = () => {
                       <div className="flex gap-2">
                         {/* Visa */}
                         <div className="w-[35px] h-[24px] border border-gray-300 rounded bg-white flex items-center justify-center">
-                          <svg width="25" height="8" viewBox="0 0 25 9" fill="none">
+                          <svg
+                            width="25"
+                            height="8"
+                            viewBox="0 0 25 9"
+                            fill="none"
+                          >
                             <path
                               fillRule="evenodd"
                               clipRule="evenodd"
@@ -696,23 +844,30 @@ const PersonalData = () => {
                   </div>
 
                   {/* MBWAY */}
-                  <div 
+                  <div
                     className={`flex-1 p-4 rounded-lg border-2 cursor-pointer transition-colors ${
-                      formData.paymentMethod === "mbway" 
-                        ? "border-wayzor-green bg-bg-light-medium" 
+                      formData.paymentMethod === "mbway"
+                        ? "border-wayzor-green bg-bg-light-medium"
                         : "border-gray-200 bg-white"
                     }`}
                     onClick={() => handleInputChange("paymentMethod", "mbway")}
                   >
                     <div className="flex items-center justify-between">
                       <div className="flex items-center gap-3">
-                        <div className={`w-[18px] h-[18px] rounded-full border-2 flex items-center justify-center ${
-                          formData.paymentMethod === "mbway" 
-                            ? "border-wayzor-green bg-wayzor-green" 
-                            : "border-wayzor-green-dark bg-white"
-                        }`}>
+                        <div
+                          className={`w-[18px] h-[18px] rounded-full border-2 flex items-center justify-center ${
+                            formData.paymentMethod === "mbway"
+                              ? "border-wayzor-green bg-wayzor-green"
+                              : "border-wayzor-green-dark bg-white"
+                          }`}
+                        >
                           {formData.paymentMethod === "mbway" && (
-                            <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                            <svg
+                              width="12"
+                              height="12"
+                              viewBox="0 0 12 12"
+                              fill="none"
+                            >
                               <path
                                 fillRule="evenodd"
                                 clipRule="evenodd"
@@ -726,7 +881,7 @@ const PersonalData = () => {
                           MBWAY
                         </span>
                       </div>
-                      <img 
+                      <img
                         src="https://api.builder.io/api/v1/image/assets/TEMP/79dfb137a669eace83a425aaf604041215b66953?width=98"
                         alt="MBWAY"
                         className="w-[49px] h-[24px]"
@@ -737,7 +892,6 @@ const PersonalData = () => {
               </div>
             </CardContent>
           </Card>
-
         </div>
 
         {/* Right Column - Car Card */}

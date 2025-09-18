@@ -175,7 +175,12 @@ const ReservationConfirmed = () => {
                 <div className="flex h-28 px-8 pt-8 flex-col items-start gap-18 self-stretch">
                   <div className="flex items-center gap-4">
                     <div className="flex w-[52px] h-[52px] px-[30px] justify-center items-center gap-2.5 rounded-full bg-[#4B384C]">
-                      <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                      <svg
+                        width="32"
+                        height="32"
+                        viewBox="0 0 32 32"
+                        fill="none"
+                      >
                         <path
                           fillRule="evenodd"
                           clipRule="evenodd"
@@ -185,7 +190,8 @@ const ReservationConfirmed = () => {
                       </svg>
                     </div>
                     <h1 className="text-content-dark-strong font-lato text-[32px] font-bold leading-[125%]">
-                      Your Reservation has been confirmed.<br />
+                      Your Reservation has been confirmed.
+                      <br />
                       Thank you!
                     </h1>
                   </div>
@@ -229,7 +235,8 @@ const ReservationConfirmed = () => {
                         </h3>
                         <div className="flex flex-col justify-center items-start gap-1">
                           <p className="text-content-dark-strong font-lato text-base font-normal leading-[150%]">
-                            PDL Marina Atlântico<br />
+                            PDL Marina Atlântico
+                            <br />
                             Qua 10 Out . 10:00
                           </p>
                         </div>
@@ -240,7 +247,8 @@ const ReservationConfirmed = () => {
                         </h3>
                         <div className="flex flex-col justify-center items-start gap-1">
                           <p className="text-content-dark-strong font-lato text-base font-normal leading-[150%]">
-                            PDL Marina Atlântico<br />
+                            PDL Marina Atlântico
+                            <br />
                             Qua 10 Out . 10:00
                           </p>
                         </div>
@@ -261,7 +269,8 @@ const ReservationConfirmed = () => {
                   </h2>
                   <div className="flex flex-col items-start gap-6">
                     <p className="w-[682px] text-content-dark-strong font-lato text-base font-normal leading-[150%]">
-                      To complete your reservation, please check in by clicking on the button below:
+                      To complete your reservation, please check in by clicking
+                      on the button below:
                     </p>
                     <Button className="flex h-12 px-8 flex-col justify-center items-center gap-0 rounded-full bg-wayzor-green hover:bg-wayzor-green/90">
                       <span className="text-black text-center font-lato text-sm font-bold leading-[150%]">
@@ -282,45 +291,51 @@ const ReservationConfirmed = () => {
           {/* Payment Instructions */}
           <div className="w-[682px] text-content-dark-strong font-lato text-base font-normal leading-[150%]">
             <p className="mb-4">If you paid with:</p>
-            
+
             <p className="mb-4">
-              <span className="font-bold">Credit Card:</span>{" "}
-              You must have the same valid credit card used for online payment and on your behalf, which will be used for the security deposit*.
+              <span className="font-bold">Credit Card:</span> You must have the
+              same valid credit card used for online payment and on your behalf,
+              which will be used for the security deposit*.
             </p>
 
             <p className="mb-4">
-              <span className="font-bold">Debit Card:</span>{" "}
-              You must present the same debit card you used in the online payment, valid and in your name.
-              In addition you must present a credit card, also valid and in your name, for the security deposit*.
+              <span className="font-bold">Debit Card:</span> You must present
+              the same debit card you used in the online payment, valid and in
+              your name. In addition you must present a credit card, also valid
+              and in your name, for the security deposit*.
             </p>
 
             <p className="mb-4">
-              <span className="font-bold">Virtual card (eg MB Way):</span>{" "}
-              You must provide proof of payment in one of the following ways:
+              <span className="font-bold">Virtual card (eg MB Way):</span> You
+              must provide proof of payment in one of the following ways:
             </p>
             <ul className="list-disc ml-6 mb-4">
               <li>Open app on your mobile device, showing transaction;</li>
-              <li>Presentation of bank statement proving the movement or, proof of transaction</li>
+              <li>
+                Presentation of bank statement proving the movement or, proof of
+                transaction
+              </li>
             </ul>
 
             <p className="mb-4">
-              <span className="font-bold">Security Deposit:</span>{" "}
-              Present a valid credit card in your name for the security deposit*.
+              <span className="font-bold">Security Deposit:</span> Present a
+              valid credit card in your name for the security deposit*.
             </p>
 
             <p className="text-sm">
-              *The credit card used for the security deposit must be valid within 30 days from the date of delivery of the vehicle.
+              *The credit card used for the security deposit must be valid
+              within 30 days from the date of delivery of the vehicle.
             </p>
           </div>
 
           {/* Assistance Banner */}
-          <Card 
+          <Card
             className="w-full h-[185px] border-[#4B384C]/20 bg-cover bg-center"
             style={{
               backgroundImage: `url('https://api.builder.io/api/v1/image/assets/TEMP/b97daf1c97d05f4d342cb304a95ef346d3b928ae?width=1500'), #4B384C`,
-              backgroundSize: '50.392% 129.193%',
-              backgroundPosition: '400px -42.889px',
-              backgroundRepeat: 'no-repeat'
+              backgroundSize: "50.392% 129.193%",
+              backgroundPosition: "400px -42.889px",
+              backgroundRepeat: "no-repeat",
             }}
           >
             <CardContent className="flex w-full h-full items-center p-6">
@@ -328,9 +343,20 @@ const ReservationConfirmed = () => {
                 <div className="flex pt-[14px] items-center gap-2.5">
                   <div className="flex p-2 items-center gap-2.5 rounded-full bg-[#685869]">
                     <svg width="32" height="33" viewBox="0 0 32 33" fill="none">
-                      <path d="M16.0128 7.55556C13.9532 7.55556 12.5736 8.44114 11.7247 9.34201C11.3077 9.78463 11.0222 10.2259 10.8395 10.5589C10.7477 10.7262 10.6805 10.8686 10.6347 10.9737C10.6117 11.0263 10.594 11.0698 10.5812 11.1026C10.5748 11.1191 10.5695 11.1329 10.5655 11.1438L10.5602 11.1582L10.5582 11.1637L10.5574 11.1661L10.557 11.1671C10.557 11.1671 10.5567 11.1681 11.5 11.5L10.5567 11.1681C10.3734 11.6891 10.6471 12.26 11.1681 12.4433C11.6868 12.6258 12.255 12.3553 12.4409 11.8388L12.4438 11.8312C12.4478 11.8209 12.4557 11.8012 12.4679 11.7733C12.4923 11.7173 12.5333 11.6297 12.5929 11.5209C12.7131 11.3018 12.9038 11.007 13.1804 10.7135C13.7187 10.1422 14.5955 9.55556 16.0128 9.55556C17.137 9.55556 17.89 9.85034 18.3785 10.2251C18.8683 10.6008 19.1564 11.1055 19.2733 11.6412C19.5287 12.8118 18.9686 13.8069 18.288 14.0468C16.838 14.5579 15.9318 15.2635 15.45 16.1975C15.0112 17.0482 15.0121 17.9513 15.0127 18.5959L15.0128 18.6667C15.0128 19.219 15.4605 19.6667 16.0128 19.6667C16.5651 19.6667 17.0128 19.219 17.0128 18.6667C17.0128 17.936 17.0307 17.496 17.2275 17.1144C17.3976 16.7845 17.7952 16.3411 18.9529 15.933C20.88 15.2537 21.6237 13.0316 21.2273 11.2148C21.0182 10.2568 20.4914 9.3253 19.5959 8.63826C18.699 7.95017 17.4963 7.55556 16.0128 7.55556Z" fill="white"/>
-                      <path d="M16 21.5C15.4477 21.5 15 21.9477 15 22.5C15 23.0523 15.4477 23.5 16 23.5C16.5523 23.5 17 23.0523 17 22.5C17 21.9477 16.5523 21.5 16 21.5Z" fill="white"/>
-                      <path fillRule="evenodd" clipRule="evenodd" d="M16 2.5C8.26801 2.5 2 8.76801 2 16.5C2 24.232 8.26801 30.5 16 30.5C23.732 30.5 30 24.232 30 16.5C30 8.76801 23.732 2.5 16 2.5ZM4 16.5C4 9.87258 9.37258 4.5 16 4.5C22.6274 4.5 28 9.87258 28 16.5C28 23.1274 22.6274 28.5 16 28.5C9.37258 28.5 4 23.1274 4 16.5Z" fill="white"/>
+                      <path
+                        d="M16.0128 7.55556C13.9532 7.55556 12.5736 8.44114 11.7247 9.34201C11.3077 9.78463 11.0222 10.2259 10.8395 10.5589C10.7477 10.7262 10.6805 10.8686 10.6347 10.9737C10.6117 11.0263 10.594 11.0698 10.5812 11.1026C10.5748 11.1191 10.5695 11.1329 10.5655 11.1438L10.5602 11.1582L10.5582 11.1637L10.5574 11.1661L10.557 11.1671C10.557 11.1671 10.5567 11.1681 11.5 11.5L10.5567 11.1681C10.3734 11.6891 10.6471 12.26 11.1681 12.4433C11.6868 12.6258 12.255 12.3553 12.4409 11.8388L12.4438 11.8312C12.4478 11.8209 12.4557 11.8012 12.4679 11.7733C12.4923 11.7173 12.5333 11.6297 12.5929 11.5209C12.7131 11.3018 12.9038 11.007 13.1804 10.7135C13.7187 10.1422 14.5955 9.55556 16.0128 9.55556C17.137 9.55556 17.89 9.85034 18.3785 10.2251C18.8683 10.6008 19.1564 11.1055 19.2733 11.6412C19.5287 12.8118 18.9686 13.8069 18.288 14.0468C16.838 14.5579 15.9318 15.2635 15.45 16.1975C15.0112 17.0482 15.0121 17.9513 15.0127 18.5959L15.0128 18.6667C15.0128 19.219 15.4605 19.6667 16.0128 19.6667C16.5651 19.6667 17.0128 19.219 17.0128 18.6667C17.0128 17.936 17.0307 17.496 17.2275 17.1144C17.3976 16.7845 17.7952 16.3411 18.9529 15.933C20.88 15.2537 21.6237 13.0316 21.2273 11.2148C21.0182 10.2568 20.4914 9.3253 19.5959 8.63826C18.699 7.95017 17.4963 7.55556 16.0128 7.55556Z"
+                        fill="white"
+                      />
+                      <path
+                        d="M16 21.5C15.4477 21.5 15 21.9477 15 22.5C15 23.0523 15.4477 23.5 16 23.5C16.5523 23.5 17 23.0523 17 22.5C17 21.9477 16.5523 21.5 16 21.5Z"
+                        fill="white"
+                      />
+                      <path
+                        fillRule="evenodd"
+                        clipRule="evenodd"
+                        d="M16 2.5C8.26801 2.5 2 8.76801 2 16.5C2 24.232 8.26801 30.5 16 30.5C23.732 30.5 30 24.232 30 16.5C30 8.76801 23.732 2.5 16 2.5ZM4 16.5C4 9.87258 9.37258 4.5 16 4.5C22.6274 4.5 28 9.87258 28 16.5C28 23.1274 22.6274 28.5 16 28.5C9.37258 28.5 4 23.1274 4 16.5Z"
+                        fill="white"
+                      />
                     </svg>
                   </div>
                 </div>
@@ -341,12 +367,14 @@ const ReservationConfirmed = () => {
                         Still require assistance?
                       </h3>
                       <p className="w-[612px] text-white font-lato text-sm font-normal leading-[150%]">
-                        Join the thousands who hit the road with Wayzor — over 150,000 in 2019 alone.
-                        Our friendly team is here to help you plan your perfect trip. Visit our contact page and let's get your Azores adventure started.
+                        Join the thousands who hit the road with Wayzor — over
+                        150,000 in 2019 alone. Our friendly team is here to help
+                        you plan your perfect trip. Visit our contact page and
+                        let's get your Azores adventure started.
                       </p>
                     </div>
                   </div>
-                  <Button 
+                  <Button
                     variant="outline"
                     className="flex w-[178px] h-10 px-6 flex-col justify-center items-center gap-0 rounded-full border-[1.5px] border-wayzor-green bg-transparent hover:bg-white/10"
                   >

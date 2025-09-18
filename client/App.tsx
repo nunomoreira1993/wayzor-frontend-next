@@ -30,7 +30,10 @@ const App = () => (
           <Route path="/fleet" element={<Fleet />} />
           <Route path="/select-options" element={<SelectOptions />} />
           <Route path="/personal-data" element={<PersonalData />} />
-          <Route path="/reservation-confirmed" element={<ReservationConfirmed />} />
+          <Route
+            path="/reservation-confirmed"
+            element={<ReservationConfirmed />}
+          />
           <Route path="/station-details" element={<StationDetails />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
