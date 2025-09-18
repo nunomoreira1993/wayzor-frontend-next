@@ -3,6 +3,7 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import PersonalDataCarCard from "../components/PersonalDataCarCard";
+import ReservationSummaryBar from "../components/ReservationSummaryBar";
 
 const ReservationConfirmed = () => {
   const [promocode, setPromocode] = useState("");
@@ -158,6 +159,9 @@ const ReservationConfirmed = () => {
           </div>
         </div>
       </div>
+
+      {/* Reservation Summary Bar */}
+      <ReservationSummaryBar />
 
       {/* Main Content */}
       <div className="flex justify-center gap-8 px-4 lg:px-[120px] pb-16 w-full max-w-[1406px] mx-auto">
