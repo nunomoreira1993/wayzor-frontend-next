@@ -1,4 +1,19 @@
 @charset "UTF-8";
+/*
+
+// Mixin para botões básicos
+@mixin button-base($padding-y: 13px, $padding-x: 24px) {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: $padding-y $padding-x;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color .3s, color .3s;
+}*/
 /* Minimal reset for static pages */
 * {
   box-sizing: border-box;

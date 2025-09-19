@@ -1,4 +1,102 @@
 @charset "UTF-8";
+/*
+
+// Mixin para botões básicos
+@mixin button-base($padding-y: 13px, $padding-x: 24px) {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: $padding-y $padding-x;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color .3s, color .3s;
+}*/
+/*
+
+// Mixin para botões básicos
+@mixin button-base($padding-y: 13px, $padding-x: 24px) {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: $padding-y $padding-x;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color .3s, color .3s;
+}*/
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Lato", Arial, sans-serif;
+  font-weight: 700;
+  font-size: 0.875rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 9999px;
+  border: 2px solid #78BE20;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  line-height: 1;
+}
+.btn:hover {
+  background: #78BE20;
+  color: #000;
+}
+
+.btn-primary {
+  background: #78BE20;
+  color: #000;
+  border-color: #78BE20;
+}
+.btn-primary:hover {
+  background: #528116;
+  border-color: #528116;
+  color: #fff;
+}
+
+.btn-primary-outline {
+  background: transparent;
+  color: #78BE20;
+  border-color: #78BE20;
+}
+.btn-primary-outline:hover {
+  background: #78BE20;
+  color: #000;
+}
+
+.btn-secondary-outline {
+  background: transparent;
+  color: #262E2F;
+  border-color: #262E2F;
+}
+.btn-secondary-outline:hover {
+  background: #262E2F;
+  color: #fff;
+}
+
+.btn-full {
+  width: 100%;
+  display: inline-flex;
+  justify-content: center;
+}
+
+.btn--sm {
+  padding: 0.5rem 1rem;
+  font-size: 0.75rem;
+}
+
+.btn--lg {
+  padding: 1rem 2rem;
+  font-size: 1rem;
+}
+
 /* Minimal reset for static pages */
 * {
   box-sizing: border-box;
@@ -345,8 +443,8 @@ button {
   font-weight: 700;
   font-size: 0.875rem;
   background: transparent;
-  color: #78BE20;
-  border-color: #78BE20;
+  color: #528116;
+  border-color: #528116;
   border-width: 2px;
   transition: color 0.25s, background 0.25s, box-shadow 0.25s, filter 0.25s;
 }
@@ -1504,8 +1602,8 @@ button {
   cursor: pointer;
   transition: all 0.3s ease;
   background: transparent;
-  color: #78BE20;
-  border-color: #78BE20;
+  color: #528116;
+  border-color: #528116;
 }
 .partners__btn:hover {
   background: #78BE20;
@@ -1514,8 +1612,8 @@ button {
 
 .partners__btn:hover {
   background: transparent;
-  color: #78BE20;
-  border-color: #78BE20;
+  color: #528116;
+  border-color: #528116;
 }
 
 @media (max-width: 2560px) {
@@ -1932,8 +2030,4 @@ body {
   background: #fff;
   font-family: "Lato", Arial, sans-serif;
   color: #262E2F;
-}
-
-.main {
-  font-family: "Lato", Arial, sans-serif;
 }/*# sourceMappingURL=homepage.css.map */

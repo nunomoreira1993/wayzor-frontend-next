@@ -1,5 +1,6 @@
 @import 'variables' ;
 @import 'mixins';
+@import 'buttons';
 @import 'reset';
 @import 'components/hero';
 @import 'components/header';
@@ -14,4 +15,3 @@
 @import 'components/footer';
 
 body { background:#fff; font-family:$font-base; color:$color-dark-strong; }
-.main { font-family:$font-base; }

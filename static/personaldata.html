@@ -1,29 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Wayzor - Personal Data (Static)</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;500;600;700;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./css/personaldata.css" />
-  <link rel="stylesheet" href="./css/personaldata-layout.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Generated Page</title>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wayzor - Personal Data</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./css/personaldata.css">
+
+  
+
+  <script src="global.js" defer></script>
 </head>
-<body class="main font-lato personaldata-page">
-  <!-- Header (copied from fleet.html for white background variant) -->
+<body class="main font-lato">
+  <!-- Header -->
   <header class="header header--white" data-header>
     <div class="header__wrap">
       <div class="header__inner">
         <nav class="header__nav">
+          <!-- Logo -->
           <div class="header__logo">
             <a href="/" class="header__logo-link">
               <img data-logo src="images/new_log.svg" alt="Wayzor" class="header__logo-img" />
             </a>
           </div>
+
+          <!-- Desktop Menu -->
           <div class="header__menu">
             <div class="header__links">
-              <a href="./fleet.html" class="header__link" data-active-link="fleet">Vehicles<span class="header__underline u-hidden" data-active-underline></span></a>
+              <a href="./fleet.html" class="header__link" data-active-link="fleet">Vehicles</span></a>
               <a href="#" class="header__link">Stations</a>
               <a href="#" class="header__link">About us</a>
             </div>
@@ -39,14 +48,17 @@
               </div>
             </div>
           </div>
-          <div class="header__mobile">
-            <button class="header__menu-btn" data-menu-open aria-label="Open menu">
-              <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M2 9C2 8.44772 2.44772 8 3 8H26C26.5523 8 27 8.44772 27 9C27 9.55228 26.5523 10 26 10H3C2.44772 10 2 9.55228 2 9ZM2 16C2 15.4477 2.44772 15 3 15H29C29.5523 15 30 15.4477 30 16C30 16.5523 29.5523 17 29 17H3C2.44772 17 2 16.5523 2 16ZM2 23C2 22.4477 2.44772 22 3 22H24C24.5523 22 25 22.4477 25 23C25 23.5523 24.5523 24 24 24H3C2.44772 24 2 23.5523 2 23Z" fill="currentColor"/></svg>
-            </button>
-          </div>
+
+          <!-- Mobile actions -->
+            <div class="header__mobile">
+              <button class="header__menu-btn" data-menu-open aria-label="Open menu">
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M2 9C2 8.44772 2.44772 8 3 8H26C26.5523 8 27 8.44772 27 9C27 9.55228 26.5523 10 26 10H3C2.44772 10 2 9.55228 2 9ZM2 16C2 15.4477 2.44772 15 3 15H29C29.5523 15 30 15.4477 30 16C30 16.5523 29.5523 17 29 17H3C2.44772 17 2 16.5523 2 16ZM2 23C2 22.4477 2.44772 22 3 22H24C24.5523 22 25 22.4477 25 23C25 23.5523 24.5523 24 24 24H3C2.44772 24 2 23.5523 2 23Z" fill="currentColor"/></svg>
+              </button>
+            </div>
         </nav>
       </div>
     </div>
+    <!-- Mobile overlay -->
     <div class="header__overlay" data-header-overlay>
       <button class="header__close-btn" data-menu-close aria-label="Close menu">
         <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M0.969825 0.969825C1.26272 0.676936 1.73759 0.676936 2.03049 0.969825L6 4.93934L9.96952 0.969825C10.2624 0.676936 10.7373 0.676936 11.0302 0.969825C11.3231 1.26272 11.3231 1.73759 11.0302 2.03049L7.06066 6L11.0302 9.96952C11.3231 10.2624 11.3231 10.7373 11.0302 11.0302C10.7373 11.3231 10.2624 11.3231 9.96952 11.0302L6 7.06066L2.03049 11.0302C1.73759 11.3231 1.26272 11.3231 0.969825 11.0302C0.676936 10.7373 0.676936 10.2624 0.969825 9.96952L4.93934 6L0.969825 2.03049C0.676936 1.73759 0.676936 1.26272 0.969825 0.969825Z" fill="#528116"/></svg>
@@ -57,7 +69,7 @@
           <a href="#" class="header__overlay-link">Stations</a>
           <a href="#" class="header__overlay-link">About us</a>
         </div>
-        <div class="header__overlay-bottom">
+          <div class="header__overlay-bottom">
           <div class="header__overlay-link header__overlay-link--plain">+351 296 301 805</div>
           <div class="header__overlay-link header__overlay-link--plain">Fast Check in</div>
           <div class="header__overlay-link header__overlay-link--plain">Login / Register</div>
@@ -67,401 +79,416 @@
     </div>
   </header>
 
-  <main class="personaldata">
-    <!-- Stepper -->
-    <section class="personaldata__stepper" aria-label="Progress">
-      <div class="personaldata__steps personaldata__steps--fidelity">
-        <!-- Steps 1-3 complete, 4 active, 5 pending -->
-        <div class="personaldata__step personaldata__step--complete" data-step="1">
-          <div class="personaldata__step-node personaldata__step-node--complete">
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M14.5303 3.46967C14.8232 3.76256 14.8232 4.23744 14.5303 4.53033L6.53034 12.5303C6.25114 12.8095 5.80329 12.8244 5.50613 12.5644L1.50613 9.06443C1.1944 8.79167 1.16282 8.31785 1.43558 8.00612C1.70834 7.69439 2.18216 7.66281 2.49389 7.93557L5.96583 10.9735L13.4697 3.46967C13.7626 3.17678 14.2374 3.17678 14.5303 3.46967Z" fill="black"/></svg>
-          </div>
-          <div class="personaldata__step-label-wrap"><span class="personaldata__step-label">Select itinerary</span></div>
+  <!-- Price Widget (separated from header) -->
+  <section class="price-widget is-hidden" aria-label="Booking price summary" data-price-widget>
+    <div class="container price-widget-container">
+      <div class="booking-details" aria-label="Booking itinerary">
+        <div class="detail-item">
+          <span class="detail-label">Pick up:</span>
+          <span class="detail-value">PDL Marina Atlântico > Qua 10 Out . 10:00</span>
         </div>
-        <div class="personaldata__connector personaldata__connector--complete"></div>
-        <div class="personaldata__step personaldata__step--complete" data-step="2">
-          <div class="personaldata__step-node personaldata__step-node--complete">
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M14.5303 3.46967C14.8232 3.76256 14.8232 4.23744 14.5303 4.53033L6.53034 12.5303C6.25114 12.8095 5.80329 12.8244 5.50613 12.5644L1.50613 9.06443C1.1944 8.79167 1.16282 8.31785 1.43558 8.00612C1.70834 7.69439 2.18216 7.66281 2.49389 7.93557L5.96583 10.9735L13.4697 3.46967C13.7626 3.17678 14.2374 3.17678 14.5303 3.46967Z" fill="black"/></svg>
-          </div>
-          <div class="personaldata__step-label-wrap"><span class="personaldata__step-label">Select Vehicle</span></div>
-        </div>
-        <div class="personaldata__connector personaldata__connector--complete"></div>
-        <div class="personaldata__step personaldata__step--complete" data-step="3">
-          <div class="personaldata__step-node personaldata__step-node--complete">
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M14.5303 3.46967C14.8232 3.76256 14.8232 4.23744 14.5303 4.53033L6.53034 12.5303C6.25114 12.8095 5.80329 12.8244 5.50613 12.5644L1.50613 9.06443C1.1944 8.79167 1.16282 8.31785 1.43558 8.00612C1.70834 7.69439 2.18216 7.66281 2.49389 7.93557L5.96583 10.9735L13.4697 3.46967C13.7626 3.17678 14.2374 3.17678 14.5303 3.46967Z" fill="black"/></svg>
-          </div>
-          <div class="personaldata__step-label-wrap"><span class="personaldata__step-label">Select options</span></div>
-        </div>
-        <div class="personaldata__connector personaldata__connector--complete"></div>
-        <div class="personaldata__step personaldata__step--active" data-step="4">
-          <div class="personaldata__step-node personaldata__step-node--active"><span>4</span><svg class="personaldata__step-underline" width="10" height="2" viewBox="0 0 10 2" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1H9" stroke="black" stroke-width="1.5" stroke-linecap="round"/></svg></div>
-          <div class="personaldata__step-label-wrap"><span class="personaldata__step-label personaldata__step-label--active">Personal data</span></div>
-        </div>
-        <div class="personaldata__connector"></div>
-        <div class="personaldata__step" data-step="5">
-          <div class="personaldata__step-node"><span>5</span></div>
-          <div class="personaldata__step-label-wrap"><span class="personaldata__step-label">Payment</span></div>
+        <div class="detail-item">
+          <span class="detail-label">Drop off:</span>
+          <span class="detail-value">PDL Marina Atlântico > Quin 11 Out . 10:00</span>
         </div>
       </div>
-    </section>
-
-    <!-- Reservation summary bar placeholder (will fill next) -->
-    <section class="personaldata__summarybar" aria-label="Reservation summary placeholder">
-      <div class="rsbar" data-summarybar>
-        <div class="rsbar__inner">
-          <div class="rsbar__segment rsbar__segment--pickupdrop">
-            <div class="rsbar__row">
-              <span class="rsbar__label">Pick up:</span>
-              <span class="rsbar__value">PDL Marina Atlântico &gt; Qua 10 Out . 10:00</span>
-            </div>
-            <div class="rsbar__row">
-              <span class="rsbar__label">Drop off:</span>
-              <span class="rsbar__value">PDL Marina Atlântico &gt; Quin 11 Out . 10:00</span>
-            </div>
+      <div class="price-summary" aria-label="Price breakdown">
+        <div class="car-summary">
+          <div class="car-text">
+            <span class="car-class">CLASS: D - COMPACT</span>
+            <span class="car-name">VW Taig</span>
+            <span class="car-similar">or similar*</span>
           </div>
-          <div class="rsbar__segment rsbar__segment--pricing">
-            <div class="rsbar__carblock">
-              <div class="rsbar__cartexts">
-                <span class="rsbar__carclass">CLASS: D - COMPACT</span>
-                <div class="rsbar__carnamewrap">
-                  <h3 class="rsbar__carname">VW Taig</h3>
-                  <span class="rsbar__carsimilar">or similar*</span>
-                </div>
-              </div>
-              <img src="https://api.builder.io/api/v1/image/assets/TEMP/452afb865f1a9bdeef036faee275c70f23c89135?width=264" alt="VW Taig" class="rsbar__carimg" />
-            </div>
-            <div class="rsbar__valueblock">
-              <span class="rsbar__small">Reservation Value</span>
-              <span class="rsbar__price">€ 44,52</span>
-            </div>
-            <div class="rsbar__operator">+</div>
-            <div class="rsbar__valueblock">
-              <span class="rsbar__small">Complementary products</span>
-              <span class="rsbar__price">€ 2,20</span>
-            </div>
-            <div class="rsbar__operator">=</div>
-            <div class="rsbar__valueblock rsbar__valueblock--total">
-              <span class="rsbar__small">Reservation Value</span>
-              <div class="rsbar__totalwrap">
-                <span class="rsbar__total">€ 46,72</span>
-                <span class="rsbar__vat">*Includes VAT</span>
-              </div>
-            </div>
-          </div>
+          <img src="images/Car.png" alt="VW Taig" class="car-image">
         </div>
-      </div>
-    </section>
-
-    <!-- Main Content -->
-    <div class="flex justify-center gap-8 px-4 lg:px-[120px] pb-16 w-full max-w-[1406px] mx-auto personaldata__content">
-      <!-- Left Column - Form -->
-      <div class="flex w-[750px] flex-col items-start gap-8 personaldata__left">
-        <!-- Main Form Card -->
-        <div class="personaldata__card personaldata__card--main" aria-label="Personal data form">
-          <!-- Your Details Section -->
-          <div class="personaldata__subsection" aria-labelledby="pd-your-details-title">
-          <div class="personaldata__section-head">
-            <h2 id="pd-your-details-title" class="personaldata__section-title">Your details</h2>
-            <p class="personaldata__section-desc">We only use this data for your rental contract.</p>
-          </div>
-          <div class="personaldata__fields" data-columns="2">
-            <div class="personaldata__field">
-              <label for="firstName" class="personaldata__label">First name<span aria-hidden="true" class="personaldata__required">*</span></label>
-              <input id="firstName" name="firstName" type="text" class="personaldata__input" placeholder="John" autocomplete="given-name" />
-            </div>
-            <div class="personaldata__field">
-              <label for="lastName" class="personaldata__label">Last name<span aria-hidden="true" class="personaldata__required">*</span></label>
-              <input id="lastName" name="lastName" type="text" class="personaldata__input" placeholder="Doe" autocomplete="family-name" />
-            </div>
-            <div class="personaldata__field">
-              <label for="email" class="personaldata__label">Email<span aria-hidden="true" class="personaldata__required">*</span></label>
-              <input id="email" name="email" type="email" class="personaldata__input" placeholder="you@example.com" autocomplete="email" />
-            </div>
-            <div class="personaldata__field personaldata__field--phone">
-              <label for="phone" class="personaldata__label">Phone<span aria-hidden="true" class="personaldata__required">*</span></label>
-              <div class="personaldata__phonewrap">
-                <select aria-label="Country code" class="personaldata__select personaldata__select--code" name="phoneCode">
-                  <option value="+351" selected>+351</option>
-                  <option value="+34">+34</option>
-                  <option value="+44">+44</option>
-                </select>
-                <input id="phone" name="phone" type="tel" class="personaldata__input personaldata__input--phone" placeholder="912 345 678" autocomplete="tel" />
-              </div>
-            </div>
-            <div class="personaldata__field">
-              <label for="birthDate" class="personaldata__label">Birth date<span aria-hidden="true" class="personaldata__required">*</span></label>
-              <input id="birthDate" name="birthDate" type="date" class="personaldata__input" />
-            </div>
-            <div class="personaldata__field">
-              <label for="nationality" class="personaldata__label">Nationality<span aria-hidden="true" class="personaldata__required">*</span></label>
-              <select id="nationality" name="nationality" class="personaldata__select">
-                <option value="" disabled selected>Select...</option>
-                <option value="pt">Portugal</option>
-                <option value="es">Spain</option>
-                <option value="us">United States</option>
-              </select>
-            </div>
-            <div class="personaldata__field">
-              <label for="nif" class="personaldata__label">NIF / VAT</label>
-              <input id="nif" name="nif" type="text" class="personaldata__input" placeholder="123456789" />
-            </div>
-          </div>
-            </div>
-          </div>
-          <!-- Save Time Subsection -->
-          <div class="personaldata__subsection personaldata__subsection--info" aria-labelledby="pd-save-time-title">
-            <div class="personaldata__section-head personaldata__section-head--inline">
-              <h2 id="pd-save-time-title" class="personaldata__section-title">Save time on pick up</h2>
-            </div>
-            <p class="personaldata__text">Fill in the following data now so you don't have to do it at the counter. This will speed up your pick up process.</p>
-          </div>
-          <!-- Home Address Subsection -->
-          <div class="personaldata__subsection" aria-labelledby="pd-home-title">
-            <div class="personaldata__section-head">
-              <h2 id="pd-home-title" class="personaldata__section-title">Home address details</h2>
-            </div>
-            <div class="personaldata__fields" data-columns="2">
-            <div class="personaldata__field personaldata__field--full">
-              <label for="address" class="personaldata__label">Address<span aria-hidden="true" class="personaldata__required">*</span></label>
-              <input id="address" name="address" type="text" class="personaldata__input" placeholder="Street, number, apt" autocomplete="address-line1" />
-            </div>
-            <div class="personaldata__field">
-              <label for="postal" class="personaldata__label">Postal code<span aria-hidden="true" class="personaldata__required">*</span></label>
-              <input id="postal" name="postal" type="text" class="personaldata__input" placeholder="9000-123" autocomplete="postal-code" />
-            </div>
-            <div class="personaldata__field">
-              <label for="city" class="personaldata__label">City<span aria-hidden="true" class="personaldata__required">*</span></label>
-              <input id="city" name="city" type="text" class="personaldata__input" placeholder="Ponta Delgada" autocomplete="address-level2" />
-            </div>
-            <div class="personaldata__field">
-              <label for="country" class="personaldata__label">Country<span aria-hidden="true" class="personaldata__required">*</span></label>
-              <select id="country" name="country" class="personaldata__select" autocomplete="country">
-                <option value="" disabled selected>Select...</option>
-                <option value="pt">Portugal</option>
-                <option value="es">Spain</option>
-                <option value="us">United States</option>
-              </select>
-            </div>
-            </div>
-          </div>
-          <!-- Citizen Card Subsection -->
-          <div class="personaldata__subsection" aria-labelledby="pd-citizen-title">
-            <div class="personaldata__section-head">
-              <h2 id="pd-citizen-title" class="personaldata__section-title">Citizen card</h2>
-            </div>
-            <div class="personaldata__fields" data-columns="3">
-            <div class="personaldata__field">
-              <label for="citizenNumber" class="personaldata__label">Number<span aria-hidden="true" class="personaldata__required">*</span></label>
-              <input id="citizenNumber" name="citizenNumber" type="text" class="personaldata__input" placeholder="00000000" />
-            </div>
-            <div class="personaldata__field">
-              <label for="citizenIssue" class="personaldata__label">Issue date<span aria-hidden="true" class="personaldata__required">*</span></label>
-              <input id="citizenIssue" name="citizenIssue" type="date" class="personaldata__input" />
-            </div>
-            <div class="personaldata__field">
-              <label for="citizenExpiry" class="personaldata__label">Expiration date<span aria-hidden="true" class="personaldata__required">*</span></label>
-              <input id="citizenExpiry" name="citizenExpiry" type="date" class="personaldata__input" />
-            </div>
-            </div>
-          </div>
-          <!-- Driving License Subsection -->
-          <div class="personaldata__subsection" aria-labelledby="pd-license-title">
-            <div class="personaldata__section-head">
-              <h2 id="pd-license-title" class="personaldata__section-title">Driving license</h2>
-            </div>
-            <div class="personaldata__fields" data-columns="3">
-            <div class="personaldata__field">
-              <label for="licenseNumber" class="personaldata__label">Number<span aria-hidden="true" class="personaldata__required">*</span></label>
-              <input id="licenseNumber" name="licenseNumber" type="text" class="personaldata__input" placeholder="00000000" />
-            </div>
-            <div class="personaldata__field">
-              <label for="licenseIssue" class="personaldata__label">Issue date<span aria-hidden="true" class="personaldata__required">*</span></label>
-              <input id="licenseIssue" name="licenseIssue" type="date" class="personaldata__input" />
-            </div>
-            <div class="personaldata__field">
-              <label for="licenseExpiry" class="personaldata__label">Expiration date<span aria-hidden="true" class="personaldata__required">*</span></label>
-              <input id="licenseExpiry" name="licenseExpiry" type="date" class="personaldata__input" />
-            </div>
-            <div class="personaldata__field">
-              <label for="licenseCountry" class="personaldata__label">Issuing country<span aria-hidden="true" class="personaldata__required">*</span></label>
-              <select id="licenseCountry" name="licenseCountry" class="personaldata__select">
-                <option value="" disabled selected>Select...</option>
-                <option value="pt">Portugal</option>
-                <option value="es">Spain</option>
-                <option value="us">United States</option>
-              </select>
-            </div>
-            </div>
-          </div>
-          <!-- Agreements Subsection -->
-          <div class="personaldata__subsection" aria-labelledby="pd-agreements-title">
-            <div class="personaldata__section-head">
-              <h2 id="pd-agreements-title" class="personaldata__section-title">Agreements</h2>
-            </div>
-            <div class="personaldata__checks">
-            <label class="personaldata__checkitem">
-              <input type="checkbox" class="personaldata__checkbox" name="acceptTerms" />
-              <span class="personaldata__check-indicator" aria-hidden="true"></span>
-              <span class="personaldata__check-label">I agree with the <a href="#" class="personaldata__link">Terms & Conditions</a><span class="personaldata__required" aria-hidden="true">*</span></span>
-            </label>
-            <label class="personaldata__checkitem">
-              <input type="checkbox" class="personaldata__checkbox" name="privacy" />
-              <span class="personaldata__check-indicator" aria-hidden="true"></span>
-              <span class="personaldata__check-label">I have read the <a href="#" class="personaldata__link">Privacy Policy</a><span class="personaldata__required" aria-hidden="true">*</span></span>
-            </label>
-            <label class="personaldata__checkitem">
-              <input type="checkbox" class="personaldata__checkbox" name="newsletter" />
-              <span class="personaldata__check-indicator" aria-hidden="true"></span>
-              <span class="personaldata__check-label">I want to receive Wayzor updates and promotions</span>
-            </label>
-            </div>
-          </div>
-          <!-- Payment Preference Subsection -->
-          <div class="personaldata__subsection personaldata__subsection--minimal" aria-labelledby="pd-paymentpref-title">
-            <div class="personaldata__section-head">
-              <h2 id="pd-paymentpref-title" class="personaldata__section-title">Payment preference</h2>
-            </div>
-            <div class="personaldata__radios">
-            <label class="personaldata__radioitem">
-              <input type="radio" name="paymentPref" value="now" class="personaldata__radio" checked />
-              <span class="personaldata__radio-indicator" aria-hidden="true"></span>
-              <span class="personaldata__radio-label">Pay online now</span>
-            </label>
-            <label class="personaldata__radioitem">
-              <input type="radio" name="paymentPref" value="arrival" class="personaldata__radio" />
-              <span class="personaldata__radio-indicator" aria-hidden="true"></span>
-              <span class="personaldata__radio-label">Pay at arrival (card required)</span>
-            </label>
-            </div>
-          </div>
-          <!-- Warning Coverage Banner -->
-          <div class="personaldata__warning" aria-labelledby="pd-warning-title">
-            <div class="personaldata__warning-header">
-              <div class="personaldata__warning-icon">!</div>
-              <h2 id="pd-warning-title" class="personaldata__warning-title">Your booking is not fully covered</h2>
-            </div>
-            <div class="personaldata__warning-texts">
-              <p>Protect yourself from unexpected costs. Adding full coverage reduces your financial responsibility if something happens during the rental period.</p>
-              <p>Drive with peace of mind by upgrading your protection now before completing the reservation.</p>
-            </div>
-            <button class="personaldata__warning-cta" type="button">Add full coverage</button>
-          </div>
-
-          <!-- Payment Method Card -->
-          <div class="personaldata__payment" aria-labelledby="pd-payment-method-title">
-            <div class="personaldata__section-head">
-              <h2 id="pd-payment-method-title" class="personaldata__section-title">Choose payment method</h2>
-              <p class="personaldata__section-desc">Secure & encrypted processing.</p>
-            </div>
-            <div class="personaldata__payment-options">
-              <div class="personaldata__payment-option" data-active="true" role="button" tabindex="0" aria-pressed="true">
-                <span class="personaldata__payment-badge">✓</span>
-                <h3 class="personaldata__payment-title">Other cards</h3>
-                <p class="personaldata__payment-desc">Pay with Visa, Mastercard or AMEX using our secure provider.</p>
-                <div class="personaldata__payment-logos">
-                  <span class="personaldata__payment-logo">VISA</span>
-                  <span class="personaldata__payment-logo">MC</span>
-                  <span class="personaldata__payment-logo">AMEX</span>
-                </div>
-              </div>
-              <div class="personaldata__payment-option" role="button" tabindex="0" aria-pressed="false">
-                <span class="personaldata__payment-badge">✓</span>
-                <h3 class="personaldata__payment-title">MB WAY</h3>
-                <p class="personaldata__payment-desc">Use the MB WAY app to authorize your payment instantly.</p>
-                <div class="personaldata__payment-logos">
-                  <span class="personaldata__payment-logo">MB</span>
-                </div>
-              </div>
-            </div>
-          </div>
+        <div class="price-item">
+          <span class="price-label">Reservation Value</span>
+          <span class="price-value">€ 44,52</span>
         </div>
-      </div>
-      <!-- Right Column - Car Card -->
-      <div class="hidden lg:block w-[528px] flex-shrink-0 personaldata__right">
-        <div class="carcard personaldata__carcard" data-carcard-sidebar>
-          <div class="carcard__inner">
-            <div class="carcard__header">
-              <div class="carcard__details">
-                <div class="carcard__titles">
-                  <div class="carcard__class">CLASS: D - COMPACT</div>
-                  <div class="carcard__namewrap">
-                    <h2 class="carcard__title">Volkswagen Taig</h2>
-                    <span class="carcard__similar">or similar*</span>
-                  </div>
-                </div>
-                <button class="carcard__change">
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M9.06543 1.58302C9.973 0.675452 11.4445 0.675453 12.352 1.58302C13.2596 2.49059 13.2596 3.96204 12.352 4.86961L7.28495 9.93667C7.00197 10.2197 6.63053 10.3971 6.23257 10.4394L3.16992 10.7651L3.49561 7.70247C3.53793 7.3045 3.71538 6.93307 3.99836 6.65008L9.06543 1.58302ZM11.2914 2.64368C10.9696 2.3219 10.4479 2.3219 10.1261 2.64368L10.0475 2.72231L11.2127 3.88758L11.2914 3.80895C11.6131 3.48717 11.6131 2.96546 11.2914 2.64368ZM10.1521 4.94824L8.9868 3.78297L5.05903 7.71075C5.0186 7.75117 4.99325 7.80423 4.9872 7.86108L4.85788 9.07716L6.07395 8.94784C6.13081 8.94179 6.18387 8.91644 6.22429 8.87601L10.1521 4.94824ZM3.25094 14.0004C3.25094 13.5862 3.58672 13.2504 4.00094 13.2504H10.5009C10.9152 13.2504 11.2509 13.5862 11.2509 14.0004C11.2509 14.4146 10.9152 14.7504 10.5009 14.7504H4.00094C3.58672 14.7504 3.25094 14.4146 3.25094 14.0004Z" fill="#528116"/></svg>
-                  <span>Change vehicle</span>
-                </button>
-              </div>
-              <div class="carcard__media">
-                <img src="https://api.builder.io/api/v1/image/assets/TEMP/dca0708bcc7ca2e230f908f71e104db024a7151e?width=596" alt="Volkswagen Taig" class="carcard__image" />
-                <img src="https://api.builder.io/api/v1/image/assets/TEMP/177c953a2ebf8260ff25675c236acdc40e22f6a8?width=111" alt="" class="carcard__accent" />
-              </div>
-            </div>
-            <div class="carcard__divider"></div>
-            <div class="carcard__pickupdrop">
-              <div class="carcard__column">
-                <div class="carcard__coltitle">Pick up</div>
-                <div class="carcard__coltext">PDL Marina Atlântico<br/>Qua 10 Out . 10:00</div>
-              </div>
-              <div class="carcard__column carcard__column--mid">
-                <div class="carcard__coltitle">Drop off</div>
-                <div class="carcard__coltext">PDL Marina Atlântico<br/>Qua 10 Out . 10:00</div>
-              </div>
-              <button class="carcard__edit">
-                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M9.06543 1.58302C9.973 0.675452 11.4445 0.675453 12.352 1.58302C13.2596 2.49059 13.2596 3.96204 12.352 4.86961L7.28495 9.93667C7.00197 10.2197 6.63053 10.3971 6.23257 10.4394L3.16992 10.7651L3.49561 7.70247C3.53793 7.3045 3.71538 6.93307 3.99836 6.65008L9.06543 1.58302ZM11.2914 2.64368C10.9696 2.3219 10.4479 2.3219 10.1261 2.64368L10.0475 2.72231L11.2127 3.88758L11.2914 3.80895C11.6131 3.48717 11.6131 2.96546 11.2914 2.64368ZM3.25094 14.0004C3.25094 13.5862 3.58672 13.2504 4.00094 13.2504H10.5009C10.9152 13.2504 11.2509 13.5862 11.2509 14.0004C11.2509 14.4146 10.9152 14.7504 10.5009 14.7504H4.00094C3.58672 14.7504 3.25094 14.4146 3.25094 14.0004Z" fill="#528116"/></svg>
-                <span>Edit</span>
-              </button>
-            </div>
-            <div class="carcard__services">
-              <div class="carcard__service carcard__service--selected">
-                <div class="carcard__service-main">
-                  <span class="carcard__service-name">Includes 2000 km/month</span>
-                  <button class="carcard__service-info" aria-label="Info">
-                    <svg width="16" height="16" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M1.25 8.5C1.25 4.77208 4.27208 1.75 8 1.75C11.7279 1.75 14.75 4.77208 14.75 8.5C14.75 12.2279 11.7279 15.25 8 15.25C4.27208 15.25 1.25 12.2279 1.25 8.5ZM8 3.25C5.10051 3.25 2.75 5.6005 2.75 8.5C2.75 11.3995 5.1005 13.75 8 13.75C10.8995 13.75 13.25 11.3995 13.25 8.5C13.25 5.60051 10.8995 3.25 8 3.25ZM5.89369 5.00081C6.33012 4.59972 7.01173 4.25 8.0059 4.25C8.74241 4.25 9.36236 4.44653 9.83522 4.8093C10.3071 5.17129 10.5846 5.66281 10.6944 6.16585C10.8977 7.09756 10.528 8.30015 9.45878 8.67704C8.91663 8.86814 8.81537 9.01474 8.79896 9.04201C8.77393 9.08361 8.7559 9.14059 8.7559 9.5C8.7559 9.91422 8.42012 10.25 8.0059 10.25C7.59169 10.25 7.2559 9.91422 7.2559 9.5C7.2559 9.48462 7.25585 9.46857 7.25579 9.45188C7.25481 9.16808 7.25319 8.70155 7.51373 8.2686C7.79821 7.79586 8.29872 7.49549 8.96011 7.26236C9.09446 7.215 9.32647 6.93274 9.22891 6.48566C9.18824 6.29931 9.08972 6.12795 8.92217 5.99941C8.75565 5.87165 8.47294 5.75 8.0059 5.75C7.39535 5.75 7.07401 5.95331 6.90868 6.10525C6.81923 6.18746 6.76213 6.26742 6.72959 6.32124C6.71346 6.34794 6.70398 6.36719 6.70009 6.37552C6.69968 6.37641 6.69933 6.37717 6.69905 6.37779C6.55197 6.75666 6.12829 6.9504 5.74427 6.81112C5.35488 6.66988 5.15371 6.23972 5.29495 5.85033L6 6.10606C5.29495 5.85033 5.29478 5.85078 5.29495 5.85033L5.29561 5.84851L5.29632 5.84658L5.29787 5.84239L5.30154 5.83274C5.30424 5.82575 5.30746 5.81764 5.31122 5.80849C5.31874 5.7902 5.32847 5.76768 5.34065 5.74155C5.36498 5.68939 5.39937 5.62223 5.44592 5.54524C5.53875 5.39167 5.68225 5.19512 5.89369 5.00081Z" fill="#528116"/><path d="M8.75 11.75C8.75 12.1642 8.41421 12.5 8 12.5C7.58579 12.5 7.25 12.1642 7.25 11.75C7.25 11.3358 7.58579 11 8 11C8.41421 11 8.75 11.3358 8.75 11.75Z" fill="#528116"/></svg>
-                  </button>
-                </div>
-                <div class="carcard__service-check">
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M14.5303 3.46967C14.8232 3.76256 14.8232 4.23744 14.5303 4.53033L6.53034 12.5303C6.25114 12.8095 5.80329 12.8244 5.50613 12.5644L1.50613 9.06443C1.1944 8.79167 1.16282 8.31785 1.43558 8.00612C1.70834 7.69439 2.18216 7.66281 2.49389 7.93557L5.96583 10.9735L13.4697 3.46967C13.7626 3.17678 14.2374 3.17678 14.5303 3.46967Z" fill="white"/></svg>
-                </div>
-              </div>
-              <div class="carcard__service">
-                <div class="carcard__service-main">
-                  <span class="carcard__service-name">Civil Liability Insurance</span>
-                  <button class="carcard__service-info" aria-label="Info">
-                    <svg width="16" height="16" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M1.25 8.5C1.25 4.77208 4.27208 1.75 8 1.75C11.7279 1.75 14.75 4.77208 14.75 8.5C14.75 12.2279 11.7279 15.25 8 15.25C4.27208 15.25 1.25 12.2279 1.25 8.5ZM8 3.25C5.10051 3.25 2.75 5.6005 2.75 8.5C2.75 11.3995 5.1005 13.75 8 13.75C10.8995 13.75 13.25 11.3995 13.25 8.5C13.25 5.60051 10.8995 3.25 8 3.25ZM5.89369 5.00081C6.33012 4.59972 7.01173 4.25 8.0059 4.25C8.74241 4.25 9.36236 4.44653 9.83522 4.8093C10.3071 5.17129 10.5846 5.66281 10.6944 6.16585C10.8977 7.09756 10.528 8.30015 9.45878 8.67704C8.91663 8.86814 8.81537 9.01474 8.79896 9.04201C8.77393 9.08361 8.7559 9.14059 8.7559 9.5C8.7559 9.91422 8.42012 10.25 8.0059 10.25C7.59169 10.25 7.2559 9.91422 7.2559 9.5C7.2559 9.48462 7.25585 9.46857 7.25579 9.45188C7.25481 9.16808 7.25319 8.70155 7.51373 8.2686C7.79821 7.79586 8.29872 7.49549 8.96011 7.26236C9.09446 7.215 9.32647 6.93274 9.22891 6.48566C9.18824 6.29931 9.08972 6.12795 8.92217 5.99941C8.75565 5.87165 8.47294 5.75 8.0059 5.75C7.39535 5.75 7.07401 5.95331 6.90868 6.10525C6.81923 6.18746 6.76213 6.26742 6.72959 6.32124C6.71346 6.34794 6.70398 6.36719 6.70009 6.37552C6.69968 6.37641 6.69933 6.37717 6.69905 6.37779C6.55197 6.75666 6.12829 6.9504 5.74427 6.81112C5.35488 6.66988 5.15371 6.23972 5.29495 5.85033L6 6.10606C5.29495 5.85033 5.29478 5.85078 5.29495 5.85033L5.29561 5.84851L5.29632 5.84658L5.29787 5.84239L5.30154 5.83274C5.30424 5.82575 5.30746 5.81764 5.31122 5.80849C5.31874 5.7902 5.32847 5.76768 5.34065 5.74155C5.36498 5.68939 5.39937 5.62223 5.44592 5.54524C5.53875 5.39167 5.68225 5.19512 5.89369 5.00081Z" fill="#528116"/><path d="M8.75 11.75C8.75 12.1642 8.41421 12.5 8 12.5C7.58579 12.5 7.25 12.1642 7.25 11.75C7.25 11.3358 7.58579 11 8 11C8.41421 11 8.75 11.3358 8.75 11.75Z" fill="#528116"/></svg>
-                  </button>
-                </div>
-                <div class="carcard__service-price">€ 2,20</div>
-                <button class="carcard__service-check carcard__service-check--empty" aria-label="Select"></button>
-              </div>
-            </div>
-            <div class="carcard__totalblock">
-              <div class="carcard__totalnote">valor da totalidade da<br/>reserva IVA incluído</div>
-              <div class="carcard__totalprice">€ 44,52 *</div>
-            </div>
-            <div class="carcard__promo">
-              <h4 class="carcard__promo-title">Do you have a promotional code?</h4>
-              <div class="carcard__promo-row">
-                <input type="text" class="carcard__promo-input" placeholder="Promocode" />
-                <button class="carcard__promo-validate">Validate</button>
-              </div>
-            </div>
-            <div class="carcard__actions">
-              <button class="carcard__continue">Continue the reserve</button>
-              <div class="carcard__disclaimer">* At the time of pick up the vehicle: - € 600,00 Security Deposit on the same physical credit card as the online payment, on behalf of the driver. - Security Deposit will be returned upon termination of contract.</div>
-            </div>
-          </div>
+        <span class="price-operator" aria-hidden="true">+</span>
+        <div class="price-item">
+          <span class="price-label">Complementary products</span>
+          <span class="price-value">€ 2,20</span>
+        </div>
+        <span class="price-operator" aria-hidden="true">=</span>
+        <div class="price-item total">
+          <span class="price-label">Reservation Value</span>
+          <span class="price-value-total">€ 46,72</span>
+          <span class="price-vat">*Includes VAT</span>
         </div>
       </div>
     </div>
-  </main>
+  </section>
 
-  <!-- Footer copied from fleet.html (desktop + mobile) -->
-  <footer class="footer" data-footer>
-    <!-- Placeholder minimal footer until full copy; will replace in styling task -->
-    <div class="footer__bottom footer__bottom--stack" style="padding:32px; text-align:center; font-size:14px;">&copy; 2025 Wayzor</div>
+<main id="section-main" class="main-section">
+    <div class="container">
+        <section class="stepper-section">
+            <div class="stepper">
+                <div class="step completed">
+                    <div class="step-icon"><img src="images/ic_check.svg" alt="Checkmark"></div>
+                    <div class="step-label">Select itinerary</div>
+                </div>
+                <div class="step completed">
+                    <div class="step-icon"><img src="images/ic_check.svg" alt="Checkmark"></div>
+                    <div class="step-label">Select Vehicle</div>
+                </div>
+                <div class="step completed">
+                    <div class="step-icon"><img src="images/ic_check.svg" alt="Checkmark"></div>
+                    <div class="step-label">Select options</div>
+                </div>
+                <div class="step active">
+                    <div class="step-icon">4</div>
+                    <div class="step-label">Personal data</div>
+                </div>
+                <div class="step">
+                    <div class="step-icon">5</div>
+                    <div class="step-label">Payment</div>
+                </div>
+            </div>
+        </section>
+
+        <div class="content-grid">
+            <div class="form-column">
+                <form class="details-form">
+                    <section class="form-section">
+                        <h2>Your details</h2>
+                        <div class="form-row">
+                            <div class="form-field">
+                                <label for="first-name">First name</label>
+                                <input type="text" id="first-name" name="first-name">
+                            </div>
+                            <div class="form-field">
+                                <label for="last-name">Last name</label>
+                                <input type="text" id="last-name" name="last-name">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-field">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email">
+                            </div>
+                            <div class="form-field">
+                                <label for="dob">Date of birth</label>
+                                <input type="text" id="dob" name="dob" placeholder="MM/DD/YYYY">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-field form-field-select">
+                                <label for="country">Country</label>
+                                <select id="country" name="country">
+                                    <option value="">Choose a country</option>
+                                </select>
+                                <img src="images/ic_chevron_down.svg" class="select-arrow" alt="dropdown arrow">
+                            </div>
+                            <div class="form-field">
+                                <label for="nif">NIF <span>(optional)</span></label>
+                                <input type="text" id="nif" name="nif">
+                            </div>
+                        </div>
+                        <div class="checkbox-container">
+                            <input type="checkbox" id="billing-details" name="billing-details" checked>
+                            <label for="billing-details">Add to billing details</label>
+                        </div>
+                    </section>
+
+                    <section class="form-section">
+                        <h3>Save time!</h3>
+                        <p>Fill in all the required information for your rental now, and simply pick up your vehicle at a Wayzor station.</p>
+                    </section>
+
+                    <section class="form-section">
+                        <h4>Home details</h4>
+                        <div class="form-field">
+                            <label for="street-address">Street address</label>
+                            <input type="text" id="street-address" name="street-address">
+                        </div>
+                        <div class="form-row">
+                            <div class="form-field">
+                                <label for="zip">Zip</label>
+                                <input type="text" id="zip" name="zip">
+                            </div>
+                            <div class="form-field">
+                                <label for="city">City</label>
+                                <input type="text" id="city" name="city">
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="form-section">
+                        <h4>Citizen Card</h4>
+                        <div class="form-row">
+                            <div class="form-field">
+                                <label for="citizen-card-number">Citizen card number</label>
+                                <input type="text" id="citizen-card-number" name="citizen-card-number">
+                            </div>
+                            <div class="form-field">
+                                <label for="citizen-card-expiry">Expiry date</label>
+                                <input type="text" id="citizen-card-expiry" name="citizen-card-expiry" placeholder="MM/DD/YYYY">
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="form-section">
+                        <h4>Driving license</h4>
+                        <div class="form-row">
+                            <div class="form-field">
+                                <label for="driver-number">Driver´s number</label>
+                                <input type="text" id="driver-number" name="driver-number">
+                            </div>
+                            <div class="form-field">
+                                <label for="issue-date">Issue date</label>
+                                <input type="text" id="issue-date" name="issue-date" placeholder="MM/DD/YYYY">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-field">
+                                <label for="driver-license-expiry">Expiry date</label>
+                                <input type="text" id="driver-license-expiry" name="driver-license-expiry" placeholder="MM/DD/YYYY">
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="form-section form-agreements">
+                        <div class="checkbox-container">
+                            <input type="checkbox" id="create-account" name="create-account">
+                            <label for="create-account"><a href="#">Create an account</a> with the entered details to access the Reserved Area.</label>
+                        </div>
+                        <div class="checkbox-container">
+                            <input type="checkbox" id="terms" name="terms">
+                            <label for="terms">I have read and agree to the <a href="#">Privacy and Security Policy</a>, <a href="#">Terms and Conditions</a>, and <a href="#">Web Terms and Conditions</a>.</label>
+                        </div>
+                        <div class="checkbox-container">
+                            <input type="checkbox" id="marketing" name="marketing">
+                            <label for="marketing">I would like to receive marketing communications, namely about promotions, events, and new mobility products from Wayzor and its subsidiaries, whether by e-mail, telephone, or SMS.</label>
+                        </div>
+                    </section>
+                </form>
+
+                <section class="warning-banner">
+                    <div class="warning-icon-wrapper">
+                        <img src="images/598_3171.svg" alt="Warning Icon">
+                    </div>
+                    <div class="warning-text">
+                        <h3>Your booking is not fully covered</h3>
+                        <p>If the vehicle is damaged, stolen, you lose the keys and/or need a tow, you may have to pay an excedd charge of up to 3 300 euros.</p>
+                        <p class="warning-cta-text">Reduce your responsibility by just <strong>38,27 €</strong></p>
+                    </div>
+                    <a href="#" class="btn btn-primary-outline">Add Total Car Rental Protection</a>
+                </section>
+
+                <section class="payment-section">
+                    <h4>Choose payment method</h4>
+                    <div class="payment-options">
+                      <div class="payment-option selected">
+                        <input type="radio" id="card" name="payment-method" value="card" checked>
+                        <label for="card">
+                          <span class="radio-check"></span>
+                          Other Cards
+                        </label>
+                        <div class="payment-logos">
+                          <img src="images/Visa.svg" alt="Visa">
+                          <div class="mastercard-logo">
+                            <img src="images/Mastercard.svg" alt="Mastercard part 1" style="height:24px;">
+                         
+                          </div>
+                        </div>
+                      </div>
+                      <div class="payment-option">
+                        <input type="radio" id="mbway" name="payment-method" value="mbway">
+                        <label for="mbway">
+                          <span class="radio-check"></span>
+                          MBWAY
+                        </label>
+                        <div class="payment-logos">
+                          <img src="images/mbway-seeklogo 1.svg" alt="MB Way" style="height:24px;">
+                        </div>
+                      </div>
+                    </div>
+                    <button type="submit" form="details-form" class="btn btn-primary btn-full">Continue to payment</button>
+                </section>
+            </div>
+
+            <aside class="summary-column">
+                <div class="summary-card">
+                    <div class="car-info">
+                        <div class="car-text">
+                            <p class="car-class">CLASS: D - COMPACT</p>
+                            <h3>Volkswagen Taig</h3>
+                            <p class="car-similar">or similar*</p>
+                            <a href="#" class="change-vehicle-link">
+                                <img src="images/ic_edit.svg" alt="Edit icon">
+                                Change vehicle
+                            </a>
+                        </div>
+                        <div class="car-image-container">
+                            <img src="images/Car.png" alt="Volkswagen Taig" class="car-photo">
+                            <!--merged image-->
+                            <div class="car-graphic-overlay">
+                                <img src="images/1172_23373.svg" alt="">
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr>
+
+                    <div class="booking-details">
+                        <div class="pickup-details">
+                            <h4>Pick up</h4>
+                            <p>PDL Marina Atlântico<br>Qua 10 Out . 10:00</p>
+                        </div>
+                        <div class="dropoff-details">
+                            <h4>Drop off</h4>
+                            <p>PDL Marina Atlântico<br>Qua 10 Out . 10:00</p>
+                        </div>
+                        <a href="#" class="edit-booking-link">
+                            <img src="images/ic_edit.svg" alt="Edit icon">
+                            Edit
+                        </a>
+                    </div>
+
+                    <div class="inclusions">
+                        <div class="inclusion-item">
+                            <span>Includes 2000 km/month <img src="images/ic_help.svg" alt="Help"></span>
+                            <img src="images/ic_check.svg" class="check-icon" alt="Included">
+                        </div>
+                        <div class="inclusion-item">
+                            <span>Civil Liability Insurance <img src="images/ic_help.svg" alt="Help"></span>
+                            <span class="price">€ 2,20</span>
+                            <img src="images/ic_check.svg" class="check-icon" alt="Included">
+                        </div>
+                        <div class="inclusion-item">
+                            <span>Road Assistance <img src="images/ic_help.svg" alt="Help"></span>
+                            <img src="images/ic_check.svg" class="check-icon" alt="Included">
+                        </div>
+                        <div class="inclusion-item">
+                            <span>Collision damage waiver <img src="images/ic_help.svg" alt="Help"></span>
+                            <img src="images/ic_check.svg" class="check-icon" alt="Included">
+                        </div>
+                        <div class="inclusion-item">
+                            <span>Road Tax <img src="images/ic_help.svg" alt="Help"></span>
+                            <img src="images/ic_check.svg" class="check-icon" alt="Included">
+                        </div>
+                        <div class="inclusion-item">
+                            <span>Theft Insurance <img src="images/ic_help.svg" alt="Help"></span>
+                            <img src="images/ic_check.svg" class="check-icon" alt="Included">
+                        </div>
+                    </div>
+
+                    <div class="total-price" data-total-price>
+                        <p>valor da totalidade da reserva IVA incluído</p>
+                        <h2>€ 44,52 *</h2>
+                    </div>
+
+                    <div class="promo-code">
+                        <h4>Do you have a promotional code?</h4>
+                        <div class="promo-input-group">
+                            <div class="form-field">
+                                <label for="promocode">Promocode</label>
+                                <input type="text" id="promocode" name="promocode">
+                            </div>
+                            <button type="button" class="btn btn-secondary-outline">Validate</button>
+                        </div>
+                    </div>
+
+                    <div class="summary-actions">
+                        <button type="submit" form="details-form" class="btn btn-primary btn-full">Continue the reserve</button>
+                        <p class="disclaimer">* At the time of pick up the vehicle:<br>- € 600,00 Security Deposit on the same physical credit card as the online payment, on behalf of the driver.<br>- Security Deposit will be returned upon termination of contract.</p>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </div>
+</main>
+ <!-- Footer (synced with homepage) -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__main">
+        <!-- Logo -->
+        <div class="footer__logo-col">
+          <img src="https://api.builder.io/api/v1/image/assets/TEMP/57a1d4e29a0f3df2a8258ee43ae52904113a8ca4?width=376" alt="Wayzor" class="footer__logo-img">
+        </div>
+
+        <!-- Agrupados -->
+        <div class="footer__nav-group">
+          <!-- Site Map -->
+          <details class="footer__section" data-collapse>
+            <summary class="footer__title">
+              Site Map
+              <span class="footer__chevron" aria-hidden="true"><img src="images/ic_chevron_white.svg" alt=""></span>
+            </summary>
+            <nav class="footer__links">
+              <a href="#">Booking</a>
+              <a href="#">Personal Area</a>
+              <a href="#">Fast Check-in</a>
+              <a href="#">About Us</a>
+              <a href="#">General Contacts</a>
+            </nav>
+          </details>
+
+          <!-- More Info -->
+          <details class="footer__section" data-collapse>
+            <summary class="footer__title">
+              More Info
+              <span class="footer__chevron" aria-hidden="true"><img src="images/ic_chevron_white.svg" alt=""></span>
+            </summary>
+            <nav class="footer__links">
+              <a href="#">Privacy Policy</a>
+              <a href="#">Cookie Policy</a>
+              <a href="#">Personal Data Opt-Out</a>
+              <a href="#">Terms & Conditions</a>
+              <a href="#">FAQs</a>
+            </nav>
+          </details>
+
+          <!-- Stations -->
+          <details class="footer__section footer__section--stations" data-collapse>
+            <summary class="footer__title">
+              Stations
+              <span class="footer__chevron" aria-hidden="true"><img src="images/ic_chevron_white.svg" alt=""></span>
+            </summary>
+            <div class="footer__links">
+              <div class="footer__stations-cols">
+                <div>
+                  <a href="#">PDL Marina Atlântico</a>
+                  <a href="#">PDL Aeroporto</a>
+                  <a href="#">Furnas Terra Nostra</a>
+                  <a href="#">Faial Aeroporto</a>
+                  <a href="#">PDL SEDE</a>
+                  <a href="#">PDL SM Park Hotel</a>
+                </div>
+                <div>
+                  <a href="#">FAIAL Hotel do Canal</a>
+                  <a href="#">TER Aeroporto</a>
+                  <a href="#">PDL Grand Hotel AA</a>
+                  <a href="#">PDL Neat HOTEL</a>
+                  <a href="#">TER Mar Hotel</a>
+                </div>
+              </div>
+            </div>
+          </details>
+        </div>
+
+        <!-- Social (estático) -->
+        <div class="footer__section footer__section--static">
+          <h3 class="footer__title footer__title--static">Follow Us</h3>
+          <div class="footer__social-icons">
+            <div class="footer__icon"><img src="images/ic_instagram.svg" alt="Instagram" width="20" height="20"></div>
+            <div class="footer__icon"><img src="images/ic_facebook.svg" alt="Facebook" width="20" height="20"></div>
+            <div class="footer__icon"><img src="images/linkedin.svg" alt="LinkedIn" width="20" height="20"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <div>Copyright 2025 &copy; Wayzor</div>
+        <div class="footer__payments">Easy and secure payment:
+          <svg width="24" height="17" viewBox="0 0 24 17" fill="none"><g clip-path="url(#c3)"><path d="M14.8667 3.14258H9.11328V13.4805H14.8667V3.14258Z" fill="#FF5F00"/><path d="M9.47942 8.32974C9.47942 6.22928 10.4657 4.36627 11.9817 3.16079C10.8675 2.28407 9.46115 1.75439 7.92691 1.75439C4.2922 1.75439 1.35156 4.69503 1.35156 8.32974C1.35156 11.9644 4.2922 14.9051 7.92691 14.9051C9.46115 14.9051 10.8675 14.3754 11.9817 13.4987C10.4657 12.2932 9.47942 10.4119 9.47942 8.32974Z" fill="#EB001B"/><path d="M22.6301 8.32974C22.6301 11.9644 19.6895 14.9051 16.0548 14.9051C14.5205 14.9051 13.1142 14.3754 12 13.4987C13.5342 12.2932 14.5023 10.4302 14.5023 8.32974C14.5023 6.22928 13.516 4.36627 12 3.16079C13.1142 2.28407 14.5205 1.75439 16.0548 1.75439C19.6895 1.75439 22.6301 4.69503 22.6301 8.32974Z" fill="#F79E1B"/></g><defs><clipPath id="c3"><rect width="24" height="15.8721" fill="white" transform="translate(0 0.384766)"/></clipPath></defs></svg>
+          <svg width="24" height="17" viewBox="0 0 24 17" fill="none"><g clip-path="url(#c4)"><path d="M-0.5 1.04004V15.7308H23.5V1.04004H-0.5ZM5.71046 10.8356L5.1583 6.87812L6.49832 7.71989L4.24289 5.93512H6.41066L6.62997 8.26294C6.65755 8.53939 6.67978 8.81094 6.70073 9.09033C6.81345 8.82289 6.94469 8.53039 7.09653 8.20782L8.17037 5.93512H9.59598L7.06779 10.8356L5.71046 10.8356ZM9.29311 10.8356L10.2242 5.93517H11.5L10.5702 10.8356H9.29311ZM12.726 10.9052C12.1439 10.9052 11.6177 10.7714 11.319 10.5472L11.2313 10.4806L11.6625 9.41705L11.8069 9.50345C12.0966 9.67665 12.4664 9.77788 12.8219 9.77788C13.0934 9.77788 13.4123 9.67255 13.4123 9.37879C13.4123 9.22532 13.323 9.09038 12.8667 8.85462C12.3829 8.59335 11.8304 8.20417 11.8304 7.50271C11.8304 6.53627 12.6384 5.86072 13.7949 5.86072C14.2681 5.86072 14.647 5.94343 14.9514 6.11126L15.0592 6.17053L14.6515 7.26285L14.5058 7.18303C14.4491 7.15134 14.1409 6.9954 13.7414 6.9954C13.3308 6.9954 13.1564 7.17397 13.1564 7.33892C13.1564 7.51582 13.3823 7.65612 13.7558 7.8647C14.4203 8.21359 14.7444 8.65383 14.7444 9.20882C14.7445 10.2234 13.934 10.9052 12.726 10.9052ZM17.7249 10.8356L17.6294 9.63879H16.524L15.9755 10.8356H14.608L16.9934 5.93517H18.4762L19.0505 10.8356H17.7249Z" fill="white"/><path d="M17.4606 7.44238C17.4096 7.57363 17.3574 7.69829 17.3059 7.80853L16.9414 8.60049H17.5618L17.4853 7.76242C17.4791 7.66787 17.4701 7.55885 17.4606 7.44238Z" fill="white"/></g><defs><clipPath id="c4"><rect width="24" height="15.8721" fill="white" transform="translate(0 0.384766)"/></clipPath></defs></svg>
+        </div>
+      </div>
+    </div>
   </footer>
+  <script src="./js/personaldata.js" defer></script>
+
 </body>
 </html>
