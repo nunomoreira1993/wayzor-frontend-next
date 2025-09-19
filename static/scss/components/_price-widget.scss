@@ -12,13 +12,16 @@
     padding: 24px 0;
     transition: transform .25s ease, opacity .2s ease;
 
-    &.is-floating {
-        position: fixed;
-        left: 0;
-        right: 0;
-        top: var(--price-widget-offset, 0);
-        z-index: 120;
-        box-shadow: 0 2px 6px rgba(0,0,0,.08);
+    /* Estado visível (desktop) fixo no topo sem necessitar classe extra */
+    &:not(.is-hidden) {
+        @media (min-width: 769px) {
+            position: fixed;
+            left: 0;
+            right: 0;
+            top: var(--price-widget-offset, 0);
+            z-index: 120;
+            box-shadow: 0 2px 6px rgba(0,0,0,.08);
+        }
     }
 
     &.is-hidden {
@@ -124,5 +127,63 @@
             gap: 16px;
         }
         .price-summary { flex-wrap: wrap; }
+    }
+
+    /* Mobile simplified variant */
+    .price-widget-mobile { display: none; }
+
+    @media (max-width: 768px) {
+        padding: 10px 0; /* compact spacing on mobile */
+
+        &-container { display: none; }
+        .price-widget-mobile {
+            display: flex;
+            align-items: center;
+            justify-content: center; /* center cluster */
+            gap: 16px; /* equal spacing around center */
+            width: 100%;
+            text-align: center;
+        }
+        .price-widget-mobile .pwm-left { display: flex; flex-direction: column; align-items: flex-end; padding: 0 12px; }
+        .price-widget-mobile .pwm-label { font-size: 11px; font-weight: 500; line-height: 1.1; }
+        .price-widget-mobile .pwm-total { font-size: 20px; font-weight: 700; color: var(--secondary-green); }
+
+    .price-widget-mobile .pwm-center { flex: 0 0 auto; display: flex; justify-content: center; }
+    .price-widget-mobile .pwm-car { height: 46px; object-fit: contain; }
+
+        .price-widget-mobile .pwm-right { display: flex; }
+        .price-widget-mobile .pwm-btn {
+            background: var(--secondary-green);
+            color: #fff;
+            border: none;
+            padding: 8px 18px;
+            border-radius: 24px; /* pill look */
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 110px;
+            transition: background .2s ease, transform .2s ease;
+        }
+        .price-widget-mobile .pwm-btn:active { transform: scale(.95); }
+        .price-widget-mobile .pwm-btn:hover { background: #3f6510; }
+        .price-widget-mobile .pwm-btn:active { background: #34540d; }
+
+        /* Ensure hidden state still collapses properly */
+        &.is-hidden { padding: 0; }
+
+        /* Em mobile visível fixa no fundo (sem precisar classe extra) */
+        &:not(.is-hidden) {
+            position: fixed;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            top: auto;
+            box-shadow: 0 -2px 6px rgba(0,0,0,.08);
+            border-top: 1px solid var(--border-light);
+            z-index: 120;
+        }
     }
 }

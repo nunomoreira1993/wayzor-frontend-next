@@ -17,8 +17,19 @@
     widget.style.setProperty('--price-widget-offset', offset + 'px');
   }
 
-  const showWidget = () => { widget.classList.remove('is-hidden'); widget.classList.add('is-floating'); applyOffset(); };
-  const hideWidget = () => { widget.classList.add('is-hidden'); widget.classList.remove('is-floating'); };
+  function maybeApplyOffset(){
+    if(window.innerWidth >= 769){
+      applyOffset();
+    } else {
+      widget.style.removeProperty('--price-widget-offset');
+    }
+  }
+
+  const showWidget = () => {
+    widget.classList.remove('is-hidden');
+    maybeApplyOffset();
+  };
+  const hideWidget = () => { widget.classList.add('is-hidden'); };
 
   // Initial state: hidden until total price leaves viewport
   hideWidget();
@@ -38,8 +49,8 @@
     }, { root: null, threshold: 0 });
 
   io.observe(totalPrice);
-  window.addEventListener('resize', ()=>{ if(!widget.classList.contains('is-hidden')) applyOffset(); });
-  window.addEventListener('orientationchange', ()=>{ if(!widget.classList.contains('is-hidden')) applyOffset(); });
+  window.addEventListener('resize', ()=>{ if(!widget.classList.contains('is-hidden')) maybeApplyOffset(); });
+  window.addEventListener('orientationchange', ()=>{ if(!widget.classList.contains('is-hidden')) maybeApplyOffset(); });
   } else {
     // Fallback: on scroll check bounding rect
     const check = () => {
