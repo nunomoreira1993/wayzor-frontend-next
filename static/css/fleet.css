@@ -1,55 +1,20 @@
 @charset "UTF-8";
-/* Minimal reset for static pages */
+/*
 
-
-.fleetfilter__inputgroup:focus-within .fleetfilter__input-separator {
-  background: #78BE20;
-}
-
-
-/* Group date and time inputs with a separator */
-.fleetfilter__inputgroup {
-  display: flex;
+// Mixin para botões básicos
+@mixin button-base($padding-y: 13px, $padding-x: 24px) {
+  display: inline-flex;
+  justify-content: center;
   align-items: center;
-  gap: 0;
-  width: 100%;
-}
-
-.fleetfilter__check span {
-  display: inline-block;
-  white-space: pre-line;
-  line-height: 1.1;
-  word-break: break-word;
-  text-align: left;
-}
-
-.fleetfilter__inputgroup .fleetfilter__input {
-  border-radius: 0;
-  border-right: none;
-}
-
-.fleetfilter__inputgroup .fleetfilter__inputwrap:first-child .fleetfilter__input {
-  border-top-left-radius: 0.5rem;
-  border-bottom-left-radius: 0.5rem;
-}
-
-.fleetfilter__inputgroup .fleetfilter__inputwrap:last-child .fleetfilter__input {
-  border-top-right-radius: 0.5rem;
-  border-bottom-right-radius: 0.5rem;
-  border-right: 2px solid #E5E7EB;
-}
-
-.fleetfilter__input-separator {
-  position: relative;
-  width: 1px;
-  top: 25px;
-  height: 45px;
-  background: #E0E0E0;
-  margin: 0;
-  display: inline-block;
-  align-self: stretch;
-  z-index: 1;
-}
+  padding: $padding-y $padding-x;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color .3s, color .3s;
+}*/
+/* Minimal reset for static pages */
 * {
   box-sizing: border-box;
 }
@@ -58,7 +23,7 @@ html, body {
   margin: 0;
   padding: 0;
   font-family: "Lato", Arial, sans-serif;
-  color: #171C1D;
+  color: #262E2F;
 }
 
 img {
@@ -172,7 +137,7 @@ button {
 }
 
 .header__link:hover {
-  color: #528116;
+  color: #78BE20;
 }
 
 .header--transparent .header__link:hover {
@@ -180,7 +145,7 @@ button {
 }
 
 .header--white .header__link:hover {
-  color: #528116;
+  color: #78BE20;
 }
 
 .header--white .header__link {
@@ -200,7 +165,7 @@ button {
 }
 
 .header--white .header__link:hover::after {
-  background: #528116;
+  background: #78BE20;
 }
 
 .header__underline {
@@ -209,7 +174,7 @@ button {
   bottom: -8px;
   width: 60px;
   height: 2px;
-  background: #528116;
+  background: #78BE20;
   border-radius: 2px;
 }
 
@@ -228,7 +193,7 @@ button {
   font-size: 0.875rem;
   padding: 0.75rem 1.5rem;
   border-radius: 9999px;
-  border: 2px solid #528116;
+  border: 2px solid #78BE20;
   background: transparent;
   cursor: pointer;
   transition: color 0.25s, background 0.25s, box-shadow 0.25s, filter 0.25s;
@@ -236,35 +201,35 @@ button {
 }
 
 .header__btn:hover {
-  background: #528116;
+  background: #78BE20;
   color: #000;
 }
 
 .header--transparent .header__btn {
   background: transparent;
   color: #fff;
-  border-color: #528116;
+  border-color: #78BE20;
 }
 
 .header--transparent .header__btn:hover {
   background: rgba(0, 0, 0, 0.35);
   color: #fff;
-  border-color: #528116;
+  border-color: #78BE20;
   filter: none;
 }
 
 .header--white .header__btn {
   background: transparent;
-  color: #528116;
-  border-color: #528116;
+  color: #78BE20;
+  border-color: #78BE20;
   filter: none;
 }
 
 .header--white .header__btn:hover {
   background: transparent;
-  color: #528116;
-  border-color: #528116;
-  box-shadow: 0 0 0 1px rgba(82, 129, 22, 0.35);
+  color: #78BE20;
+  border-color: #78BE20;
+  box-shadow: 0 0 0 1px rgba(120, 190, 32, 0.35);
 }
 
 .header__phone {
@@ -440,14 +405,14 @@ button {
   top: 0;
 }
 
-.container-1312, .fleet__body, .fleet__header, .hero__inner, .features__header, .features__grid, .blog__header, .blog__cards, .partners-container, .social__header, .footer__grid {
+.container-1312, .fleet__body, .fleet__header, .hero__inner, .features__header, .features__grid, .blog__header, .blog__cards, .partners-container, .social__header, .social__grid, .footer__grid {
   max-width: 1312px;
   margin: 0 auto;
   padding: 0 1.5rem;
 }
 
 @media (min-width: 1024px) {
-  .container-1312, .fleet__body, .fleet__header, .hero__inner, .features__header, .features__grid, .blog__header, .blog__cards, .partners-container, .social__header, .footer__grid {
+  .container-1312, .fleet__body, .fleet__header, .hero__inner, .features__header, .features__grid, .blog__header, .blog__cards, .partners-container, .social__header, .social__grid, .footer__grid {
     padding: 0 2rem;
   }
 }
@@ -467,16 +432,16 @@ button {
   font-size: 0.875rem;
   padding: 0.75rem 1.5rem;
   border-radius: 9999px;
-  border: 2px solid #528116;
+  border: 2px solid #78BE20;
   background: transparent;
   cursor: pointer;
   transition: all 0.3s ease;
   background: transparent;
-  color: #528116;
-  border-color: #528116;
+  color: #78BE20;
+  border-color: #78BE20;
 }
 .btn--outline-green:hover {
-  background: #528116;
+  background: #78BE20;
   color: #000;
 }
 
@@ -567,7 +532,7 @@ button {
 }
 
 .fleet {
-  background: #F5F7F5;
+  background: #F8FAFA;
   min-height: 100vh;
   padding-top: 6rem;
   padding-bottom: 2rem;
@@ -588,7 +553,7 @@ button {
   font-size: 1.875rem;
   line-height: 1.15;
   font-weight: 700;
-  color: #171C1D;
+  color: #262E2F;
   margin: 0 0 0.5rem;
 }
 
@@ -599,7 +564,7 @@ button {
 }
 .fleet__subtitle {
   font-size: 1.125rem;
-  color: #171C1D;
+  color: #262E2F;
   margin: 0;
 }
 
@@ -621,7 +586,6 @@ button {
   }
 }
 /* Sidebar Filters */
-/* Match filters max width to car card max width */
 .fleet__filters {
   flex: 0 0 auto;
   width: 100%;
@@ -684,16 +648,15 @@ button {
   }
 }
 .fleetfilter + .fleetfilter {
-  margin-top: 1.25rem;
+  margin-top: 1.5rem;
 }
 
 /* Form label */
 .fleetfilter__label {
-  display: inline-flex;
-  align-items: flex-end;
+  display: block;
   font-size: 0.875rem;
   font-weight: 700;
-  color: #262E2F;
+  color: #363F41;
   margin-bottom: 0.5rem;
 }
 
@@ -701,49 +664,16 @@ button {
   margin-top: 1rem;
 }
 
-
 /* Input wrapper */
 .fleetfilter__inputwrap {
   position: relative;
-  display: flex;
-  top: 1px;
-  flex-direction: column;
-  justify-content: flex-end;
-  min-height: 69px;
-}
-
-.fleetfilter__floating-label {
-  position: absolute;
-  top: 15px;
-  left: 0.7rem;
-  background: #fff;
-  padding: 0 6px;
-  font-size: 13px;
-  line-height: 18px;
-  font-weight: 600;
-  color: #2E3132;
-  letter-spacing: 0.2px;
-  pointer-events: none;
-  transition: all 0.18s cubic-bezier(.4,0,.2,1);
-  z-index: 2;
-}
-
-.fleetfilter__input:focus + .fleetfilter__icon + .fleetfilter__floating-label,
-.fleetfilter__input:not(:placeholder-shown) + .fleetfilter__icon + .fleetfilter__floating-label {
-  top: -9px;
-  left: 11px;
-  background: #fff;
-  font-size: 12px;
-  color: #528116;
-  padding: 0 6px;
 }
 
 .fleetfilter__icon {
   position: absolute;
   left: 0.75rem;
-  top: 69%;
+  top: 50%;
   transform: translateY(-50%);
-  z-index: 3;
 }
 
 .fleetfilter__input {
@@ -753,7 +683,7 @@ button {
   border-radius: 0.5rem;
   font-family: "Lato", Arial, sans-serif;
   font-size: 0.875rem;
-  color: #6D7679;
+  color: #262E2F;
 }
 
 .fleetfilter__input:focus {
@@ -762,13 +692,13 @@ button {
 }
 
 .fleetfilter__input::-moz-placeholder {
-  color: #6D7679;
-  opacity: 1;
+  color: #363F41;
+  opacity: 0.6;
 }
 
 .fleetfilter__input::placeholder {
-  color: #6D7679;
-  opacity: 1;
+  color: #363F41;
+  opacity: 0.6;
 }
 
 /* Date/time split */
@@ -797,13 +727,13 @@ button {
 }
 
 .fleetfilter__submit:hover {
-  background: rgb(69.7, 109.65, 18.7);
+  background: rgb(102, 161.5, 27.2);
 }
 
 /* Panel (Type/Fuel/Transmission) wrapper reset */
 .fleetfilter--panel {
   padding: 0;
-  /* overflow: visible; */
+  overflow: hidden;
 }
 
 /* Generic margin utility (avoid inline) */
@@ -827,116 +757,56 @@ button {
   font-family: "Lato", Arial, sans-serif;
 }
 
-/* Hide the native checkbox visually but keep it accessible */
-.fleetfilter__check input[type="checkbox"] {
-  position: absolute;
-  opacity: 0;
+.fleetfilter__check input {
   width: 1rem;
   height: 1rem;
-  margin: 0;
-  z-index: 1;
-  cursor: pointer;
-}
-
-/* Custom checkbox box */
-.fleetfilter__custom-checkbox {
-  display: inline-block;
-  width: 16px;
-  height: 16px;
-  min-width: 16px;
-  min-height: 16px;
-  max-width: 16px;
-  max-height: 16px;
-  border: 2px solid #528116;
+  border: 2px solid #78BE20;
   border-radius: 0.25rem;
-  background: #fff;
-  vertical-align: middle;
-  margin-right: 0.5rem;
-  position: relative;
-  transition: border-color 0.2s, background 0.2s;
-  box-sizing: border-box;
-}
-
-/* Show checkmark when checked */
-/* Improved checkmark for custom checkbox */
-.fleetfilter__check input[type="checkbox"]:checked + .fleetfilter__custom-checkbox::after {
-  content: "";
-  position: absolute;
-  left: 0.08rem;
-  bottom: 0.01rem;
-  width: 6px;
-  height: 11px;
-  border: solid #528116;
-  border-width: 0 3px 3px 0;
-  border-radius: 1px;
-  transform: rotate(45deg) scale(0.65);
-  box-shadow: 0 0 0 0 #fff;
-}
-
-/* Focus state for accessibility */
-.fleetfilter__check input[type="checkbox"]:focus + .fleetfilter__custom-checkbox {
-  box-shadow: 0 0 0 2px #B9DD8B;
+  accent-color: #78BE20;
 }
 
 /* Section title within panel */
 .fleetfilter__heading {
   font-size: 1rem;
   font-weight: 700;
-  color: #262E2F;
+  color: #363F41;
   margin: 0;
 }
 
 .fleetfilter__panelhead {
-  padding: 1rem;
+  padding: 1.5rem;
   border-bottom: 1px solid #D9DED9;
 }
 
 .fleetfilter__panelbody {
-  padding: 1rem;
+  padding: 1.5rem;
 }
 
 /* Cards grid */
-/* Center car cards under filters on mobile */
 .fleet__grid {
   flex: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1rem;
-  width: 100%;
-}
-
-@media (min-width: 768px) {
-  .fleet__grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    justify-items: center;
-    align-items: stretch;
-  }
-}
-@media (min-width: 1280px) {
-  .fleet__grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
 }
 
 @media (min-width: 768px) {
   .fleet__grid {
     grid-template-columns: repeat(2, 1fr);
-    justify-items: center;
   }
 }
 @media (min-width: 1280px) {
   .fleet__grid {
     grid-template-columns: repeat(3, 1fr);
-    justify-items: center;
   }
 }
 /* Car Card (static replication of Tailwind version) */
 .carcard {
   display: flex;
   flex-direction: column;
-  margin: 0 auto 1.5rem auto;
+  width: 100%;
+  max-width: 303px;
+  margin: 0 auto;
   border: 1px solid rgba(75, 56, 76, 0.2);
   background: #fff;
   border-radius: 0.75rem;
@@ -1043,22 +913,22 @@ button {
 }
 
 .carcard:hover {
-  border-color: #528116;
+  border-color: #78BE20;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
 }
 
 .carcard__head {
   padding: 1rem 1.25rem 0.25rem;
   position: relative;
-  /* overflow: visible; */
+  overflow: hidden;
 }
 
 .carcard__cornerwrap {
   position: absolute;
   top: 0;
   right: 0;
-  width: 62px;
-  height: 179px;
+  width: 52px;
+  height: 140px;
   overflow: hidden;
   pointer-events: none;
 }
@@ -1091,47 +961,44 @@ button {
 .carcard__class {
   font-size: 0.75rem;
   font-weight: 600;
-  color: #262E2F;
-  line-height: 1.1;
+  color: #363F41;
+  line-height: 1.5;
   text-transform: uppercase;
 }
 
 .carcard__titlewrap {
   display: flex;
   align-items: center;
-  gap: 6px;
-  margin-top: 0.18rem;
-  margin-bottom: 1.19rem;
+  gap: 0.375rem;
+  margin-top: 0.25rem;
 }
 
 .carcard__name {
   font-size: 1.25rem;
   font-weight: 700;
   line-height: 1.4;
-  color: #262E2F;
-  margin: 0;
+  color: #363F41;
 }
 
 .carcard__similar {
   font-size: 0.75rem;
   line-height: 1;
-  color: #262E2F;
+  color: #363F41;
   padding-top: 0.25rem;
 }
-
 
 .carcard__image {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 112px;
+  height: 92px;
   padding: 0.5rem;
 }
 
 .carcard__image img {
   width: 100%;
-  max-width: 300px;
-  max-height: 130px;
+  max-width: 260px;
+  max-height: 110px;
   -o-object-fit: contain;
      object-fit: contain;
 }
@@ -1156,11 +1023,11 @@ button {
 }
 
 .carcard__price--green {
-  color: #528116;
+  color: #78BE20;
 }
 
 .carcard__price--dark {
-  color: #262E2F;
+  color: #363F41;
 }
 
 .carcard__pricelabel {
@@ -1172,22 +1039,19 @@ button {
 
 .carcard__daily {
   font-size: 0.875rem;
-  color: #262E2F;
+  color: #363F41;
   line-height: 1.4;
   margin-bottom: 0.75rem;
 }
-
 
 .carcard__badge {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  background: #4B384C;
+  background: #363F41;
   padding: 0.2rem 0.5rem;
   border-radius: 0.25rem;
   margin-bottom: 0.75rem;
-  width: 147px;
-  /* Only as wide as content, not full card */
 }
 
 .carcard__badge span {
@@ -1199,7 +1063,7 @@ button {
   display: flex;
   align-items: center;
   font-size: 0.7rem;
-  color: #262E2F;
+  color: #363F41;
   line-height: 1;
   margin-bottom: 0.75rem;
 }
@@ -1226,44 +1090,28 @@ button {
 }
 
 .carcard__footer {
-  margin-bottom: 0;
   padding: 0 1.25rem 1.25rem;
-  /* Remove extra margin below the button so card ends after button */
-}
-
-.carcard {
-  display: flex;
-  flex-direction: column;
-  margin: 0 0 1.5rem 0;
-  border: 1px solid rgba(75, 56, 76, 0.2);
-  background: #fff;
-  border-radius: 0.75rem;
-  transition: all 0.3s;
-  cursor: pointer;
-  position: relative;
-  height: fit-content;
-  min-height: 0;
-  /* Card height is only as tall as its content */
 }
 
 .carcard__btn {
   width: 100%;
   height: 40px;
-  border: 1.5px solid #528116;
+  border: 1.5px solid #78BE20;
   border-radius: 999px;
   background: transparent;
-  color: #528116;
-  font-size: 0.875rem;
-  font-weight: 600;
   cursor: pointer;
   transition: all 0.3s;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+}
+
+.carcard__btn span {
+  color: #78BE20;
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1.5;
 }
 
 .carcard__btn:hover {
-  background: #528116;
+  background: #78BE20;
 }
 
 .carcard__btn:hover span {
@@ -1393,7 +1241,7 @@ button {
 }
 
 .footer a:hover {
-  color: #528116;
+  color: #78BE20;
 }
 
 .footer__links {

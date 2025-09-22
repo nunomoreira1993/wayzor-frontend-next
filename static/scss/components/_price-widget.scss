@@ -1,0 +1,189 @@
+:root {
+    /* Fallback variables */
+    --background-widget: #ffffff;
+    --text-light: #1c1c1c;
+    --text-dark: #1c1c1c;
+    --secondary-green: #528116;
+    --border-light: #E4E4E4;
+}
+
+.price-widget {
+    background-color: var(--background-widget);
+    padding: 24px 0;
+    transition: transform .25s ease, opacity .2s ease;
+
+    /* Estado visível (desktop) fixo no topo sem necessitar classe extra */
+    &:not(.is-hidden) {
+        @media (min-width: 769px) {
+            position: fixed;
+            left: 0;
+            right: 0;
+            top: var(--price-widget-offset, 0);
+            z-index: 120;
+            box-shadow: 0 2px 6px rgba(0,0,0,.08);
+        }
+    }
+
+    &.is-hidden {
+        opacity: 0;
+        pointer-events: none;
+        transform: translateY(-8px);
+        height: 0;
+        padding: 0;
+        overflow: hidden;
+    }
+
+    &-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 56px;
+    }
+
+    .booking-details {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+
+        .detail-item {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+
+            .detail-label {
+                font-size: 14px;
+                font-weight: 700;
+                color: var(--text-dark);
+            }
+
+            .detail-value {
+                font-size: 13px;
+                color: var(--text-dark);
+            }
+        }
+    }
+
+    .price-summary {
+        display: flex;
+        align-items: center;
+        gap: 32px;
+    }
+
+    .car-summary {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+
+        .car-text {
+            display: flex;
+            flex-direction: column;
+
+            .car-class { font-size: 10px; font-weight: 500; }
+            .car-name { font-size: 24px; font-weight: 700; color: var(--text-dark); }
+            .car-similar { font-size: 10px; }
+        }
+
+        .car-image {
+            height: 60px;
+            object-fit: contain;
+        }
+    }
+
+    .price-item {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+
+        .price-label { font-size: 12px; }
+        .price-value,
+        .price-operator {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--text-light);
+        }
+
+        &.total {
+            .price-value-total { 
+                color: var(--secondary-green);
+                font-size: 24px;
+                font-weight: 700;
+            }
+            .price-vat {
+                font-size: 12px;
+                color: var(--secondary-green);
+                font-weight: 600;
+            }
+        }
+    }
+
+    @media (max-width: 1200px) {
+        .price-summary { gap: 16px; }
+    }
+
+    @media (max-width: 992px) {
+        &-container {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 16px;
+        }
+        .price-summary { flex-wrap: wrap; }
+    }
+
+    /* Mobile simplified variant */
+    .price-widget-mobile { display: none; }
+
+    @media (max-width: 768px) {
+        padding: 10px 0; /* compact spacing on mobile */
+
+        &-container { display: none; }
+        .price-widget-mobile {
+            display: flex;
+            align-items: center;
+            justify-content: center; /* center cluster */
+            gap: 16px; /* equal spacing around center */
+            width: 100%;
+            text-align: center;
+        }
+        .price-widget-mobile .pwm-left { display: flex; flex-direction: column; align-items: flex-end; padding: 0 12px; }
+        .price-widget-mobile .pwm-label { font-size: 11px; font-weight: 500; line-height: 1.1; }
+        .price-widget-mobile .pwm-total { font-size: 20px; font-weight: 700; color: var(--secondary-green); }
+
+    .price-widget-mobile .pwm-center { flex: 0 0 auto; display: flex; justify-content: center; }
+    .price-widget-mobile .pwm-car { height: 46px; object-fit: contain; }
+
+        .price-widget-mobile .pwm-right { display: flex; }
+        .price-widget-mobile .pwm-btn {
+            background: var(--secondary-green);
+            color: #fff;
+            border: none;
+            padding: 8px 18px;
+            border-radius: 24px; /* pill look */
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 110px;
+            transition: background .2s ease, transform .2s ease;
+        }
+        .price-widget-mobile .pwm-btn:active { transform: scale(.95); }
+        .price-widget-mobile .pwm-btn:hover { background: #3f6510; }
+        .price-widget-mobile .pwm-btn:active { background: #34540d; }
+
+        /* Ensure hidden state still collapses properly */
+        &.is-hidden { padding: 0; }
+
+        /* Em mobile visível fixa no fundo (sem precisar classe extra) */
+        &:not(.is-hidden) {
+            position: fixed;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            top: auto;
+            box-shadow: 0 -2px 6px rgba(0,0,0,.08);
+            border-top: 1px solid var(--border-light);
+            z-index: 120;
+        }
+    }
+}

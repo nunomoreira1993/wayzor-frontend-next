@@ -20,6 +20,40 @@
   line-height:1.25;
 }
 
+// Breakpoints centralizados
+$breakpoints: (
+  'xl': 1200px,
+  'lg': 1024px,
+  'md': 768px,
+  'sm': 500px
+);
+
+// Mixin para media query
+@mixin mq($size) {
+  $value: map-get($breakpoints, $size);
+  @if $value {
+    @media (max-width: $value) { @content; }
+  } @else {
+    @warn 'Breakpoint '#{$size}' não definido.';
+  }
+}
+/*
+
+// Mixin para botões básicos
+@mixin button-base($padding-y: 13px, $padding-x: 24px) {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: $padding-y $padding-x;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color .3s, color .3s;
+}*/
+
+
 @mixin button-base {
   display:inline-flex;
   align-items:center;

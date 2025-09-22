@@ -1,0 +1,25 @@
+.price-widget { background-color:var(--background-widget); padding:24px 0; transition:transform .25s ease, opacity .2s ease; }
+@media (min-width:769px){ .price-widget:not(.is-hidden){ position:fixed; left:0; right:0; top:var(--price-widget-offset,0); z-index:120; box-shadow:0 2px 6px rgba(0,0,0,.08); } }
+.price-widget.is-hidden { opacity:0; pointer-events:none; transform:translateY(-8px); height:0; padding:0; overflow:hidden; }
+.price-widget-container { display:flex; justify-content:space-between; align-items:center; gap:56px; }
+.booking-details { display:flex; flex-direction:column; gap:8px; }
+.detail-item { display:flex; align-items:center; gap:4px; }
+.detail-label { font-size:14px; font-weight:700; color:var(--text-dark); }
+.detail-value { font-size:13px; color:var(--text-dark); }
+.price-summary { display:flex; align-items:center; gap:32px; }
+.car-summary { display:flex; align-items:center; gap:16px; }
+.car-text { display:flex; flex-direction:column; }
+.car-class { font-size:10px; font-weight:500; }
+.car-name { font-size:24px; font-weight:700; color:var(--text-dark); }
+.car-similar { font-size:10px; }
+.car-image { height:60px; object-fit:contain; }
+.price-item { display:flex; flex-direction:column; gap:2px; }
+.price-label { font-size:12px; }
+.price-value { font-size:24px; font-weight:700; color:var(--text-light); }
+.price-operator { font-size:24px; font-weight:700; color:var(--text-light); }
+.price-item.total .price-value-total { color:var(--secondary-green); font-size:24px; font-weight:700; }
+.price-item.total .price-vat { font-size:12px; color:var(--secondary-green); font-weight:600; }
+.price-widget-mobile { display:none; }
+@media (max-width:1200px){ .price-summary { gap:16px; } }
+@media (max-width:992px){ .price-widget-container { flex-direction:column; align-items:flex-start; gap:16px; } .price-summary { flex-wrap:wrap; } }
+@media (max-width:768px){ .price-widget { padding:12px 0; } .price-widget-container { display:none; } .price-widget-mobile { display:flex; align-items:center; justify-content:space-between; gap:12px; width:100%; } .price-widget-mobile .pwm-left { display:flex; flex-direction:column; } .price-widget-mobile .pwm-label { font-size:11px; font-weight:500; line-height:1.1; } .price-widget-mobile .pwm-total { font-size:20px; font-weight:700; color:var(--secondary-green); } .price-widget-mobile .pwm-center { flex:0 0 auto; display:flex; justify-content:center; } .price-widget-mobile .pwm-car { height:48px; object-fit:contain; } .price-widget-mobile .pwm-right { display:flex; } .price-widget-mobile .pwm-btn { background:var(--secondary-green); color:#fff; border:none; padding:10px 16px; border-radius:6px; font-size:14px; font-weight:600; cursor:pointer; display:inline-flex; align-items:center; justify-content:center; min-width:108px; transition:background .2s ease; } .price-widget-mobile .pwm-btn:hover { background:#3f6510; } .price-widget-mobile .pwm-btn:active { background:#34540d; } .price-widget.is-hidden { padding:0; } .price-widget:not(.is-hidden){ position:fixed; left:0; right:0; bottom:0; top:auto; box-shadow:0 -2px 6px rgba(0,0,0,.08); border-top:1px solid var(--border-light); z-index:120; } }

@@ -1,0 +1,76 @@
+/* Custom Tailwind-style utility classes for personaldata layout */
+.font-lato {
+  font-family: "Lato", Arial, sans-serif;
+}
+
+/* Flex utilities */
+.flex {
+  display: flex;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.items-start {
+  align-items: flex-start;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.flex-shrink-0 {
+  flex-shrink: 0;
+}
+
+/* Width/height/spacing utilities */
+.w-full {
+  width: 100%;
+}
+
+.w-\[750px\] {
+  width: 750px;
+}
+
+.w-\[528px\] {
+  width: 528px;
+}
+
+.max-w-\[1406px\] {
+  max-width: 1406px;
+}
+
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.gap-8 {
+  gap: 32px;
+}
+
+.px-4 {
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+.pb-16 {
+  padding-bottom: 64px;
+}
+
+/* Responsive utilities */
+.hidden {
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .lg\:block {
+    display: block;
+  }
+  
+  .lg\:px-\[120px\] {
+    padding-left: 120px;
+    padding-right: 120px;
+  }
+}

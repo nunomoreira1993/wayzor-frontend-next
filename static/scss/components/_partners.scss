@@ -14,7 +14,7 @@
 
 .partners-info {
   flex-shrink: 0;
-  width: 294px;
+  width: 200px;
 
   h2 {
     font-size: 28px;
@@ -32,7 +32,7 @@
 .partners-logos.swiper {
   width: 100%;
   padding: 8px 0 16px;
-  margin-left: 32px; /* space after info column on desktop */
+  /* space after info column on desktop */
 }
 
 /* Inner scroll track */
@@ -55,7 +55,7 @@
 .logo-item img { max-width:131px; max-height:131px; object-fit:contain; opacity:.9; transition:all .3s ease; }
 .logo-item:hover img { opacity:1; filter:grayscale(0%); }
 
-.partners-nav { display:flex; justify-content:center; gap:24px; margin:24px 0 0; }
+.partners-nav { display:flex; justify-content:center; gap:24px; margin:24px auto; }
 
 .partner-arrow {
   background: none;
@@ -71,17 +71,44 @@
 .partner-arrow:focus-visible img { filter: brightness(1.15); }
 .partner-arrow:active img { transform: scale(.9) rotate(var(--rot,0deg)); }
 
+/* Disabled state (JS set via disabled attr) */
+.partner-arrow:disabled {
+  opacity: .35;
+  filter: grayscale(100%);
+  cursor: default;
+}
+.partner-arrow:disabled img { filter: grayscale(100%) brightness(.8); }
+.partner-arrow:disabled:hover img { filter: grayscale(100%) brightness(.8); }
+
 .partners__btn {
   @include button-base;
   background: transparent;
-  color: $color-green;
-  border-color: $color-green;
+  color: $color-green-dark;
+  border-color: $color-green-dark;
 }
 
 .partners__btn:hover {
   background: transparent;
-  color: $color-green;
-  border-color: $color-green;
+  color: $color-green-dark;
+  border-color: $color-green-dark;
+}
+
+
+@media (max-width: 2560px) {
+   .partners-logos.swiper {
+    width: 150%;
+   }
+}
+@media (max-width: 1440px) {
+   .partners-logos.swiper {
+    width: calc(100% - 150px);
+   }
+}
+
+@media (max-width: 1312px) {
+   .partners-logos.swiper {
+    width: calc(100% - 250px);
+   }
 }
 
 @media (max-width: 992px) {

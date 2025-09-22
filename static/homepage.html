@@ -14,7 +14,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
   <!-- Removed inline style block; container handled via SCSS utilities -->
 </head>
-<body class="main font-lato">
+<body class="font-lato page-home">
   <!-- Header -->
   <header class="header header--transparent" data-header>
     <div class="header__wrap">
@@ -94,8 +94,9 @@
       </div>
     </div>
   </header>
+  <main id="main-content" class="page-main" tabindex="-1" aria-label="Main content">
   <!-- Hero Section -->
-  <section class="hero">
+  <section class="section hero" id="section-hero">
     <div class="hero__bg">
       <img src="https://api.builder.io/api/v1/image/assets/TEMP/57a037179d6c85c633005116e350ede4ccf0590c?width=3370" alt="Azores landscape" />
       <div class="hero__overlay"></div>
@@ -123,7 +124,7 @@
   </section>
 
   <!-- Search Widget (fidelity version) -->
-  <section class="search-widget">
+  <section class="section search-widget" id="section-search">
     <div class="search-widget__container">
       <!-- Desktop Layout -->
       <div class="search-widget__desktop">
@@ -198,7 +199,7 @@
   </section>
 
   <!-- Features -->
-  <section class="features">
+  <section class="section features" id="section-features">
     <div class="features__header">
       <h2 class="features__title">Thinking of renting?</h2>
       <p class="features__subtitle">Here's why Wayzor's got you covered</p>
@@ -236,7 +237,7 @@
   </section>
 
   <!-- Discover -->
-  <section class="discover">
+  <section class="section discover" id="section-discover" aria-labelledby="discover-heading">
     <video class="discover__video" autoplay muted loop playsinline preload="metadata">
       <source src="videos/adobe.mp4" type="video/mp4" />
     </video>
@@ -249,7 +250,7 @@
   </section>
 
   <!-- Blog (static simplified) -->
-  <section class="blog">
+  <section class="section blog" id="section-blog">
     <div class="blog__header">
       <h2 class="blog__title">Highlights that move with you</h2>
       <p class="blog__subtitle">Travel tips, exclusive deals, and Azores highlights, all in one place.</p>
@@ -318,7 +319,7 @@
   </section>
 
   <!-- Partners (Swiper) -->
-<section id="section-partners" class="partners-section">
+<section id="section-partners" class="section partners-section" aria-labelledby="partners-heading">
   <div class="container partners-container">
     <div class="partners-info">
       <h2>Appreciated by <span class="partners-title__break">Our Partners</span></h2>
@@ -326,58 +327,58 @@
     </div>
     <div class="partners-logos swiper" aria-label="Partners logos carousel">
       <div class="partners-scroll" data-partners-scroll>
-        <div class="logo-item"><img src="/images/partner_1.png" alt="Partner logo 1"></div>
-        <div class="logo-item"><img src="/images/partner_2.png" alt="Partner logo 2"></div>
-        <div class="logo-item"><img src="/images/partner_3.png" alt="Partner logo 3"></div>
-        <div class="logo-item"><img src="/images/partner_4.png" alt="Partner logo 4"></div>
-        <div class="logo-item"><img src="/images/partner_5.png" alt="Partner logo 5"></div>
-        <div class="logo-item"><img src="/images/partner_6.png" alt="Partner logo 6"></div>
-        <div class="logo-item"><img src="/images/partner_7.png" alt="Partner logo 7"></div>
+        <div class="logo-item"><img src="/images/part7.png" alt="Partner logo 1"></div>
+        <div class="logo-item"><img src="/images/part2.png" alt="Partner logo 2"></div>
+        <div class="logo-item"><img src="/images/part3.png" alt="Partner logo 3"></div>
+        <div class="logo-item"><img src="/images/part4.png" alt="Partner logo 4"></div>
+        <div class="logo-item"><img src="/images/part5.png" alt="Partner logo 5"></div>
+        <div class="logo-item"><img src="/images/part6.png" alt="Partner logo 6"></div>
+        <div class="logo-item"><img src="/images/part5.png" alt="Partner logo 7"></div>
+          <div class="logo-item"><img src="/images/part7.png" alt="Partner logo 1"></div>
+        <div class="logo-item"><img src="/images/part2.png" alt="Partner logo 2"></div>
+        <div class="logo-item"><img src="/images/part3.png" alt="Partner logo 3"></div>
+        <div class="logo-item"><img src="/images/part4.png" alt="Partner logo 4"></div>
+        <div class="logo-item"><img src="/images/part5.png" alt="Partner logo 5"></div>
+        <div class="logo-item"><img src="/images/part6.png" alt="Partner logo 6"></div>
+        <div class="logo-item"><img src="/images/part5.png" alt="Partner logo 7"></div>
+          <div class="logo-item"><img src="/images/part7.png" alt="Partner logo 1"></div>
+        <div class="logo-item"><img src="/images/part2.png" alt="Partner logo 2"></div>
+        <div class="logo-item"><img src="/images/part3.png" alt="Partner logo 3"></div>
       </div>
     </div>
   </div>
   <div class="container partners-nav">
-    <button class="partner-arrow swiper-button-prev" type="button" aria-label="Previous partners">
-      <img src="/images/ic_arrow_right_big.svg" alt="Previous">
+    <button class="partner-arrow" data-partners-prev aria-label="Previous partners">
+      <img src="/images/ic_arrow_left_big_green.svg" alt="Previous">
     </button>
-    <button class="partner-arrow swiper-button-next" type="button" aria-label="Next partners">
+    <button class="partner-arrow" data-partners-next aria-label="Next partners">
       <img src="/images/ic_arrow_right_big_green.svg" alt="Next">
     </button>
   </div>
 </section>
 
   <!-- Social -->
-  <section class="social">
+  <section class="section social" id="section-social">
     <div class="social__header">
       <h2 class="social__title">Get Inspired. Follow @wayzorrentacar</h2>
       <p class="social__text">Capture your best adventures and tag <strong>@wayzorrentacar</strong>. Use <strong>#AzoresYourWay</strong> and show the world what freedom on the road really looks like.</p>
     </div>
     <div class="container">
-      <div class="social__grid-mobile">
-        <div class="social__img-wrap">
-          <video src="videos/reel01.mp4" autoplay muted loop playsinline></video>
-        </div>
-      </div>
-      <div class="social__grid-desktop">
-        <div class="social__img-wrap">
-          <video src="videos/reel01.mp4" autoplay muted loop playsinline></video>
-        </div>
-        <div class="social__img-wrap">
-          <video src="videos/reel02.mp4" autoplay muted loop playsinline></video>
-        </div>
-        <div class="social__img-wrap">
-          <video src="videos/reel03.mp4" autoplay muted loop playsinline></video>
-        </div>
+      <div class="social__grid" data-social-grid>
+        <div class="social__img-wrap"><video src="videos/reel01.mp4" autoplay muted loop playsinline></video></div>
+        <div class="social__img-wrap"><video src="videos/reel02.mp4" autoplay muted loop playsinline></video></div>
+        <div class="social__img-wrap"><video src="videos/reel03.mp4" autoplay muted loop playsinline></video></div>
       </div>
       <div class="social__share">
-        <button class="social__share-btn">Share</button>
+        <button class="social__share-btn"><img src="images/ic_share.svg" alt="Share" class="social__share-icon">Share</button>
       </div>
     </div>
   </section>
 
 
+  </main>
   <!-- Footer -->
-  <footer class="footer">
+  <footer class="footer" role="contentinfo">
     <div class="container">
       <div class="footer__main">
         <!-- Logo -->
@@ -470,35 +471,50 @@
   <script>
     (function(){
       const track = document.querySelector('[data-partners-scroll]');
-      const prev = document.querySelector('.swiper-button-prev');
-      const next = document.querySelector('.swiper-button-next');
       if(!track) return;
+      let prev = document.querySelector('[data-partners-prev]');
+      let next = document.querySelector('[data-partners-next]');
+      // Fallback: if data attributes missing, pick first two .partner-arrow
+      if(!prev || !next){
+        const arrows = document.querySelectorAll('.partner-arrow');
+        if(arrows.length >= 2){
+          prev = arrows[0];
+          next = arrows[1];
+        }
+      }
+
+      function getGap(){
+        const gapVar = getComputedStyle(track).getPropertyValue('--partners-gap');
+        const num = parseFloat(gapVar);
+        return isNaN(num) ? 32 : num;
+      }
 
       function step(){
         const item = track.querySelector('.logo-item');
         if(!item) return 200;
-        const gap = 32; // sync with CSS
-        return item.getBoundingClientRect().width + gap;
+        return item.getBoundingClientRect().width + getGap();
       }
 
       function updateButtons(){
         if(!prev || !next) return;
+        const fullyVisible = track.scrollWidth <= track.clientWidth + 1; // all items fit
+        if(fullyVisible){
+          prev.disabled = true;
+          next.disabled = true;
+          return;
+        }
         prev.disabled = track.scrollLeft <= 0;
         next.disabled = track.scrollLeft + track.clientWidth >= track.scrollWidth - 1;
       }
 
-      prev && prev.addEventListener('click', ()=>{
-        track.scrollBy({ left: -step(), behavior: 'smooth'});
-      });
-      next && next.addEventListener('click', ()=>{
-        track.scrollBy({ left: step(), behavior: 'smooth'});
-      });
+      prev && prev.addEventListener('click', ()=> track.scrollBy({ left: -step(), behavior: 'smooth'}));
+      next && next.addEventListener('click', ()=> track.scrollBy({ left: step(), behavior: 'smooth'}));
 
       // wheel (touchpad) horizontal conversion
       track.addEventListener('wheel', e => {
-        if(Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
-          track.scrollLeft += e.deltaY;
+        if(Math.abs(e.deltaY) > Math.abs(e.deltaX)){
           e.preventDefault();
+          track.scrollLeft += e.deltaY;
         }
       }, { passive:false });
 
@@ -517,7 +533,28 @@
 
       track.addEventListener('scroll', updateButtons);
       window.addEventListener('resize', updateButtons);
+      window.addEventListener('load', updateButtons);
+      if('ResizeObserver' in window){
+        new ResizeObserver(updateButtons).observe(track);
+      }
       updateButtons();
+    })();
+
+    // Social horizontal drag (mobile) - optional enhancement
+    (function(){
+      const scroller = document.querySelector('[data-social-grid]');
+      if(!scroller) return;
+      let isDown=false,startX=0,startLeft=0;
+      const start = x => { isDown=true; startX=x; startLeft=scroller.scrollLeft; scroller.classList.add('is-dragging'); };
+      const move = x => { if(!isDown) return; scroller.scrollLeft = startLeft - (x-startX); };
+      const end = () => { isDown=false; scroller.classList.remove('is-dragging'); };
+      scroller.addEventListener('mousedown', e=> start(e.clientX));
+      window.addEventListener('mousemove', e=> move(e.clientX));
+      window.addEventListener('mouseup', end);
+      scroller.addEventListener('mouseleave', end);
+      scroller.addEventListener('touchstart', e=> start(e.touches[0].clientX), { passive:true });
+      scroller.addEventListener('touchmove', e=> move(e.touches[0].clientX), { passive:true });
+      scroller.addEventListener('touchend', end);
     })();
   </script>
 </body>

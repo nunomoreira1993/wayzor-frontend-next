@@ -1,0 +1,592 @@
+/* ========================================================================== */
+/* 1. AREA PRINCIPAL / LAYOUT GERAL                                           */
+/* ========================================================================== */
+
+.main-section {
+    padding-top: 72px;
+    padding-bottom: 88px;
+}
+
+.stepper-section {
+    margin: 72px;
+}
+
+.content-grid {
+    display: grid;
+    grid-template-columns: 1fr 528px;
+    gap: 32px;
+    align-items: start;
+}
+
+.form-column,
+.summary-column {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+/* ========================================================================== */
+/* 2. STEPPER / PROGRESSO                                                     */
+/* ========================================================================== */
+
+.stepper {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 0;
+    width: 100%;
+    max-width: 980px;
+    margin: 0 auto;
+}
+
+.step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    position: relative;
+    flex: 1;
+    text-align: center;
+
+    &:not(:last-child) {
+        flex: 2;
+
+        &::after {
+            content: '';
+            position: absolute;
+            top: 19px;
+            left: calc(50% + 30px);
+            width: calc(100% - 60px);
+            height: 2.5px;
+            background-color: var(--color-input-bg);
+        }
+    }
+
+    &.completed {
+        .step-icon {
+            background-color: var(--color-primary);
+            border-color: var(--color-primary);
+        }
+
+        .step-label {
+            color: var(--color-text-dark);
+        }
+
+        &:not(:last-child)::after {
+            background-color: var(--color-primary-light);
+        }
+    }
+
+    &.active {
+        .step-icon {
+            background-color: var(--color-primary-light);
+            border-color: var(--color-primary-light);
+        }
+
+        .step-label {
+            font-weight: 600;
+            color: var(--color-text-dark);
+        }
+    }
+}
+
+.step-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 500;
+    background-color: var(--color-input-bg);
+    color: var(--color-text-dark);
+    border: 2.5px solid var(--color-input-bg);
+}
+
+.step-label {
+    font-size: 14px;
+    color: var(--color-text-muted);
+}
+
+/* ========================================================================== */
+/* 3. FORMULÁRIOS / CAMPOS                                                    */
+/* ========================================================================== */
+
+.details-form,
+.summary-card {
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+    padding: 32px;
+}
+
+.details-form {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.form-section {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+
+    > p {
+        margin: 0;
+        line-height: 1.5;
+    }
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+}
+
+.form-field {
+    position: relative;
+    border: 1.5px solid var(--color-input-border);
+    border-radius: 8px;
+    background-color: var(--color-surface);
+
+    label {
+        position: absolute;
+        top: -8px;
+        left: 12px;
+        font-size: 14px;
+        font-weight: 600;
+        color: var(--color-text-body);
+        background-color: var(--color-surface);
+        padding: 0 4px;
+        transition: all .2s ease;
+
+        span {
+            color: var(--color-text-muted);
+            font-weight: 400;
+        }
+    }
+
+    input,
+    select {
+        width: 100%;
+        padding: 16px;
+        border: none;
+        background: transparent;
+        font-size: 16px;
+        outline: none;
+    }
+
+    input::placeholder {
+        color: var(--color-text-muted);
+    }
+
+    &.form-field-select {
+        select {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+        }
+
+        .select-arrow {
+            position: absolute;
+            right: 16px;
+            top: 50%;
+            transform: translateY(-50%);
+            pointer-events: none;
+        }
+    }
+}
+
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    input[type='checkbox'] {
+        width: 18px;
+        height: 18px;
+        accent-color: var(--color-primary-darker);
+        border: 1.35px solid var(--color-primary-darker);
+        border-radius: 4px;
+    }
+
+    label {
+        font-size: 12px;
+        font-weight: 500;
+        color: var(--color-text-muted);
+    }
+}
+
+.form-agreements label {
+    line-height: 1.5;
+}
+
+/* ========================================================================== */
+/* 4. BANNER DE AVISO                                                         */
+/* ========================================================================== */
+
+.warning-banner {
+    background-color: var(--color-warning-bg);
+    background-image: url('../images/8f471f1d3dbe4c1b19b501b6b4e869baccb562e3.png');
+    background-size: cover;
+    border-radius: 12px;
+    padding: 24px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--color-footer-text);
+
+    .warning-icon-wrapper {
+        background-color: #685869;
+        border-radius: 50%;
+        padding: 8px;
+        display: flex;
+        align-self: flex-start;
+    }
+
+    .warning-text {
+        flex-grow: 1;
+
+        h3 {
+            color: var(--color-footer-text);
+            font-size: 18px;
+            margin-bottom: 4px;
+        }
+
+        p {
+            margin: 0;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        .warning-cta-text {
+            margin-top: 25px !important;
+            font-size: 15px !important;
+
+            strong {
+                font-weight: 700;
+            }
+        }
+    }
+
+    .btn-primary-outline {
+        border: 1.5px solid var(--color-primary);
+        color: var(--color-footer-text);
+        background-color: transparent;
+        white-space: nowrap;
+
+        &:hover {
+            background-color: var(--color-primary);
+            color: var(--color-text-dark);
+        }
+    }
+}
+
+/* ========================================================================== */
+/* 5. PAGAMENTO                                                               */
+/* ========================================================================== */
+
+.payment-section {
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+    padding: 24px 32px 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+
+    .payment-options {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 24px;
+
+        @media (max-width: 768px) {
+            grid-template-columns: 1fr;
+        }
+
+        .payment-option {
+            background-color: var(--color-input-bg);
+            border-radius: 12px;
+            padding: 16px 24px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            cursor: pointer;
+            position: relative;
+
+            input[type='radio'] {
+                display: none;
+            }
+
+            label {
+                display: flex;
+                align-items: center;
+                gap: 12px;
+                font-weight: 600;
+                flex-grow: 1;
+            }
+
+            .radio-check {
+                width: 18px;
+                height: 18px;
+                border-radius: 50%;
+                border: 1.125px solid var(--color-primary-darker);
+                background-color: var(--color-surface);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            &.selected {
+                .radio-check {
+                    background-color: var(--color-primary);
+
+                    &::after {
+                        content: '✓';
+                        color: var(--color-surface);
+                        font-size: 12px;
+                    }
+                }
+            }
+
+            .payment-logos {
+                display: flex;
+                gap: 8px;
+                align-items: center;
+
+                img,
+                .mastercard-logo,
+                .mbway-logo {
+                    height: 24px;
+                }
+
+                .mastercard-logo,
+                .mbway-logo {
+                    position: relative;
+                    width: 35px;
+                }
+            }
+        }
+    }
+}
+
+/* ========================================================================== */
+/* 6. CARTÃO DE RESUMO                                                        */
+/* ========================================================================== */
+
+.summary-card {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    position: sticky;
+    top: 120px;
+
+    .car-info {
+        display: flex;
+        gap: 24px;
+
+        .car-text {
+            .car-class {
+                font-size: 12px;
+                font-weight: 600;
+                margin: 0 0 4px;
+            }
+
+            h3 {
+                margin: 0;
+            }
+
+            .car-similar {
+                font-size: 12px;
+                margin: 5px 0 24px;
+            }
+
+            .change-vehicle-link {
+                display: flex;
+                align-items: center;
+                gap: 4px;
+                font-size: 12px;
+                font-weight: 500;
+            }
+        }
+
+        .car-image-container {
+            position: relative;
+            flex-shrink: 0;
+
+            .car-photo {
+                width: 298px;
+            }
+
+            .car-graphic-overlay {
+                position: absolute;
+                top: 0;
+                right: -24px;
+                z-index: -1;
+                opacity: .5;
+            }
+        }
+    }
+
+    hr {
+        border: none;
+        border-top: 1px solid var(--color-border);
+        margin: 0;
+    }
+
+    .booking-details {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px 24px;
+        font-size: 13px;
+        line-height: 1.2;
+
+        h4 {
+            font-size: 14px;
+            margin-bottom: 4px;
+        }
+
+        p {
+            margin: 0;
+        }
+
+        .edit-booking-link {
+            grid-column: 1 / -1;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            font-size: 12px;
+            font-weight: 500;
+            margin-top: 12px;
+        }
+    }
+
+    .inclusions {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+
+        .inclusion-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: rgba(75, 56, 76, .1);
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+
+            span {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+            }
+
+            .price {
+                margin-left: auto;
+                margin-right: 24px;
+            }
+
+            .check-icon {
+                background-color: #ffff;
+                border-radius: 50%;
+                padding: 4px;
+            }
+        }
+    }
+
+    .total-price {
+        text-align: right;
+        padding: 24px 0 0;
+
+        p {
+            font-size: 12px;
+            color: var(--color-text-muted);
+            margin: 0 0 8px;
+        }
+    }
+
+    .promo-code {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+
+        .promo-input-group {
+            display: flex;
+            gap: 16px;
+            align-items: flex-start;
+
+            .form-field {
+                flex-grow: 1;
+            }
+
+            .btn {
+                margin-top: 8px;
+            }
+        }
+    }
+
+    .summary-actions {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+
+        .disclaimer {
+            font-size: 14px;
+            color: var(--color-text-muted);
+            line-height: 1.5;
+            margin: 0;
+        }
+    }
+}
+
+/* ========================================================================== */
+/* 7. MEDIA QUERIES                                                           */
+/* ========================================================================== */
+
+@include mq('lg') {
+    .content-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .summary-card {
+        position: static;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .warning-banner {
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
+
+        .btn {
+            align-self: flex-start;
+        }
+    }
+}
+
+@include mq('md') {
+    .stepper {
+        flex-direction: column;
+        gap: 24px;
+        align-items: flex-start;
+    }
+
+    .step:not(:last-child)::after {
+        display: none;
+    }
+
+    .step {
+        flex-direction: row;
+        text-align: left;
+    }
+
+    .payment-options {
+        grid-template-columns: 1fr !important;
+    }
+}
