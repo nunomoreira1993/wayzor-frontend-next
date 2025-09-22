@@ -1286,17 +1286,18 @@ button {
 .summary-card .inclusions .inclusion-item span.name {
   display: inline-flex;
   align-items: flex-start;
-  width: auto;
+  width: calc(100% - 28px - 16px);
 }
 .summary-card .inclusions .inclusion-item span.name .text {
   display: inline;
   white-space: normal;
 }
 .summary-card .inclusions .inclusion-item span.name .help {
-  margin-left: 4px;
+  display: inline-block;
+  padding-top: 4px;
+  margin-left: 8px;
   width: 17px;
   height: 17px;
-  align-self: flex-start;
 }
 .summary-card .inclusions .inclusion-item .price {
   margin-left: auto;
