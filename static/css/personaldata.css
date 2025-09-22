@@ -1182,11 +1182,13 @@ button {
 .summary-card .car-info {
   display: flex;
   gap: 24px;
+  /* Garante que o bloco de texto ocupe o espaço inicial e a imagem vá totalmente para a direita */
   align-items: flex-start;
-  overflow: hidden;
   width: 100%;
 }
-
+.summary-card .car-info .car-text {
+  flex: 1 1 auto;
+}
 .summary-card .car-info .car-text .car-class {
   font-size: 12px;
   font-weight: 600;
@@ -1212,7 +1214,7 @@ button {
   margin-left: auto; /* empurra a imagem ao extremo direito */
   display: flex;
   align-items: flex-end; /* alinha a base da imagem com o conteúdo textual */
-  width: calc(65% - 50px);
+  width: calc(75% - 60px);
 }
 .summary-card .car-info .car-image-container .car-photo {
   /* Largura fluida: escala com viewport, mantendo limites seguros */
@@ -1265,27 +1267,55 @@ button {
 }
 .summary-card .inclusions .inclusion-item {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  flex-wrap: nowrap; /* mantém em uma linha */
+  gap: 16px;
+  justify-content: flex-start; /* texto expande e preço fixa à direita */
   background-color: rgba(75, 56, 76, 0.1);
   padding: 12px 24px;
   border-radius: 8px;
   font-size: 14px;
   font-weight: 600;
 }
-.summary-card .inclusions .inclusion-item span {
-  display: flex;
-  align-items: center;
-  gap: 8px;
+.summary-card .inclusions .inclusion-item.with-price span.name {
+  width: calc(100% - 55px - 28px - 32px);
+}
+.summary-card .inclusions .inclusion-item.with-price .check-icon {
+  margin-left: 0;
+}
+.summary-card .inclusions .inclusion-item span.name {
+  display: block;
+  position: relative;
+  width: calc(100% - 28px - 16px);
+}
+.summary-card .inclusions .inclusion-item span.name .text {
+  position: relative;
+  display: block;
+  width: inherit;
+}
+.summary-card .inclusions .inclusion-item span.name .help {
+  position: absolute;
+  right: 0px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 17px;
+  height: 17px;
 }
 .summary-card .inclusions .inclusion-item .price {
   margin-left: auto;
-  margin-right: 24px;
+  flex: 0 0 auto;
+  white-space: nowrap;
+  max-width: 55px;
 }
 .summary-card .inclusions .inclusion-item .check-icon {
+  margin-left: auto;
+  width: 28px;
+}
+.summary-card .inclusions .inclusion-item .check-icon img {
   background-color: white;
   border-radius: 50%;
   padding: 4px;
+  width: 100%;
 }
 .summary-card .total-price {
   text-align: right;
@@ -1434,7 +1464,12 @@ button {
     font-size: 16px;
   }
 }
-
+@media (max-width: 500px) {
+  /* Telas muito pequenas (<=500px): reduzir mais para evitar overflow */
+  .summary-card .car-image-container .car-photo {
+    width: clamp(160px, 45vw, 240px);
+  }
+}
 .footer {
   background: #332634;
   color: #fff;
