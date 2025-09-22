@@ -37,6 +37,7 @@
     width: 100%;
     max-width: 980px;
     margin: 0 auto;
+
 }
 
 .step {
@@ -243,6 +244,10 @@
         padding: 8px;
         display: flex;
         align-self: flex-start;
+        .img {
+            width: 24px;
+            height: 24px;
+        }
     }
 
     .warning-text {
@@ -423,7 +428,7 @@
             margin-left: auto; /* empurra a imagem ao extremo direito */
             display: flex;
             align-items: flex-end; /* alinha a base da imagem com o conteúdo textual */
-            width: calc(75% - 60px);
+            width: calc(40% - 60px);
 
             .car-photo {
                 /* Largura fluida: escala com viewport, mantendo limites seguros */
@@ -531,7 +536,8 @@
                 margin-left:auto;
                 width: 28px;
                 img {
-                    background-color: #ffff;
+                    background-color: #4B384C;
+                    color: #fff;
                     border-radius: 50%;
                     padding: 4px;
                     width: 100%;
@@ -569,6 +575,28 @@
 
             .btn {
                 margin-top: 8px;
+            }
+
+            /* Estilos específicos para o botão Validate (outline verde + hover verde) */
+            .btn.btn-secondary-outline {
+                background: transparent;
+                border: 1.5px solid var(--color-primary);
+                color: var(--color-primary);
+                font-weight: 600;
+                transition: background .2s ease, color .2s ease, border-color .2s ease, box-shadow .2s ease;
+                line-height: 1.2;
+                padding: 12px 20px;
+            }
+            .btn.btn-secondary-outline:hover,
+            .btn.btn-secondary-outline:focus {
+                background: var(--color-primary);
+                color: var(--color-text-dark);
+                border-color: var(--color-primary);
+                box-shadow: 0 0 0 2px rgba(0,0,0,.05);
+            }
+            .btn.btn-secondary-outline:active {
+                background: var(--color-primary-light, var(--color-primary));
+                filter: brightness(.95);
             }
         }
     }

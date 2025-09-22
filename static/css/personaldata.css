@@ -339,6 +339,14 @@ button {
   color: #fff;
   transition: 0.25s;
   letter-spacing: 0.2px;
+  text-decoration: none;
+}
+
+.header__link:hover,
+.header__link:focus,
+.header__link:active,
+.header__link:visited {
+  text-decoration: none;
 }
 
 .header--white .header__link {
@@ -1073,6 +1081,10 @@ button {
   display: flex;
   align-self: flex-start;
 }
+.warning-banner .warning-icon-wrapper .img {
+  width: 24px;
+  height: 24px;
+}
 .warning-banner .warning-text {
   flex-grow: 1;
 }
@@ -1226,7 +1238,7 @@ button {
   margin-left: auto; /* empurra a imagem ao extremo direito */
   display: flex;
   align-items: flex-end; /* alinha a base da imagem com o conteúdo textual */
-  width: calc(75% - 60px);
+  width: calc(40% - 60px);
 }
 .summary-card .car-info .car-image-container .car-photo {
   /* Largura fluida: escala com viewport, mantendo limites seguros */
@@ -1322,7 +1334,8 @@ button {
   width: 28px;
 }
 .summary-card .inclusions .inclusion-item .check-icon img {
-  background-color: white;
+  background-color: #4B384C;
+  color: #fff;
   border-radius: 50%;
   padding: 4px;
   width: 100%;
@@ -1345,12 +1358,33 @@ button {
   display: flex;
   gap: 16px;
   align-items: flex-start;
+  /* Estilos específicos para o botão Validate (outline verde + hover verde) */
 }
 .summary-card .promo-code .promo-input-group .form-field {
   flex-grow: 1;
 }
 .summary-card .promo-code .promo-input-group .btn {
   margin-top: 8px;
+}
+.summary-card .promo-code .promo-input-group .btn.btn-secondary-outline {
+  background: transparent;
+  border: 1.5px solid var(--color-primary);
+  color: var(--color-primary);
+  font-weight: 600;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+  line-height: 1.2;
+  padding: 12px 20px;
+}
+.summary-card .promo-code .promo-input-group .btn.btn-secondary-outline:hover,
+.summary-card .promo-code .promo-input-group .btn.btn-secondary-outline:focus {
+  background: var(--color-primary);
+  color: var(--color-text-dark);
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.05);
+}
+.summary-card .promo-code .promo-input-group .btn.btn-secondary-outline:active {
+  background: var(--color-primary-light, var(--color-primary));
+  filter: brightness(0.95);
 }
 .summary-card .summary-actions {
   display: flex;

@@ -256,6 +256,14 @@ button {
   color: #fff;
   transition: 0.25s;
   letter-spacing: 0.2px;
+  text-decoration: none;
+}
+
+.header__link:hover,
+.header__link:focus,
+.header__link:active,
+.header__link:visited {
+  text-decoration: none;
 }
 
 .header--white .header__link {
