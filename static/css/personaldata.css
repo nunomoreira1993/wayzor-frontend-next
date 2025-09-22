@@ -1284,22 +1284,19 @@ button {
   margin-left: 0;
 }
 .summary-card .inclusions .inclusion-item span.name {
-  display: block;
-  position: relative;
-  width: calc(100% - 28px - 16px);
+  display: inline-flex;
+  align-items: flex-start;
+  width: auto;
 }
 .summary-card .inclusions .inclusion-item span.name .text {
-  position: relative;
-  display: block;
-  width: inherit;
+  display: inline;
+  white-space: normal;
 }
 .summary-card .inclusions .inclusion-item span.name .help {
-  position: absolute;
-  right: 0px;
-  top: 50%;
-  transform: translateY(-50%);
+  margin-left: 4px;
   width: 17px;
   height: 17px;
+  align-self: flex-start;
 }
 .summary-card .inclusions .inclusion-item .price {
   margin-left: auto;

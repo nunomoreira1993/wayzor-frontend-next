@@ -503,25 +503,20 @@
             font-weight: 600;
 
             span.name {
-                display: block;
-                position: relative;
-                width: calc(100% - 28px - 16px);
+                display: inline-flex;
+                align-items: flex-start;
+                width: auto;
+
                 .text {
-                    position: relative;     
-                    display: block;
-                    width: inherit;
+                    display: inline;
+                    white-space: normal;
                 }
                 .help {
-                    position: absolute;
-                    right: 0px;
-                    top: 50%;
-                    transform: translateY(-50%);
+                    margin-left: 4px;
                     width: 17px;
                     height: 17px;
-
+                    align-self: flex-start;
                 }
-
-
             }
 
             .price {
