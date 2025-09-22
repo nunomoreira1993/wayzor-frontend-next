@@ -837,6 +837,18 @@ button {
     z-index: 120;
   }
 }
+@media (max-width: 320px) {
+  .price-widget .price-widget-mobile .pwm-center {
+    display: none;
+  }
+  .price-widget .price-widget-mobile {
+    justify-content: space-between;
+    padding: 0 10px;
+  }
+  .price-widget .price-widget-mobile .pwm-right .pwm-btn {
+    margin-right: 0;
+  }
+}
 
 /* ========================================================================== */
 /* 1. AREA PRINCIPAL / LAYOUT GERAL                                           */
