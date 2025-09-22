@@ -123,6 +123,132 @@ button {
   font-family: inherit;
 }
 
+.container-1312, .hero__inner, .features__header, .features__grid, .blog__header, .blog__cards, .partners-container, .social__header, .social__grid, .footer__grid {
+  max-width: 1312px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+@media (min-width: 1024px) {
+  .container-1312, .hero__inner, .features__header, .features__grid, .blog__header, .blog__cards, .partners-container, .social__header, .social__grid, .footer__grid {
+    padding: 0 2rem;
+  }
+}
+/* Apply to major sections */
+/* Inline styles migration utilities */
+.u-hidden {
+  display: none !important;
+}
+
+/* Buttons / variants */
+.btn--outline-green {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Lato", Arial, sans-serif;
+  font-weight: 700;
+  font-size: 0.875rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 9999px;
+  border: 2px solid #78BE20;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: transparent;
+  color: #78BE20;
+  border-color: #78BE20;
+}
+.btn--outline-green:hover {
+  background: #78BE20;
+  color: #000;
+}
+
+.header--transparent .btn--outline-green {
+  color: #fff;
+  border-color: #fff;
+}
+
+/* Partners spacing */
+.partners__title--spaced {
+  margin-bottom: 2rem !important;
+}
+
+/* Footer replacements */
+.footer__logo-img {
+  width: 188px;
+  height: 58px;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+.footer__bottom--spaced {
+  margin-top: 2rem !important;
+}
+
+.footer__bottom--stack {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.footer__logo-img--mobile {
+  width: 188px;
+  height: 58px;
+  -o-object-fit: contain;
+     object-fit: contain;
+  margin-bottom: 2rem;
+}
+
+.footer__social--spaced {
+  margin: 2rem 0;
+}
+
+.footer__social-icons--spaced {
+  margin-top: 1rem;
+}
+
+/* Blog fixed widths (desktop only) */
+@media (min-width: 1024px) {
+  .blog__card--w526 {
+    width: 526px !important;
+  }
+  .blog__card--w360 {
+    width: 360px !important;
+  }
+}
+/* Features composite icon structure */
+.features__icon-composite {
+  position: relative;
+  width: 56px;
+  height: 56px;
+}
+
+.features__icon-composite-circle {
+  position: absolute;
+  left: 24px;
+  top: 24px;
+  width: 32px;
+  height: 32px;
+  background: #B9DD8B;
+  opacity: 0.3;
+  border-radius: 50%;
+}
+
+.features__icon-composite-img {
+  position: absolute;
+  left: 4px;
+  top: 8px;
+  width: 44px;
+  height: 40px;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+/* Discover background (was inline) */
+.discover__bg--image {
+  background-image: url("https://api.builder.io/api/v1/image/assets/TEMP/f2048b43251d7614b1851d781e2f6a9b126852e5?width=720");
+}
+
 .header {
   position: fixed;
   top: 0;
@@ -716,8 +842,8 @@ button {
 /* 1. AREA PRINCIPAL / LAYOUT GERAL                                           */
 /* ========================================================================== */
 .main-section {
-  padding-top: 72px;
-  padding-bottom: 88px;
+  padding-top: calc(72px + var(--price-widget-space-top, 0px));
+  padding-bottom: calc(88px + var(--price-widget-space-bottom, 0px));
 }
 
 .stepper-section {
@@ -1056,7 +1182,11 @@ button {
 .summary-card .car-info {
   display: flex;
   gap: 24px;
+  align-items: flex-start;
+  overflow: hidden;
+  width: 100%;
 }
+
 .summary-card .car-info .car-text .car-class {
   font-size: 12px;
   font-weight: 600;
@@ -1079,9 +1209,19 @@ button {
 .summary-card .car-info .car-image-container {
   position: relative;
   flex-shrink: 0;
+  margin-left: auto; /* empurra a imagem ao extremo direito */
+  display: flex;
+  align-items: flex-end; /* alinha a base da imagem com o conteúdo textual */
+  width: calc(65% - 50px);
 }
 .summary-card .car-info .car-image-container .car-photo {
-  width: 298px;
+  /* Largura fluida: escala com viewport, mantendo limites seguros */
+  width: clamp(200px, 25vw, 320px);
+  height: auto;
+  -o-object-fit: contain;
+     object-fit: contain;
+  display: block;
+  transition: width 0.25s ease;
 }
 .summary-card .car-info .car-image-container .car-graphic-overlay {
   position: absolute;
@@ -1191,9 +1331,6 @@ button {
   .content-grid {
     grid-template-columns: 1fr;
   }
-  .summary-card {
-    position: static;
-  }
   .form-row {
     grid-template-columns: 1fr;
   }
@@ -1207,22 +1344,97 @@ button {
   }
 }
 @media (max-width: 768px) {
-  .stepper {
-    flex-direction: column;
-    gap: 24px;
-    align-items: flex-start;
+  /* Ajuste adicional em telas <= 768px: centraliza e reduz a imagem */
+  .summary-card .car-image-container .car-photo {
+    width: clamp(180px, 52vw, 280px);
   }
-  .step:not(:last-child)::after {
-    display: none;
+  /* Layout geral */
+  .main-section {
+    padding-top: calc(56px + var(--price-widget-space-top, 0px));
+    padding-bottom: calc(64px + var(--price-widget-space-bottom, 0px));
+  }
+  .stepper-section {
+    margin: 32px 16px 48px;
+  }
+  /* Stepper horizontal com 5 passos inline e apenas label ativa */
+  .stepper {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 0;
+    max-width: 100%;
   }
   .step {
-    flex-direction: row;
-    text-align: left;
+    flex: 1 1 0;
+    gap: 0;
+    position: relative;
+    text-align: center;
+    flex-direction: column;
   }
+  .step:not(:last-child) {
+    flex: 1 1 0;
+  }
+  .step:not(:last-child)::after {
+    top: 19px;
+    left: 50%;
+    width: 100%;
+    height: 2px;
+    transform: none;
+  }
+  .step-label {
+    display: none;
+  }
+  .step.active .step-label {
+    display: block;
+    position: absolute;
+    top: 48px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: -moz-max-content;
+    width: max-content;
+    font-size: 12px;
+    line-height: 1.2;
+    white-space: nowrap;
+    font-weight: 600;
+  }
+  /* Cartões / formulários */
+  .details-form, .summary-card {
+    padding: 20px;
+  }
+  .content-grid {
+    grid-template-columns: 1fr;
+  }
+  .summary-card {
+    position: static;
+  }
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+  /* Banner de aviso */
+  .warning-banner {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 16px;
+    gap: 16px;
+  }
+  .warning-banner .warning-text h3 {
+    font-size: 16px;
+  }
+  /* Pagamento */
   .payment-options {
     grid-template-columns: 1fr !important;
   }
+  /* Tipografia ajustes leves */
+  h2 {
+    font-size: 28px;
+  }
+  h3 {
+    font-size: 22px;
+  }
+  h4 {
+    font-size: 16px;
+  }
 }
+
 .footer {
   background: #332634;
   color: #fff;
