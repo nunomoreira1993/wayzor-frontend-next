@@ -1398,15 +1398,18 @@ button {
     text-align: center;
     flex-direction: column;
   }
+  /* Linha apenas no espaço central entre os steps (depois do ícone até antes do próximo) */
   .step:not(:last-child) {
     flex: 1 1 0;
   }
   .step:not(:last-child)::after {
+    content: "";
+    position: absolute;
     top: 19px;
-    left: 50%;
-    width: 100%;
+    left: calc(50% + 30px); /* começa depois do centro + metade do ícone (40px -> 20) + folga */
+    width: calc(100% - 60px); /* reduz 30px de cada lado (cria “respiro” antes do próximo ícone) */
     height: 2px;
-    transform: none;
+    background-color: var(--color-input-bg);
   }
   .step-label {
     display: none;

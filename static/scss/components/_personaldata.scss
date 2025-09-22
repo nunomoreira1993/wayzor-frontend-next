@@ -621,8 +621,20 @@
   /* Stepper horizontal com 5 passos inline e apenas label ativa */
   .stepper { flex-direction: row; align-items:flex-start; gap:0; max-width:100%; }
   .step { flex:1 1 0; gap:0; position:relative; text-align:center; flex-direction:column; }
-  .step:not(:last-child) { flex:1 1 0; }
-  .step:not(:last-child)::after { top:19px; left:50%; width:100%; height:2px; transform:none; }
+/* Linha apenas no espaço central entre os steps (depois do ícone até antes do próximo) */
+.step:not(:last-child) {
+    flex:1 1 0;
+
+    &::after {
+        content:'';
+        position:absolute;
+        top:19px;
+        left:calc(50% + 30px);      /* começa depois do centro + metade do ícone (40px -> 20) + folga */
+        width:calc(100% - 60px);     /* reduz 30px de cada lado (cria “respiro” antes do próximo ícone) */
+        height:2px;
+        background-color:var(--color-input-bg);
+    }
+}
   .step-label { display:none; }
   .step.active .step-label { display:block; position:absolute; top:48px; left:50%; transform:translateX(-50%); width:max-content; font-size:12px; line-height:1.2; white-space:nowrap; font-weight:600; }
 
