@@ -40,132 +40,6 @@ button {
   font-family: inherit;
 }
 
-.container-1312, .hero__inner, .features__header, .features__grid, .blog__header, .blog__cards, .partners-container, .social__header, .social__grid, .footer__grid {
-  max-width: 1312px;
-  margin: 0 auto;
-  padding: 0 1.5rem;
-}
-
-@media (min-width: 1024px) {
-  .container-1312, .hero__inner, .features__header, .features__grid, .blog__header, .blog__cards, .partners-container, .social__header, .social__grid, .footer__grid {
-    padding: 0 2rem;
-  }
-}
-/* Apply to major sections */
-/* Inline styles migration utilities */
-.u-hidden {
-  display: none !important;
-}
-
-/* Buttons / variants */
-.btn--outline-green {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  font-family: "Lato", Arial, sans-serif;
-  font-weight: 700;
-  font-size: 0.875rem;
-  padding: 0.75rem 1.5rem;
-  border-radius: 9999px;
-  border: 2px solid #78BE20;
-  background: transparent;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  background: transparent;
-  color: #78BE20;
-  border-color: #78BE20;
-}
-.btn--outline-green:hover {
-  background: #78BE20;
-  color: #000;
-}
-
-.header--transparent .btn--outline-green {
-  color: #fff;
-  border-color: #fff;
-}
-
-/* Partners spacing */
-.partners__title--spaced {
-  margin-bottom: 2rem !important;
-}
-
-/* Footer replacements */
-.footer__logo-img {
-  width: 188px;
-  height: 58px;
-  -o-object-fit: contain;
-     object-fit: contain;
-}
-
-.footer__bottom--spaced {
-  margin-top: 2rem !important;
-}
-
-.footer__bottom--stack {
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 1rem;
-}
-
-.footer__logo-img--mobile {
-  width: 188px;
-  height: 58px;
-  -o-object-fit: contain;
-     object-fit: contain;
-  margin-bottom: 2rem;
-}
-
-.footer__social--spaced {
-  margin: 2rem 0;
-}
-
-.footer__social-icons--spaced {
-  margin-top: 1rem;
-}
-
-/* Blog fixed widths (desktop only) */
-@media (min-width: 1024px) {
-  .blog__card--w526 {
-    width: 526px !important;
-  }
-  .blog__card--w360 {
-    width: 360px !important;
-  }
-}
-/* Features composite icon structure */
-.features__icon-composite {
-  position: relative;
-  width: 56px;
-  height: 56px;
-}
-
-.features__icon-composite-circle {
-  position: absolute;
-  left: 24px;
-  top: 24px;
-  width: 32px;
-  height: 32px;
-  background: #B9DD8B;
-  opacity: 0.3;
-  border-radius: 50%;
-}
-
-.features__icon-composite-img {
-  position: absolute;
-  left: 4px;
-  top: 8px;
-  width: 44px;
-  height: 40px;
-  -o-object-fit: contain;
-     object-fit: contain;
-}
-
-/* Discover background (was inline) */
-.discover__bg--image {
-  background-image: url("https://api.builder.io/api/v1/image/assets/TEMP/f2048b43251d7614b1851d781e2f6a9b126852e5?width=720");
-}
-
 .header {
   position: fixed;
   top: 0;
@@ -329,17 +203,10 @@ button {
   border: 2px solid #78BE20;
   background: transparent;
   cursor: pointer;
-  transition: all 0.3s ease;
-  height: 40px;
-  padding: 0.75rem 1.5rem;
-  font-weight: 700;
-  font-size: 0.875rem;
-  background: transparent;
-  color: #528116;
-  border-color: #528116;
-  border-width: 2px;
   transition: color 0.25s, background 0.25s, box-shadow 0.25s, filter 0.25s;
+  color: #528116;
 }
+
 .header__btn:hover {
   background: #78BE20;
   color: #000;
@@ -778,6 +645,7 @@ button {
     white-space: nowrap; /* garante também nas estações */
   }
 }
+
 .carcard {
   display: flex;
   flex-direction: column;
@@ -798,46 +666,19 @@ button {
 }
 
 .carcard__head {
-  padding: 1rem 1.25rem 0.25rem;
+  padding: 24px 24px 0.25rem;
   position: relative;
-  overflow: hidden;
 }
 
 .carcard__cornerwrap {
   position: absolute;
   top: 0;
-  right: 0;
-  width: 52px;
-  height: 140px;
+  left: 89.34%;
+  width: 62px;
+  height: 179px;
   overflow: hidden;
   pointer-events: none;
 }
-
-.carcard__cornershape1 {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 180px;
-  height: 150px;
-  background: #D9D9D9;
-  border-radius: 8px;
-  transform: translateX(130px);
-}
-
-.carcard__cornershape2 {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 52px;
-  height: 140px;
-  background: rgba(75, 56, 76, 0.1);
-  transition: background 0.2s;
-}
-
-.carcard:hover .carcard__cornershape2 {
-  background: rgba(120, 190, 32, 0.22);
-}
-
 .carcard__class {
   font-size: 0.75rem;
   font-weight: 600;
@@ -858,6 +699,8 @@ button {
   font-weight: 700;
   line-height: 1.4;
   color: #363F41;
+  margin-top: 0.12rem;
+  margin-bottom: 24px;
 }
 
 .carcard__similar {
@@ -869,24 +712,49 @@ button {
 
 .carcard__image {
   display: flex;
+  position: absolute;
+  left: 193px;
+  bottom: 85%;
   justify-content: center;
   align-items: center;
-  height: 92px;
   padding: 0.5rem;
 }
 
 .carcard__image img {
   width: 100%;
-  max-width: 260px;
-  max-height: 110px;
+  height: 134px;
+  width: 298px;
   -o-object-fit: contain;
      object-fit: contain;
+}
+
+.carcard_edit {
+  display:flex;
+  align-items:center;
+  gap:0.5em;
+  cursor:pointer;
+  margin-left: 24px;
+  margin-bottom: 12px;
+  filter: brightness(0.75);
+}
+
+.carcard_label {
+  right: 100%;
 }
 
 .carcard__body {
   padding: 0.25rem 1.25rem 0.75rem;
   display: flex;
   flex-direction: column;
+}
+
+.carcard__price-value {
+  font-family: Lato;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 125%; /* 40px */
+  color: #363F41;
 }
 
 .carcard__pricewrap {
@@ -963,28 +831,31 @@ button {
 }
 
 .carcard__desc {
-  font-size: 0.7rem;
-  line-height: 1.4;
+  font-size: 14px;
+  line-height: 1.5;
+  font-weight: 400;
+  font-style: normal;
   color: #6D7679;
   margin-bottom: 0.75rem;
+  padding: 24px;
 }
 
 .carcard__footer {
-  padding: 0 1.25rem 1.25rem;
+  padding: 0 1.25rem 0;
 }
 
 .carcard__btn {
   width: 100%;
-  height: 40px;
-  border: 1.5px solid #78BE20;
+  height: 54px;
+  border: none;
   border-radius: 999px;
-  background: transparent;
+  background: #78BE20;
   cursor: pointer;
   transition: all 0.3s;
 }
 
 .carcard__btn span {
-  color: #78BE20;
+  color: #000;
   font-size: 0.875rem;
   font-weight: 600;
   line-height: 1.5;
@@ -999,7 +870,7 @@ button {
 }
 
 .carcard--sidebar {
-  max-width: 303px;
+  max-width: 528px;
 }
 
 .selectoptions {
@@ -1020,14 +891,13 @@ button {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 6rem;
-  padding-bottom: 4.5rem;
+  padding-top: 10.7rem;
+  margin-bottom: 72px;
 }
 .selectoptions__steps {
   display: flex;
-  width: 980px;
-  justify-content: center;
-  align-items: flex-start;
+  justify-content: center; /* Center the steps horizontally */
+  align-items: center; /* Center the steps vertically */
 }
 .selectoptions__steps--fidelity {
   gap: 0;
@@ -1037,15 +907,15 @@ button {
   display: flex;
   flex-direction: column;
   align-items: center;
-  min-width: 171px;
+  min-width: 86px;
 }
 .selectoptions__step-node {
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 48px;
-  height: 48px;
+  width: 40px;
+  height: 40px;
   border-radius: 40px;
   background: #DCE3E5;
   font-size: 14px;
@@ -1054,21 +924,27 @@ button {
 }
 .selectoptions__step-node--complete {
   background: #78BE20;
+  position: relative;
 }
 .selectoptions__step-node--active {
   background: rgba(120, 190, 32, 0.7);
 }
 .selectoptions__step-underline {
   position: absolute;
-  left: 16px;
-  bottom: -10px;
+  left: 15px;
+  bottom: 11px;
 }
 .selectoptions__connector {
-  height: 2px;
+  height: 4px;
+  margin-top: 22px; 
   width: 99px;
+  bottom: 10px;
   align-self: center;
   background: #DCE3E5;
-  margin: 0 36px 0 36px;
+  margin: 0;
+  position: relative;
+  overflow: hidden;
+  flex-grow: 1;
 }
 .selectoptions__connector--complete {
   background: linear-gradient(to right, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), #78BE20;
@@ -1105,11 +981,11 @@ button {
   width: 750px;
   display: flex;
   flex-direction: column;
-  gap: 24px;
 }
 .selectoptions__right {
   flex-shrink: 0;
 }
+
 .selectoptions__hero-block {
   display: flex;
   flex-direction: column;
@@ -1127,14 +1003,14 @@ button {
   line-height: 150%;
   font-weight: 400;
   color: #262E2F;
-  margin: 0;
+  margin: 0 0 48px 0;
 }
 .selectoptions__section-heading {
   font-size: 24px;
   line-height: 130%;
   font-weight: 700;
   color: #262E2F;
-  margin: 0;
+  margin: 0 0 17px 0;
 }
 .selectoptions__subheading {
   font-size: 18px;
@@ -1151,12 +1027,12 @@ button {
 .selectoptions__group {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 17px;
 }
 .selectoptions__products {
   display: flex;
   flex-direction: column;
-  gap: 0;
+  gap: 17px;
 }
 .selectoptions__product {
   display: flex;
@@ -1211,6 +1087,7 @@ button {
 .selectoptions__add-btn {
   width: 92px;
   padding: 10px 16px;
+  border: none;
   border-radius: 999px;
   background: #78BE20;
   display: flex;
@@ -1218,6 +1095,7 @@ button {
   align-items: center;
   cursor: pointer;
   transition: background 0.2s;
+  margin-right: 16px;
 }
 .selectoptions__add-btn span {
   font-size: 12px;
@@ -1231,6 +1109,7 @@ button {
 .selectoptions__nudger {
   display: flex;
   padding: 4px;
+  border-radius: 999px;
   align-items: center;
   gap: 12px;
   border-radius: 8px;
@@ -1238,14 +1117,16 @@ button {
 }
 .selectoptions__nudger-btn {
   display: flex;
-  padding: 6px;
   border-radius: 999px;
+  padding: 6px;
+  border: none;
   background: transparent;
   cursor: pointer;
   transition: background 0.15s;
 }
 .selectoptions__nudger-btn:hover {
   background: #e2e8e9;
+  border-radius: 999px;
 }
 .selectoptions__nudger-value {
   width: 19px;
@@ -1266,6 +1147,9 @@ button {
   background: none;
   border: none;
   cursor: pointer;
+  position: relative;
+  left: 42%;
+  top: 24px;
 }
 .selectoptions__see-more span {
   font-size: 16px;
@@ -1276,6 +1160,77 @@ button {
 .selectoptions__see-more svg path {
   fill: #78BE20;
 }
+
+/* Styling for the promotion code input and button */
+.promocode {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.promocode__label {
+  /* Body/S - bold */
+  font-family: Lato;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 150%; /* 21px */
+  color: #262E2F;
+  margin-left: 24px;
+}
+
+.promocode__input {
+  max-width: 325px;
+  flex: 1;
+  padding: 10px;
+  height: 56px;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 100%;
+  font-family: "Lato", Arial, sans-serif;
+  outline: none;
+  transition: border-color 0.3s;
+  margin-left: 24px;
+}
+
+.promocode__input:focus {
+  border-color: #78BE20;
+}
+
+.promocode__submit {
+  padding: 13px 24px;
+  width: 130px;
+  background-color: transparent;
+  color: #528116;
+  border: 1px solid #528116;
+  border-radius: 999px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-right: 24px;
+}
+
+.promocode__submit:hover {
+  background-color: #66a91a;
+}
+
+@media (min-width: 1250px) {
+  .selectoptions__content {
+    padding: 0 3rem 3rem;
+  }
+  .selectoptions__left {
+    width: 750;
+  }
+
+  .selectoptions__right {
+    width: 528px;
+  }
+}
+
 @media (max-width: 1100px) {
   .selectoptions__content {
     flex-direction: column;
@@ -1288,3 +1243,77 @@ button {
     order: 2;
   }
 }/*# sourceMappingURL=selectoptions.css.map */
+
+.fleetfilter__summary {
+  font-size: 14px;
+  line-height: 150%;
+  font-weight: 400;
+  color: #262E2F;
+  margin: 0 0 24px 0;
+  margin-left: 24px;
+}
+
+.fleetfilter__summary .pickup__label {
+  font-weight: 600;
+}
+
+.fleetfilter__summary .dropoff__label {
+  font-weight: 600;
+}
+
+
+/* Styling for complementary items */
+.complementary-items {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 24px 24px;
+}
+
+.complementary-item {
+  display: flex;
+  align-items: center;
+  width: 480px;
+  height: 24px;
+  padding: 24px 24px 24px 24px;
+  background-color: rgba(75, 56, 76, 0.1);
+  border-radius: 4px;
+  gap: 8px;
+  white-space: nowrap;
+}
+
+.complementary-item__content {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.complementary-item__text {
+  font-size: 14px;
+  color: #333;
+}
+
+.complementary-item__icon {
+  margin-left: 8px;
+  width: 16px;
+  height: 16px;
+}
+
+.complementary-item__checkmark {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  position: relative;
+  background-color: #4B384C;
+  color: #fff;
+  font-size: 14px;
+  line-height: 24px;
+  text-align: center;
+  border-radius: 50%; /* Ensures a perfect circle */
+  aspect-ratio: 1 / 1; /* Maintains equal width and height */
+}
+
+.complementary-item__checkmark .checkmark-circle {
+  position: relative;
+  top: 3px;
+}
