@@ -679,7 +679,7 @@
     /* Ajuste adicional em telas <= 768px: centraliza e reduz a imagem */
     .summary-card .car-image-container .car-photo { width: clamp(180px, 52vw, 280px); }
   /* Layout geral */
-    .main-section { padding-top: calc(56px + var(--price-widget-space-top, 0px)); padding-bottom: calc(64px + var(--price-widget-space-bottom, 0px)); }
+
   .stepper-section { margin:32px 16px 48px; }
 
   /* Stepper horizontal com 5 passos inline e apenas label ativa */
