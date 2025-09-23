@@ -3,8 +3,8 @@
 /* ========================================================================== */
 
 .main-section {
-    padding-top: 72px;
-    padding-bottom: 88px;
+    padding-top: calc(72px + var(--price-widget-space-top, 0px));
+    padding-bottom: calc(88px + var(--price-widget-space-bottom, 0px));
 }
 
 .stepper-section {
@@ -37,6 +37,7 @@
     width: 100%;
     max-width: 980px;
     margin: 0 auto;
+
 }
 
 .step {
@@ -243,6 +244,10 @@
         padding: 8px;
         display: flex;
         align-self: flex-start;
+        .img {
+            width: 24px;
+            height: 24px;
+        }
     }
 
     .warning-text {
@@ -386,6 +391,11 @@
     .car-info {
         display: flex;
         gap: 24px;
+        /* Garante que o bloco de texto ocupe o espaço inicial e a imagem vá totalmente para a direita */
+        align-items: flex-start;
+        width: 100%;
+
+        .car-text { flex: 1 1 auto; }
 
         .car-text {
             .car-class {
@@ -415,9 +425,18 @@
         .car-image-container {
             position: relative;
             flex-shrink: 0;
+            margin-left: auto; /* empurra a imagem ao extremo direito */
+            display: flex;
+            align-items: flex-end; /* alinha a base da imagem com o conteúdo textual */
+            width: calc(40% - 60px);
 
             .car-photo {
-                width: 298px;
+                /* Largura fluida: escala com viewport, mantendo limites seguros */
+                width: clamp(200px, 25vw, 320px);
+                height: auto;
+                object-fit: contain;
+                display: block;
+                transition: width .25s ease;
             }
 
             .car-graphic-overlay {
@@ -469,30 +488,62 @@
         gap: 8px;
 
         .inclusion-item {
+            &.with-price { 
+                span.name {
+                    width: calc(100% - 55px - 28px - 32px);;
+                }
+                .check-icon {
+                    margin-left: 0;
+                }
+            }
             display: flex;
-            justify-content: space-between;
             align-items: center;
+            flex-wrap: nowrap; /* mantém em uma linha */
+            gap: 16px;
+            justify-content: flex-start; /* texto expande e preço fixa à direita */
             background-color: rgba(75, 56, 76, .1);
             padding: 12px 24px;
             border-radius: 8px;
             font-size: 14px;
             font-weight: 600;
 
-            span {
-                display: flex;
-                align-items: center;
-                gap: 8px;
+            span.name {
+                display: inline-flex;
+                align-items: flex-start;
+                width: calc(100% - 28px - 16px);
+
+                .text {
+                    display: inline;
+                    white-space: normal;
+                }
+                .help {
+                    display: inline-block;
+                    padding-top: 4px;
+                    margin-left: 8px;
+                    width: 17px;
+                    height: 17px;
+                }
             }
 
             .price {
                 margin-left: auto;
-                margin-right: 24px;
+                flex: 0 0 auto;
+                white-space: nowrap;
+                max-width: 55px;
             }
 
             .check-icon {
-                background-color: #ffff;
-                border-radius: 50%;
-                padding: 4px;
+                margin-left:auto;
+                width: 28px;
+                img {
+                    background-color: #4B384C;
+                    color: #fff;
+                    border-radius: 50%;
+                    padding: 4px;
+                    width: 100%;
+
+                }
+                
             }
         }
     }
@@ -525,6 +576,28 @@
             .btn {
                 margin-top: 8px;
             }
+
+            /* Estilos específicos para o botão Validate (outline verde + hover verde) */
+            .btn.btn-secondary-outline {
+                background: transparent;
+                border: 1.5px solid var(--color-primary);
+                color: var(--color-primary);
+                font-weight: 600;
+                transition: background .2s ease, color .2s ease, border-color .2s ease, box-shadow .2s ease;
+                line-height: 1.2;
+                padding: 12px 20px;
+            }
+            .btn.btn-secondary-outline:hover,
+            .btn.btn-secondary-outline:focus {
+                background: var(--color-primary);
+                color: var(--color-text-dark);
+                border-color: var(--color-primary);
+                box-shadow: 0 0 0 2px rgba(0,0,0,.05);
+            }
+            .btn.btn-secondary-outline:active {
+                background: var(--color-primary-light, var(--color-primary));
+                filter: brightness(.95);
+            }
         }
     }
 
@@ -551,10 +624,6 @@
         grid-template-columns: 1fr;
     }
 
-    .summary-card {
-        position: static;
-    }
-
     .form-row {
         grid-template-columns: 1fr;
     }
@@ -571,22 +640,52 @@
 }
 
 @include mq('md') {
-    .stepper {
-        flex-direction: column;
-        gap: 24px;
-        align-items: flex-start;
-    }
+    /* Ajuste adicional em telas <= 768px: centraliza e reduz a imagem */
+    .summary-card .car-image-container .car-photo { width: clamp(180px, 52vw, 280px); }
+  /* Layout geral */
+    .main-section { padding-top: calc(56px + var(--price-widget-space-top, 0px)); padding-bottom: calc(64px + var(--price-widget-space-bottom, 0px)); }
+  .stepper-section { margin:32px 16px 48px; }
 
-    .step:not(:last-child)::after {
-        display: none;
-    }
+  /* Stepper horizontal com 5 passos inline e apenas label ativa */
+  .stepper { flex-direction: row; align-items:flex-start; gap:0; max-width:100%; }
+  .step { flex:1 1 0; gap:0; position:relative; text-align:center; flex-direction:column; }
+/* Linha apenas no espaço central entre os steps (depois do ícone até antes do próximo) */
+.step:not(:last-child) {
+    flex:1 1 0;
 
-    .step {
-        flex-direction: row;
-        text-align: left;
+    &::after {
+        content:'';
+        position:absolute;
+        top:19px;
+        left:calc(50% + 30px);      /* começa depois do centro + metade do ícone (40px -> 20) + folga */
+        width:calc(100% - 60px);     /* reduz 30px de cada lado (cria “respiro” antes do próximo ícone) */
+        height:2px;
+        background-color:var(--color-input-bg);
     }
+}
+  .step-label { display:none; }
+  .step.active .step-label { display:block; position:absolute; top:48px; left:50%; transform:translateX(-50%); width:max-content; font-size:12px; line-height:1.2; white-space:nowrap; font-weight:600; }
 
-    .payment-options {
-        grid-template-columns: 1fr !important;
-    }
+  /* Cartões / formulários */
+  .details-form, .summary-card { padding:20px; }
+  .content-grid { grid-template-columns:1fr; }
+  .summary-card { position:static; }
+  .form-row { grid-template-columns:1fr; }
+
+  /* Banner de aviso */
+  .warning-banner { flex-direction:column; align-items:flex-start; padding:16px; gap:16px; }
+  .warning-banner .warning-text h3 { font-size:16px; }
+
+  /* Pagamento */
+  .payment-options { grid-template-columns:1fr !important; }
+
+  /* Tipografia ajustes leves */
+  h2 { font-size:28px; }
+  h3 { font-size:22px; }
+  h4 { font-size:16px; }
+}
+
+@include mq('sm') {
+    /* Telas muito pequenas (<=500px): reduzir mais para evitar overflow */
+    .summary-card .car-image-container .car-photo { width: clamp(160px, 45vw, 240px); }
 }

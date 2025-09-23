@@ -186,4 +186,12 @@
             z-index: 120;
         }
     }
+
+    @media (max-width: 320px) {
+        .price-widget-mobile .pwm-center { display: none; }
+        .price-widget-mobile { justify-content: space-between; padding: 0 10px; }
+        .price-widget-mobile .pwm-right .pwm-btn { 
+            margin-right: 0; 
+        }
+    }
 }

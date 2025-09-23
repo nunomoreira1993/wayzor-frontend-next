@@ -90,4 +90,93 @@
       apply();
     });
   })();
+
+
+      (function(){
+      const track = document.querySelector('[data-partners-scroll]');
+      if(!track) return;
+      let prev = document.querySelector('[data-partners-prev]');
+      let next = document.querySelector('[data-partners-next]');
+      // Fallback: if data attributes missing, pick first two .partner-arrow
+      if(!prev || !next){
+        const arrows = document.querySelectorAll('.partner-arrow');
+        if(arrows.length >= 2){
+          prev = arrows[0];
+          next = arrows[1];
+        }
+      }
+
+      function getGap(){
+        const gapVar = getComputedStyle(track).getPropertyValue('--partners-gap');
+        const num = parseFloat(gapVar);
+        return isNaN(num) ? 32 : num;
+      }
+
+      function step(){
+        const item = track.querySelector('.logo-item');
+        if(!item) return 200;
+        return item.getBoundingClientRect().width + getGap();
+      }
+
+      function updateButtons(){
+        if(!prev || !next) return;
+        const fullyVisible = track.scrollWidth <= track.clientWidth + 1; // all items fit
+        if(fullyVisible){
+          prev.disabled = true;
+          next.disabled = true;
+          return;
+        }
+        prev.disabled = track.scrollLeft <= 0;
+        next.disabled = track.scrollLeft + track.clientWidth >= track.scrollWidth - 1;
+      }
+
+      prev && prev.addEventListener('click', ()=> track.scrollBy({ left: -step(), behavior: 'smooth'}));
+      next && next.addEventListener('click', ()=> track.scrollBy({ left: step(), behavior: 'smooth'}));
+
+      // wheel (touchpad) horizontal conversion
+      track.addEventListener('wheel', e => {
+        if(Math.abs(e.deltaY) > Math.abs(e.deltaX)){
+          e.preventDefault();
+          track.scrollLeft += e.deltaY;
+        }
+      }, { passive:false });
+
+      // drag
+      let isDown=false,startX=0,startScroll=0;
+      const start = x => { isDown=true; startX=x; startScroll=track.scrollLeft; track.classList.add('is-dragging'); };
+      const move = x => { if(!isDown) return; track.scrollLeft = startScroll - (x-startX); };
+      const end = () => { isDown=false; track.classList.remove('is-dragging'); };
+      track.addEventListener('mousedown', e=> start(e.clientX));
+      window.addEventListener('mousemove', e=> move(e.clientX));
+      window.addEventListener('mouseup', end);
+      track.addEventListener('mouseleave', end);
+      track.addEventListener('touchstart', e=> start(e.touches[0].clientX), { passive:true });
+      track.addEventListener('touchmove', e=> move(e.touches[0].clientX), { passive:true });
+      track.addEventListener('touchend', end);
+
+      track.addEventListener('scroll', updateButtons);
+      window.addEventListener('resize', updateButtons);
+      window.addEventListener('load', updateButtons);
+      if('ResizeObserver' in window){
+        new ResizeObserver(updateButtons).observe(track);
+      }
+      updateButtons();
+    })();
+
+    // Social horizontal drag (mobile) - optional enhancement
+    (function(){
+      const scroller = document.querySelector('[data-social-grid]');
+      if(!scroller) return;
+      let isDown=false,startX=0,startLeft=0;
+      const start = x => { isDown=true; startX=x; startLeft=scroller.scrollLeft; scroller.classList.add('is-dragging'); };
+      const move = x => { if(!isDown) return; scroller.scrollLeft = startLeft - (x-startX); };
+      const end = () => { isDown=false; scroller.classList.remove('is-dragging'); };
+      scroller.addEventListener('mousedown', e=> start(e.clientX));
+      window.addEventListener('mousemove', e=> move(e.clientX));
+      window.addEventListener('mouseup', end);
+      scroller.addEventListener('mouseleave', end);
+      scroller.addEventListener('touchstart', e=> start(e.touches[0].clientX), { passive:true });
+      scroller.addEventListener('touchmove', e=> move(e.touches[0].clientX), { passive:true });
+      scroller.addEventListener('touchend', end);
+    })();
 })();
