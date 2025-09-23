@@ -11,6 +11,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./css/personaldata.css">
+  <link rel="stylesheet" href="./css/lang-dropdown.css" />
 
   
 
@@ -38,13 +39,26 @@
             </div>
             <div class="header__actions">
               <button class="header__btn">Fast Check-in</button>
-              <span class="header__phone">+351 296 301 805</span>
+              <a class="header__phone" href="callto:+351296301805" aria-label="Call Wayzor support +351 296 301 805">+351 296 301 805</a>
               <div class="header__user">
                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M4.25 15C4.25 12.9289 5.92893 11.25 8 11.25H12C14.0711 11.25 15.75 12.9289 15.75 15V17C15.75 17.4142 15.4142 17.75 15 17.75C14.5858 17.75 14.25 17.4142 14.25 17V15C14.25 13.7574 13.2426 12.75 12 12.75H8C6.75736 12.75 5.75 13.7574 5.75 15V17C5.75 17.4142 5.41421 17.75 5 17.75C4.58579 17.75 4.25 17.4142 4.25 17V15Z" fill="currentColor"/><path fill-rule="evenodd" clip-rule="evenodd" d="M10 3.75C8.75736 3.75 7.75 4.75736 7.75 6C7.75 7.24264 8.75736 8.25 10 8.25C11.2426 8.25 12.25 7.24264 12.25 6C12.25 4.75736 11.2426 3.75 10 3.75ZM6.25 6C6.25 3.92893 7.92893 2.25 10 2.25C12.0711 2.25 13.75 3.92893 13.75 6C13.75 8.07107 12.0711 9.75 10 9.75C7.92893 9.75 6.25 8.07107 6.25 6Z" fill="currentColor"/></svg>
-                <span>Login / Register</span>
+                <a href="/login" class="header__auth-link" aria-label="Login">Login</a>
+                <span aria-hidden="true">/</span>
+                <a href="/register" class="header__auth-link" aria-label="Register">Register</a>
               </div>
-              <div class="header__lang">EN
-                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M1.24587 4.39238C1.4779 4.11395 1.89171 4.07633 2.17014 4.30835L7.00002 8.33325L11.8299 4.30835C12.1083 4.07633 12.5221 4.11395 12.7542 4.39238C12.9862 4.67081 12.9486 5.08462 12.6701 5.31665L7.42014 9.69165C7.17677 9.89445 6.82326 9.89445 6.5799 9.69164L1.3299 5.31665C1.05146 5.08462 1.01384 4.67081 1.24587 4.39238Z" fill="currentColor"/></svg>
+              <div class="header__lang">
+                <div class="lang-dropdown" data-lang-root>
+                  <button class="lang-dropdown__toggle" data-lang-toggle aria-haspopup="listbox" aria-expanded="false">
+                    <span data-lang-current>EN</span>
+                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M1.24587 4.39238C1.4779 4.11395 1.89171 4.07633 2.17014 4.30835L7.00002 8.33325L11.8299 4.30835C12.1083 4.07633 12.5221 4.11395 12.7542 4.39238C12.9862 4.67081 12.9486 5.08462 12.6701 5.31665L7.42014 9.69165C7.17677 9.89445 6.82326 9.89445 6.5799 9.69164L1.3299 5.31665C1.05146 5.08462 1.01384 4.67081 1.24587 4.39238Z" fill="currentColor"/></svg>
+                  </button>
+                  <ul class="lang-dropdown__menu" data-lang-menu role="listbox" aria-label="Select language">
+                    <li class="lang-dropdown__item" role="option" data-lang-value="PT">PT</li>
+                    <li class="lang-dropdown__item" role="option" data-lang-value="EN" aria-selected="true">EN</li>
+                    <li class="lang-dropdown__item" role="option" data-lang-value="FR">FR</li>
+                    <li class="lang-dropdown__item" role="option" data-lang-value="ES">ES</li>
+                  </ul>
+                </div>
               </div>
             </div>
           </div>
@@ -70,10 +84,27 @@
           <a href="#" class="header__overlay-link">About us</a>
         </div>
           <div class="header__overlay-bottom">
-          <div class="header__overlay-link header__overlay-link--plain">+351 296 301 805</div>
+          <a class="header__overlay-link header__overlay-link--plain" href="callto:+351296301805" aria-label="Call Wayzor support +351 296 301 805">+351 296 301 805</a>
           <div class="header__overlay-link header__overlay-link--plain">Fast Check in</div>
-          <div class="header__overlay-link header__overlay-link--plain">Login / Register</div>
-          <div class="header__overlay-link header__overlay-link--plain">EN</div>
+          <div class="header__overlay-link header__overlay-link--plain">
+            <a href="/login" class="header__auth-link" aria-label="Login">Login</a>
+            <span aria-hidden="true">/</span>
+            <a href="/register" class="header__auth-link" aria-label="Register">Register</a>
+          </div>
+          <div class="header__overlay-link header__overlay-link--plain">
+            <div class="lang-dropdown lang-dropdown--mobile" data-lang-root>
+              <button class="lang-dropdown__toggle" data-lang-toggle aria-haspopup="listbox" aria-expanded="false">
+                <span data-lang-current>EN</span>
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M1.24587 4.39238C1.4779 4.11395 1.89171 4.07633 2.17014 4.30835L7.00002 8.33325L11.8299 4.30835C12.1083 4.07633 12.5221 4.11395 12.7542 4.39238C12.9862 4.67081 12.9486 5.08462 12.6701 5.31665L7.42014 9.69165C7.17677 9.89445 6.82326 9.89445 6.5799 9.69164L1.3299 5.31665C1.05146 5.08462 1.01384 4.67081 1.24587 4.39238Z" fill="currentColor"/></svg>
+              </button>
+              <ul class="lang-dropdown__menu" data-lang-menu role="listbox" aria-label="Select language">
+                <li class="lang-dropdown__item" role="option" data-lang-value="PT">PT</li>
+                <li class="lang-dropdown__item" role="option" data-lang-value="EN" aria-selected="true">EN</li>
+                <li class="lang-dropdown__item" role="option" data-lang-value="FR">FR</li>
+                <li class="lang-dropdown__item" role="option" data-lang-value="ES">ES</li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -422,6 +453,7 @@
       </div>
     </div>
   </footer>
+  <script src="./js/lang-dropdown.js" defer></script>
   <script src="./js/personaldata.js" defer></script>
 
 </body>

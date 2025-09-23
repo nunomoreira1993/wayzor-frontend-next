@@ -312,6 +312,12 @@ button {
   border-radius: 2px;
 }
 
+/* Override: remove underline decoration in header links */
+.header__link { text-decoration: none !important; }
+.header__underline { display: none !important; }
+.header--white .header__link::after { display:none !important; }
+.header__link:focus-visible { outline: 2px solid #78BE20; outline-offset: 2px; }
+
 .header__actions {
   display: flex;
   align-items: center;
@@ -349,13 +355,13 @@ button {
 .header--transparent .header__btn {
   background: transparent;
   color: #fff;
-  border-color: #78BE20;
+  border-color: #528116;
 }
 
 .header--transparent .header__btn:hover {
   background: rgba(0, 0, 0, 0.35);
   color: #fff;
-  border-color: #78BE20;
+  border-color: #528116;
   filter: none;
 }
 
@@ -995,15 +1001,6 @@ button {
   max-width: 303px;
 }
 
-.selectoptions {
-  /* Stepper fidelity */
-  /* Layout */
-  /* Headings / copy fidelity */
-  /* Product groups */
-  /* Nudger fidelity */
-  /* See more */
-  /* Responsive */
-}
 .selectoptions__main {
   min-height: 100vh;
   background: #F8FAFA;

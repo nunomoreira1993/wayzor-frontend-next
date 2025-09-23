@@ -8,6 +8,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;500;600;700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./css/selectoptions.css" />
+  <link rel="stylesheet" href="./css/lang-dropdown.css" />
 </head>
 <body class="main font-lato selectoptions-page">
   <!-- Header (exact copy from homepage) -->
@@ -31,15 +32,27 @@
             </div>
             <div class="header__actions">
               <button class="header__btn">Fast Check-in</button>
-              <span class="header__phone">+351 296 301 805</span>
+              <a class="header__phone" href="callto:+351296301805" aria-label="Call Wayzor support +351 296 301 805">+351 296 301 805</a>
               <div class="header__user">
                 <img id="user-icon" src="images/ic_user_white.svg" alt="User" class="icon icon--20">
-                <span>Login / Register</span>
+                <a href="/login" class="header__auth-link" aria-label="Login">Login</a>
+                <span aria-hidden="true">/</span>
+                <a href="/register" class="header__auth-link" aria-label="Register">Register</a>
               </div>
               <div class="header__lang">
-                <img id="global-icon" src="images/ic_global_white.svg" alt="Global" class="icon icon--18">
-                EN
-                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M1.24587 4.39238C1.4779 4.11395 1.89171 4.07633 2.17014 4.30835L7.00002 8.33325L11.8299 4.30835C12.1083 4.07633 12.5221 4.11395 12.7542 4.39238C12.9862 4.67081 12.9486 5.08462 12.6701 5.31665L7.42014 9.69165C7.17677 9.89445 6.82326 9.89445 6.5799 9.69164L1.3299 5.31665C1.05146 5.08462 1.01384 4.67081 1.24587 4.39238Z" fill="currentColor"/></svg>
+                <div class="lang-dropdown" data-lang-root>
+                  <button class="lang-dropdown__toggle" data-lang-toggle aria-haspopup="listbox" aria-expanded="false">
+                    <img id="global-icon" src="images/ic_global_white.svg" alt="Global" class="icon icon--18">
+                    <span data-lang-current>EN</span>
+                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M1.24587 4.39238C1.4779 4.11395 1.89171 4.07633 2.17014 4.30835L7.00002 8.33325L11.8299 4.30835C12.1083 4.07633 12.5221 4.11395 12.7542 4.39238C12.9862 4.67081 12.9486 5.08462 12.6701 5.31665L7.42014 9.69165C7.17677 9.89445 6.82326 9.89445 6.5799 9.69164L1.3299 5.31665C1.05146 5.08462 1.01384 4.67081 1.24587 4.39238Z" fill="currentColor"/></svg>
+                  </button>
+                  <ul class="lang-dropdown__menu" data-lang-menu role="listbox" aria-label="Select language">
+                    <li class="lang-dropdown__item" role="option" data-lang-value="PT">PT</li>
+                    <li class="lang-dropdown__item" role="option" data-lang-value="EN" aria-selected="true">EN</li>
+                    <li class="lang-dropdown__item" role="option" data-lang-value="FR">FR</li>
+                    <li class="lang-dropdown__item" role="option" data-lang-value="ES">ES</li>
+                  </ul>
+                </div>
               </div>
             </div>
           </div>
@@ -70,7 +83,7 @@
         </div>
         <div class="header__overlay-bottom">
           <div class="header__overlay-link header__overlay-link--plain header__overlay-link--phone u-underline">
-            +351 296 301 805
+            <a href="callto:+351296301805" aria-label="Call Wayzor support +351 296 301 805">+351 296 301 805</a>
           </div>
           <div class="header__overlay-link header__overlay-link--plain">
             <img src="images/ic_check.svg" alt="Fast Check-in" class="header__overlay-icon icon icon--18">
@@ -78,12 +91,24 @@
           </div>
           <div class="header__overlay-link header__overlay-link--plain">
             <img src="images/ic_user.svg" alt="User" class="header__overlay-icon icon icon--18">
-            Login / Register
+            <a href="/login" class="header__auth-link" aria-label="Login">Login</a>
+            <span aria-hidden="true">/</span>
+            <a href="/register" class="header__auth-link" aria-label="Register">Register</a>
           </div>
           <div class="header__overlay-link header__overlay-link--plain">
-            <img src="images/ic_global.svg" alt="Language" class="header__overlay-icon icon icon--18">
-            EN
-            <img src="images/ic_chevron_down.svg" alt="Dropdown" class="header__overlay-icon icon icon--18">
+            <div class="lang-dropdown lang-dropdown--mobile" data-lang-root>
+              <button class="lang-dropdown__toggle" data-lang-toggle aria-haspopup="listbox" aria-expanded="false">
+                <img src="images/ic_global.svg" alt="Language" class="header__overlay-icon icon icon--18">
+                <span data-lang-current>EN</span>
+                <img src="images/ic_chevron_down.svg" alt="Dropdown" class="header__overlay-icon icon icon--18" aria-hidden="true">
+              </button>
+              <ul class="lang-dropdown__menu" data-lang-menu role="listbox" aria-label="Select language">
+                <li class="lang-dropdown__item" role="option" data-lang-value="PT">PT</li>
+                <li class="lang-dropdown__item" role="option" data-lang-value="EN" aria-selected="true">EN</li>
+                <li class="lang-dropdown__item" role="option" data-lang-value="FR">FR</li>
+                <li class="lang-dropdown__item" role="option" data-lang-value="ES">ES</li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
@@ -430,5 +455,6 @@
   </footer>
 
   <script src="./js/homepage.js"></script>
+  <script src="./js/lang-dropdown.js" defer></script>
 </body>
 </html>
