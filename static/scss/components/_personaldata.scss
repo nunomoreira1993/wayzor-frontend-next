@@ -112,6 +112,17 @@
     border: 2.5px solid var(--color-input-bg);
 }
 
+/* Page variant: On personaldata page, completed steps should be green (original design) */
+.page-personaldata {
+    .step.completed .step-icon {
+        background-color: var(--color-primary);
+        border-color: var(--color-primary);
+   
+        
+    }
+    .step.completed:not(:last-child)::after { background-color: var(--color-primary); }
+}
+
 .step-label {
     font-size: 14px;
     color: var(--color-text-muted);
