@@ -1060,6 +1060,32 @@ button {
   line-height: 1.5;
 }
 
+.carcard__cornerwrap {
+  position: absolute;
+  top: 0;
+  right: 0;
+  /* Tamanhos fluidos: reduz em telas pequenas, cresce moderado em desktops grandes */
+  width: clamp(36px, 5vw, 62px);
+  /* Mantém proporção aproximada do SVG original (52x140 -> 0.3714) */
+  aspect-ratio: 52/140;
+  height: auto;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 1;
+}
+.carcard__cornerwrap svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* Ajuste extra para telas muito pequenas: pode esconder ou reduzir ainda mais */
+@media (max-width: 480px) {
+  .carcard__cornerwrap {
+    width: 40px;
+    opacity: 0.85;
+  }
+}
 /* ========================================================================== */
 /* 4. BANNER DE AVISO                                                         */
 /* ========================================================================== */
