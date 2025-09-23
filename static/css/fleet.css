@@ -196,10 +196,17 @@ button {
   border: 2px solid #78BE20;
   background: transparent;
   cursor: pointer;
-  transition: color 0.25s, background 0.25s, box-shadow 0.25s, filter 0.25s;
+  transition: all 0.3s ease;
+  height: 40px;
+  padding: 0.75rem 1.5rem;
+  font-weight: 700;
+  font-size: 0.875rem;
+  background: transparent;
   color: #528116;
+  border-color: #528116;
+  border-width: 2px;
+  transition: color 0.25s, background 0.25s, box-shadow 0.25s, filter 0.25s;
 }
-
 .header__btn:hover {
   background: #78BE20;
   color: #000;
@@ -589,9 +596,6 @@ button {
 .fleet__filters {
   flex: 0 0 auto;
   width: 100%;
-  max-width: 320px;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 @media (min-width: 1024px) {
@@ -607,41 +611,6 @@ button {
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
 }
 
-/* Main filter card top banner */
-.fleetfilter--main .fleetfilter__topbanner {
-  height: 40px;
-  background: #4B384C;
-  border-top-left-radius: 1rem;
-  border-top-right-radius: 1rem;
-  margin: -1.25rem -1.25rem 1.25rem -1.25rem;
-}
-@media (min-width: 1024px) {
-  .fleetfilter--main .fleetfilter__topbanner {
-    margin: -1.5rem -1.5rem 1.5rem -1.5rem;
-  }
-}
-
-/* Top banner for the 3rd white box */
-.fleetbox--intermediate .fleetbox__topbanner {
-  height: 40px;
-  background: #4B384C;
-  border-top-left-radius: 1rem;
-  border-top-right-radius: 1rem;
-  margin: -1.25rem -1.25rem 1.25rem -1.25rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #fff;
-  font-weight: bold;
-  font-size: 14px;
-}
-
-@media (min-width: 1024px) {
-  .fleetbox--intermediate .fleetbox__topbanner {
-    margin: -1.5rem -1.5rem 1.5rem -1.5rem;
-  }
-}
-
 @media (min-width: 1024px) {
   .fleetfilter {
     padding: 1.5rem;
@@ -650,58 +619,6 @@ button {
 .fleetfilter + .fleetfilter {
   margin-top: 1.5rem;
 }
-
-
-.fleetfilter__inputgroup:focus-within .fleetfilter__input-separator {
-  background: #78BE20;
-}
-
-
-
-/* Group date and time inputs with a separator */
-.fleetfilter__inputgroup {
-  display: flex;
-
-  gap: 0;
-  width: 100%;
-}
-
-.fleetfilter__check span {
-  display: inline-block;
-  white-space: pre-line;
-  line-height: 1.1;
-  word-break: break-word;
-  text-align: left;
-}
-
-.fleetfilter__inputgroup .fleetfilter__input {
-  border-radius: 0;
-  border-right: none;
-}
-
-.fleetfilter__inputgroup .fleetfilter__inputwrap:first-child .fleetfilter__input {
-  border-top-left-radius: 0.5rem;
-  border-bottom-left-radius: 0.5rem;
-}
-
-.fleetfilter__inputgroup .fleetfilter__inputwrap:last-child .fleetfilter__input {
-  border-top-right-radius: 0.5rem;
-  border-bottom-right-radius: 0.5rem;
-  border-right: 2px solid #E5E7EB;
-}
-
-.fleetfilter__input-separator {
-  position: relative;
-  width: 1px;
-  top: 25px;
-  height: 45px;
-  background: #E0E0E0;
-  margin: 0;
-  display: inline-block;
-  align-self: stretch;
-  z-index: 1;
-}
-
 
 /* Form label */
 .fleetfilter__label {
@@ -719,43 +636,12 @@ button {
 /* Input wrapper */
 .fleetfilter__inputwrap {
   position: relative;
-    display: flex;
-  top: 1px;
-  flex-direction: column;
-  justify-content: flex-end;
-  min-height: 69px;
-}
-
-.fleetfilter__floating-label {
-  position: absolute;
-  top: 15px;
-  left: 0.7rem;
-  background: #fff;
-  padding: 0 6px;
-  font-size: 13px;
-  line-height: 18px;
-  font-weight: 600;
-  color: #2E3132;
-  letter-spacing: 0.2px;
-  pointer-events: none;
-  transition: all 0.18s cubic-bezier(.4,0,.2,1);
-  z-index: 2;
-}
-
-.fleetfilter__input:focus + .fleetfilter__icon + .fleetfilter__floating-label,
-.fleetfilter__input:not(:placeholder-shown) + .fleetfilter__icon + .fleetfilter__floating-label {
-  top: -9px;
-  left: 11px;
-  background: #fff;
-  font-size: 12px;
-  color: #528116;
-  padding: 0 6px;
-
 }
 
 .fleetfilter__icon {
   position: absolute;
   left: 0.75rem;
+  top: 50%;
   transform: translateY(-50%);
 }
 
@@ -824,10 +710,6 @@ button {
   margin-top: 1rem !important;
 }
 
-input[type="checkbox"] {
-    display: none;
-  }
-
 /* Checkbox grid (Type/Fuel/Transmission) */
 .fleetfilter__grid {
   display: grid;
@@ -847,52 +729,8 @@ input[type="checkbox"] {
 .fleetfilter__check input {
   width: 1rem;
   height: 1rem;
-
-    margin: 0;
-  z-index: 1;
-  cursor: pointer;
-}
-
-/* Custom checkbox box */
-.fleetfilter__custom-checkbox {
-  display: inline-block;
-  width: 16px;
-  height: 16px;
-  min-width: 16px;
-  min-height: 16px;
-  max-width: 16px;
-  max-height: 16px;
   border: 2px solid #78BE20;
   border-radius: 0.25rem;
-
-  background: #fff;
-  vertical-align: middle;
-  margin-right: 0.5rem;
-  position: relative;
-  transition: border-color 0.2s, background 0.2s;
-  box-sizing: border-box;
-}
-
-/* Show checkmark when checked */
-/* Improved checkmark for custom checkbox */
-.fleetfilter__check input[type="checkbox"]:checked + .fleetfilter__custom-checkbox::after {
-  content: "";
-  position: absolute;
-  left: 0.08rem;
-  bottom: 0.01rem;
-  width: 6px;
-  height: 11px;
-  border: solid #528116;
-  border-width: 0 3px 3px 0;
-  border-radius: 1px;
-  transform: rotate(45deg) scale(0.65);
-  box-shadow: 0 0 0 0 #fff;
-}
-
-/* Focus state for accessibility */
-.fleetfilter__check input[type="checkbox"]:focus + .fleetfilter__custom-checkbox {
-  box-shadow: 0 0 0 2px #B9DD8B;
-
   accent-color: #78BE20;
 }
 
@@ -905,7 +743,7 @@ input[type="checkbox"] {
 }
 
 .fleetfilter__panelhead {
-  padding: 12px;
+  padding: 1.5rem;
   border-bottom: 1px solid #D9DED9;
 }
 
@@ -944,104 +782,6 @@ input[type="checkbox"] {
   transition: all 0.3s;
   cursor: pointer;
   position: relative;
-  height: fit-content;
-  min-height: 0;
-  /* Card height is only as tall as its content */
-}
-
-@media (max-width: 320px) {
-  body {
-    overflow-x: hidden; /* Prevent horizontal scrolling */
-  }
-
-  .circle-container {
-    display: flex;
-    justify-content: space-between; /* Ensure circles are evenly spaced */
-    margin: 0; /* Remove any extra margin */
-    padding: 0; /* Remove any extra padding */
-  }
-
-  .circle-container .circle {
-    flex-shrink: 0; /* Prevent circles from shrinking */
-    width: 48px; /* Adjust circle size if needed */
-    height: 48px;
-  }
-
-  .header {
-    overflow: hidden; /* Prevent the header from growing beyond its bounds */
-    max-height: 100px; /* Set a maximum height for the header */
-  }
-
-  .stepper {
-    flex-wrap: wrap; /* Allow the stepper to wrap to the next line if needed */
-    justify-content: center; /* Center the stepper items */
-  }
-}
-@media (max-width: 425px) {
-  .circle-container {
-    display: flex;
-    justify-content: space-between; /* Ensure circles are evenly spaced */
-    overflow: hidden; /* Prevent white space on the right */
-  }
-
-  .circle-container .circle {
-    flex-shrink: 0; /* Prevent circles from shrinking */
-    width: 48px; /* Adjust circle size if needed */
-    height: 48px;
-  }
-}
-
-.white-box-container {
-  display: flex;
-  gap: 24px;
-  justify-content: flex-start;
-  overflow-x: auto;
-  white-space: nowrap;
-  padding: 10px;
-  scroll-padding: 10px;
-  margin-bottom: 40px
-}
-
-.white-box {
-  flex: 0 0 auto;
-  width: 142px;
-  height: 130px;
-  background: white;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  scroll-snap-align: start;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  transition: transform 0.2s, box-shadow 0.2s;
-
-}
-
-.white-box:hover {
-  transform: scale(1.05);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  cursor: pointer;
-}
-
-.white-box img {
-  width: 50px;
-  height: 50px;
-  margin-bottom: 26px;
-}
-
-.white-box .car-type {
-  font-size: 14px;
-  font-weight: bold;
-  margin-bottom: 4px;
-  margin-top: 8px;
-}
-
-.white-box .car-price {
-  font-size: 12px;
-  color: #528116;
-  font-weight: bold;
 }
 
 .carcard:hover {
@@ -1052,14 +792,15 @@ input[type="checkbox"] {
 .carcard__head {
   padding: 1rem 1.25rem 0.25rem;
   position: relative;
+  overflow: hidden;
 }
 
 .carcard__cornerwrap {
   position: absolute;
   top: 0;
   right: 0;
-  width: 62px;
-  height: 179px;
+  width: 52px;
+  height: 140px;
   overflow: hidden;
   pointer-events: none;
 }
@@ -1092,25 +833,23 @@ input[type="checkbox"] {
 .carcard__class {
   font-size: 0.75rem;
   font-weight: 600;
-   color: #262E2F;
-  line-height: 1.1;
+  color: #363F41;
+  line-height: 1.5;
   text-transform: uppercase;
 }
 
 .carcard__titlewrap {
   display: flex;
   align-items: center;
-  gap: 6px;
-  margin-top: 0.18rem;
-  margin-bottom: 1.19rem;
+  gap: 0.375rem;
+  margin-top: 0.25rem;
 }
 
 .carcard__name {
   font-size: 1.25rem;
   font-weight: 700;
   line-height: 1.4;
-  color: #262E2F;
-  margin: 0;
+  color: #363F41;
 }
 
 .carcard__similar {
@@ -1124,14 +863,14 @@ input[type="checkbox"] {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 112px;
+  height: 92px;
   padding: 0.5rem;
 }
 
 .carcard__image img {
   width: 100%;
-  max-width: 300px;
-  max-height: 130px;
+  max-width: 260px;
+  max-height: 110px;
   -o-object-fit: contain;
      object-fit: contain;
 }
@@ -1156,7 +895,7 @@ input[type="checkbox"] {
 }
 
 .carcard__price--green {
-  color: #528116;
+  color: #78BE20;
 }
 
 .carcard__price--dark {
@@ -1181,11 +920,10 @@ input[type="checkbox"] {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  background: #4B384C;
+  background: #363F41;
   padding: 0.2rem 0.5rem;
   border-radius: 0.25rem;
   margin-bottom: 0.75rem;
-  width: 147px;
 }
 
 .carcard__badge span {
@@ -1230,7 +968,7 @@ input[type="checkbox"] {
 .carcard__btn {
   width: 100%;
   height: 40px;
-  border: 1.5px solid #528116;
+  border: 1.5px solid #78BE20;
   border-radius: 999px;
   background: transparent;
   cursor: pointer;
@@ -1238,7 +976,7 @@ input[type="checkbox"] {
 }
 
 .carcard__btn span {
-  color: #528116;
+  color: #78BE20;
   font-size: 0.875rem;
   font-weight: 600;
   line-height: 1.5;
@@ -1491,428 +1229,8 @@ input[type="checkbox"] {
   .footer__stations-cols a {
     white-space: nowrap; /* garante também nas estações */
   }
-
-  .fleet__results {
-    width: calc(100% - 16.5rem);
-  }
 }
-
-
-@media (min-width: 1441px) {
-  .fleet__results {
-    width: calc(100% - 15.5rem);
-  }
-}
-
-@media (min-width: 1025px) and (max-width: 1440px) {
-  .fleet__results {
-    width: calc(100% - 17.5rem);
-  }
-}
-
-@media (min-width: 1024px) and (max-width: 1024px) {
-  .fleet__results {
-    width: calc(100% - 21.5rem);
-  }
-}
-
-
-@media (min-width: 769px) and (max-width: 1023px) {
-  .fleet__results {
-    width: calc(100%);
-  }
-}
-
-
-
-@media (min-width: 1440px) {
-  .white-box-container {
-    max-width: 1440px;
-    margin: 0 auto 40px auto;
-    overflow-x: auto;
-    white-space: nowrap;
-  }
-
-  .fleet__grid {
-    max-width: 1440px;
-    margin: 0 auto;
-    overflow-x: auto;
-  }
-}
-
-@media (min-width: 1024px) and (max-width: 1439px) {
-  .white-box-container {
-    max-width: 942px;
-    margin: 0 auto 40px auto;
-    overflow-x: auto;
-    white-space: nowrap;
-  }
-
-  .fleet__grid {
-    max-width: 1024px;
-    margin: 0 auto;
-    overflow-x: auto;
-  }
-}
-
-@media (min-width: 769px) and (max-width: 1023px) {
-  .white-box-container {
-    max-width: 720px;
-    margin: 0 auto 40px auto;
-    overflow-x: auto;
-    white-space: nowrap;
-  }
-
-  .fleet__grid {
-    max-width: 720px;
-    margin: 0 auto;
-    overflow-x: auto;
-  }
-}
-
-
-
-/* Stepper Fidelity Styles */
-.selectoptions__stepper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding-top: 4.5rem;
-  padding-bottom: 3rem;
-  margin-bottom: 72px;
-} 
-
-.selectoptions__steps {
-  display: flex;
-  justify-content: center; /* Center the steps horizontally */
-  align-items: center; /* Center the steps vertically */
-}
-
-.selectoptions__steps--fidelity {
-  gap: 0;
-}
-
-.selectoptions__step {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  min-width: 86px;
-}
-
-.selectoptions__step-node {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 40px;
-  height: 40px;
-  border-radius: 40px;
-  background: #DCE3E5;
-  font-size: 14px;
-  font-weight: 500;
+body {
+  background: #fff;
   font-family: "Lato", Arial, sans-serif;
-}
-
-.selectoptions__step-node--complete {
-  background: #78BE20;
-  position: relative;
-}
-
-.selectoptions__step-node--complete::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1));
-  mix-blend-mode: overlay;
-  border-radius: inherit;
-}
-
-.selectoptions__step-node--active {
-  background: rgba(120, 190, 32, 0.7);
-  position: relative;
-}
-
-.selectoptions__step-node--active::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1));
-  mix-blend-mode: overlay;
-  border-radius: inherit;
-}
-
-.selectoptions__step-underline {
-  position: absolute;
-  left: 15px;
-  bottom: 11px;
-}
-
-.selectoptions__connector {
-  height: 4px;
-  margin-top: 22px; 
-  width: 99px; 
-  align-self: center;
-  background: #DCE3E5;
-  margin: 0;
-  position: relative;
-  overflow: hidden;
-  flex-grow: 1;
-}
-
-.selectoptions__connector--complete {
-  background: #78BE20;
-}
-
-.selectoptions__connector--complete::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to right, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1));
-  mix-blend-mode: overlay;
-}
-
-.selectoptions__step-label-wrap {
-  position: relative;
-  width: 40px;
-  display: flex;
-  justify-content: center;
-}
-
-.selectoptions__step-label {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 180px;
-  text-align: center;
-  font-size: 14px;
-  line-height: 150%;
-  font-weight: 400;
-  color: #000;
-  font-family: "Lato", Arial, sans-serif;
-}
-
-.selectoptions__step-label--active {
-  font-weight: 600;
-}
-
-/* Adjusted styles for the intermediate white box */
-.white-box--intermediate {
-  position: relative;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
-  overflow: hidden; /* Ensure the banner stays inside the box */
-}
-
-.white-box--intermediate .fleetbox__topbanner {
-  height: 20px;
-  position: relative;
-  bottom: 11px;
-  background: #4B384C;
-  color: #fff;
-  font-weight: bold;
-  font-size: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: absolute; /* Position the banner absolutely */
-  top: 0; /* Align it to the top of the box */
-  left: 0;
-  right: 0;
-}
-
-.white-box--intermediate .white-box__content {
-  padding-top: 40px; /* Add padding to avoid overlap with the banner */
-}
-
-@media (max-width: 768px) {
-  .selectoptions__stepper {
-    overflow-x: hidden; /* Prevent horizontal scrolling */
-  }
-
-  .selectoptions__steps {
-    justify-content: center; /* Center steps in the available space */
-  }
-}
-
-@media (max-width: 768px) {
-  .selectoptions__connector {
-    width: 13.5px; /* Adjusted width for smaller screens */
-  }
-}
-
-@media (min-width: 769px) {
-  .selectoptions__connector {
-    width: 99px; /* Ensure it adapts dynamically */
-    flex-grow: 1; /* Allow proportional resizing */
-    height: 4px; /* Maintain consistent height */
-  }
-}
-
-@media (max-width: 600px) {
-  .selectoptions__step-label {
-    visibility: hidden; /* Ensure text is not visible */
-  }
-
-  .selectoptions__step--active .selectoptions__step-label {
-    visibility: visible; /* Only show the text for the active step */
-    left: 85px;
-    top: 20px;
-    font-weight: bold;
-    font-size: 16px;
-  }
-}
-
-@media (max-width: 600px) {
-  .selectoptions__step {
-    min-width: 50px; /* Reduce minimum width for smaller screens */
-  }
-}
-
-@media (max-width: 1023px) {
-  .filter-card {
-    display: flex; /* Display the filter card */
-    align-items: left;
-    justify-content: left;
-    gap: 8px;
-    padding: 8px 12px;
-    background-color: #f5f5f5;
-    border-radius: 8px;
-    cursor: pointer;
-  }
-
-  .filter-card img {
-    width: 20px;
-    height: 20px;
-  }
-
-  .filter-card span {
-    font-size: 14px;
-    font-weight: 500;
-  }
-
-  .filters {
-    display: none; /* Hide the filters by default */
-  }
-
-  .filter-card.active + .filters {
-    display: block; /* Show the filters when the card is active */
-  }
-
-  .fuel-filter,
-  .transmission-filter {
-    display: none; /* Hide individual filters */
-  }
-}
-
-@media (min-width: 1023px) {
-  .filter-card {
-    display: none; /* Hide the filter card on larger screens */
-  }
-}
-
-.filter-card {
-  background-color: #fff; /* White background */
-  border-radius: 8px; /* Rounded corners */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-  margin-bottom: 16px; /* Add space below the filter card */
-  margin-top: 16px;
-}
-
-@media (min-width: 767px) {
-  .fuel-filter {
-    margin-bottom: 16px; /* Restore space below the fuel filter */
-    margin-top: 16px;
-  }
-}
-
-@media (min-width: 767px) {
-  .fleetfilter__summary .dropoff {
-    display: flex;
-    flex-direction: column;
-  }
-  
-}
-
-@media (max-width: 1024px) {
-  .fleetfilter__summary {
-    display: flex;
-    flex-direction: row; /* Arrange pickup and drop-off side by side */
-    justify-content: space-between;
-    align-items: center; /* Align both sections vertically */
-  }
-
-  .fleetfilter__summary .pickup,
-  .fleetfilter__summary .dropoff {
-    display: flex;
-    flex-direction: column; /* Stack text vertically */
-    width: 50%; /* Adjust width for side-by-side layout */
-    font-size: 11.5px;
-  }
-
-  .fleetfilter__summary {
-    gap: 8px; /* Add space between pickup and drop-off */
-  }
-
-  .fleetfilter__summary .pickup,
-  .fleetfilter__summary .dropoff {
-    white-space: nowrap; /* Prevent text wrapping */
-    overflow: hidden; /* Prevent overflow */
-    text-overflow: ellipsis; /* Add ellipsis for long text */
-  }
-
-}
-
-@media (min-width: 1024px) {
-  .fleetfilter__summary .dropoff {
-    margin-top: 1rem;
-  }
-}
-
-@media (min-width: 1023px) {
-  .load-more-btn {
-    display: none;
-  }
-}
-
-@media (max-width: 1023px) {
-  .load-more-btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    font-family: "Lato", Arial, sans-serif;
-    font-weight: 700;
-    font-size: 0.875rem;
-    padding: 0.75rem 1.5rem;
-    border-radius: 9999px;
-    border: 2px solid #528116;
-    background: transparent;
-    cursor: pointer;
-    transition: color 0.25s, background 0.25s, box-shadow 0.25s, filter 0.25s;
-    color: #528116;
-    position: relative;
-    left: 50%;
-    transform: translate(-50%);
-    width: 268px; 
-  }
-
-  .load-more-btn:hover {
-    background: #528116;
-    color: #000;
-  }
-
-  .carcard__hidden {
-    display: none; /* Hide 50% of the car cards */
-  }
-
-  .car-list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center; /* Center car cards horizontally */
-  gap: 1rem; /* Add spacing between car cards */
-  position: relative; /* Ensure the button can be positioned relative to the car list */
-  }
-}
-
-.fleetfilter__inputwrap:last-child:focus-within .fleetfilter__input {
-    border-right: 2px solid #78BE20; /* Change border color only when time input is focused */
-}
+}/*# sourceMappingURL=fleet.css.map */
