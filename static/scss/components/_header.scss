@@ -95,6 +95,7 @@
 .header--white .header__menu-btn {
   color: #000;
 }
+
 .header__overlay { position:fixed; inset:0; background:#fff; z-index:60; display:none; }
 .header__overlay.is-open { display:block; }
 .header__overlay-content { height:100%; display:flex; flex-direction:column; justify-content:space-between; padding:4rem 1.5rem; }
@@ -140,6 +141,12 @@
     display: block;
   }
 }
+
+// Mobile user icon variants
+// Padrão: header branco (ou default) usa ícone preto (bb)
+// Header transparente troca para ícone branco (bw)
+.header__mobile-user img { content: url("/images/ic_user_bb.svg"); }
+.header--transparent .header__mobile-user img { content: url("/images/ic_user_bw.svg"); }
 
 // Icon & utility helpers (removem inline styles)
 .icon, .header__overlay-icon {
