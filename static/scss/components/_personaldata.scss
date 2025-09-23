@@ -223,25 +223,40 @@
     line-height: 1.5;
 }
 
-.carcard__cornerwrap {
-        position:absolute;
-        top:0;
-        right:0;
-        /* Tamanhos fluidos: reduz em telas pequenas, cresce moderado em desktops grandes */
-        width: clamp(36px, 5vw, 62px);
-        /* Mantém proporção aproximada do SVG original (52x140 -> 0.3714) */
-        aspect-ratio: 52 / 140;
-        height: auto;
-        overflow:hidden;
-        pointer-events:none;
-        z-index: 1;
-
-        svg { width:100%; height:100%; display:block; }
+/* Garantir contexto de posicionamento para o corner wrap */
+.summary-card,
+.summary-card .car-info,
+.summary-card .car-image-container {
+    position: relative;
 }
 
-/* Ajuste extra para telas muito pequenas: pode esconder ou reduzir ainda mais */
+.carcard__cornerwrap {
+    position: absolute;
+    top: 0;
+    right: 0;            /* Mantém sempre encostado à direita */
+    width: clamp(36px, 5vw, 62px);
+    aspect-ratio: 52 / 140;
+    height: auto;
+    overflow: hidden;
+    pointer-events: none;
+    /* Pode ficar atrás de imagem/conteúdo se estes tiverem z-index > 0 */
+    z-index: 0;
+
+    svg {
+        width: 100%;
+        height: 100%;
+        display: block;
+    }
+}
+
+/* Ajuste para telas muito pequenas */
 @media (max-width: 480px) {
-    .carcard__cornerwrap { width: 40px; opacity:.85; }
+    .carcard__cornerwrap {
+        width: 40px;
+        right: 0;
+        top: 0;
+        opacity: .85;
+    }
 }
 
 /* ========================================================================== */
