@@ -268,9 +268,9 @@
     </video>
     <div class="discover__overlay"></div>
     <div class="discover__content">
-      <h2 class="discover__title">Discover the Azores your way</h2>
+      <h2 class="discover__title" id="discover-heading">Discover the Azores your way</h2>
       <p class="discover__text">Explore breathtaking landscapes with total freedom. Check out our fleet and find the perfect car for your adventure.</p>
-      <button class="discover__btn">Explore our Fleet</button>
+      <a class="discover__btn" href="./fleet.html" aria-label="Explore the vehicle fleet">Explore our Fleet</a>
     </div>
   </section>
 
@@ -347,10 +347,10 @@
 <section id="section-partners" class="section partners-section" aria-labelledby="partners-heading">
   <div class="container partners-container">
     <div class="partners-info">
-      <h2>Appreciated by <span class="partners-title__break">Our Partners</span></h2>
+      <h2 id="partners-heading">Appreciated by <span class="partners-title__break">Our Partners</span></h2>
       <a href="#" class="partners__btn">Meet Our Partners</a>
     </div>
-    <div class="partners-logos swiper" aria-label="Partners logos carousel">
+  <div class="partners-logos swiper" role="group" aria-labelledby="partners-heading">
       <div class="partners-scroll" data-partners-scroll>
         <div class="logo-item"><img src="/images/part7.png" alt="Partner logo 1"></div>
         <div class="logo-item"><img src="/images/part2.png" alt="Partner logo 2"></div>
@@ -394,7 +394,7 @@
 
   </main>
   <!-- Footer -->
-  <footer class="footer" role="contentinfo">
+  <footer class="footer">
     <div class="container">
       <div class="footer__main">
         <!-- Logo -->
