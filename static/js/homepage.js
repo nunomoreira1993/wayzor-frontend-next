@@ -89,6 +89,7 @@
       initialMobileClose(); // garante fechamento ao encolher para mobile
       apply();
     });
+
   })();
 
 

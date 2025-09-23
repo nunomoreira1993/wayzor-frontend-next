@@ -10,6 +10,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;500;600;700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./css/homepage.css" />
+  <link rel="stylesheet" href="./css/lang-dropdown.css" />
   <!-- Swiper CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
   <!-- Removed inline style block; container handled via SCSS utilities -->
@@ -36,15 +37,27 @@
             </div>
             <div class="header__actions">
               <button class="header__btn">Fast Check-in</button>
-              <span class="header__phone">+351 296 301 805</span>
+              <a class="header__phone" href="callto:+351296301805" aria-label="Call Wayzor support +351 296 301 805">+351 296 301 805</a>
               <div class="header__user">
                 <img id="user-icon" src="images/ic_user_white.svg" alt="User" class="icon icon--20">
-                <span>Login / Register</span>
+                <a href="/login" class="header__auth-link" aria-label="Login">Login</a>
+                <span aria-hidden="true">/</span>
+                <a href="/register" class="header__auth-link" aria-label="Register">Register</a>
               </div>
               <div class="header__lang">
-                <img id="global-icon" src="images/ic_global_white.svg" alt="Global" class="icon icon--18">
-                EN
-                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M1.24587 4.39238C1.4779 4.11395 1.89171 4.07633 2.17014 4.30835L7.00002 8.33325L11.8299 4.30835C12.1083 4.07633 12.5221 4.11395 12.7542 4.39238C12.9862 4.67081 12.9486 5.08462 12.6701 5.31665L7.42014 9.69165C7.17677 9.89445 6.82326 9.89445 6.5799 9.69164L1.3299 5.31665C1.05146 5.08462 1.01384 4.67081 1.24587 4.39238Z" fill="currentColor"/></svg>
+                <div class="lang-dropdown" data-lang-root>
+                  <button class="lang-dropdown__toggle" data-lang-toggle aria-haspopup="listbox" aria-expanded="false">
+                    <img id="global-icon" src="images/ic_global_white.svg" alt="Global" class="icon icon--18">
+                    <span data-lang-current>EN</span>
+                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M1.24587 4.39238C1.4779 4.11395 1.89171 4.07633 2.17014 4.30835L7.00002 8.33325L11.8299 4.30835C12.1083 4.07633 12.5221 4.11395 12.7542 4.39238C12.9862 4.67081 12.9486 5.08462 12.6701 5.31665L7.42014 9.69165C7.17677 9.89445 6.82326 9.89445 6.5799 9.69164L1.3299 5.31665C1.05146 5.08462 1.01384 4.67081 1.24587 4.39238Z" fill="currentColor"/></svg>
+                  </button>
+                  <ul class="lang-dropdown__menu" data-lang-menu role="listbox" aria-label="Select language">
+                    <li class="lang-dropdown__item" role="option" data-lang-value="PT">PT</li>
+                    <li class="lang-dropdown__item" role="option" data-lang-value="EN" aria-selected="true">EN</li>
+                    <li class="lang-dropdown__item" role="option" data-lang-value="FR">FR</li>
+                    <li class="lang-dropdown__item" role="option" data-lang-value="ES">ES</li>
+                  </ul>
+                </div>
               </div>
             </div>
           </div>
@@ -75,7 +88,7 @@
         </div>
         <div class="header__overlay-bottom">
             <div class="header__overlay-link header__overlay-link--plain header__overlay-link--phone u-underline">
-            +351 296 301 805
+            <a href="callto:+351296301805" aria-label="Call Wayzor support +351 296 301 805">+351 296 301 805</a>
             </div>
           <div class="header__overlay-link header__overlay-link--plain">
             <img src="images/ic_check.svg" alt="Fast Check-in" class="header__overlay-icon icon icon--18">
@@ -83,12 +96,24 @@
           </div>
           <div class="header__overlay-link header__overlay-link--plain">
             <img src="images/ic_user.svg" alt="User" class="header__overlay-icon icon icon--18">
-            Login / Register
+            <a href="/login" class="header__auth-link" aria-label="Login">Login</a>
+            <span aria-hidden="true">/</span>
+            <a href="/register" class="header__auth-link" aria-label="Register">Register</a>
           </div>
           <div class="header__overlay-link header__overlay-link--plain">
-            <img src="images/ic_global.svg" alt="Language" class="header__overlay-icon icon icon--18">
-            EN
-            <img src="images/ic_chevron_down.svg" alt="Dropdown" class="header__overlay-icon icon icon--18">
+            <div class="lang-dropdown lang-dropdown--mobile" data-lang-root>
+              <button class="lang-dropdown__toggle" data-lang-toggle aria-haspopup="listbox" aria-expanded="false">
+                <img src="images/ic_global.svg" alt="Language" class="header__overlay-icon icon icon--18">
+                <span data-lang-current>EN</span>
+                <img src="images/ic_chevron_down.svg" alt="Dropdown" class="header__overlay-icon icon icon--18" aria-hidden="true">
+              </button>
+              <ul class="lang-dropdown__menu" data-lang-menu role="listbox" aria-label="Select language">
+                <li class="lang-dropdown__item" role="option" data-lang-value="PT">PT</li>
+                <li class="lang-dropdown__item" role="option" data-lang-value="EN" aria-selected="true">EN</li>
+                <li class="lang-dropdown__item" role="option" data-lang-value="FR">FR</li>
+                <li class="lang-dropdown__item" role="option" data-lang-value="ES">ES</li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
@@ -243,9 +268,9 @@
     </video>
     <div class="discover__overlay"></div>
     <div class="discover__content">
-      <h2 class="discover__title">Discover the Azores your way</h2>
+      <h2 class="discover__title" id="discover-heading">Discover the Azores your way</h2>
       <p class="discover__text">Explore breathtaking landscapes with total freedom. Check out our fleet and find the perfect car for your adventure.</p>
-      <button class="discover__btn">Explore our Fleet</button>
+      <a class="discover__btn" href="./fleet.html" aria-label="Explore the vehicle fleet">Explore our Fleet</a>
     </div>
   </section>
 
@@ -322,10 +347,10 @@
 <section id="section-partners" class="section partners-section" aria-labelledby="partners-heading">
   <div class="container partners-container">
     <div class="partners-info">
-      <h2>Appreciated by <span class="partners-title__break">Our Partners</span></h2>
+      <h2 id="partners-heading">Appreciated by <span class="partners-title__break">Our Partners</span></h2>
       <a href="#" class="partners__btn">Meet Our Partners</a>
     </div>
-    <div class="partners-logos swiper" aria-label="Partners logos carousel">
+  <div class="partners-logos swiper" role="group" aria-labelledby="partners-heading">
       <div class="partners-scroll" data-partners-scroll>
         <div class="logo-item"><img src="/images/part7.png" alt="Partner logo 1"></div>
         <div class="logo-item"><img src="/images/part2.png" alt="Partner logo 2"></div>
@@ -333,17 +358,8 @@
         <div class="logo-item"><img src="/images/part4.png" alt="Partner logo 4"></div>
         <div class="logo-item"><img src="/images/part5.png" alt="Partner logo 5"></div>
         <div class="logo-item"><img src="/images/part6.png" alt="Partner logo 6"></div>
-        <div class="logo-item"><img src="/images/part5.png" alt="Partner logo 7"></div>
-          <div class="logo-item"><img src="/images/part7.png" alt="Partner logo 1"></div>
-        <div class="logo-item"><img src="/images/part2.png" alt="Partner logo 2"></div>
-        <div class="logo-item"><img src="/images/part3.png" alt="Partner logo 3"></div>
-        <div class="logo-item"><img src="/images/part4.png" alt="Partner logo 4"></div>
-        <div class="logo-item"><img src="/images/part5.png" alt="Partner logo 5"></div>
-        <div class="logo-item"><img src="/images/part6.png" alt="Partner logo 6"></div>
-        <div class="logo-item"><img src="/images/part5.png" alt="Partner logo 7"></div>
-          <div class="logo-item"><img src="/images/part7.png" alt="Partner logo 1"></div>
-        <div class="logo-item"><img src="/images/part2.png" alt="Partner logo 2"></div>
-        <div class="logo-item"><img src="/images/part3.png" alt="Partner logo 3"></div>
+        <div class="logo-item"><img src="/images/partner7.png" alt="Partner logo 7" style="width:80px;height:auto;"></div>
+
       </div>
     </div>
   </div>
@@ -378,7 +394,7 @@
 
   </main>
   <!-- Footer -->
-  <footer class="footer" role="contentinfo">
+  <footer class="footer">
     <div class="container">
       <div class="footer__main">
         <!-- Logo -->
@@ -467,6 +483,7 @@
     </div>
   </footer>
 
+  <script src="./js/lang-dropdown.js"></script>
   <script src="./js/homepage.js"></script>
 
 </body>

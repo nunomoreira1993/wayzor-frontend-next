@@ -267,7 +267,6 @@ button {
   background: transparent;
 }
 
-/* Unified container width: 1312px */
 .header__wrap {
   width: 100%;
   max-width: 1312px;
@@ -432,13 +431,13 @@ button {
 .header--transparent .header__btn {
   background: transparent;
   color: #fff;
-  border-color: #78BE20;
+  border-color: #528116;
 }
 
 .header--transparent .header__btn:hover {
   background: rgba(0, 0, 0, 0.35);
   color: #fff;
-  border-color: #78BE20;
+  border-color: #528116;
   filter: none;
 }
 
@@ -905,6 +904,9 @@ button {
   position: relative;
   flex: 1;
   text-align: center;
+  /* Completed steps: neutral gray background, muted darker text */
+  /* Marker class applied to the step BEFORE the active to color only that connector green */
+  /* Active step: white circle, black text, underline INSIDE the circle */
 }
 .step:not(:last-child) {
   flex: 2;
@@ -919,18 +921,26 @@ button {
   background-color: var(--color-input-bg);
 }
 .step.completed .step-icon {
-  background-color: var(--color-primary);
-  border-color: var(--color-primary);
+  background-color: #D5D9DA;
+  border-color: #D5D9DA;
+  color: #5A6164;
+  font-weight: 600;
 }
 .step.completed .step-label {
-  color: var(--color-text-dark);
+  color: #5A6164;
 }
-.step.completed:not(:last-child)::after {
-  background-color: var(--color-primary-light);
+.step.step--preactive:not(:last-child)::after {
+  background-color: var(--color-primary);
 }
 .step.active .step-icon {
-  background-color: var(--color-primary-light);
-  border-color: var(--color-primary-light);
+  background-color: #A3D367;
+  border-color: #FFFFFF;
+  color: #000000;
+  position: relative;
+  font-weight: 700;
+}
+.step.active .step-icon::after {
+  content: "";
 }
 .step.active .step-label {
   font-weight: 600;
@@ -949,6 +959,15 @@ button {
   background-color: var(--color-input-bg);
   color: var(--color-text-dark);
   border: 2.5px solid var(--color-input-bg);
+}
+
+/* Page variant: On personaldata page, completed steps should be green (original design) */
+.page-personaldata .step.completed .step-icon {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+.page-personaldata .step.completed:not(:last-child)::after {
+  background-color: var(--color-primary);
 }
 
 .step-label {
@@ -1060,6 +1079,40 @@ button {
   line-height: 1.5;
 }
 
+/* Garantir contexto de posicionamento para o corner wrap */
+.summary-card,
+.summary-card .car-info,
+.summary-card .car-image-container {
+  position: relative;
+}
+
+.carcard__cornerwrap {
+  position: absolute;
+  top: 0;
+  right: 0; /* Mantém sempre encostado à direita */
+  width: clamp(36px, 5vw, 62px);
+  aspect-ratio: 52/140;
+  height: auto;
+  overflow: hidden;
+  pointer-events: none;
+  /* Pode ficar atrás de imagem/conteúdo se estes tiverem z-index > 0 */
+  z-index: 0;
+}
+.carcard__cornerwrap svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* Ajuste para telas muito pequenas */
+@media (max-width: 480px) {
+  .carcard__cornerwrap {
+    width: 40px;
+    right: 0;
+    top: 0;
+    opacity: 0.85;
+  }
+}
 /* ========================================================================== */
 /* 4. BANNER DE AVISO                                                         */
 /* ========================================================================== */
@@ -1423,10 +1476,6 @@ button {
     width: clamp(180px, 52vw, 280px);
   }
   /* Layout geral */
-  .main-section {
-    padding-top: calc(56px + var(--price-widget-space-top, 0px));
-    padding-bottom: calc(64px + var(--price-widget-space-bottom, 0px));
-  }
   .stepper-section {
     margin: 32px 16px 48px;
   }

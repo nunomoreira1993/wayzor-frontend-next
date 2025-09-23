@@ -1,7 +1,6 @@
 .header { position:fixed; top:0; left:0; width:100%; z-index:50; transition:all .3s ease; }
 .header--white { background:#fff; box-shadow:0 4px 16px -4px rgba(0,0,0,0.12); }
 .header--transparent { background:transparent; }
-/* Unified container width: 1312px */
 .header__wrap { width:100%; max-width:$container-max; margin:0 auto; padding:0 1.5rem; }
 @media (min-width:1024px){ .header__wrap { padding:0 2rem; } }
 .header__inner { max-width:100%; margin:0 auto; padding:0; }
@@ -64,11 +63,11 @@
 
 
 // Header transparente: borda verde clara, texto branco
-.header--transparent .header__btn { background:transparent; color:#fff; border-color:$color-green; }
+.header--transparent .header__btn { background:transparent; color:#fff; border-color:$color-green-dark; }
 .header--transparent .header__btn:hover { 
         background:rgba(0,0,0,0.35); 
         color:#fff; 
-        border-color:$color-green; 
+        border-color:$color-green-dark; 
         filter:none; 
 }
 // Header branco: usar verde escuro consistente (sem mudança de tom no hover)

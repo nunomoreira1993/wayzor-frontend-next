@@ -58,7 +58,6 @@ button {
   background: transparent;
 }
 
-/* Unified container width: 1312px */
 .header__wrap {
   width: 100%;
   max-width: 1312px;
@@ -216,13 +215,13 @@ button {
 .header--transparent .header__btn {
   background: transparent;
   color: #fff;
-  border-color: #78BE20;
+  border-color: #528116;
 }
 
 .header--transparent .header__btn:hover {
   background: rgba(0, 0, 0, 0.35);
   color: #fff;
-  border-color: #78BE20;
+  border-color: #528116;
   filter: none;
 }
 

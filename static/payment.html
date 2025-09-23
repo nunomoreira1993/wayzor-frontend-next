@@ -17,7 +17,7 @@
 
   <script src="global.js" defer></script>
 </head>
-<body class="main font-lato page-personaldata">
+<body class="main font-lato">
   <!-- Header -->
   <header class="header header--white" data-header>
     <div class="header__wrap">
@@ -167,24 +167,24 @@
 <main id="section-main" class="main-section">
     <div class="container">
         <section class="stepper-section">
-            <div class="stepper">
-                <div class="step completed">
-                    <div class="step-icon"><img src="images/ic_check_b.svg" alt="Checkmark"></div>
+      <div class="stepper">
+        <div class="step completed">
+                    <div class="step-icon"><img src="images/ic_check.svg" alt="Checkmark"></div>
                     <div class="step-label">Select itinerary</div>
                 </div>
-                <div class="step completed">
-                    <div class="step-icon"><img src="images/ic_check_b.svg" alt="Checkmark"></div>
+        <div class="step completed">
+                    <div class="step-icon"><img src="images/ic_check.svg" alt="Checkmark"></div>
                     <div class="step-label">Select Vehicle</div>
                 </div>
-                <div class="step completed">
-                    <div class="step-icon"><img src="images/ic_check_b.svg" alt="Checkmark"></div>
+        <div class="step completed">
+                    <div class="step-icon"><img src="images/ic_check.svg" alt="Checkmark"></div>
                     <div class="step-label">Select options</div>
                 </div>
-                <div class="step active">
-                    <div class="step-icon">4</div>
+    <div class="step completed step--preactive">
+                    <div class="step-icon"><img src="images/ic_check.svg" alt="Checkmark"></div>
                     <div class="step-label">Personal data</div>
                 </div>
-                <div class="step">
+                <div class="step active">
                     <div class="step-icon">5</div>
                     <div class="step-label">Payment</div>
                 </div>
@@ -192,123 +192,73 @@
         </section>
 
         <div class="content-grid">
-            <div class="form-column">
-                <form class="details-form">
-                    <section class="form-section">
-                        <h2>Your details</h2>
-                        <div class="form-row">
-                            <div class="form-field">
-                                <label for="first-name">First name</label>
-                                <input type="text" id="first-name" name="first-name">
-                            </div>
-                            <div class="form-field">
-                                <label for="last-name">Last name</label>
-                                <input type="text" id="last-name" name="last-name">
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="form-field">
-                                <label for="email">Email</label>
-                                <input type="email" id="email" name="email">
-                            </div>
-                            <div class="form-field">
-                                <label for="dob">Date of birth</label>
-                                <input type="text" id="dob" name="dob" placeholder="MM/DD/YYYY">
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="form-field form-field-select">
-                                <label for="country">Country</label>
-                                <select id="country" name="country">
-                                    <option value="">Choose a country</option>
-                                </select>
-                                <img src="images/ic_chevron_down.svg" class="select-arrow" alt="dropdown arrow">
-                            </div>
-                            <div class="form-field">
-                                <label for="nif">NIF <span>(optional)</span></label>
-                                <input type="text" id="nif" name="nif">
-                            </div>
-                        </div>
-                        <div class="checkbox-container">
-                            <input type="checkbox" id="billing-details" name="billing-details" checked>
-                            <label for="billing-details">Add to billing details</label>
-                        </div>
-                    </section>
+      <div class="form-column">
+        <section class="confirmation" aria-labelledby="confirmation-title">
+          <div class="confirmation__header">
+          <div class="confirmation__icon">
+            <div class="confirmation__icon-inner" aria-hidden="true">
+            
+                <img src="images/ic_check_big.svg" alt="Checkmark">
+            
+            </div>
+          </div>
+          <h1 id="confirmation-title" class="confirmation__title">Your Reservation has been confirmed.<br>Thank you!</h1>
+          </div>
 
-                    <section class="form-section">
-                        <h3>Save time!</h3>
-                        <p>Fill in all the required information for your rental now, and simply pick up your vehicle at a Wayzor station.</p>
-                    </section>
+          <div class="confirmation__block confirmation__block--identity">
+          <div class="confirmation__cols">
+            <div class="confirmation__col">
+            <h2 class="confirmation__subtitle">Nuno Moreira</h2>
+            <div class="confirmation__meta">
+              <p>nunomoreira@gmail.com</p>
+              <p>913 456 876</p>
+            </div>
+            </div>
+            <div class="confirmation__col confirmation__col--narrow">
+            <h2 class="confirmation__subtitle">Reservation No</h2>
+            <div class="confirmation__meta">
+              <p>5832456</p>
+            </div>
+            </div>
+          </div>
+          </div>
 
-                    <section class="form-section">
-                        <h4>Home details</h4>
-                        <div class="form-field">
-                            <label for="street-address">Street address</label>
-                            <input type="text" id="street-address" name="street-address">
-                        </div>
-                        <div class="form-row">
-                            <div class="form-field">
-                                <label for="zip">Zip</label>
-                                <input type="text" id="zip" name="zip">
-                            </div>
-                            <div class="form-field">
-                                <label for="city">City</label>
-                                <input type="text" id="city" name="city">
-                            </div>
-                        </div>
-                    </section>
+          <div class="confirmation__block confirmation__block--itinerary">
+          <div class="confirmation__cols">
+            <div class="confirmation__col">
+            <h3 class="confirmation__label">Pick up</h3>
+            <p>PDL Marina Atlântico<br>Qua 10 Out . 10:00</p>
+            </div>
+            <div class="confirmation__col confirmation__col--narrow">
+            <h3 class="confirmation__label">Drop off</h3>
+            <p>PDL Marina Atlântico<br>Qua 10 Out . 10:00</p>
+            </div>
+          </div>
+          </div>
 
-                    <section class="form-section">
-                        <h4>Citizen Card</h4>
-                        <div class="form-row">
-                            <div class="form-field">
-                                <label for="citizen-card-number">Citizen card number</label>
-                                <input type="text" id="citizen-card-number" name="citizen-card-number">
-                            </div>
-                            <div class="form-field">
-                                <label for="citizen-card-expiry">Expiry date</label>
-                                <input type="text" id="citizen-card-expiry" name="citizen-card-expiry" placeholder="MM/DD/YYYY">
-                            </div>
-                        </div>
-                    </section>
+          <hr class="confirmation__divider">
 
-                    <section class="form-section">
-                        <h4>Driving license</h4>
-                        <div class="form-row">
-                            <div class="form-field">
-                                <label for="driver-number">Driver´s number</label>
-                                <input type="text" id="driver-number" name="driver-number">
-                            </div>
-                            <div class="form-field">
-                                <label for="issue-date">Issue date</label>
-                                <input type="text" id="issue-date" name="issue-date" placeholder="MM/DD/YYYY">
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="form-field">
-                                <label for="driver-license-expiry">Expiry date</label>
-                                <input type="text" id="driver-license-expiry" name="driver-license-expiry" placeholder="MM/DD/YYYY">
-                            </div>
-                        </div>
-                    </section>
+          <div class="confirmation__block confirmation__block--checkin">
+          <h3 class="confirmation__label">Check in</h3>
+          <p class="confirmation__text">To complete your reservation, please check in by clicking on the button below:</p>
+          <button class="btn btn-primary confirmation__cta" type="button">Check-in online</button>
+          </div>
 
-                    <section class="form-section form-agreements">
-                        <div class="checkbox-container">
-                            <input type="checkbox" id="create-account" name="create-account">
-                            <label for="create-account"><a href="#">Create an account</a> with the entered details to access the Reserved Area.</label>
-                        </div>
-                        <div class="checkbox-container">
-                            <input type="checkbox" id="terms" name="terms">
-                            <label for="terms">I have read and agree to the <a href="#">Privacy and Security Policy</a>, <a href="#">Terms and Conditions</a>, and <a href="#">Web Terms and Conditions</a>.</label>
-                        </div>
-                        <div class="checkbox-container">
-                            <input type="checkbox" id="marketing" name="marketing">
-                            <label for="marketing">I would like to receive marketing communications, namely about promotions, events, and new mobility products from Wayzor and its subsidiaries, whether by e-mail, telephone, or SMS.</label>
-                        </div>
-                    </section>
-                </form>
+          <hr class="confirmation__divider">
 
-                <section class="warning-banner">
+          <div class="confirmation__block confirmation__block--paymentinfo">
+          <div class="confirmation__paymenttext">
+            <p>If you paid with:</p>
+            <p><strong>Credit Card:</strong><br>You must have the same valid credit card used for online payment and on your behalf, which will be used for the security deposit*.</p>
+            <p><strong>Debit Card:</strong><br>You must present the same debit card you used in the online payment, valid and in your name.<br>In addition you must present a credit card, also valid and in your name, for the security deposit*.</p>
+            <p><strong>Virtual card (eg MB Way):</strong><br>You must provide proof of payment in one of the following ways:<br>Open app on your mobile device, showing transaction;<br>Presentation of bank statement proving the movement or, proof of transaction</p>
+            <p><strong>Security Deposit:</strong><br>Present a valid credit card in your name for the security deposit*.</p>
+            <p class="confirmation__small">*The credit card used for the security deposit must be valid within 30 days from the date of delivery of the vehicle.</p>
+          </div>
+          </div>
+        </section>
+
+        <section class="warning-banner">
                     <div class="warning-icon-wrapper">
                         <img src="images/ic_alert works.svg" alt="Warning Icon">
                     </div>
@@ -320,36 +270,7 @@
                     <a href="#" class="btn btn-primary-outline">Add Total Car Rental Protection</a>
                 </section>
 
-                <section class="payment-section">
-                    <h4>Choose payment method</h4>
-                    <div class="payment-options">
-                      <div class="payment-option selected">
-                        <input type="radio" id="card" name="payment-method" value="card" checked>
-                        <label for="card">
-                          <span class="radio-check"></span>
-                          Other Cards
-                        </label>
-                        <div class="payment-logos">
-                          <img src="images/Visa.svg" alt="Visa">
-                          <div class="mastercard-logo">
-                            <img src="images/Mastercard.svg" alt="Mastercard part 1" style="height:24px;">
-                         
-                          </div>
-                        </div>
-                      </div>
-                      <div class="payment-option">
-                        <input type="radio" id="mbway" name="payment-method" value="mbway">
-                        <label for="mbway">
-                          <span class="radio-check"></span>
-                          MBWAY
-                        </label>
-                        <div class="payment-logos">
-                          <img src="images/mbway-seeklogo 1.svg" alt="MB Way" style="height:24px;">
-                        </div>
-                      </div>
-                    </div>
-                    <button type="submit" form="details-form" class="btn btn-primary btn-full">Continue to payment</button>
-                </section>
+
             </div>
 
             <aside class="summary-column">
@@ -534,7 +455,6 @@
   </footer>
   <script src="./js/lang-dropdown.js" defer></script>
   <script src="./js/personaldata.js" defer></script>
-  
 
 </body>
 </html>
