@@ -3,8 +3,14 @@
 .discover__overlay { position:absolute; inset:0; background:linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(0,0,0,.5) 50%, rgba(0,0,0,.5) 100%); }
 .discover__content { position:relative; z-index:10; padding:0 1.25rem; max-width:40rem; }
 @media (min-width:1024px){ .discover__content { padding-left:12rem; } }
-.discover__title { font-size:2rem; font-weight:700; color:#fff; margin:0 0 1rem; line-height:1.15; }
+// Ajuste: usar clamp para evitar wrap indesejado em ecrãs muito pequenos e manter proporção em grandes
+.discover__title { font-size:clamp(1.75rem, 5.2vw, 2rem); font-weight:700; color:#fff; margin:0 0 1rem; line-height:1.15; }
 @media (min-width:1024px){ .discover__title { font-size:3rem; } }
+.discover__title .discover__line1,
+.discover__title .discover__line2 { display:block; }
+// Evitar quebra inesperada da primeira linha; segunda já era fixa.
+.discover__title .discover__line1 { white-space:nowrap; }
+.discover__title .discover__line2 { white-space:nowrap; }
 .discover__text { color:#fff; font-size:.9rem; margin:0 0 2rem; line-height:1.6; }
 @media (min-width:1024px){ .discover__text { font-size:1rem; } }
 .discover__btn { @include button-base; background:transparent; color:#fff; border-color:#78BE20; }

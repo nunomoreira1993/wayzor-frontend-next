@@ -116,11 +116,16 @@
             width: 18px;
             height: 18px;
             display: inline-block;
+            transition: filter .25s, opacity .25s;
         }
 
         &:hover {
             background: $color-green-dark;
             color: #fff;
+            // tornar o ícone branco (duas abordagens: filtro ou trocar asset). Primeiro aplicar filter invert.
+            .social__share-icon {
+                filter: brightness(0) invert(1);
+            }
         }
     }
 }
