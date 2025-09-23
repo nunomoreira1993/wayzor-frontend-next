@@ -388,6 +388,14 @@ button {
   display: block;
 }
 
+.header__mobile-user img {
+  content: url("/images/ic_user_bb.svg");
+}
+
+.header--transparent .header__mobile-user img {
+  content: url("/images/ic_user_bw.svg");
+}
+
 .icon, .header__overlay-icon {
   display: inline-block;
   vertical-align: middle;
