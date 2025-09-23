@@ -1290,7 +1290,7 @@ button {
   }
 }
 .discover__title {
-  font-size: 2rem;
+  font-size: clamp(1.75rem, 5.2vw, 2rem);
   font-weight: 700;
   color: #fff;
   margin: 0 0 1rem;
@@ -1302,6 +1302,19 @@ button {
     font-size: 3rem;
   }
 }
+.discover__title .discover__line1,
+.discover__title .discover__line2 {
+  display: block;
+}
+
+.discover__title .discover__line1 {
+  white-space: nowrap;
+}
+
+.discover__title .discover__line2 {
+  white-space: nowrap;
+}
+
 .discover__text {
   color: #fff;
   font-size: 0.9rem;
