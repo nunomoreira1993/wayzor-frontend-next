@@ -62,26 +62,33 @@
             background-color: var(--color-input-bg);
         }
     }
-
+    /* Completed steps: neutral gray background, muted darker text */
     &.completed {
         .step-icon {
-            background-color: var(--color-primary);
-            border-color: var(--color-primary);
+            background-color: #D5D9DA;
+            border-color: #D5D9DA;
+            color: #5A6164;
+            font-weight: 600;
         }
-
-        .step-label {
-            color: var(--color-text-dark);
-        }
-
-        &:not(:last-child)::after {
-            background-color: var(--color-primary-light);
-        }
+        .step-label { color: #5A6164; }
     }
 
+    /* Marker class applied to the step BEFORE the active to color only that connector green */
+    &.step--preactive:not(:last-child)::after { background-color: var(--color-primary); }
+
+    /* Active step: white circle, black text, underline INSIDE the circle */
     &.active {
         .step-icon {
-            background-color: var(--color-primary-light);
-            border-color: var(--color-primary-light);
+            background-color: #A3D367;
+            border-color: #FFFFFF;
+            color: #000000;
+            position: relative;
+            font-weight: 700;
+
+            &::after {
+                content: '';
+   
+            }
         }
 
         .step-label {
