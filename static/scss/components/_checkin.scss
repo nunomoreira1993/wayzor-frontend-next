@@ -1,0 +1,207 @@
+.checkin-card {
+	position: relative; // provides positioning context for future badges, etc.
+}
+
+
+html, body { height: 100%; }
+
+.page-checkin {
+  background: #F7F9FA;
+  font-family: $font-base;
+  color: $color-dark-strong;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+// Main wrapper should expand to fill remaining space between header and footer
+.checkin-main {
+  flex: 1 0 auto; // allow growth and prevent shrinking of header/footer
+  display: flex;
+  flex-direction: column;
+}
+
+.checkin-hero {
+  padding-top: 120px; // accommodates fixed header
+  padding-bottom: 48px;
+  text-align: center;
+
+  .checkin-title {
+    font-size: clamp(2rem, 5vw, 56px);
+    line-height: 1.1;
+    font-weight: 700;
+    margin: 0 0 12px;
+  }
+
+  .checkin-subtitle {
+    font-size: clamp(1.125rem, 2.2vw, 22px);
+    line-height: 1.4;
+    max-width: 860px;
+    margin: 0 auto;
+    font-weight: 400;
+  }
+}
+
+.checkin-form-section {
+  padding: 0 0 120px;
+}
+
+.checkin-card {
+  background: $color-surface;
+  border: 1px solid $color-border;
+  border-radius: 16px;
+  padding: clamp(24px, 4vw, 56px);
+  max-width: 880px;
+  margin: 0 auto;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.04), 0 4px 16px rgba(0,0,0,0.04);
+}
+
+.checkin-form {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  label {
+    font-size: 14px;
+    font-weight: 600;
+    color: $color-text-body;
+  }
+
+  input {
+    height: 56px;
+    padding: 0 41.41px;
+    border: 1.5px solid $color-input-border;
+    border-radius: 8px;
+    font-size: 16px;
+    background: $color-surface;
+    outline: none;
+    transition: border-color .2s ease, box-shadow .2s ease;
+
+    &::placeholder { color: $color-text-muted; }
+
+    &:focus {
+      border-color: $color-primary;
+      box-shadow: 0 0 0 3px rgba($color-primary, 0.25);
+    }
+  }
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+
+  @media (max-width: 780px) {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
+
+.actions {
+  .btn-validate {
+    @include button-base();
+    background: $color-primary;
+    color: #000;
+    font-weight: 600;
+    font-size: 16px;
+    padding: 0 40px;
+    height: 56px;
+    border-radius: 8px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: background .25s ease, transform .15s ease;
+
+    &:hover { background: darken($color-primary, 7%); }
+    &:active { transform: translateY(1px); }
+  }
+}
+
+@media (max-width: 769px) {
+  .checkin-card {
+    padding: 24px;
+  }
+  .container {
+    padding: 0 16px;
+
+/* ------------------------------------------------------------- */
+/* Floating label inside top border (cut-out effect)              */
+/* ------------------------------------------------------------- */
+.page-checkin .fleetfilter__inputwrap {
+  position: relative;
+}
+
+/* Base label already defined in fleet styles; adjust only active/floating state */
+.page-checkin .fleetfilter__input:focus + .fleetfilter__icon + .fleetfilter__floating-label,
+.page-checkin .fleetfilter__input:not(:placeholder-shown) + .fleetfilter__icon + .fleetfilter__floating-label {
+  /* Move label so it sits intersecting the top border rather than fully above */
+  top: -4px; /* was -9px in fleet */
+  background: #fff; /* mask border behind */
+  padding: 0 6px;
+  line-height: 1.1;
+  font-size: 12px;
+  display: inline-flex;
+  align-items: center;
+}
+
+/* Optional subtle outline continuation illusion: extend white background a bit more */
+.page-checkin .fleetfilter__floating-label {
+  &::before, &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 2px; /* match border thickness (2px in fleet) */
+    width: 6px;
+    background: #E5E7EB; /* same as input border color */
+  }
+  &::before { right: 100%; margin-right: 2px; }
+  &::after { left: 100%; margin-left: 2px; }
+}
+
+/* When focused, keep the line segments consistent with focused border color */
+.page-checkin .fleetfilter__input:focus + .fleetfilter__icon + .fleetfilter__floating-label::before,
+.page-checkin .fleetfilter__input:focus + .fleetfilter__icon + .fleetfilter__floating-label::after {
+  background: #78BE20;
+}
+  }
+}
+
+// date/time stacked group introduced in markup
+// Full-width inputs below tablet
+@media (max-width: 780px) {
+  .form-row.form-row--split > .form-group,
+  .checkin-form .form-group { width: 100%; }
+}
+
+// Ensure input group inside check-in form stretches full width and inherits fleet styling
+.checkin-card .fleetfilter__inputgroup { width: 100%; }
+
+.fleetfilter__icon {
+  transform: translateY(-50%);
+  position: relative;
+        left: 13.71px;
+        bottom: 26.71px;
+}
+
+.fleetfilter__inputwarp{
+    display: flex;
+}
+
+.fleetfilter__floating-label-date{
+    transform: translateY(-50%);
+    position: absolute;
+    left: 473px;
+}
+
+.fleetfilter__floating-label-location{
+    transform: translateY(-50%);
+    position: absolute;
+    left: 8px;
+}

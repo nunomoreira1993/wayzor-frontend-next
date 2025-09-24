@@ -1331,7 +1331,7 @@ input[type=checkbox] {
 }
 @media (min-width: 1024px) and (max-width: 1439px) {
   .white-box-container {
-    max-width: 942px;
+    max-width: 742px;
     margin: 0 auto 40px auto;
     overflow-x: auto;
     white-space: nowrap;
@@ -1499,7 +1499,7 @@ input[type=checkbox] {
   padding-top: 40px; /* Add padding to avoid overlap with the banner */
 }
 
-@media (max-width: 768px) {
+@media (max-width: 950px) {
   .selectoptions__stepper {
     overflow-x: hidden; /* Prevent horizontal scrolling */
   }
@@ -1510,7 +1510,7 @@ input[type=checkbox] {
     width: 13.5px; /* Adjusted width for smaller screens */
   }
 }
-@media (min-width: 769px) {
+@media (min-width: 951px) {
   .selectoptions__connector {
     width: 99px; /* Ensure it adapts dynamically */
     flex-grow: 1; /* Allow proportional resizing */
@@ -1534,8 +1534,8 @@ input[type=checkbox] {
     min-width: 50px; /* Reduce minimum width for smaller screens */
   }
 }
-/* Mobile ( < 769px ) collapsible filters */
-@media (max-width: 769px) {
+/* Mobile ( < 1023px ) collapsible filters */
+@media (max-width: 1023px) {
   .filter-card {
     display: flex; /* Display the filter card */
     align-items: left;
@@ -1575,7 +1575,7 @@ input[type=checkbox] {
   }
 }
 /* Hide filter toggle card on tablet/desktop ( ≥ 769px ) */
-@media (min-width: 769px) {
+@media (min-width: 1023px) {
   .filter-card {
     display: none; /* Hide the filter card on larger screens */
   }
@@ -1584,24 +1584,24 @@ input[type=checkbox] {
   background-color: #fff; /* White background */
   border-radius: 16px; /* Rounded corners */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-  margin-bottom: 16px; /* Add space below the filter card */
-  margin-top: 16px;
+  margin-bottom: 8px; /* Add space below the filter card */
+  margin-top: 24px;
 }
 
-@media (min-width: 769px) {
+@media (min-width: 1023px) {
   .fuel-filter {
     margin-bottom: 16px; /* Restore space below the fuel filter */
     margin-top: 16px;
   }
 }
-@media (min-width: 769px) {
+@media (min-width: 1023px) {
   .fleetfilter__summary .dropoff {
     display: flex;
     flex-direction: column;
   }
 }
 /* Mobile: show only the first (Pick-up location) input in the top search card */
-@media (max-width: 769px) {
+@media (max-width: 1023px) {
   .fleet__filters .fleetfilter:first-of-type .fleetfilter__inputwrap:not(:first-of-type),
   .fleet__filters .fleetfilter:first-of-type .fleetfilter__split {
     display: none !important;
