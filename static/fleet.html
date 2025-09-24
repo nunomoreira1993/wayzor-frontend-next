@@ -150,8 +150,16 @@
           <button class="fleetfilter__submit u-mt-4">Search cars</button>
         </div>
 
+        <!-- Mobile Filters Toggle (added) -->
+      <div class="filter-card" onclick="toggleFilters()">
+        <div class="filter-card__icon">
+        <img src="images/ic_filter.svg" alt="Filter Icon" />
+        <span>Filters</span>
+        </div>
+      </div>
+      <div class="filters">
         <!-- Type Filter -->
-  <div class="fleetfilter fleetfilter--panel">
+        <div class="fleetfilter fleetfilter--panel">
           <div class="fleetfilter__panelhead">
             <h3 class="fleetfilter__heading">Type</h3>
           </div>
@@ -159,13 +167,12 @@
             <div class="fleetfilter__grid">
               <label class="fleetfilter__check"><input type="checkbox" /><span class="fleetfilter__custom-checkbox"></span><span>Passenger vehicles</span></label>
               <label class="fleetfilter__check"><input type="checkbox" /><span class="fleetfilter__custom-checkbox"></span><span>Commercial vehicles</span></label>
-              <label class="fleetfilter__check"><input type="checkbox" /><span class="fleetfilter__custom-checkbox"></span><span>Cold<br>Commercial</span></label>
+              <label class="fleetfilter__check"><input type="checkbox" /><span class="fleetfilter__custom-checkbox"></span><span>Cold<br/>Commercial</span></label>
             </div>
           </div>
         </div>
-
         <!-- Fuel Filter -->
-  <div class="fleetfilter fleetfilter--panel">
+        <div class="fleetfilter fleetfilter--panel">
           <div class="fleetfilter__panelhead">
             <h3 class="fleetfilter__heading">Fuel</h3>
           </div>
@@ -179,9 +186,8 @@
             </div>
           </div>
         </div>
-
         <!-- Transmission Filter -->
-  <div class="fleetfilter fleetfilter--panel">
+        <div class="fleetfilter fleetfilter--panel">
           <div class="fleetfilter__panelhead">
             <h3 class="fleetfilter__heading">Transmission</h3>
           </div>
@@ -192,6 +198,8 @@
             </div>
           </div>
         </div>
+      </div>
+      <!-- End Mobile Filters Wrapper -->
       </aside>
 
       <!-- Fleet Grid -->
@@ -291,6 +299,7 @@
           </div>
           <div class="carcard__footer"><button class="carcard__btn"><span>Book now</span></button></div>
         </div>
+
         <!-- Fifth car card: VW Taig -->
         <div class="carcard">
           <div class="carcard__head">
