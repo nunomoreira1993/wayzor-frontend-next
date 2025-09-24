@@ -146,6 +146,14 @@ button {
   height: 100%;
 }
 
+.hero__col-left {
+  width: 50%;
+}
+
+.hero__col-right {
+  width: 50%;
+}
+
 .hero__bg img {
   width: 100%;
   height: 100%;
@@ -163,7 +171,7 @@ button {
   position: relative;
   z-index: 10;
   width: 100%;
-  padding: 5rem 1.25rem 4rem;
+  padding: auto;
 }
 
 .hero__inner { /* width controlled via .container-1312 extend in _layout.scss */
@@ -1276,41 +1284,10 @@ button {
   background-position: center;
 }
 
-.discover__overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 50%, rgba(0, 0, 0, 0.5) 100%);
+.discover .container {
+  margin: 0 auto;
 }
 
-.discover__content {
-  position: relative;
-  z-index: 10;
-  padding: 0 1.5rem;
-  max-width: 40rem;
-  margin: 0;
-}
-
-@media (min-width: 1440px) {
-  .discover__content {
-    padding: 0 90px;
-    width: 50%;
-    max-width: none; /* alinhado à esquerda como hero__col-left */
-  }
-}
-@media (min-width: 1024px) {
-  .discover__content {
-    padding: 0 100px;
-    width: 50%;
-    max-width: none; /* alinhado à esquerda como hero__col-left */
-  }
-}
-@media (min-width: 768px) {
-  .discover__content {
-    padding: 0 50px;
-    width: 80%;
-    max-width: none; /* alinhado à esquerda como hero__col-left */
-  }
-}
 .discover__title {
   font-size: clamp(1.75rem, 5.2vw, 2rem);
   font-weight: 700;
@@ -1388,6 +1365,7 @@ button {
   z-index: 0;
 }
 
+/* Overlay filter (replicating hero background gradient treatment) */
 .discover:after {
   content: "";
   position: absolute;

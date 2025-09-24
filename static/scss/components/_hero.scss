@@ -12,9 +12,12 @@
     height:100%;
   }
 }
+
+.hero__col-left { width:50%; }
+.hero__col-right { width:50%; }
 .hero__bg img { width:100%; height:100%; object-fit:cover; }
 .hero__overlay { position:absolute; inset:0; background:rgba(0,0,0,0.2); }
-.hero__content { position:relative; z-index:10; width:100%; padding:5rem 1.25rem 4rem; }
+.hero__content { position:relative; z-index:10; width:100%; padding:auto ; }
 .hero__inner { /* width controlled via .container-1312 extend in _layout.scss */ max-width:100%; }
 .hero__grid { display:flex; flex-direction:column; gap:2rem; }
 @media (min-width:1024px){
