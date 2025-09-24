@@ -1,6 +1,6 @@
-// Basic interactivity for static homepage (mobile search widget toggle example)
+// Basic interactivity for static homepage (no JS hero carousel – pure CSS slider in markup)
 (function(){
-  // Mobile search toggle (placeholder)
+  // Mobile search toggle (placeholder behaviour)
   const toggle = document.querySelector('[data-mobile-search-toggle]');
   const mobilePanel = document.querySelector('[data-mobile-search-panel]');
   if(toggle && mobilePanel){
@@ -19,165 +19,95 @@
   const userIcon = document.getElementById('user-icon');
   const menuIcon = document.getElementById('menu-icon');
   function updateIcons(scrolled){
-    if(globalIcon){
-      globalIcon.src = scrolled ? 'images/ic_global.svg' : 'images/ic_global_white.svg';
-    }
-    if(userIcon){
-      userIcon.src = scrolled ? 'images/ic_user.svg' : 'images/ic_user_white.svg';
-    }
-    if(menuIcon){
-      menuIcon.src = scrolled ? 'images/ic_menu_b.svg' : 'images/ic_menu.svg';
-    }
+    if(globalIcon) globalIcon.src = scrolled ? 'images/ic_global.svg' : 'images/ic_global_white.svg';
+    if(userIcon) userIcon.src = scrolled ? 'images/ic_user.svg' : 'images/ic_user_white.svg';
+    if(menuIcon) menuIcon.src = scrolled ? 'images/ic_menu_b.svg' : 'images/ic_menu.svg';
   }
   function onScroll(){
     if(!header) return;
     const scrolled = window.scrollY > 50;
     header.classList.toggle('header--white', scrolled);
     header.classList.toggle('header--transparent', !scrolled);
-    if(logo){ logo.src = scrolled ? whiteLogo : transparentLogo; }
+    if(logo) logo.src = scrolled ? whiteLogo : transparentLogo;
     updateIcons(scrolled);
   }
   window.addEventListener('scroll', onScroll, { passive:true });
   onScroll();
 
-  // Mobile menu overlay
+  // Mobile menu overlay open/close
   const menuOpenBtn = document.querySelector('[data-menu-open]');
   const menuCloseBtn = document.querySelector('[data-menu-close]');
   const overlay = document.querySelector('[data-header-overlay]');
-  function openMenu(){ overlay && overlay.classList.add('is-open'); }
-  function closeMenu(){ overlay && overlay.classList.remove('is-open'); }
+  function openMenu(){ if(overlay) overlay.classList.add('is-open'); }
+  function closeMenu(){ if(overlay) overlay.classList.remove('is-open'); }
   if(menuOpenBtn) menuOpenBtn.addEventListener('click', openMenu);
   if(menuCloseBtn) menuCloseBtn.addEventListener('click', closeMenu);
-  overlay && overlay.addEventListener('click', (e)=>{ if(e.target === overlay) closeMenu(); });
+  if(overlay){
+    overlay.addEventListener('click', (e)=>{ if(e.target === overlay) closeMenu(); });
+  }
 
-  // Footer unificado responsivo
+  // Partners horizontal scroll (arrows + drag)
   (function(){
-    const BP = 1024;
-    const sections = () => document.querySelectorAll('.footer__section[data-collapse]');
+    const track = document.querySelector('[data-partners-scroll]');
+    if(!track) return;
+    const btnPrev = document.querySelector('[data-partners-prev]');
+    const btnNext = document.querySelector('[data-partners-next]');
+    const SCROLL_AMOUNT = 300; // px per click
 
-    function initialMobileClose(){
-      if(window.innerWidth < BP){
-        sections().forEach(d=>{
-          d.removeAttribute('open');
-          d.removeAttribute('data-user');
-        });
-      }
+    function updateButtons(){
+      if(!btnPrev || !btnNext) return;
+      const maxScroll = track.scrollWidth - track.clientWidth - 2; // tolerance
+      btnPrev.disabled = track.scrollLeft <= 0;
+      btnNext.disabled = track.scrollLeft >= maxScroll;
+      btnPrev.classList.toggle('is-disabled', btnPrev.disabled);
+      btnNext.classList.toggle('is-disabled', btnNext.disabled);
     }
 
-    function apply(){
-      const desktop = window.innerWidth >= BP;
-      sections().forEach(d=>{
-        if(desktop){
-          d.setAttribute('open','');
-        } else if(!d.hasAttribute('data-user')){
-          d.removeAttribute('open');
-        }
+    if(btnPrev){
+      btnPrev.addEventListener('click', ()=>{
+        track.scrollBy({ left: -SCROLL_AMOUNT, behavior:'smooth' });
+      });
+    }
+    if(btnNext){
+      btnNext.addEventListener('click', ()=>{
+        track.scrollBy({ left: SCROLL_AMOUNT, behavior:'smooth' });
       });
     }
 
-    // Execução inicial
-    initialMobileClose();
-    apply();
+    // Drag / swipe support
+    let isDown=false, startX=0, startScroll=0;
+    function start(x){ isDown=true; startX=x; startScroll=track.scrollLeft; track.classList.add('is-dragging'); }
+    function move(x){ if(!isDown) return; track.scrollLeft = startScroll - (x - startX); }
+    function end(){ if(!isDown) return; isDown=false; track.classList.remove('is-dragging'); updateButtons(); }
+    track.addEventListener('mousedown', e=> start(e.clientX));
+    window.addEventListener('mousemove', e=> move(e.clientX));
+    window.addEventListener('mouseup', end);
+    track.addEventListener('mouseleave', end);
+    track.addEventListener('touchstart', e=> start(e.touches[0].clientX), { passive:true });
+    track.addEventListener('touchmove', e=> move(e.touches[0].clientX), { passive:true });
+    track.addEventListener('touchend', end);
 
-    sections().forEach(d=>{
-      d.addEventListener('toggle', ()=>{
-        if(d.open) d.setAttribute('data-user',''); else d.removeAttribute('data-user');
-      });
-    });
-
-    window.addEventListener('resize', ()=>{
-      initialMobileClose(); // garante fechamento ao encolher para mobile
-      apply();
-    });
-
+    track.addEventListener('scroll', updateButtons);
+    window.addEventListener('resize', updateButtons);
+    window.addEventListener('load', updateButtons);
+    if('ResizeObserver' in window){ new ResizeObserver(updateButtons).observe(track); }
+    updateButtons();
   })();
 
-
-      (function(){
-      const track = document.querySelector('[data-partners-scroll]');
-      if(!track) return;
-      let prev = document.querySelector('[data-partners-prev]');
-      let next = document.querySelector('[data-partners-next]');
-      // Fallback: if data attributes missing, pick first two .partner-arrow
-      if(!prev || !next){
-        const arrows = document.querySelectorAll('.partner-arrow');
-        if(arrows.length >= 2){
-          prev = arrows[0];
-          next = arrows[1];
-        }
-      }
-
-      function getGap(){
-        const gapVar = getComputedStyle(track).getPropertyValue('--partners-gap');
-        const num = parseFloat(gapVar);
-        return isNaN(num) ? 32 : num;
-      }
-
-      function step(){
-        const item = track.querySelector('.logo-item');
-        if(!item) return 200;
-        return item.getBoundingClientRect().width + getGap();
-      }
-
-      function updateButtons(){
-        if(!prev || !next) return;
-        const fullyVisible = track.scrollWidth <= track.clientWidth + 1; // all items fit
-        if(fullyVisible){
-          prev.disabled = true;
-          next.disabled = true;
-          return;
-        }
-        prev.disabled = track.scrollLeft <= 0;
-        next.disabled = track.scrollLeft + track.clientWidth >= track.scrollWidth - 1;
-      }
-
-      prev && prev.addEventListener('click', ()=> track.scrollBy({ left: -step(), behavior: 'smooth'}));
-      next && next.addEventListener('click', ()=> track.scrollBy({ left: step(), behavior: 'smooth'}));
-
-      // wheel (touchpad) horizontal conversion
-      track.addEventListener('wheel', e => {
-        if(Math.abs(e.deltaY) > Math.abs(e.deltaX)){
-          e.preventDefault();
-          track.scrollLeft += e.deltaY;
-        }
-      }, { passive:false });
-
-      // drag
-      let isDown=false,startX=0,startScroll=0;
-      const start = x => { isDown=true; startX=x; startScroll=track.scrollLeft; track.classList.add('is-dragging'); };
-      const move = x => { if(!isDown) return; track.scrollLeft = startScroll - (x-startX); };
-      const end = () => { isDown=false; track.classList.remove('is-dragging'); };
-      track.addEventListener('mousedown', e=> start(e.clientX));
-      window.addEventListener('mousemove', e=> move(e.clientX));
-      window.addEventListener('mouseup', end);
-      track.addEventListener('mouseleave', end);
-      track.addEventListener('touchstart', e=> start(e.touches[0].clientX), { passive:true });
-      track.addEventListener('touchmove', e=> move(e.touches[0].clientX), { passive:true });
-      track.addEventListener('touchend', end);
-
-      track.addEventListener('scroll', updateButtons);
-      window.addEventListener('resize', updateButtons);
-      window.addEventListener('load', updateButtons);
-      if('ResizeObserver' in window){
-        new ResizeObserver(updateButtons).observe(track);
-      }
-      updateButtons();
-    })();
-
-    // Social horizontal drag (mobile) - optional enhancement
-    (function(){
-      const scroller = document.querySelector('[data-social-grid]');
-      if(!scroller) return;
-      let isDown=false,startX=0,startLeft=0;
-      const start = x => { isDown=true; startX=x; startLeft=scroller.scrollLeft; scroller.classList.add('is-dragging'); };
-      const move = x => { if(!isDown) return; scroller.scrollLeft = startLeft - (x-startX); };
-      const end = () => { isDown=false; scroller.classList.remove('is-dragging'); };
-      scroller.addEventListener('mousedown', e=> start(e.clientX));
-      window.addEventListener('mousemove', e=> move(e.clientX));
-      window.addEventListener('mouseup', end);
-      scroller.addEventListener('mouseleave', end);
-      scroller.addEventListener('touchstart', e=> start(e.touches[0].clientX), { passive:true });
-      scroller.addEventListener('touchmove', e=> move(e.touches[0].clientX), { passive:true });
-      scroller.addEventListener('touchend', end);
-    })();
+  // Social section horizontal drag (mobile enhancement)
+  (function(){
+    const scroller = document.querySelector('[data-social-grid]');
+    if(!scroller) return;
+    let isDown=false,startX=0,startLeft=0;
+    function start(x){ isDown=true; startX=x; startLeft=scroller.scrollLeft; scroller.classList.add('is-dragging'); }
+    function move(x){ if(!isDown) return; scroller.scrollLeft = startLeft - (x-startX); }
+    function end(){ if(!isDown) return; isDown=false; scroller.classList.remove('is-dragging'); }
+    scroller.addEventListener('mousedown', e=> start(e.clientX));
+    window.addEventListener('mousemove', e=> move(e.clientX));
+    window.addEventListener('mouseup', end);
+    scroller.addEventListener('mouseleave', end);
+    scroller.addEventListener('touchstart', e=> start(e.touches[0].clientX), { passive:true });
+    scroller.addEventListener('touchmove', e=> move(e.touches[0].clientX), { passive:true });
+    scroller.addEventListener('touchend', end);
+  })();
 })();

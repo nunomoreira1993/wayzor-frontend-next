@@ -1,7 +1,7 @@
 .discover { position:relative; padding:10rem 0; overflow:hidden; }
 .discover__bg { position:absolute; inset:0; background-size:cover; background-position:center; }
 
-.discover .discover_container { margin: 0 auto; position:relative; z-index:0 }
+.discover .discover_container { margin: 0 auto; position:relative; z-index:2; }
 // Ajuste: usar clamp para evitar wrap indesejado em ecrãs muito pequenos e manter proporção em grandes
 .discover__title { font-size:clamp(1.75rem, 5.2vw, 2rem); font-weight:700; color:#fff; margin:0 0 1rem; line-height:1.15; }
 @media (min-width:1024px){ .discover__title { font-size:3rem; } }
