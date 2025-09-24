@@ -123,8 +123,12 @@
   <!-- Hero Section -->
   <section class="section hero" id="section-hero">
     <div class="hero__bg">
-      <img src="https://api.builder.io/api/v1/image/assets/TEMP/57a037179d6c85c633005116e350ede4ccf0590c?width=3370" alt="Azores landscape" />
-      <div class="hero__overlay"></div>
+      <picture>
+        <!-- Mobile first: até 640px usa image.png -->
+        <source srcset="images/image.png" media="(max-width: 640px)">
+        <!-- (Opcional) poderíamos adicionar uma versão retina ou webp futuramente -->
+        <img src="images/none.png" alt="Azores landscape" />
+      </picture>
     </div>
     <div class="hero__content">
       <div class="hero__inner">
@@ -262,10 +266,11 @@
 
   <!-- Discover -->
   <section class="section discover" id="section-discover" aria-labelledby="discover-heading">
+    
     <video class="discover__video" autoplay muted loop playsinline preload="metadata">
       <source src="videos/adobe.mp4" type="video/mp4" />
     </video>
-    <div class="discover__overlay"></div>
+   <div class="container">
     <div class="discover__content">
       <h2 class="discover__title" id="discover-heading">
         <span class="discover__line1">Discover the Azores</span>
@@ -273,6 +278,8 @@
       </h2>
       <p class="discover__text">Explore breathtaking landscapes with total freedom. Check out our fleet and find the perfect car for your adventure.</p>
       <a class="discover__btn" href="./fleet.html" aria-label="Explore the vehicle fleet">Explore our Fleet</a>
+    </div>
+    </div>
     </div>
   </section>
 

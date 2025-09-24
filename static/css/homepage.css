@@ -136,6 +136,23 @@ button {
   position: absolute;
   inset: 0;
 }
+.hero__bg:after {
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0) 77.45%, rgba(0, 0, 0, 0.4) 92.35%), linear-gradient(92deg, rgba(0, 0, 0, 0.2) 43.43%, rgba(0, 0, 0, 0) 91.91%), transparent -11px -85px/105.934% 105.01% no-repeat;
+  content: "";
+  left: 0;
+  top: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.hero__col-left {
+  width: 50%;
+}
+
+.hero__col-right {
+  width: 50%;
+}
 
 .hero__bg img {
   width: 100%;
@@ -154,7 +171,7 @@ button {
   position: relative;
   z-index: 10;
   width: 100%;
-  padding: 5rem 1.25rem 4rem;
+  padding: auto;
 }
 
 .hero__inner { /* width controlled via .container-1312 extend in _layout.scss */
@@ -1267,24 +1284,10 @@ button {
   background-position: center;
 }
 
-.discover__overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 50%, rgba(0, 0, 0, 0.5) 100%);
+.discover .container {
+  margin: 0 auto;
 }
 
-.discover__content {
-  position: relative;
-  z-index: 10;
-  padding: 0 1.25rem;
-  max-width: 40rem;
-}
-
-@media (min-width: 1024px) {
-  .discover__content {
-    padding-left: 12rem;
-  }
-}
 .discover__title {
   font-size: clamp(1.75rem, 5.2vw, 2rem);
   font-weight: 700;
@@ -1360,6 +1363,23 @@ button {
   -o-object-fit: cover;
      object-fit: cover;
   z-index: 0;
+}
+
+/* Overlay filter (replicating hero background gradient treatment) */
+.discover:after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  /* Reuse hero gradients: vertical darkening at bottom + lateral soft shade */
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0) 77.45%, rgba(0, 0, 0, 0.4) 92.35%), linear-gradient(92deg, rgba(0, 0, 0, 0.2) 43.43%, rgba(0, 0, 0, 0) 91.91%), transparent -11px -85px/105.934% 105.01% no-repeat;
+  z-index: 1;
+}
+
+/* Ensure content stays above new overlay */
+.discover__content {
+  position: relative;
+  z-index: 10;
 }
 
 .blog {
@@ -1685,7 +1705,8 @@ button {
 }
 .social {
   background: #F8FAFA;
-  padding: 5rem;
+  padding: 5px;
+  padding-bottom: 30px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -1697,7 +1718,7 @@ button {
 .social__title {
   font-size: 1.75rem;
   font-weight: 700;
-  margin: 0 0 1rem;
+  margin: 3rem 0 1rem;
 }
 @media (min-width: 1024px) {
   .social__title {
@@ -1723,16 +1744,6 @@ button {
 .social__grid::-webkit-scrollbar {
   display: none;
 }
-@media (max-width: 320px) {
-  .social__grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-    overflow: visible;
-    scroll-snap-type: none;
-    padding: 0;
-  }
-}
 @media (min-width: 768px) {
   .social__grid {
     display: grid;
@@ -1740,7 +1751,7 @@ button {
     gap: 2rem;
     overflow: visible;
     scroll-snap-type: none;
-    padding: 0;
+    padding: 0 1.5rem;
   }
 }
 .social__img-wrap {
@@ -1755,6 +1766,7 @@ button {
   scroll-snap-align: center;
   flex: 0 0 auto;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  /* Ajuste específico para telas muito pequenas (≤320px): reduz ligeiramente o tamanho */
 }
 @media (min-width: 480px) {
   .social__img-wrap {
@@ -1773,16 +1785,20 @@ button {
     scroll-snap-align: unset;
   }
 }
-.social__img-wrap:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 6px 16px -4px rgba(0, 0, 0, 0.15);
-}
 .social__img-wrap img, .social__img-wrap video {
   width: 300px;
   height: 400px;
   -o-object-fit: cover;
      object-fit: cover;
   display: block;
+  min-width: 100%;
+  min-height: 100%;
+}
+@media (max-width: 320px) {
+  .social__img-wrap img, .social__img-wrap video {
+    width: 240px; /* antes 300px */
+    height: 320px; /* mantém proporção aproximada 3:4, antes 400px */
+  }
 }
 .social__img-wrap video {
   border: 0;
@@ -1856,6 +1872,8 @@ button {
   max-width: 240px;
   width: 100%;
   display: block;
+  min-width: 188px; /* garante largura mínima para não desaparecer em larguras intermédias */
+  margin-left: -35px;
 }
 
 /* Agrupamento das secções centrais */
@@ -2003,11 +2021,64 @@ button {
 }
 
 /* Desktop */
-@media (min-width: 1024px) {
+/* Layout intermédio apenas (quando 5 colunas ficariam apertadas): 1024px–1305px */
+@media (min-width: 1024px) and (max-width: 1305px) {
+  .footer__main {
+    display: grid;
+    grid-template-columns: auto 1fr 1fr;
+    -moz-column-gap: 3rem;
+         column-gap: 3rem;
+    row-gap: 2rem;
+    align-items: start;
+  }
+  .footer__logo-col {
+    grid-row: 1/span 2;
+    grid-column: 1;
+    margin: 0;
+    align-self: start;
+  }
+  .footer__nav-group {
+    display: contents;
+    margin: 0;
+  }
+  .footer__section, .footer__section--stations, .footer__section--static {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+  .footer__title {
+    cursor: default;
+    margin: 0 0 1.1rem;
+  }
+  .footer__chevron {
+    display: none;
+  }
+  .footer__links {
+    margin-top: 0;
+  }
+  .footer__stations-cols > div {
+    gap: 0.75rem;
+  }
+  .footer__social-icons {
+    flex-wrap: wrap;
+    row-gap: 0.75rem;
+  }
+  /* Mantém padding consistente com o mobile para posição fixa do logo */
+  .footer__bottom {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .footer__links a, .footer__stations-cols a {
+    white-space: nowrap;
+  }
+}
+/* Layout largo (>=1306px): restaura grelha original de 5 colunas */
+@media (min-width: 1306px) {
   .footer__main {
     display: grid;
     grid-template-columns: 1.5fr 1fr 1fr 2fr 1fr;
     gap: 3rem;
+    align-items: start;
   }
   .footer__section,
   .footer__section--stations,
@@ -2016,42 +2087,38 @@ button {
     padding-bottom: 0;
   }
   .footer__title {
-    cursor: default; /* revertido: não clicável no desktop */
+    cursor: default;
     margin: 0 0 1.25rem;
   }
   .footer__chevron {
     display: none;
-  } /* esconde chevron no desktop */
+  }
   .footer__links {
     margin-top: 0;
   }
   .footer__stations-cols > div {
     gap: 0.75rem;
   }
-  /* Remove margin extra social */
   .footer__title--static + .footer__social-icons {
     margin-top: 1.25rem;
-  } /* corrige sintaxe */
+  }
   .footer__nav-group {
     display: contents;
     margin: 0;
   }
-  .footer__section--static {
-    margin-left: 10px;
-  }
   .footer__logo-col {
-    margin-right: 10px;
-  }
+    margin: 0;
+  } /* Removido margin-right para posição fixa */
+  .footer__section--static {
+    margin: 0;
+  } /* Removido margin-left para alinhamento consistente */
   .footer__bottom {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
   }
-  .footer__links a {
-    white-space: nowrap; /* evita quebra dentro do link */
-  }
-  .footer__stations-cols a {
-    white-space: nowrap; /* garante também nas estações */
+  .footer__links a, .footer__stations-cols a {
+    white-space: nowrap;
   }
 }
 body {

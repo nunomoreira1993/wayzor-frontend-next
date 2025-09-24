@@ -1,8 +1,7 @@
 .discover { position:relative; padding:8rem 0; overflow:hidden; }
 .discover__bg { position:absolute; inset:0; background-size:cover; background-position:center; }
-.discover__overlay { position:absolute; inset:0; background:linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(0,0,0,.5) 50%, rgba(0,0,0,.5) 100%); }
-.discover__content { position:relative; z-index:10; padding:0 1.25rem; max-width:40rem; }
-@media (min-width:1024px){ .discover__content { padding-left:12rem; } }
+
+.discover .container { margin: 0 auto; }
 // Ajuste: usar clamp para evitar wrap indesejado em ecrãs muito pequenos e manter proporção em grandes
 .discover__title { font-size:clamp(1.75rem, 5.2vw, 2rem); font-weight:700; color:#fff; margin:0 0 1rem; line-height:1.15; }
 @media (min-width:1024px){ .discover__title { font-size:3rem; } }
@@ -23,4 +22,23 @@
   height:100%;
   object-fit:cover;
   z-index:0;
+}
+
+/* Overlay filter (replicating hero background gradient treatment) */
+.discover:after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  /* Reuse hero gradients: vertical darkening at bottom + lateral soft shade */
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0) 77.45%, rgba(0, 0, 0, 0.4) 92.35%),
+              linear-gradient(92deg, rgba(0, 0, 0, 0.2) 43.43%, rgba(0, 0, 0, 0) 91.91%),
+              transparent -11px -85px/105.934% 105.01% no-repeat;
+  z-index: 1;
+}
+
+/* Ensure content stays above new overlay */
+.discover__content {
+  position: relative;
+  z-index: 10;
 }

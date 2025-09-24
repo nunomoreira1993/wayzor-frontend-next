@@ -1,10 +1,23 @@
 
 
 .hero { position:relative; min-height:869px; display:flex; align-items:center; justify-content:center; overflow:hidden;}
-.hero__bg { position:absolute; inset:0; }
+.hero__bg { position:absolute; inset:0; 
+  &:after {
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.00) 77.45%, rgba(0, 0, 0, 0.40) 92.35%), linear-gradient( 92deg, rgba(0, 0, 0, 0.20) 43.43%, rgba(0, 0, 0, 0.00) 91.91%), transparent -11px -85px / 105.934% 105.01% no-repeat;
+    content: "";
+    left:0;
+    top:0;
+    position:absolute;
+    width:100%;
+    height:100%;
+  }
+}
+
+.hero__col-left { width:50%; }
+.hero__col-right { width:50%; }
 .hero__bg img { width:100%; height:100%; object-fit:cover; }
 .hero__overlay { position:absolute; inset:0; background:rgba(0,0,0,0.2); }
-.hero__content { position:relative; z-index:10; width:100%; padding:5rem 1.25rem 4rem; }
+.hero__content { position:relative; z-index:10; width:100%; padding:auto ; }
 .hero__inner { /* width controlled via .container-1312 extend in _layout.scss */ max-width:100%; }
 .hero__grid { display:flex; flex-direction:column; gap:2rem; }
 @media (min-width:1024px){
