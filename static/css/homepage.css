@@ -1285,13 +1285,30 @@ button {
 .discover__content {
   position: relative;
   z-index: 10;
-  padding: 0 1.25rem;
+  padding: 0 1.5rem;
   max-width: 40rem;
+  margin: 0;
 }
 
+@media (min-width: 1440px) {
+  .discover__content {
+    padding: 0 90px;
+    width: 50%;
+    max-width: none; /* alinhado à esquerda como hero__col-left */
+  }
+}
 @media (min-width: 1024px) {
   .discover__content {
-    padding-left: 12rem;
+    padding: 0 100px;
+    width: 50%;
+    max-width: none; /* alinhado à esquerda como hero__col-left */
+  }
+}
+@media (min-width: 768px) {
+  .discover__content {
+    padding: 0 50px;
+    width: 80%;
+    max-width: none; /* alinhado à esquerda como hero__col-left */
   }
 }
 .discover__title {
