@@ -78,10 +78,7 @@
             scroll-snap-align: unset;
         }
 
-        &:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 6px 16px -4px rgba(0,0,0,.15);
-        }
+    
 
         img, video {
             width: 300px;
