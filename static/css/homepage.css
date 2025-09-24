@@ -1685,7 +1685,7 @@ button {
 }
 .social {
   background: #F8FAFA;
-  padding: 5rem;
+  padding: 5px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -1723,16 +1723,6 @@ button {
 .social__grid::-webkit-scrollbar {
   display: none;
 }
-@media (max-width: 320px) {
-  .social__grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-    overflow: visible;
-    scroll-snap-type: none;
-    padding: 0;
-  }
-}
 @media (min-width: 768px) {
   .social__grid {
     display: grid;
@@ -1755,6 +1745,7 @@ button {
   scroll-snap-align: center;
   flex: 0 0 auto;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  /* Ajuste específico para telas muito pequenas (≤320px): reduz ligeiramente o tamanho */
 }
 @media (min-width: 480px) {
   .social__img-wrap {
@@ -1783,6 +1774,12 @@ button {
   -o-object-fit: cover;
      object-fit: cover;
   display: block;
+}
+@media (max-width: 320px) {
+  .social__img-wrap img, .social__img-wrap video {
+    width: 240px; /* antes 300px */
+    height: 320px; /* mantém proporção aproximada 3:4, antes 400px */
+  }
 }
 .social__img-wrap video {
   border: 0;
