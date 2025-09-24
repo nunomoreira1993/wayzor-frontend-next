@@ -585,24 +585,20 @@ button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 32px;
-  height: 32px;
+  width: 24px;
+  height: 24px;
   border-radius: 50%;
   cursor: pointer;
   transition: background 0.25s, border-color 0.25s;
-}
-.header__mobile-user img {
-  width: 24px;
-  height: 24px;
-  display: block;
+  font-size: 0;
 }
 
-.header__mobile-user img {
-  content: url("/images/ic_user_bb.svg");
+.header__mobile-user {
+  background-image: url("/images/ic_user_bb.svg");
 }
 
-.header--transparent .header__mobile-user img {
-  content: url("/images/ic_user_bw.svg");
+.header--transparent .header__mobile-user {
+  background-image: url("/images/ic_user_bw.svg");
 }
 
 .icon, .header__overlay-icon {
