@@ -681,14 +681,14 @@ button {
   top: 0;
 }
 
-.container-1312, .hero__inner, .features__header, .features__grid, .blog__header, .blog__cards, .partners-container, .social__header, .social__grid, .footer__grid {
+.container-1312, .hero__inner, .features__header, .features__grid, .blog__header, .blog__cards, .partners-container, .social__header, .social__grid, .footer__grid, .discover_container {
   max-width: 1312px;
   margin: 0 auto;
   padding: 0 1.5rem;
 }
 
 @media (min-width: 1024px) {
-  .container-1312, .hero__inner, .features__header, .features__grid, .blog__header, .blog__cards, .partners-container, .social__header, .social__grid, .footer__grid {
+  .container-1312, .hero__inner, .features__header, .features__grid, .blog__header, .blog__cards, .partners-container, .social__header, .social__grid, .footer__grid, .discover_container {
     padding: 0 2rem;
   }
 }
@@ -1273,7 +1273,7 @@ button {
 }
 .discover {
   position: relative;
-  padding: 8rem 0;
+  padding: 10rem 0;
   overflow: hidden;
 }
 
@@ -1284,8 +1284,10 @@ button {
   background-position: center;
 }
 
-.discover .container {
+.discover .discover_container {
   margin: 0 auto;
+  position: relative;
+  z-index: 0;
 }
 
 .discover__title {
@@ -1374,12 +1376,6 @@ button {
   /* Reuse hero gradients: vertical darkening at bottom + lateral soft shade */
   background: linear-gradient(0deg, rgba(0, 0, 0, 0) 77.45%, rgba(0, 0, 0, 0.4) 92.35%), linear-gradient(92deg, rgba(0, 0, 0, 0.2) 43.43%, rgba(0, 0, 0, 0) 91.91%), transparent -11px -85px/105.934% 105.01% no-repeat;
   z-index: 1;
-}
-
-/* Ensure content stays above new overlay */
-.discover__content {
-  position: relative;
-  z-index: 10;
 }
 
 .blog {
