@@ -123,14 +123,14 @@ button {
   font-family: inherit;
 }
 
-.container-1312, .hero__inner, .features__header, .features__grid, .blog__header, .blog__cards, .partners-container, .social__header, .social__grid, .footer__grid {
+.container-1312, .hero__inner, .features__header, .features__grid, .blog__header, .blog__cards, .partners-container, .social__header, .social__grid, .footer__grid, .discover_container {
   max-width: 1312px;
   margin: 0 auto;
   padding: 0 1.5rem;
 }
 
 @media (min-width: 1024px) {
-  .container-1312, .hero__inner, .features__header, .features__grid, .blog__header, .blog__cards, .partners-container, .social__header, .social__grid, .footer__grid {
+  .container-1312, .hero__inner, .features__header, .features__grid, .blog__header, .blog__cards, .partners-container, .social__header, .social__grid, .footer__grid, .discover_container {
     padding: 0 2rem;
   }
 }
