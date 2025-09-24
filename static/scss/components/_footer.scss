@@ -26,7 +26,8 @@
   max-width: 240px;
   width: 100%;
   display: block;
-
+  min-width: 188px; /* garante largura mínima para não desaparecer em larguras intermédias */
+  margin-left: -35px; 
 }
 
 /* Agrupamento das secções centrais */
@@ -149,46 +150,54 @@
 }
 
 /* Desktop */
-@media (min-width: 1024px) {
+/* Layout intermédio apenas (quando 5 colunas ficariam apertadas): 1024px–1305px */
+@media (min-width:1024px) and (max-width:1305px) {
+  .footer__main { 
+    display:grid; 
+    grid-template-columns: auto 1fr 1fr; 
+    column-gap:3rem; 
+    row-gap:2rem; 
+    align-items:start;
+  }
+  .footer__logo-col { 
+    grid-row:1 / span 2; 
+    grid-column:1; 
+    margin:0; 
+    align-self:start; 
+  }
+  .footer__nav-group { display:contents; margin:0; }
+  .footer__section, .footer__section--stations, .footer__section--static { border-bottom:none; padding-bottom:0; }
+  .footer__title { cursor:default; margin:0 0 1.1rem; }
+  .footer__chevron { display:none; }
+  .footer__links { margin-top:0; }
+  .footer__stations-cols > div { gap:.75rem; }
+  .footer__social-icons { flex-wrap:wrap; row-gap:.75rem; }
+  /* Mantém padding consistente com o mobile para posição fixa do logo */
+  .footer__bottom { flex-direction:row; justify-content:space-between; align-items:center; }
+  .footer__links a, .footer__stations-cols a { white-space:nowrap; }
+}
+
+/* Layout largo (>=1306px): restaura grelha original de 5 colunas */
+@media (min-width:1306px) {
   .footer__main {
     display: grid;
     grid-template-columns: 1.5fr 1fr 1fr 2fr 1fr;
     gap: 3rem;
+    align-items:start;
   }
   .footer__section,
   .footer__section--stations,
-  .footer__logo-col {
-    border-bottom: none;
-    padding-bottom: 0;
-  }
-
-  .footer__title {
-    cursor:default; /* revertido: não clicável no desktop */
-    margin:0 0 1.25rem;
-  }
-  .footer__chevron { display:none; } /* esconde chevron no desktop */
+  .footer__logo-col { border-bottom:none; padding-bottom:0; }
+  .footer__title { cursor:default; margin:0 0 1.25rem; }
+  .footer__chevron { display:none; }
   .footer__links { margin-top:0; }
-  .footer__stations-cols > div { gap: .75rem; }
-  /* Remove margin extra social */
-  .footer__title--static + .footer__social-icons { margin-top:1.25rem; } /* corrige sintaxe */
-  .footer__nav-group {
-    display:contents;
-    margin:0; 
-  }
-
-  .footer__section--static { margin-left:10px; }
-
-  .footer__logo-col { margin-right:10px; }
-  .footer__bottom {
-    flex-direction:row;          
-    justify-content:space-between;
-    align-items:center;
-  }
-  .footer__links a {
-    white-space:nowrap;        /* evita quebra dentro do link */
-  }
-  .footer__stations-cols a {
-    white-space:nowrap;        /* garante também nas estações */
-  }
+  .footer__stations-cols > div { gap:.75rem; }
+  .footer__title--static + .footer__social-icons { margin-top:1.25rem; }
+  .footer__nav-group { display:contents; margin:0; }
+  .footer__logo-col { margin:0; } /* Removido margin-right para posição fixa */
+  .footer__section--static { margin:0; } /* Removido margin-left para alinhamento consistente */
+  .footer__bottom { flex-direction:row; justify-content:space-between; align-items:center; }
+  .footer__links a, .footer__stations-cols a { white-space:nowrap; }
 }
+
 
