@@ -88,6 +88,8 @@
             height: 400px;
             object-fit: cover;
             display: block;
+            min-width: 100%;
+            min-height: 100%;
         }
 
         /* Ajuste específico para telas muito pequenas (≤320px): reduz ligeiramente o tamanho */
