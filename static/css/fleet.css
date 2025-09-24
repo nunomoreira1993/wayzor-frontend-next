@@ -881,6 +881,7 @@ button {
 .fleetfilter--panel {
   padding: 0;
   overflow: hidden;
+  margin-top: 32px;
 }
 
 /* Generic margin utility (avoid inline) */
@@ -1567,7 +1568,8 @@ input[type=checkbox] {
   }
   .fuel-filter,
   .transmission-filter {
-    display: none; /* Hide individual filters */
+    display: block; /* Hide individual filters */
+    margin-top: 32px;
   }
   .fleet__header {
     margin-bottom: 32px;
