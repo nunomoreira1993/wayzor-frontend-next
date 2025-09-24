@@ -799,7 +799,7 @@ input[type="checkbox"] {
 
 @media (min-width: 1024px) and (max-width: 1439px) {
   .white-box-container {
-    max-width: 942px;
+    max-width: 742px;
     margin: 0 auto 40px auto;
     overflow-x: auto;
     white-space: nowrap;
@@ -973,7 +973,7 @@ input[type="checkbox"] {
   padding-top: 40px; /* Add padding to avoid overlap with the banner */
 }
 
-@media (max-width: 768px) {
+@media (max-width: 950px) {
   .selectoptions__stepper {
     overflow-x: hidden; /* Prevent horizontal scrolling */
   }
@@ -987,7 +987,7 @@ input[type="checkbox"] {
   }
 }
 
-@media (min-width: 769px) {
+@media (min-width: 951px) {
   .selectoptions__connector {
     width: 99px; /* Ensure it adapts dynamically */
     flex-grow: 1; /* Allow proportional resizing */
