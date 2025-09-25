@@ -183,6 +183,12 @@ button {
   .hero__picture--1 img {
     filter: brightness(0.65) saturate(1.05);
   }
+  .hero__picture--2 img {
+    filter: brightness(0.65) saturate(1.05);
+  }
+  .hero__picture--3 img {
+    filter: brightness(0.65) saturate(1.05);
+  }
 }
 /* Content slides */
 .hero__slides-content {
@@ -200,9 +206,6 @@ button {
   transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
-.hero__slide-content--1 {
-  position: relative;
-} /* allow first to have natural height fallback */
 /* Radio mapping */
 #hero-slide-1:checked ~ .hero__bg .hero__picture--1,
 #hero-slide-2:checked ~ .hero__bg .hero__picture--2,
@@ -349,7 +352,35 @@ button {
   color: #000;
 }
 
-/* Removed JS nav button styles */
+.hero__nav {
+  position: absolute;
+  bottom: 10rem;
+  right: 2rem;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.1);
+  -webkit-backdrop-filter: blur(4px);
+          backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: 0.3s;
+  z-index: 30;
+}
+
+.hero__nav:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+@media (min-width: 1024px) {
+  .hero__nav {
+    right: 8rem;
+    width: 5.75rem;
+    height: 5.75rem;
+  }
+}
 .header {
   position: fixed;
   top: 0;

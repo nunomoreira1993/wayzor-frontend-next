@@ -22,13 +22,17 @@
 
 /* Ensure mobile image (image.png in slide 1 source) has same darkening effect as desktop none.png */
 @media (max-width:640px){
-  .hero__picture--1 img { filter:brightness(.65) saturate(1.05); }
+  .hero__picture--1 img { filter:brightness(.65) saturate(1.05);
+  }
+  .hero__picture--2 img { filter:brightness(.65) saturate(1.05);
+  }
+  .hero__picture--3 img { filter:brightness(.65) saturate(1.05);
+  }
 }
 
 /* Content slides */
 .hero__slides-content { position:relative; }
 .hero__slide-content { opacity:0; transform:translateY(10px); pointer-events:none; position:absolute; top:0; left:0; width:100%; transition:opacity .6s ease, transform .6s ease; }
-.hero__slide-content--1 { position:relative; } /* allow first to have natural height fallback */
 
 /* Radio mapping */
 #hero-slide-1:checked ~ .hero__bg .hero__picture--1,
@@ -64,4 +68,7 @@
 @media (min-width:1024px){ .hero__subtitle { font-size:1.125rem; } }
 .hero__btn { @include button-base; background:rgba(0,0,0,0.4); backdrop-filter:blur(4px); color:#fff; }
 .hero__btn:hover { background:$color-green; color:#000; }
-/* Removed JS nav button styles */
+
+.hero__nav { position:absolute; bottom:10rem; right:2rem; width:4rem; height:4rem; border-radius:50%; background:rgba(0,0,0,0.1); backdrop-filter:blur(4px); display:flex; align-items:center; justify-content:center; cursor:pointer; transition:.3s; z-index:30; }
+.hero__nav:hover { background:rgba(255,255,255,0.2); }
+@media (min-width:1024px){ .hero__nav { right:8rem; width:5.75rem; height:5.75rem; } }
