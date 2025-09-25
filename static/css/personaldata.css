@@ -764,7 +764,7 @@ button {
 .price-widget .price-widget-mobile {
   display: none;
 }
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .price-widget {
     padding: 10px 0; /* compact spacing on mobile */
     /* Ensure hidden state still collapses properly */
@@ -1455,9 +1455,6 @@ button {
 .summary-card .inclusions .inclusion-item.with-price span.name {
   width: calc(100% - 55px - 28px - 32px);
 }
-.summary-card .inclusions .inclusion-item.with-price .check-icon {
-  margin-left: 0;
-}
 .summary-card .inclusions .inclusion-item span.name {
   display: inline-flex;
   align-items: flex-start;
@@ -1482,14 +1479,9 @@ button {
 }
 .summary-card .inclusions .inclusion-item .check-icon {
   margin-left: auto;
-  width: 28px;
-}
-.summary-card .inclusions .inclusion-item .check-icon img {
-  background-color: #4B384C;
-  color: #fff;
+  background-color: #fff;
   border-radius: 50%;
   padding: 4px;
-  width: 100%;
 }
 .summary-card .total-price {
   text-align: right;
@@ -1692,7 +1684,6 @@ button {
   width: 100%;
   display: block;
   min-width: 188px; /* garante largura mínima para não desaparecer em larguras intermédias */
-  margin-left: -35px;
 }
 
 /* Agrupamento das secções centrais */
@@ -1855,6 +1846,7 @@ button {
     grid-column: 1;
     margin: 0;
     align-self: start;
+    margin-left: auto;
   }
   .footer__nav-group {
     display: contents;
@@ -1898,6 +1890,9 @@ button {
     grid-template-columns: 1.5fr 1fr 1fr 2fr 1fr;
     gap: 3rem;
     align-items: start;
+  }
+  .footer__logo-img {
+    margin-left: -45px;
   }
   .footer__section,
   .footer__section--stations,

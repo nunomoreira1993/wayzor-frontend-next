@@ -1966,7 +1966,6 @@ html, body {
   width: 100%;
   display: block;
   min-width: 188px; /* garante largura mínima para não desaparecer em larguras intermédias */
-  margin-left: -35px;
 }
 
 /* Agrupamento das secções centrais */
@@ -2129,6 +2128,7 @@ html, body {
     grid-column: 1;
     margin: 0;
     align-self: start;
+    margin-left: auto;
   }
   .footer__nav-group {
     display: contents;
@@ -2172,6 +2172,9 @@ html, body {
     grid-template-columns: 1.5fr 1fr 1fr 2fr 1fr;
     gap: 3rem;
     align-items: start;
+  }
+  .footer__logo-img {
+    margin-left: -45px;
   }
   .footer__section,
   .footer__section--stations,

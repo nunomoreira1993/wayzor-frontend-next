@@ -132,7 +132,7 @@
     /* Mobile simplified variant */
     .price-widget-mobile { display: none; }
 
-    @media (max-width: 768px) {
+    @media (max-width: 1024px) {
         padding: 10px 0; /* compact spacing on mobile */
 
         &-container { display: none; }
