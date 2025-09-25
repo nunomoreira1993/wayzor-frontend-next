@@ -122,64 +122,80 @@
   <main id="main-content" class="page-main" tabindex="-1" aria-label="Main content">
   <!-- Hero Section -->
   <section class="section hero" id="section-hero">
-    <!-- Radio controls (no JS) -->
-    <input type="radio" name="hero-slide" id="hero-slide-1" class="hero__radio" checked aria-hidden="true" />
-    <input type="radio" name="hero-slide" id="hero-slide-2" class="hero__radio" aria-hidden="true" />
-    <input type="radio" name="hero-slide" id="hero-slide-3" class="hero__radio" aria-hidden="true" />
-
-    <!-- Background slides -->
-    <div class="hero__bg">
-      <picture class="hero__picture hero__picture--1">
-        <source srcset="images/image.png" media="(max-width: 640px)">
-        <img src="images/none.png" alt="Azores landscape">
-      </picture>
-      <picture class="hero__picture hero__picture--2">
-        <source srcset="images/image.png" media="(max-width: 640px)">
-        <img src="images/none.png" alt="Island mobility">
-      </picture>
-      <picture class="hero__picture hero__picture--3">
-        <source srcset="images/image.png" media="(max-width: 640px)">
-        <img src="images/none.png" alt="Business mobility">
-      </picture>
-    </div>
-
-    <!-- Text slides -->
-    <div class="hero__content">
-      <div class="hero__inner">
-        <div class="hero__grid">
-          <div class="hero__col-left">
-            <div class="hero__slides-content">
-              <div class="hero__slide-content hero__slide-content--1">
-                <h1 class="hero__title">Your journey, your rules, your Azores.</h1>
-                <p class="hero__subtitle">Wayzor. Freedom starts here.</p>
-                <a class="hero__btn" href="#about">More about us</a>
-              </div>
-              <div class="hero__slide-content hero__slide-content--2">
-                <h1 class="hero__title">Freedom to explore every island</h1>
-                <p class="hero__subtitle">11 stations. Infinite possibilities.</p>
-                <a class="hero__btn" href="#stations">View Stations</a>
-              </div>
-              <div class="hero__slide-content hero__slide-content--3">
-                <h1 class="hero__title">Business mobility made simple</h1>
-                <p class="hero__subtitle">Smart, flexible and fully digital solutions.</p>
-                <a class="hero__btn" href="#business">Wayzor Business</a>
+    <div class="hero__slider swiper" data-hero-swiper>
+      <div class="swiper-wrapper">
+        <div class="swiper-slide hero__slide">
+          <div class="hero__bg">
+            <picture class="hero__picture">
+              <source srcset="images/image.png" media="(max-width: 640px)">
+              <img src="images/none.png" alt="Azores landscape">
+            </picture>
+          </div>
+          <div class="hero__content">
+            <div class="hero__inner">
+              <div class="hero__grid">
+                <div class="hero__col-left">
+                  <div class="hero__slide-content">
+                    <h1 class="hero__title">Your journey, your rules, your Azores.</h1>
+                    <p class="hero__subtitle">Wayzor. Freedom starts here.</p>
+                    <a class="hero__btn" href="#about">More about us</a>
+                  </div>
+                </div>
+                <div class="hero__col-right"></div>
               </div>
             </div>
           </div>
-          <div class="hero__col-right"></div>
+        </div>
+        <div class="swiper-slide hero__slide">
+          <div class="hero__bg">
+            <picture class="hero__picture">
+              <source srcset="images/image.png" media="(max-width: 640px)">
+              <img src="images/none.png" alt="Island mobility">
+            </picture>
+          </div>
+          <div class="hero__content">
+            <div class="hero__inner">
+              <div class="hero__grid">
+                <div class="hero__col-left">
+                  <div class="hero__slide-content">
+                    <h1 class="hero__title">Freedom to explore every island</h1>
+                    <p class="hero__subtitle">11 stations. Infinite possibilities.</p>
+                    <a class="hero__btn" href="#stations">View Stations</a>
+                  </div>
+                </div>
+                <div class="hero__col-right"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide hero__slide">
+          <div class="hero__bg">
+            <picture class="hero__picture">
+              <source srcset="images/image.png" media="(max-width: 640px)">
+              <img src="images/none.png" alt="Business mobility">
+            </picture>
+          </div>
+          <div class="hero__content">
+            <div class="hero__inner">
+              <div class="hero__grid">
+                <div class="hero__col-left">
+                  <div class="hero__slide-content">
+                    <h1 class="hero__title">Business mobility made simple</h1>
+                    <p class="hero__subtitle">Smart, flexible and fully digital solutions.</p>
+                    <a class="hero__btn" href="#business">Wayzor Business</a>
+                  </div>
+                </div>
+                <div class="hero__col-right"></div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
+      <div class="hero__pagination swiper-pagination" aria-label="Hero pagination"></div>
+      <button class="hero__nav" aria-label="Next slide">
+        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M21.4538 9.25628C21.7923 8.91457 22.341 8.91457 22.6795 9.25628L28.7462 15.3813C29.0846 15.723 29.0846 16.277 28.7462 16.6187L22.6795 22.7437C22.341 23.0854 21.7923 23.0854 21.4538 22.7437C21.1154 22.402 21.1154 21.848 21.4538 21.5063L26.041 16.875H3.86667C3.38802 16.875 3 16.4832 3 16C3 15.5168 3.38802 15.125 3.86667 15.125L26.041 15.125L21.4538 10.4937C21.1154 10.152 21.1154 9.59799 21.4538 9.25628Z" fill="white"/></svg>
+      </button>
     </div>
-
-    <!-- Indicators (labels) -->
-    <div class="hero__indicators" role="tablist" aria-label="Hero slides">
-      <label class="hero__indicator" for="hero-slide-1" aria-label="Slide 1"></label>
-      <label class="hero__indicator" for="hero-slide-2" aria-label="Slide 2"></label>
-      <label class="hero__indicator" for="hero-slide-3" aria-label="Slide 3"></label>
-    </div>
-    <button class="hero__nav" aria-label="Next slide">
-      <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M21.4538 9.25628C21.7923 8.91457 22.341 8.91457 22.6795 9.25628L28.7462 15.3813C29.0846 15.723 29.0846 16.277 28.7462 16.6187L22.6795 22.7437C22.341 23.0854 21.7923 23.0854 21.4538 22.7437C21.1154 22.402 21.1154 21.848 21.4538 21.5063L26.041 16.875H3.86667C3.38802 16.875 3 16.4832 3 16C3 15.5168 3.38802 15.125 3.86667 15.125L26.041 15.125L21.4538 10.4937C21.1154 10.152 21.1154 9.59799 21.4538 9.25628Z" fill="white"/></svg>
-    </button>
   </section>
 
   <!-- Search Widget (fidelity version) -->
@@ -522,6 +538,8 @@
   </footer>
 
   <script src="./js/lang-dropdown.js"></script>
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
   <script src="./js/homepage.js"></script>
 
 </body>

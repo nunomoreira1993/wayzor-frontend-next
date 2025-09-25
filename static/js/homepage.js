@@ -181,39 +181,28 @@
     })();
 })();
 
-// Hero slider arrow control (cycles radio buttons)
+// Hero Swiper initialization
 (function(){
-  const nextBtn = document.querySelector('.hero__nav');
-  if(!nextBtn) return; // no hero on page
-  const radios = Array.from(document.querySelectorAll('.hero__radio'));
-  if(!radios.length) return;
-
-  function currentIndex(){
-    const i = radios.findIndex(r => r.checked);
-    return i === -1 ? 0 : i;
-  }
-
-  function updateAria(){
-    const i = currentIndex();
-    nextBtn.setAttribute('aria-label', `Next slide (${i+1}/${radios.length})`);
-  }
-
-  function goNext(){
-    const i = currentIndex();
-    const next = radios[(i + 1) % radios.length];
-    if(next){
-      next.checked = true;
-      next.dispatchEvent(new Event('change', { bubbles:true }));
-      updateAria();
-    }
-  }
-
-  nextBtn.addEventListener('click', goNext);
-  // Keyboard support if focused
-  nextBtn.addEventListener('keydown', e => {
-    if(e.key === 'Enter' || e.key === ' ') { e.preventDefault(); goNext(); }
+  if(typeof Swiper === 'undefined') return; // ensure library loaded
+  const sliderEl = document.querySelector('[data-hero-swiper]');
+  if(!sliderEl) return;
+  const nextBtn = sliderEl.querySelector('.hero__nav');
+  const swiper = new Swiper(sliderEl, {
+    loop: true,
+    effect: 'fade',
+    fadeEffect: { crossFade: true },
+    speed: 900,
+    autoplay: { delay: 6000, disableOnInteraction: false },
+    pagination: { el: sliderEl.querySelector('.hero__pagination'), clickable: true },
+    navigation: { nextEl: nextBtn },
+    // Allow vertical page scroll while swiping horizontally
+    watchSlidesProgress: true
   });
-
-  // Optional: swipe / wheel could be added later
+  function updateAria(){
+    const realIndex = (swiper.realIndex ?? 0) + 1;
+    const total = swiper.slides.filter(s=> !s.classList.contains('swiper-slide-duplicate')).length;
+    if(nextBtn) nextBtn.setAttribute('aria-label', `Next slide (${realIndex}/${total})`);
+  }
+  swiper.on('slideChange', updateAria);
   updateAria();
 })();
