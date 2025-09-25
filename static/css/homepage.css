@@ -1641,13 +1641,56 @@ button {
 }
 
 /* Mobile stack */
+/* Mobile horizontal scroller (mirrors social section behavior) */
 .blog__mobile {
   display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  padding: 0 1rem;
+  flex-direction: row;
+  gap: 1rem;
+  padding: 0 1rem 0.75rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE/Edge */
 }
 
+.blog__mobile::-webkit-scrollbar {
+  display: none;
+}
+
+/* Each card becomes a snap item with a width that adapts by breakpoint */
+.blog__mobile .blog__card {
+  flex: 0 0 auto;
+  scroll-snap-align: center;
+  min-width: 90%;
+  max-width: 90%;
+}
+
+@media (min-width: 480px) {
+  .blog__mobile .blog__card {
+    min-width: 85%;
+    max-width: 85%;
+  }
+}
+@media (min-width: 640px) {
+  .blog__mobile .blog__card {
+    min-width: 80%;
+    max-width: 80%;
+  }
+}
+/* Slightly narrower as screen grows but still dominant */
+@media (min-width: 768px) {
+  .blog__mobile .blog__card {
+    min-width: 70%;
+    max-width: 70%;
+  }
+}
+@media (min-width: 900px) {
+  .blog__mobile .blog__card {
+    min-width: 65%;
+    max-width: 65%;
+  }
+}
 @media (min-width: 1024px) {
   .blog__mobile {
     display: none;
