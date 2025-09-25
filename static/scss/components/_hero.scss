@@ -64,4 +64,7 @@
 @media (min-width:1024px){ .hero__subtitle { font-size:1.125rem; } }
 .hero__btn { @include button-base; background:rgba(0,0,0,0.4); backdrop-filter:blur(4px); color:#fff; }
 .hero__btn:hover { background:$color-green; color:#000; }
-/* Removed JS nav button styles */
+
+.hero__nav { position:absolute; bottom:10rem; right:2rem; width:4rem; height:4rem; border-radius:50%; background:rgba(0,0,0,0.1); backdrop-filter:blur(4px); display:flex; align-items:center; justify-content:center; cursor:pointer; transition:.3s; }
+.hero__nav:hover { background:rgba(255,255,255,0.2); }
+@media (min-width:1024px){ .hero__nav { right:8rem; width:5.75rem; height:5.75rem; } }
