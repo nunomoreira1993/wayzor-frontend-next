@@ -1666,10 +1666,14 @@ button {
   }
   .blog__cards {
     overflow-x: auto;
-    scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
     padding-bottom: 1rem;
-    margin-left: 1rem;
+    margin-left: 1rem; /* hide scrollbar visually */
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .blog__cards::-webkit-scrollbar {
+    display: none;
   }
   .blog__card {
     scroll-snap-align: start;
