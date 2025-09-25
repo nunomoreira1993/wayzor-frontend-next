@@ -232,6 +232,21 @@
     hero.addEventListener('pointerdown', pointerDown, { passive:true });
     hero.addEventListener('pointermove', pointerMove, { passive:true });
     window.addEventListener('pointerup', pointerUp, { passive:true });
+
+      // Trackpad / wheel swipe: interpret horizontal delta first, fallback to vertical intent
+      let wheelCooldown=false;
+      hero.addEventListener('wheel', e => {
+        if(wheelCooldown) return;
+        const absX = Math.abs(e.deltaX);
+        const absY = Math.abs(e.deltaY);
+        // Prefer horizontal gestures; if vertical but large, ignore
+        if(absX > 18 && absX > absY){
+          e.preventDefault();
+          wheelCooldown = true;
+          (e.deltaX > 0) ? swiper.slideNext() : swiper.slidePrev();
+          setTimeout(()=> wheelCooldown=false, 450); // cooldown to avoid rapid multi-fire
+        }
+      }, { passive:false });
   }
   function updateAria(){
     const realIndex = (swiper.realIndex ?? 0) + 1;
