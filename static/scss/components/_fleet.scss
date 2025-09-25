@@ -331,6 +331,7 @@ button {
 .fleetfilter--panel {
   padding: 0;
   overflow: hidden;
+  margin-top: 32px;
 }
 
 /* Generic margin utility (avoid inline) */
@@ -797,9 +798,24 @@ input[type="checkbox"] {
   }
 }
 
-@media (min-width: 1024px) and (max-width: 1439px) {
+@media (min-width: 1240px) and (max-width: 1439px) {
   .white-box-container {
     max-width: 742px;
+    margin: 0 auto 40px auto;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  .fleet__grid {
+    max-width: 1024px;
+    margin: 0 auto;
+    overflow-x: auto;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1239px) {
+  .white-box-container {
+    max-width: 642px;
     margin: 0 auto 40px auto;
     overflow-x: auto;
     white-space: nowrap;
@@ -1054,7 +1070,8 @@ input[type="checkbox"] {
 
   .fuel-filter,
   .transmission-filter {
-    display: none; /* Hide individual filters */
+    display: block; /* Hide individual filters */
+    margin-top: 32px;
   }
 
   .fleet__header {
