@@ -43,6 +43,14 @@ h4 { font-size:18px; line-height:1.4; }
     max-height: 1385px;
 }
 
+.form-field {
+    height: 45px;
+}
+
+.form-field input {
+    padding: 12px;   
+}
+
 /* Reservation info section */
 .reservation-info {
 	h3 { margin: 0 0 8px; }
@@ -93,7 +101,7 @@ h4 { font-size:18px; line-height:1.4; }
 	min-height: 16px;
 	max-width: 16px;
 	max-height: 16px;
-	border: 2px solid #78BE20;
+	border: 2px solid #528116;
 	border-radius: 0.25rem;
 	background: #fff;
 	vertical-align: middle;

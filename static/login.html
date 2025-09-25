@@ -3,16 +3,16 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Wayzor - Register</title>
-  <!-- Base styles reused from check-in -->
-  <link rel="stylesheet" href="./css/register.css" />
-  <!-- Reuse checkin-2 bundle for details form styling -->
+  <title>Wayzor - Login</title>
+  <!-- Reuse existing check-in styles and checkbox/form layout -->
+  <link rel="stylesheet" href="./css/login.css" />
+  <link rel="stylesheet" href="./css/checkin.css" />
   <link rel="stylesheet" href="./css/checkin-2.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="icon" href="/favicon.ico" />
-  <meta name="description" content="Create your Wayzor account" />
+  <meta name="description" content="Login to your Wayzor account" />
   <meta name="robots" content="noindex" />
 </head>
 <body class="page-checkin">
@@ -81,31 +81,16 @@
   <main class="checkin-main">
     <section class="checkin-hero">
       <div class="container">
-        <h1 class="checkin-title">Not yet registered?</h1>
-        <p class="checkin-subtitle">Create your account to start your Wayzor journey, quick, easy, and set for your Azores adventure</p>
+        <h1 class="checkin-title">Already Registered?</h1>
+        <div class="checkin-subtitle">Enter your email and password to enjoy the best Wayzor experience.</div>
       </div>
     </section>
 
-    <!-- Registration details form (same structure as checkin-2, without Reservation Information) -->
     <section class="checkin-form-section">
       <div class="container">
-        <form class="details-form" id="register-form">
+        <form class="details-form" id="login-form">
           <section class="form-section">
-            <div class="your-details"><h2>Your Details</h2></div>
-
-            <!-- Personal details form -->
-            <!-- Row 1: First name | Last name -->
-            <div class="form-row">
-              <div class="form-field">
-                <label for="first-name">First name</label>
-                <input type="text" id="first-name" name="first-name" />
-              </div>
-              <div class="form-field">
-                <label for="last-name">Last name</label>
-                <input type="text" id="last-name" name="last-name" />
-              </div>
-            </div>
-            <!-- Row 2: Email | Password -->
+            <!-- Row 1: Email | Password -->
             <div class="form-row">
               <div class="form-field">
                 <label for="email">Email</label>
@@ -116,116 +101,23 @@
                 <input type="password" id="password" name="password" />
               </div>
             </div>
-            <!-- Row 3: Date of birth | Country -->
-            <div class="form-row">
-              <div class="form-field">
-                <label for="dob">Date of birth</label>
-                <input type="text" id="dob" name="dob" placeholder="MM/DD/YYYY" />
-              </div>
-              <div class="form-field form-field-select">
-                <label for="country">Country</label>
-                <select id="country" name="country" required>
-                  <option value="" selected disabled hidden>Choose a country</option>
-                </select>
-                <img src="images/ic_chevron_down.svg" class="select-arrow" alt="dropdown arrow" />
+
+            <!-- Row 2: Remember + Retrieve Password -->
+            <div class="form-section form-agreements">
+              <div class="checkbox-container fleetfilter__check">
+                <input type="checkbox" id="remember" name="remember" />
+                <label for="remember">
+                  <span class="fleetfilter__custom-checkbox" aria-hidden="true"></span>
+                  <span class="check-text">Remember on this device</span>
+                </label>
+                <a href="#" class="retrieve-link">Retrieve Password</a>
               </div>
             </div>
-            <!-- Row 4: NIF (left only) -->
-            <div class="form-row">
-              <div class="form-field">
-                <label for="nif">NIF <span>(optional)</span></label>
-                <input type="text" id="nif" name="nif" />
-              </div>
+
+            <div class="actions">
+              <button type="submit" class="btn btn-primary btn-validate" style="width:100%">Submit</button>
             </div>
           </section>
-
-          <!-- Billing details opt-in -->
-          <section class="form-section form-agreements">
-            <div class="checkbox-container fleetfilter__check">
-              <input type="checkbox" id="billing-details" name="billing-details" />
-              <label for="billing-details">
-                <span class="fleetfilter__custom-checkbox" aria-hidden="true"></span>
-                Add to billing details
-              </label>
-            </div>
-          </section>
-
-          <!-- Home details -->
-          <section class="form-section">
-            <div class="details"><h4>Home details</h4></div>
-            <div class="form-field">
-              <label for="street-address">Street address</label>
-              <input type="text" id="street-address" name="street-address" />
-            </div>
-            <div class="form-row">
-              <div class="form-field">
-                <label for="zip">Zip</label>
-                <input type="text" id="zip" name="zip" />
-              </div>
-              <div class="form-field">
-                <label for="city">City</label>
-                <input type="text" id="city" name="city" />
-              </div>
-            </div>
-          </section>
-
-          <!-- Citizen Card -->
-          <section class="form-section">
-            <div class="details"><h4>Citizen Card</h4></div>
-            <div class="form-row">
-              <div class="form-field">
-                <label for="citizen-card-number">Citizen card number</label>
-                <input type="text" id="citizen-card-number" name="citizen-card-number" />
-              </div>
-              <div class="form-field">
-                <label for="citizen-card-expiry">Expiry date</label>
-                <input type="text" id="citizen-card-expiry" name="citizen-card-expiry" placeholder="MM/DD/YYYY" />
-              </div>
-            </div>
-          </section>
-
-          <!-- Driving license -->
-          <section class="form-section">
-            <div class="details"><h4>Driving license</h4></div>
-            <div class="form-row">
-              <div class="form-field">
-                <label for="driver-number">Driver's number</label>
-                <input type="text" id="driver-number" name="driver-number" />
-              </div>
-              <div class="form-field">
-                <label for="issue-date">Issue date</label>
-                <input type="text" id="issue-date" name="issue-date" placeholder="MM/DD/YYYY" />
-              </div>
-            </div>
-            <div class="form-row">
-              <div class="form-field">
-                <label for="driver-license-expiry">Expiry date</label>
-                <input type="text" id="driver-license-expiry" name="driver-license-expiry" placeholder="MM/DD/YYYY" />
-              </div>
-            </div>
-          </section>
-
-          <!-- Agreements -->
-          <section class="form-section form-agreements">
-            <div class="checkbox-container fleetfilter__check">
-              <input type="checkbox" id="create-account" name="create-account" />
-              <label for="create-account">
-                <span class="fleetfilter__custom-checkbox" aria-hidden="true"></span>
-                <span class="check-text"><a href="#">Create an account</a> with the entered details to access the Reserved Area.</span>
-              </label>
-            </div>
-            <div class="checkbox-container fleetfilter__check">
-              <input type="checkbox" id="marketing" name="marketing" />
-              <label for="marketing">
-                <span class="fleetfilter__custom-checkbox" aria-hidden="true"></span>
-                I would like to receive marketing communications, namely about promotions, events, and new mobility products from Wayzor and its subsidiaries, whether by e-mail, telephone, or SMS.
-              </label>
-            </div>
-          </section>
-
-          <div class="actions">
-            <button type="submit" class="btn btn-primary btn-validate">Create Account</button>
-          </div>
         </form>
       </div>
     </section>
@@ -312,7 +204,7 @@
       </div>
 
       <div class="footer__bottom">
-        <div>Copyright 2025 &copy; Wayzor</div>
+        <div>C</div>
         <div class="footer__payments">Easy and secure payment:
           <svg width="24" height="17" viewBox="0 0 24 17" fill="none"><g clip-path="url(#c3)"><path d="M14.8667 3.14258H9.11328V13.4805H14.8667V3.14258Z" fill="#FF5F00"/><path d="M9.47942 8.32974C9.47942 6.22928 10.4657 4.36627 11.9817 3.16079C10.8675 2.28407 9.46115 1.75439 7.92691 1.75439C4.2922 1.75439 1.35156 4.69503 1.35156 8.32974C1.35156 11.9644 4.2922 14.9051 7.92691 14.9051C9.46115 14.9051 10.8675 14.3754 11.9817 13.4987C10.4657 12.2932 9.47942 10.4119 9.47942 8.32974Z" fill="#EB001B"/><path d="M22.6301 8.32974C22.6301 11.9644 19.6895 14.9051 16.0548 14.9051C14.5205 14.9051 13.1142 14.3754 12 13.4987C13.5342 12.2932 14.5023 10.4302 14.5023 8.32974C14.5023 6.22928 13.516 4.36627 12 3.16079C13.1142 2.28407 14.5205 1.75439 16.0548 1.75439C19.6895 1.75439 22.6301 4.69503 22.6301 8.32974Z" fill="#F79E1B"/></g><defs><clipPath id="c3"><rect width="24" height="15.8721" fill="white" transform="translate(0 0.384766)"/></clipPath></defs></svg>
           <svg width="24" height="17" viewBox="0 0 24 17" fill="none"><g clip-path="url(#c4)"><path d="M-0.5 1.04004V15.7308H23.5V1.04004H-0.5ZM5.71046 10.8356L5.1583 6.87812L6.49832 7.71989L4.24289 5.93512H6.41066L6.62997 8.26294C6.65755 8.53939 6.67978 8.81094 6.70073 9.09033C6.81345 8.82289 6.94469 8.53039 7.09653 8.20782L8.17037 5.93512H9.59598L7.06779 10.8356L5.71046 10.8356ZM9.29311 10.8356L10.2242 5.93517H11.5L10.5702 10.8356H9.29311ZM12.726 10.9052C12.1439 10.9052 11.6177 10.7714 11.319 10.5472L11.2313 10.4806L11.6625 9.41705L11.8069 9.50345C12.0966 9.67665 12.4664 9.77788 12.8219 9.77788C13.0934 9.77788 13.4123 9.67255 13.4123 9.37879C13.4123 9.22532 13.323 9.09038 12.8667 8.85462C12.3829 8.59335 11.8304 8.20417 11.8304 7.50271C11.8304 6.53627 12.6384 5.86072 13.7949 5.86072C14.2681 5.86072 14.647 5.94343 14.9514 6.11126L15.0592 6.17053L14.6515 7.26285L14.5058 7.18303C14.4491 7.15134 14.1409 6.9954 13.7414 6.9954C13.3308 6.9954 13.1564 7.17397 13.1564 7.33892C13.1564 7.51582 13.3823 7.65612 13.7558 7.8647C14.4203 8.21359 14.7444 8.65383 14.7444 9.20882C14.7445 10.2234 13.934 10.9052 12.726 10.9052ZM17.7249 10.8356L17.6294 9.63879H16.524L15.9755 10.8356H14.608L16.9934 5.93517H18.4762L19.0505 10.8356H17.7249Z" fill="white"/><path d="M17.4606 7.44238C17.4096 7.57363 17.3574 7.69829 17.3059 7.80853L16.9414 8.60049H17.5618L17.4853 7.76242C17.4791 7.66787 17.4701 7.55885 17.4606 7.44238Z" fill="white"/></g><defs><clipPath id="c4"><rect width="24" height="15.8721" fill="white" transform="translate(0 0.384766)"/></clipPath></defs></svg>
