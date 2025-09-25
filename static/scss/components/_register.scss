@@ -1,0 +1,61 @@
+.details-form {
+    padding-top: 40px !important; 
+}
+
+.form-section {
+    gap:40px !important;
+}
+
+.details {
+    margin-top: 16px;
+}
+
+.your-details {
+    margin-top: 8px;
+}
+
+.form-agreements .fleetfilter__check input#marketing + label {
+	margin-top: -32px;
+}
+
+.actions {
+    margin-bottom: 16px !important;
+}
+
+.form-row .form-field input#driver-license-expiry + label {
+	padding-top: 8px !important;
+}
+
+
+/* Targeted margin for specific rows using :has() */
+/* Street address is a lone .form-field; adjust the next row (Zip/City) spacing */
+.details-form .form-field:has(> input#street-address) + .form-row {
+    margin-top: -16px;
+}
+
+/* Row that contains Citizen card number */
+.details-form .form-row:has(> .form-field > input#citizen-card-number) {
+    margin-top: -16px;
+}
+
+/* Row that contains Driver's number */
+.details-form .form-row:has(> .form-field > input#driver-number) {
+    margin-top: -16px;
+}
+
+@media (min-width: 769px) {
+        /* Keep the hero subtitle on a single line on register page */
+.page-checkin .checkin-hero .checkin-subtitle {
+    white-space: nowrap;
+}
+}
+
+
+.details-form .form-row:has(> .form-field > input#driver-license-expiry) {
+    margin-top: -8px;
+}
+
+.checkin-hero {
+    padding-bottom: 72px !important;
+    padding-top: 164px !important;
+}

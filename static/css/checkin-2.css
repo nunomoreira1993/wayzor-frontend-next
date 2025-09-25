@@ -1440,16 +1440,25 @@ h4 {
   max-height: 1385px;
 }
 
+.form-field {
+  height: 45px;
+}
+
+.form-field input {
+  padding: 12px;
+}
+
 /* Reservation info section */
 .reservation-info h3 {
   margin: 0 0 8px;
 }
 .reservation-info .booking-details {
-  display: inherit;
+  display: grid;
   margin-top: 16px;
   margin-bottom: 8px;
-  grid-template-columns: 1fr 1fr;
-  gap: 169px;
+  grid-template-columns: 0.75fr 1fr;
+  /* Responsive spacing between columns, capped at 169px */
+  gap: clamp(20px, 1vw, 20px);
   font-size: 13px;
   line-height: 1.2;
 }
@@ -1476,6 +1485,8 @@ h4 {
   display: none; /* hide native */
 }
 
+.form-agreements .fleetfilter__check input#create-account + label,
+.form-agreements .fleetfilter__check input#terms + label,
 .form-agreements .fleetfilter__check input#marketing + label {
   /* Ensure long text wraps beside (not under) the custom checkbox */
   display: grid;
@@ -1493,7 +1504,7 @@ h4 {
   min-height: 16px;
   max-width: 16px;
   max-height: 16px;
-  border: 2px solid #78BE20;
+  border: 2px solid #528116;
   border-radius: 0.25rem;
   background: #fff;
   vertical-align: middle;
@@ -1503,7 +1514,9 @@ h4 {
   box-sizing: border-box;
 }
 
-/* No extra margin on the custom checkbox inside marketing label; spacing via column-gap */
+/* No extra margin on the custom checkbox inside account/marketing label; spacing via column-gap */
+.form-agreements .fleetfilter__check input#create-account + label .fleetfilter__custom-checkbox,
+.form-agreements .fleetfilter__check input#terms + label .fleetfilter__custom-checkbox,
 .form-agreements .fleetfilter__check input#marketing + label .fleetfilter__custom-checkbox {
   margin-right: 0;
 }
@@ -1573,7 +1586,7 @@ h4 {
 }
 
 .form-field label {
-  top: -12.5px;
+  top: -12px;
 }
 
 .footer {
@@ -1851,4 +1864,8 @@ h4 {
   .footer__links a, .footer__stations-cols a {
     white-space: nowrap;
   }
+}
+body {
+  background: #EEF2F4;
+  font-family: "Lato", Arial, sans-serif;
 }/*# sourceMappingURL=checkin-2.css.map */

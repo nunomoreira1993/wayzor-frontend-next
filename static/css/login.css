@@ -549,6 +549,109 @@ button {
   top: 0;
 }
 
+/* Scoped style: only affect the inline 'Retrieve Password' link in login */
+.retrieve-link {
+  color: #6D7679 !important;
+}
+
+.checkin-subtitle {
+  color: var(--Content-color-content-dark-strong, #262E2F);
+  text-align: center;
+  font-feature-settings: "liga" off, "clig" off;
+  /* Body/XL - regular */
+  font-family: Lato;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 140%; /* 28px */
+}
+
+.checkin-main {
+  color: var(--Content-color-content-dark-strong, #262E2F);
+  text-align: center;
+  font-feature-settings: "liga" off, "clig" off;
+  /* Web/Heading/Desktop/H1 - Bold */
+  font-family: Lato;
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 110%; /* 52.8px */
+}
+
+.details-form {
+  padding-top: 48px !important;
+}
+
+.form-section {
+  gap: 0px !important;
+}
+
+.details-form .form-section.form-agreements {
+  gap: 0px !important;
+  margin-top: 7.5px;
+  margin-bottom: 31px;
+}
+
+/* Keep checkbox text wrapping to the right of the box */
+.details-form .form-section.form-agreements label {
+  display: grid;
+  grid-template-columns: 16px 1fr;
+  align-items: center;
+  -moz-column-gap: 10px;
+       column-gap: 10px;
+}
+
+/* On very small screens, place the retrieve link below the checkbox */
+@media (max-width: 375px) {
+  .details-form .form-section.form-agreements .checkbox-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    row-gap: 8px;
+  }
+  .details-form .form-section.form-agreements .checkbox-container .retrieve-link {
+    margin-left: 0 !important;
+    margin-top: 4px;
+  }
+}
+.details-form .actions .btn-validate {
+  margin-bottom: 8px !important;
+}
+
+.form-field label {
+  bottom: 40px;
+  top: -27px !important;
+}
+
+/* Retrieve Password page tweaks */
+#retrieve-form .form-row .form-field input[type=email] {
+  width: 728px;
+}
+
+/* Add gap between email input and button (mirror login spacing pattern) */
+#retrieve-form .form-row {
+  margin-bottom: 24px;
+}
+
+/* Smaller text for the back-to-login line */
+.retrieve-back {
+  margin-top: 12px;
+  margin-bottom: 16px !important;
+  font-size: 14px;
+  line-height: 1.4;
+  color: #6D7679;
+}
+
+/* Ensure back-to-login link is underlined */
+.retrieve-back a {
+  color: #262E2F !important;
+  text-decoration: underline !important;
+}
+
+.actions {
+  margin-bottom: 16px !important;
+}
+
 /* Minimal reset for static pages */
 * {
   box-sizing: border-box;
@@ -1709,176 +1812,6 @@ input[type=checkbox] {
   border-right: 2px solid #78BE20; /* Change border color only when time input is focused */
 }
 
-.checkin-card {
-  position: relative;
-}
-
-html, body {
-  height: 100%;
-}
-
-.page-checkin {
-  background: #F7F9FA;
-  font-family: "Lato", Arial, sans-serif;
-  color: #262E2F;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
-
-.checkin-main {
-  flex: 1 0 auto;
-  display: flex;
-  flex-direction: column;
-}
-
-.checkin-hero {
-  padding-top: 120px;
-  padding-bottom: 48px;
-  text-align: center;
-}
-.checkin-hero .checkin-title {
-  font-size: clamp(2rem, 5vw, 56px);
-  line-height: 1.1;
-  font-weight: 700;
-  margin: 0 0 12px;
-}
-.checkin-hero .checkin-subtitle {
-  font-size: clamp(1.125rem, 2.2vw, 22px);
-  line-height: 1.4;
-  max-width: 860px;
-  margin: 0 auto;
-  font-weight: 400;
-}
-
-.checkin-form-section {
-  padding: 0 0 120px;
-}
-
-.checkin-card {
-  background: #ffffff;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  border-radius: 16px;
-  padding: clamp(24px, 4vw, 48px);
-  max-width: 880px;
-  margin: 0 auto;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04), 0 4px 16px rgba(0, 0, 0, 0.04);
-}
-
-.checkin-form {
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
-}
-
-.form-group {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-.form-group label {
-  font-size: 14px;
-  font-weight: 600;
-  color: #363f41;
-}
-.form-group input {
-  height: 51.429px;
-  border: 1.5px solid rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
-  font-size: 16px;
-  background: #ffffff;
-  outline: none;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
-}
-.form-group input::-moz-placeholder {
-  color: #6d7679;
-}
-.form-group input::placeholder {
-  color: #6d7679;
-}
-.form-group input:focus {
-  border-color: #78be20;
-  box-shadow: 0 0 0 3px rgba(120, 190, 32, 0.25);
-}
-
-.form-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 32px;
-}
-@media (max-width: 780px) {
-  .form-row {
-    grid-template-columns: 1fr;
-    gap: 24px;
-  }
-}
-
-.actions .btn-validate {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  font-family: "Lato", Arial, sans-serif;
-  font-weight: 700;
-  font-size: 0.875rem;
-  padding: 0.75rem 1.5rem;
-  border-radius: 9999px;
-  border: 2px solid #78BE20;
-  background: transparent;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  background: #78be20;
-  color: #000;
-  font-weight: 600;
-  font-size: 16px;
-  padding: 0 19px;
-  width: 100%;
-  height: 54px;
-  border-radius: 999px;
-  margin-top: 16px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  transition: background 0.25s ease, transform 0.15s ease;
-}
-.actions .btn-validate:hover {
-  background: #78BE20;
-  color: #000;
-}
-.actions .btn-validate:hover {
-  background: rgb(100.7027027027, 159.4459459459, 26.8540540541);
-}
-.actions .btn-validate:active {
-  transform: translateY(1px);
-}
-
-@media (max-width: 769px) {
-  .checkin-card {
-    padding: 24px;
-  }
-  .container {
-    padding: 0 16px;
-  }
-}
-@media (max-width: 780px) {
-  .form-row.form-row--split > .form-group,
-  .checkin-form .form-group {
-    width: 100%;
-  }
-}
-.checkin-card .fleetfilter__inputgroup {
-  width: 100%;
-}
-
-.fleetfilter__floating-label {
-  top: 8px;
-  font-size: 16px;
-}
-
-.fleetfilter__input-separator {
-  top: 19px;
-  height: 51px;
-}
-
 .footer {
   background: #332634;
   color: #fff;
@@ -2158,4 +2091,4 @@ html, body {
 body {
   background: #EEF2F4;
   font-family: "Lato", Arial, sans-serif;
-}/*# sourceMappingURL=checkin.css.map */
+}/*# sourceMappingURL=login.css.map */
