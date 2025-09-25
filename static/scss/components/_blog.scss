@@ -1,106 +1,59 @@
-.blog {
-    background: $color-bg-light-soft;
-    padding: 5rem 0;
+
+
+.blog { background:$color-bg-light-soft; padding:5rem 0; }
+.blog__header { text-align:center; margin:0 auto 4rem; display:flex; flex-direction:column; gap:1rem; }
+.blog__title { font-size:2.5rem; font-weight:700; margin:0; line-height:1.25; }
+.blog__subtitle { font-size:1.25rem; margin:0; }
+.blog__cards { display:flex; flex-direction:column; gap:2.5rem; margin:0 auto; }
+.blog__row { display:none; }
+@media (min-width:1024px){ .blog__row { display:flex; gap:2rem; } }
+.blog__card { display:flex; flex-direction:column; gap:1rem; width:100%; }
+.blog__image { width:100%; height:304px; border-radius:1rem; overflow:hidden; }
+.blog__image img { width:100%; height:100%; object-fit:cover; }
+
+.blog__category { font-size:.75rem; font-weight:700; text-transform:uppercase; letter-spacing:.05em; color:$color-green; }
+.blog__card-title { font-size:1.5rem; font-weight:700; margin:0; }
+.blog__desc { font-size:1rem; line-height:1.5; }
+.blog__readmore { font-size:1rem; font-weight:600; color:$color-green; background:none; border:none; padding:0; text-align:left; cursor:pointer; transition:color .3s; }
+.blog__readmore:hover { color:$color-green-dark; }
+/* Mobile stack */
+/* Mobile horizontal scroller (mirrors social section behavior) */
+.blog__mobile {
+	display:flex;
+	flex-direction:row;
+	gap:1rem;
+	padding:0 1rem .75rem;
+	overflow-x:auto;
+	scroll-snap-type:x mandatory;
+	-webkit-overflow-scrolling:touch;
+	scrollbar-width:none; /* Firefox */
+	-ms-overflow-style:none; /* IE/Edge */
 }
+.blog__mobile::-webkit-scrollbar { display:none; }
 
-.blog__header {
-    text-align: center;
-    margin: 0 auto 4rem;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
+/* Each card becomes a snap item with a width that adapts by breakpoint */
+.blog__mobile .blog__card {
+	flex:0 0 auto;
+	scroll-snap-align:center;
+	min-width:90%;
+	max-width:90%;
 }
-
-.blog__title {
-    font-size: 2.5rem;
-    font-weight: 700;
-    margin: 0;
-    line-height: 1.25;
+@media (min-width:480px){
+	.blog__mobile .blog__card { min-width:85%; max-width:85%; }
 }
-
-.blog__subtitle {
-    font-size: 1.25rem;
-    margin: 0;
+@media (min-width:640px){
+	.blog__mobile .blog__card { min-width:80%; max-width:80%; }
 }
-
-.blog__cards {
-    display: flex;
-    flex-direction: column;
-    gap: 2.5rem;
-    margin: 0 auto;
+/* Slightly narrower as screen grows but still dominant */
+@media (min-width:768px){
+	.blog__mobile .blog__card { min-width:70%; max-width:70%; }
 }
-
-.blog__row {
-    /* Mobile: horizontal scroll like social */
-    display: flex;
-    flex-direction: row;
-    gap: 1rem;
-    padding: 0 1rem .75rem;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none; /* Firefox */
-    -ms-overflow-style: none; /* IE/Edge */
+@media (min-width:900px){
+	.blog__mobile .blog__card { min-width:65%; max-width:65%; }
 }
-.blog__row::-webkit-scrollbar { display: none; }
+@media (min-width:1024px){ .blog__mobile { display:none; } }
 
-/* Cards behave like slides on mobile */
-.blog__row .blog__card {
-    flex: 0 0 auto;
-    scroll-snap-align: center;
-    min-width: 90%;
-    max-width: 90%;
-}
-@media (min-width:480px){ .blog__row .blog__card { min-width:85%;  } }
-@media (min-width:640px){ .blog__row .blog__card { min-width:80%;  } }
-@media (min-width:768px){ .blog__row .blog__card { min-width:70%;  } }
-@media (min-width:900px){ .blog__row .blog__card { min-width:65%;  } }
-@media (min-width:1024px){
-    /* Desktop: revert to static flex row with original widths */
-    .blog__row { 
-        overflow: visible;
-        scroll-snap-type: none; 
-        gap:2rem; 
-        padding:0; 
-    }
-    /* Each article should size to its image width */
-    .blog__row .blog__card { 
-        flex: 0 0 auto; 
-        width: fit-content; 
-        max-width: none; 
-        scroll-snap-align: unset; 
-    }
-    .blog__row .blog__card:first-child .blog__image { max-width:526px; }
-    .blog__row .blog__card .blog__image { max-width:360px; }
-    /* Constrain text to image width */
-    .blog__row .blog__card > div:not(.blog__image) { max-width: 100%; }
-}
-
-.blog__card {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    width: 100%;
-
-    .blog__image {
-        width: 100%;
-        /* Uniform height for all images (adjusted via breakpoints) */
-        height: 240px;
-        border-radius: 1rem;
-        overflow: hidden;
-        max-width: 360px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    /* Removed .blog__mobile: unified structure now uses .blog__row for all breakpoints */
-}
-
-/* Image always covers container */
-.blog__image img { width:100%; height:100%; object-fit:cover; display:block; }
-
-@media (min-width:640px){ .blog__card .blog__image { height:260px; } }
-@media (min-width:768px){ .blog__card .blog__image { height:280px; } }
-@media (min-width:1024px){ .blog__card .blog__image { height:304px; } }
-
-/* Removed legacy .blog__mobile rules after consolidation */
+.blog__mobile .blog__image { height:240px; }
+.blog__mobile .blog__card-title { font-size:1.25rem; }
+.blog__mobile .blog__desc { font-size:.875rem; }
+.blog__mobile .blog__readmore { font-size:.875rem; }
