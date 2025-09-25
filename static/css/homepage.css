@@ -139,6 +139,12 @@ button {
   position: relative;
   width: 100%;
   height: 100%;
+  touch-action: pan-y;
+  cursor: grab;
+}
+
+.hero__slider.swiper:active {
+  cursor: grabbing;
 }
 
 .hero__slide {
@@ -189,8 +195,9 @@ button {
 }
 
 /* Swiper fade effect ensures only active slide visible (opacity handled by Swiper).  */
+/* Remove fade opacity transition (we'll use slide movement for better drag feedback) */
 .swiper-slide {
-  transition: opacity 1s ease;
+  transition: transform 0.6s ease;
 }
 
 /* Pagination (replaces old indicators) */

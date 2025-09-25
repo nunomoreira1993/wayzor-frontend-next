@@ -187,17 +187,52 @@
   const sliderEl = document.querySelector('[data-hero-swiper]');
   if(!sliderEl) return;
   const nextBtn = sliderEl.querySelector('.hero__nav');
+  // Swipe Optimization Notes:
+  // - Switched from 'fade' to native slide effect for better drag feedback.
+  // - Added grabCursor & touch-action:pan-y (in SCSS) to allow natural vertical scroll while swiping horizontally.
+  // - threshold keeps accidental tiny moves from changing slide.
+  // - resistanceRatio softens edge pull when looping duplicates are present.
   const swiper = new Swiper(sliderEl, {
     loop: true,
-    effect: 'fade',
-    fadeEffect: { crossFade: true },
-    speed: 900,
+    // Use default 'slide' effect for better tactile feedback when dragging.
+    speed: 600,
+    grabCursor: true,
+    resistanceRatio: 0.85,
+    threshold: 8, // minimal px move before triggering slide change
     autoplay: { delay: 6000, disableOnInteraction: false },
     pagination: { el: sliderEl.querySelector('.hero__pagination'), clickable: true },
     navigation: { nextEl: nextBtn },
-    // Allow vertical page scroll while swiping horizontally
-    watchSlidesProgress: true
+    watchSlidesProgress: true,
+    // Improve responsive interaction on touch devices
+    touchReleaseOnEdges: true
   });
+  
+  /* Fallback: allow swipe starting anywhere in hero (even over empty areas) */
+  const hero = document.querySelector('.hero');
+  if(hero){
+    let startX=0, startY=0, dragging=false, consumed=false;
+    const THRESHOLD = 24; // px horizontal movement to trigger slide
+    const V_CANCEL = 32; // if vertical move bigger than this before threshold, cancel
+    function pointerDown(e){
+      if(e.pointerType === 'mouse' && e.button !== 0) return;
+      startX = e.clientX; startY = e.clientY; dragging = true; consumed=false;
+    }
+    function pointerMove(e){
+      if(!dragging || consumed) return;
+      const dx = e.clientX - startX;
+      const dy = e.clientY - startY;
+      if(Math.abs(dy) > V_CANCEL && Math.abs(dx) < THRESHOLD){ // user scrolling vertically
+        dragging=false; return; }
+      if(Math.abs(dx) >= THRESHOLD){
+        consumed = true; dragging=false;
+        if(dx < 0){ swiper.slideNext(); } else { swiper.slidePrev(); }
+      }
+    }
+    function pointerUp(){ dragging=false; }
+    hero.addEventListener('pointerdown', pointerDown, { passive:true });
+    hero.addEventListener('pointermove', pointerMove, { passive:true });
+    window.addEventListener('pointerup', pointerUp, { passive:true });
+  }
   function updateAria(){
     const realIndex = (swiper.realIndex ?? 0) + 1;
     const total = swiper.slides.filter(s=> !s.classList.contains('swiper-slide-duplicate')).length;
