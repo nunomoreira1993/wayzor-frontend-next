@@ -1,5 +1,6 @@
-a {
-    color: #6D7679 !important;
+/* Scoped style: only affect the inline 'Retrieve Password' link in login */
+.retrieve-link {
+  color: #6D7679 !important;
 }
 
 .checkin-subtitle {
