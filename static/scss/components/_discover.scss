@@ -10,7 +10,7 @@
 // Evitar quebra inesperada da primeira linha; segunda já era fixa.
 .discover__title .discover__line1 { white-space:nowrap; }
 .discover__title .discover__line2 { white-space:nowrap; }
-.discover__text { color:#fff; font-size:.9rem; margin:0 0 2rem; line-height:1.6; }
+.discover__text { color:#fff; font-size:.9rem; margin:0 0 2rem; line-height:1.6;max-width: 50%; }
 @media (min-width:1024px){ .discover__text { font-size:1rem; } }
 .discover__btn { @include button-base; background:transparent; color:#fff; border-color:#78BE20; }
 .discover__btn:hover { background:rgba(0, 0, 0, 0.4); color:#fff; border-color:#78BE20; }
