@@ -123,13 +123,30 @@ button {
   font-family: inherit;
 }
 
+/* Hero base */
+/* Hero container now full viewport height; use block to let internal slide manage centering */
+/* Reduced height so elementos abaixo (ex: search widget) ganham visibilidade e tudo fica mais equilibrado */
 .hero {
   position: relative;
-  min-height: 869px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  min-height: 720px;
+  height: clamp(640px, 85vh, 860px);
+  display: block;
   overflow: hidden;
+}
+
+/* Slider e slides passam a herdar a altura definida no container (em vez de forçar 100vh) */
+.hero__slider.swiper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  touch-action: pan-y;
+}
+
+.hero__slide {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
 }
 
 .hero__bg {
@@ -137,22 +154,13 @@ button {
   inset: 0;
   z-index: 0;
 }
+
 .hero__bg:after {
   background: linear-gradient(0deg, rgba(0, 0, 0, 0) 77.45%, rgba(0, 0, 0, 0.4) 92.35%), linear-gradient(92deg, rgba(0, 0, 0, 0.2) 43.43%, rgba(0, 0, 0, 0) 91.91%), transparent -11px -85px/105.934% 105.01% no-repeat;
   content: "";
-  left: 0;
-  top: 0;
   position: absolute;
-  width: 100%;
-  height: 100%;
-  z-index: 1; /* gradient above image but below content */
-}
-
-/* Pure CSS slider */
-.hero__radio {
-  position: absolute;
-  opacity: 0;
-  pointer-events: none;
+  inset: 0;
+  z-index: 1;
 }
 
 .hero__picture {
@@ -160,8 +168,6 @@ button {
   inset: 0;
   width: 100%;
   height: 100%;
-  opacity: 0;
-  transition: opacity 1s ease;
 }
 
 .hero__picture img {
@@ -172,83 +178,131 @@ button {
   display: block;
 }
 
-.hero__picture:after {
-  content: "";
-  position: absolute;
-  inset: 0;
-}
-
-/* Ensure mobile image (image.png in slide 1 source) has same darkening effect as desktop none.png */
 @media (max-width: 640px) {
-  .hero__picture--1 img {
-    filter: brightness(0.65) saturate(1.05);
-  }
-  .hero__picture--2 img {
-    filter: brightness(0.65) saturate(1.05);
-  }
-  .hero__picture--3 img {
+  .hero__picture img {
     filter: brightness(0.65) saturate(1.05);
   }
 }
-/* Content slides */
-.hero__slides-content {
-  position: relative;
-}
-
+/* Content */
 .hero__slide-content {
-  opacity: 0;
-  transform: translateY(10px);
-  pointer-events: none;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  transition: opacity 0.6s ease, transform 0.6s ease;
-}
-
-/* Radio mapping */
-#hero-slide-1:checked ~ .hero__bg .hero__picture--1,
-#hero-slide-2:checked ~ .hero__bg .hero__picture--2,
-#hero-slide-3:checked ~ .hero__bg .hero__picture--3 {
-  opacity: 1;
-}
-
-#hero-slide-1:checked ~ .hero__content .hero__slide-content--1,
-#hero-slide-2:checked ~ .hero__content .hero__slide-content--2,
-#hero-slide-3:checked ~ .hero__content .hero__slide-content--3 {
-  opacity: 1;
-  transform: translateY(0);
-  pointer-events: auto;
   position: relative;
+  z-index: 5;
 }
 
-/* Indicators styling */
-.hero__indicators {
+/* Swiper fade effect ensures only active slide visible (opacity handled by Swiper).  */
+/* Remove fade opacity transition (we'll use slide movement for better drag feedback) */
+.swiper-slide {
+  transition: transform 0.6s ease;
+}
+
+/* Pagination (replaces old indicators) */
+/* Paginação custom dentro do hero */
+.hero__pagination {
   position: absolute;
-  bottom: 10rem;
   left: 50%;
+  bottom: 12.25rem;
   transform: translateX(-50%);
   display: flex;
   gap: 0.625rem;
   z-index: 25;
 }
 
-.hero__indicator {
+/* Reset de variáveis do Swiper para evitar bottom default */
+.hero {
+  --swiper-pagination-bottom: auto;
+  --swiper-pagination-top: auto;
+}
+
+/* Override forte (Swiper CSS vem depois) */
+.hero .swiper-pagination.swiper-pagination-bullets.hero__pagination {
+  position: absolute !important;
+  bottom: 12.25rem !important;
+  top: auto !important;
+  left: 50% !important;
+  right: auto !important;
+  width: auto !important;
+  transform: translateX(-50%) !important;
+  padding: 0;
+  margin: 0;
+}
+
+/* Neutralizar defaults globais do Swiper para a paginação dentro do hero */
+/* Neutralização genérica adicional caso outra classe seja aplicada */
+.hero .swiper-horizontal > .swiper-pagination-bullets,
+.hero .swiper-pagination-bullets.swiper-pagination-horizontal {
+  left: auto !important;
+  width: auto !important;
+}
+
+@media (max-width: 640px) {
+  .hero__pagination {
+    bottom: 8rem;
+  }
+}
+.hero__pagination .swiper-pagination-bullet {
   width: 2.5rem;
   height: 0.25rem;
   background: #fff;
   border-radius: 2px;
   opacity: 0.4;
-  cursor: pointer;
   transition: opacity 0.4s;
+  margin: 0 !important;
 }
 
-#hero-slide-1:checked ~ .hero__indicators label[for=hero-slide-1],
-#hero-slide-2:checked ~ .hero__indicators label[for=hero-slide-2],
-#hero-slide-3:checked ~ .hero__indicators label[for=hero-slide-3] {
+.hero__pagination .swiper-pagination-bullet-active {
   opacity: 1;
 }
 
+/* Responsive pagination adjustments */
+@media (max-width: 479px) {
+  .hero .swiper-pagination.swiper-pagination-bullets.hero__pagination {
+    bottom: 5.5rem !important;
+  }
+  .hero__pagination {
+    gap: 0.4rem;
+  }
+  .hero__pagination .swiper-pagination-bullet {
+    width: 1.2rem;
+  }
+}
+@media (min-width: 480px) and (max-width: 639px) {
+  .hero .swiper-pagination.swiper-pagination-bullets.hero__pagination {
+    bottom: 7rem !important;
+  }
+  .hero__pagination {
+    gap: 0.45rem;
+  }
+  .hero__pagination .swiper-pagination-bullet {
+    width: 1.6rem;
+  }
+}
+@media (min-width: 640px) and (max-width: 1023px) {
+  .hero .swiper-pagination.swiper-pagination-bullets.hero__pagination {
+    bottom: 9rem !important;
+  }
+  .hero__pagination {
+    gap: 0.5rem;
+  }
+  .hero__pagination .swiper-pagination-bullet {
+    width: 2rem;
+  }
+}
+@media (min-width: 1024px) and (max-width: 1439px) {
+  .hero .swiper-pagination.swiper-pagination-bullets.hero__pagination {
+    bottom: 11rem !important;
+  }
+  .hero__pagination .swiper-pagination-bullet {
+    width: 2.4rem;
+  }
+}
+@media (min-width: 1440px) {
+  .hero .swiper-pagination.swiper-pagination-bullets.hero__pagination {
+    bottom: 12.25rem !important;
+  }
+  .hero__pagination .swiper-pagination-bullet {
+    width: 2.8rem;
+  }
+}
 .hero__col-left {
   width: 50%;
 }
@@ -274,7 +328,32 @@ button {
   position: relative;
   z-index: 20;
   width: 100%;
-  padding: auto;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0;
+}
+
+.hero__inner {
+  width: 100%;
+}
+
+/* Ensure grid is constrained like before (if there was a container class previously, mimic spacing) */
+.hero__grid {
+  width: 100%;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+@media (min-width: 1312px) {
+  .hero__grid {
+    max-width: 1312px;
+    margin: 0 auto;
+  }
+}
+/* Fine-tune left column vertical spacing */
+.hero__slide-content {
+  max-width: 40rem;
 }
 
 .hero__inner { /* width controlled via .container-1312 extend in _layout.scss */
@@ -381,6 +460,7 @@ button {
     height: 5.75rem;
   }
 }
+/* Remove old grab cursor (Swiper manages dragging). */
 .header {
   position: fixed;
   top: 0;
@@ -1561,13 +1641,56 @@ button {
 }
 
 /* Mobile stack */
+/* Mobile horizontal scroller (mirrors social section behavior) */
 .blog__mobile {
   display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  padding: 0 1rem;
+  flex-direction: row;
+  gap: 1rem;
+  padding: 0 1rem 0.75rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE/Edge */
 }
 
+.blog__mobile::-webkit-scrollbar {
+  display: none;
+}
+
+/* Each card becomes a snap item with a width that adapts by breakpoint */
+.blog__mobile .blog__card {
+  flex: 0 0 auto;
+  scroll-snap-align: center;
+  min-width: 90%;
+  max-width: 90%;
+}
+
+@media (min-width: 480px) {
+  .blog__mobile .blog__card {
+    min-width: 85%;
+    max-width: 85%;
+  }
+}
+@media (min-width: 640px) {
+  .blog__mobile .blog__card {
+    min-width: 80%;
+    max-width: 80%;
+  }
+}
+/* Slightly narrower as screen grows but still dominant */
+@media (min-width: 768px) {
+  .blog__mobile .blog__card {
+    min-width: 70%;
+    max-width: 70%;
+  }
+}
+@media (min-width: 900px) {
+  .blog__mobile .blog__card {
+    min-width: 65%;
+    max-width: 65%;
+  }
+}
 @media (min-width: 1024px) {
   .blog__mobile {
     display: none;

@@ -181,39 +181,78 @@
     })();
 })();
 
-// Hero slider arrow control (cycles radio buttons)
+// Hero Swiper initialization
 (function(){
-  const nextBtn = document.querySelector('.hero__nav');
-  if(!nextBtn) return; // no hero on page
-  const radios = Array.from(document.querySelectorAll('.hero__radio'));
-  if(!radios.length) return;
-
-  function currentIndex(){
-    const i = radios.findIndex(r => r.checked);
-    return i === -1 ? 0 : i;
-  }
-
-  function updateAria(){
-    const i = currentIndex();
-    nextBtn.setAttribute('aria-label', `Next slide (${i+1}/${radios.length})`);
-  }
-
-  function goNext(){
-    const i = currentIndex();
-    const next = radios[(i + 1) % radios.length];
-    if(next){
-      next.checked = true;
-      next.dispatchEvent(new Event('change', { bubbles:true }));
-      updateAria();
-    }
-  }
-
-  nextBtn.addEventListener('click', goNext);
-  // Keyboard support if focused
-  nextBtn.addEventListener('keydown', e => {
-    if(e.key === 'Enter' || e.key === ' ') { e.preventDefault(); goNext(); }
+  if(typeof Swiper === 'undefined') return; // ensure library loaded
+  const sliderEl = document.querySelector('[data-hero-swiper]');
+  if(!sliderEl) return;
+  const nextBtn = sliderEl.querySelector('.hero__nav');
+  // Swipe Optimization Notes:
+  // - Switched from 'fade' to native slide effect for better drag feedback.
+  // - Added grabCursor & touch-action:pan-y (in SCSS) to allow natural vertical scroll while swiping horizontally.
+  // - threshold keeps accidental tiny moves from changing slide.
+  // - resistanceRatio softens edge pull when looping duplicates are present.
+  const swiper = new Swiper(sliderEl, {
+    loop: true,
+    // Use default 'slide' effect for better tactile feedback when dragging.
+    speed: 600,
+    grabCursor: true,
+    resistanceRatio: 0.85,
+    threshold: 8, // minimal px move before triggering slide change
+    autoplay: { delay: 6000, disableOnInteraction: false },
+    pagination: { el: sliderEl.querySelector('.hero__pagination'), clickable: true },
+    navigation: { nextEl: nextBtn },
+    watchSlidesProgress: true,
+    // Improve responsive interaction on touch devices
+    touchReleaseOnEdges: true
   });
+  
+  /* Fallback: allow swipe starting anywhere in hero (even over empty areas) */
+  const hero = document.querySelector('.hero');
+  if(hero){
+    let startX=0, startY=0, dragging=false, consumed=false;
+    const THRESHOLD = 24; // px horizontal movement to trigger slide
+    const V_CANCEL = 32; // if vertical move bigger than this before threshold, cancel
+    function pointerDown(e){
+      if(e.pointerType === 'mouse' && e.button !== 0) return;
+      startX = e.clientX; startY = e.clientY; dragging = true; consumed=false;
+    }
+    function pointerMove(e){
+      if(!dragging || consumed) return;
+      const dx = e.clientX - startX;
+      const dy = e.clientY - startY;
+      if(Math.abs(dy) > V_CANCEL && Math.abs(dx) < THRESHOLD){ // user scrolling vertically
+        dragging=false; return; }
+      if(Math.abs(dx) >= THRESHOLD){
+        consumed = true; dragging=false;
+        if(dx < 0){ swiper.slideNext(); } else { swiper.slidePrev(); }
+      }
+    }
+    function pointerUp(){ dragging=false; }
+    hero.addEventListener('pointerdown', pointerDown, { passive:true });
+    hero.addEventListener('pointermove', pointerMove, { passive:true });
+    window.addEventListener('pointerup', pointerUp, { passive:true });
 
-  // Optional: swipe / wheel could be added later
+      // Trackpad / wheel swipe: interpret horizontal delta first, fallback to vertical intent
+      let wheelCooldown=false;
+      hero.addEventListener('wheel', e => {
+        if(wheelCooldown) return;
+        const absX = Math.abs(e.deltaX);
+        const absY = Math.abs(e.deltaY);
+        // Prefer horizontal gestures; if vertical but large, ignore
+        if(absX > 18 && absX > absY){
+          e.preventDefault();
+          wheelCooldown = true;
+          (e.deltaX > 0) ? swiper.slideNext() : swiper.slidePrev();
+          setTimeout(()=> wheelCooldown=false, 450); // cooldown to avoid rapid multi-fire
+        }
+      }, { passive:false });
+  }
+  function updateAria(){
+    const realIndex = (swiper.realIndex ?? 0) + 1;
+    const total = swiper.slides.filter(s=> !s.classList.contains('swiper-slide-duplicate')).length;
+    if(nextBtn) nextBtn.setAttribute('aria-label', `Next slide (${realIndex}/${total})`);
+  }
+  swiper.on('slideChange', updateAria);
   updateAria();
 })();
