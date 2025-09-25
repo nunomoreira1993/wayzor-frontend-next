@@ -180,3 +180,40 @@
       scroller.addEventListener('touchend', end);
     })();
 })();
+
+// Hero slider arrow control (cycles radio buttons)
+(function(){
+  const nextBtn = document.querySelector('.hero__nav');
+  if(!nextBtn) return; // no hero on page
+  const radios = Array.from(document.querySelectorAll('.hero__radio'));
+  if(!radios.length) return;
+
+  function currentIndex(){
+    const i = radios.findIndex(r => r.checked);
+    return i === -1 ? 0 : i;
+  }
+
+  function updateAria(){
+    const i = currentIndex();
+    nextBtn.setAttribute('aria-label', `Next slide (${i+1}/${radios.length})`);
+  }
+
+  function goNext(){
+    const i = currentIndex();
+    const next = radios[(i + 1) % radios.length];
+    if(next){
+      next.checked = true;
+      next.dispatchEvent(new Event('change', { bubbles:true }));
+      updateAria();
+    }
+  }
+
+  nextBtn.addEventListener('click', goNext);
+  // Keyboard support if focused
+  nextBtn.addEventListener('keydown', e => {
+    if(e.key === 'Enter' || e.key === ' ') { e.preventDefault(); goNext(); }
+  });
+
+  // Optional: swipe / wheel could be added later
+  updateAria();
+})();
