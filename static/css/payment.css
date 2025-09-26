@@ -986,7 +986,7 @@ button {
   }
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1099px) {
   .price-widget {
     position: fixed;
     left: 0;
@@ -1108,7 +1108,7 @@ button {
   }
   /* Very small screens: hide the car image and space things out */
 }
-@media (max-width: 1024px) and (max-width: 320px) {
+@media (max-width: 1099px) and (max-width: 320px) {
   .price-widget .pwm-center {
     display: none;
   }
