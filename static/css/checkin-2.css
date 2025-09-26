@@ -641,7 +641,7 @@ button {
 }
 
 .stepper-section {
-  margin: 72px;
+  margin: 50px;
 }
 
 .content-grid {
@@ -1243,9 +1243,6 @@ button {
     width: clamp(180px, 52vw, 280px);
   }
   /* Layout geral */
-  .stepper-section {
-    margin: 32px 16px 48px;
-  }
   /* Stepper horizontal com 5 passos inline e apenas label ativa */
   .stepper {
     flex-direction: row;
@@ -1274,20 +1271,24 @@ button {
     background-color: var(--color-input-bg);
   }
   .step-label {
-    display: none;
-  }
-  .step.active .step-label {
-    display: block;
     position: absolute;
-    top: 48px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: -moz-max-content;
-    width: max-content;
-    font-size: 12px;
-    line-height: 1.2;
-    white-space: nowrap;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    border: 0;
+  }
+  .stepper__caption {
+    margin-top: 12px;
+    text-align: center;
+    font-size: 14px;
     font-weight: 600;
+    line-height: 1.3;
+    min-height: 1.3em;
+    color: var(--color-text-dark);
   }
   /* Cartões / formulários */
   .details-form, .summary-card {
@@ -1331,6 +1332,15 @@ button {
   /* Telas muito pequenas (<=500px): reduzir mais para evitar overflow */
   .summary-card .car-image-container .car-photo {
     width: clamp(160px, 45vw, 240px);
+  }
+}
+.stepper__caption {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .stepper__caption {
+    display: block;
   }
 }
 :root {
