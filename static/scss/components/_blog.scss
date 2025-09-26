@@ -17,7 +17,7 @@
 /* Mobile stack */
 /* Mobile horizontal scroller (mirrors social section behavior) */
 
-@media (min-width:1025px){ 
+@media (min-width:1440px){ 
   .blog__row { display:flex; gap:2rem; }
   /* Fixa larguras desejadas em desktop */
  
@@ -25,14 +25,13 @@
   /* Garante que imagens ocupem toda a largura do seu card */
   .blog__card .blog__image,
   .blog__card .blog__image,
-  .blog__card .blog__image { width:auto;
-  overflow: hidden; }
+  .blog__card .blog__image { width:auto;}
 
   /* Primeiro card maior com imagem até 526px em ecrãs grandes */
   .blog__row .blog__card:first-child { flex: 0 0 526px; max-width:526px; }
   .blog__row .blog__card:first-child .blog__image { max-width:526px; width:100%; margin:0 auto; }
 }
-@media (max-width:1024px){ 
+@media (max-width:1339px){ 
     .blog__row { display:flex; gap:2rem; }
     .blog__cards { overflow-x:auto; -webkit-overflow-scrolling:touch; padding-bottom:1rem; margin-left:1rem; /* hide scrollbar visually */ -ms-overflow-style:none; scrollbar-width:none; }
     .blog__cards::-webkit-scrollbar { display:none; }
@@ -40,4 +39,4 @@
     .blog__image { height:240px; }
     .blog__card-title { font-size:1.25rem; }
     .blog__desc { font-size:.875rem; }
-    .blog__card {  max-width:360px;
+    .blog__card {  max-width:360px;}}
