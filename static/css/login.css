@@ -220,18 +220,13 @@ button {
 }
 
 .header__menu {
-  display: none;
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  width: 100%;
+  justify-content: space-between;
 }
 
-@media (min-width: 1024px) {
-  .header__menu {
-    display: flex;
-    align-items: center;
-    gap: 60px;
-    width: 100%;
-    justify-content: space-between;
-  }
-}
 .header__logo {
   display: flex;
   align-items: center;
@@ -400,14 +395,43 @@ button {
   color: #262E2F;
 }
 
-.header__mobile {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
+/* Responsive: compact header on small screens */
+@media (max-width: 1023px) {
+  .header__links {
+    display: none;
+  }
+  .header__phone {
+    display: none;
+  }
+  /* Show user icon on mobile but hide its text */
+  .header__user {
+    display: flex;
+  }
+  .header__user .header__auth-link, .header__user span {
+    display: none;
+  }
+  .header__lang {
+    display: none;
+  }
+  .header__btn {
+    display: none;
+  }
+  .header__menu {
+    gap: 16px;
+  }
+  /* Align actions to the far right when links are hidden */
+  .header__menu {
+    justify-content: flex-end;
+  }
+  .header__actions {
+    gap: 0.75rem;
+  }
+  .header__menu-btn {
+    display: flex;
+  }
 }
-
 @media (min-width: 1024px) {
-  .header__mobile {
+  .header__menu-btn {
     display: none;
   }
 }
@@ -415,7 +439,7 @@ button {
   background: none;
   border: none;
   cursor: pointer;
-  display: flex;
+  /* display handled via media queries to avoid showing on desktop */
 }
 
 .header--transparent .header__menu-btn {
@@ -498,26 +522,7 @@ button {
   background: #fff;
 }
 
-.header__mobile-user {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 24px;
-  height: 24px;
-  border-radius: 50%;
-  cursor: pointer;
-  transition: background 0.25s, border-color 0.25s;
-  font-size: 0;
-}
-
-.header__mobile-user {
-  background-image: url("/images/ic_user_bb.svg");
-}
-
-.header--transparent .header__mobile-user {
-  background-image: url("/images/ic_user_bw.svg");
-}
-
+/* Remove legacy header__mobile user icon; responsive solution uses .header__actions */
 .icon, .header__overlay-icon {
   display: inline-block;
   vertical-align: middle;
