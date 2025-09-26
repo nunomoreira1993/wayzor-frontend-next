@@ -46,12 +46,10 @@
     align-items: center;
     gap: 12px;
     position: relative;
-    flex: 1;
+    flex: 1 1 0;
     text-align: center;
 
     &:not(:last-child) {
-        flex: 2;
-
         &::after {
             content: '';
             position: absolute;
@@ -87,6 +85,15 @@
 
             &::after {
                 content: '';
+                position: absolute;
+                left: 50%;
+                bottom: 7.5px;
+                transform: translateX(-50%);
+                width: 12px;
+                height: 2.7px;
+                background-color: currentColor;
+                border-radius: 4px;
+                pointer-events: none;
    
             }
         }
@@ -107,6 +114,7 @@
     align-items: center;
     font-size: 14px;
     font-weight: 500;
+    line-height: 1;
     background-color: var(--color-input-bg);
     color: var(--color-text-dark);
     border: 2.5px solid var(--color-input-bg);
@@ -128,12 +136,7 @@
     color: var(--color-text-muted);
 }
 
-.stepper .step {
-  flex: 1;
-}
-.stepper .step:not(:last-child) {
-  flex: 1;
-}
+/* Equal widths for all steps by default; mobile overrides below keep same basis */
 
 
 /* ========================================================================== */

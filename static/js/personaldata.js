@@ -105,3 +105,34 @@
     });
   })();
 
+  document.addEventListener('DOMContentLoaded', function(){
+    const captionEl = document.querySelector('.stepper__caption');
+    const stepper    = document.querySelector('.stepper');
+    if(!captionEl || !stepper) return;
+
+    function updateCaption(){
+      const active = stepper.querySelector('.step.active .step-label');
+      captionEl.textContent = active ? active.textContent.trim() : '';
+    }
+
+    // Inicial
+    updateCaption();
+
+    // Observer para mudanças de classe (ex: quando muda active via JS noutro script)
+    const obs = new MutationObserver(muts => {
+      let refresh = false;
+      for (const m of muts){
+        if (m.type === 'attributes' && m.target.classList.contains('step')) { refresh = true; break; }
+      }
+      if (refresh) updateCaption();
+    });
+    stepper.querySelectorAll('.step').forEach(step => {
+      obs.observe(step, { attributes:true, attributeFilter:['class'] });
+    });
+
+    // Caso exista navegação por clique (fallback simples)
+    stepper.addEventListener('click', e => {
+      const step = e.target.closest('.step');
+      if(step){ updateCaption(); }
+    });
+  });
