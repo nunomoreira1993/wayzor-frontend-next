@@ -293,9 +293,9 @@
     .price-widget .price-summary > .price-operator { display: none; }
 
     /* Placement using flex: TOTAL left, CAR centered, BUTTON right */
-    .price-widget .price-summary > .price-item.total { order: 1; margin-right: auto; text-align: right; }
+    .price-widget .price-summary > .price-item.total { order: 1; margin-right: 10px; text-align: right; }
     .price-widget .price-summary > .car-summary { order: 2; }
-    .price-widget .price-summary > .pwm-right { order: 3; margin-left: auto; }
+    .price-widget .price-summary > .pwm-right { order: 3; margin-left: 8px; }
 
     /* Left-align total label/value on mobile (override earlier flex-end) */
     .price-widget .price-item.total .total-price-label,
