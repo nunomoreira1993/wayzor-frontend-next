@@ -40,15 +40,7 @@
   window.addEventListener('scroll', onScroll, { passive:true });
   onScroll();
 
-  // Mobile menu overlay
-  const menuOpenBtn = document.querySelector('[data-menu-open]');
-  const menuCloseBtn = document.querySelector('[data-menu-close]');
-  const overlay = document.querySelector('[data-header-overlay]');
-  function openMenu(){ overlay && overlay.classList.add('is-open'); }
-  function closeMenu(){ overlay && overlay.classList.remove('is-open'); }
-  if(menuOpenBtn) menuOpenBtn.addEventListener('click', openMenu);
-  if(menuCloseBtn) menuCloseBtn.addEventListener('click', closeMenu);
-  overlay && overlay.addEventListener('click', (e)=>{ if(e.target === overlay) closeMenu(); });
+  // Mobile menu overlay removed; responsive header uses pure CSS now.
 
   // Footer unificado responsivo
   (function(){
