@@ -868,11 +868,6 @@ button {
   }
 }
 @media (max-width: 1024px) {
-  .price-widget { /* hide details on mobile */
-    /* hide car class on mobile */
-    /* Ensure hidden state still collapses properly */
-    /* Em  visível fixa no fundo (sem precisar classe extra) */
-  }
   .price-widget .price-widget {
     display: flex;
     align-items: center;
