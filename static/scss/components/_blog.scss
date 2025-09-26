@@ -25,7 +25,8 @@
   /* Garante que imagens ocupem toda a largura do seu card */
   .blog__card .blog__image,
   .blog__card .blog__image,
-  .blog__card .blog__image { width:auto; }
+  .blog__card .blog__image { width:auto;
+  overflow: hidden; }
 
   /* Primeiro card maior com imagem até 526px em ecrãs grandes */
   .blog__row .blog__card:first-child { flex: 0 0 526px; max-width:526px; }
@@ -39,5 +40,4 @@
     .blog__image { height:240px; }
     .blog__card-title { font-size:1.25rem; }
     .blog__desc { font-size:.875rem; }
-    .blog__card {  max-width:360px; }
- }
+    .blog__card {  max-width:360px;
