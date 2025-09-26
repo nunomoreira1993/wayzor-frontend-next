@@ -1992,15 +1992,6 @@ body {
   padding-right: 32px;
 }
 
-a {
-  color: var(--color-primary-darker);
-  text-decoration: underline;
-  cursor: pointer;
-}
-a:hover {
-  text-decoration: none;
-}
-
 img {
   max-width: 100%;
   height: auto;
