@@ -4,14 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Personal Data</title>
-  <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Wayzor - Personal Data</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./css/personaldata.css">
-  <link rel="stylesheet" href="./css/lang-dropdown.css" />
+  <link rel="stylesheet" href="./css/lang-dropdown.css">
 
   
 
@@ -26,14 +23,14 @@
           <!-- Logo -->
           <div class="header__logo">
             <a href="/" class="header__logo-link">
-              <img data-logo src="images/new_log.svg" alt="Wayzor" class="header__logo-img" />
+              <img data-logo src="images/new_log.svg" alt="Wayzor" class="header__logo-img">
             </a>
           </div>
 
           <!-- Desktop Menu -->
           <div class="header__menu">
             <div class="header__links">
-              <a href="./fleet.html" class="header__link" data-active-link="fleet">Vehicles</span></a>
+              <a href="./fleet.html" class="header__link" data-active-link="fleet">Vehicles</a>
               <a href="#" class="header__link">Stations</a>
               <a href="#" class="header__link">About us</a>
             </div>
@@ -75,7 +72,7 @@
   <!-- Price Widget (separated from header) -->
   <section class="price-widget is-hidden" aria-label="Booking price summary" data-price-widget>
     <div class="container price-widget-container">
-      <div class="booking-details" aria-label="Booking itinerary">
+  <div class="booking-details">
         <div class="detail-item">
           <span class="detail-label">Pick up:</span>
           <span class="detail-value">PDL Marina Atlântico > Qua 10 Out . 10:00</span>
@@ -85,7 +82,7 @@
           <span class="detail-value">PDL Marina Atlântico > Quin 11 Out . 10:00</span>
         </div>
       </div>
-      <div class="price-summary" aria-label="Price breakdown">
+  <div class="price-summary">
         <div class="car-summary">
           <div class="car-text">
             <span class="car-class">CLASS: D - COMPACT</span>
@@ -118,7 +115,7 @@
 
 <main id="section-main" class="main-section">
     <div class="container">
-        <section class="stepper-section">
+  <div class="stepper-section">
             <div class="stepper">
                 <div class="step completed">
                     <div class="step-icon"><img src="images/ic_check_b.svg" alt="Checkmark"></div>
@@ -144,11 +141,11 @@
                 </div>
             </div>
             <div class="stepper__caption" aria-live="polite"></div>
-        </section>
+  </div>
 
         <div class="content-grid">
             <div class="form-column">
-                <form class="details-form">
+                <form id="details-form" class="details-form">
                     <section class="form-section">
                         <h2>Your details</h2>
                         <div class="form-row">
@@ -247,7 +244,8 @@
                         </div>
                     </section>
 
-                    <section class="form-section form-agreements">
+          <section class="form-section form-agreements">
+            <h4>Agreements</h4>
                         <div class="checkbox-container">
                             <input type="checkbox" id="create-account" name="create-account">
                             <label for="create-account"><a href="#">Create an account</a> with the entered details to access the Reserved Area.</label>
@@ -264,8 +262,8 @@
                 </form>
 
                 <section class="warning-banner">
-                    <div class="warning-icon-wrapper">
-                        <img src="images/ic_alert works.svg" alt="Warning Icon">
+          <div class="warning-icon-wrapper">
+            <img src="images/ic_alert%20works.svg" alt="Warning Icon">
                     </div>
                     <div class="warning-text">
                         <h3>Your booking is not fully covered</h3>
@@ -299,7 +297,7 @@
                           MBWAY
                         </label>
                         <div class="payment-logos">
-                          <img src="images/mbway-seeklogo 1.svg" alt="MB Way" style="height:24px;">
+                          <img src="images/mbway-seeklogo%201.svg" alt="MB Way" style="height:24px;">
                         </div>
                       </div>
                     </div>
@@ -399,7 +397,7 @@
     </div>
 </main>
  <!-- Footer (synced with homepage) -->
-  <footer class="footer" role="contentinfo">
+  <footer class="footer">
     <div class="container">
       <div class="footer__main">
         <!-- Logo -->

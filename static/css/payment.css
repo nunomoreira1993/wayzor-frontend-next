@@ -744,14 +744,12 @@ button {
   background-color: var(--background-widget);
   padding: 24px 0;
   transition: transform 0.25s ease, opacity 0.2s ease;
-  /* Estado visível (desktop) fixo no topo sem necessitar classe extra */
+  /* Estado visível (desktop) sticky no topo sem necessitar classe extra */
 }
 @media (min-width: 1025px) {
   .price-widget:not(.is-hidden) {
-    position: fixed;
-    left: 0;
-    right: 0;
-    top: var(--price-widget-offset, 0);
+    position: sticky;
+    top: var(--price-widget-offset, 88px);
     z-index: 120;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
   }
@@ -830,8 +828,6 @@ button {
 }
 .price-widget .price-item .total-price-label {
   font-size: 12px;
-  font-weight: 600;
-  color: var(--text-dark);
 }
 .price-widget .price-item .price-value,
 .price-widget .price-item .price-operator {
@@ -867,7 +863,12 @@ button {
     flex-wrap: wrap;
   }
 }
-@media (max-width: 1024px) {
+@media (max-width: 1100px) {
+  .price-widget { /* hide details on mobile */
+    /* hide car class on mobile */
+    /* Ensure hidden state still collapses properly */
+    /* Em  visível fixa no fundo (sem precisar classe extra) */
+  }
   .price-widget .price-widget {
     display: flex;
     align-items: center;
@@ -1661,7 +1662,6 @@ button {
 }
 .summary-card .total-price p {
   font-size: 12px;
-  color: var(--color-text-muted);
   margin: 0 0 8px;
 }
 .summary-card .promo-code {
@@ -1716,7 +1716,7 @@ button {
 /* ========================================================================== */
 /* 7. MEDIA QUERIES                                                           */
 /* ========================================================================== */
-@media (max-width: 1024px) {
+@media (max-width: 1254px) {
   .content-grid {
     grid-template-columns: 1fr;
   }

@@ -12,13 +12,11 @@
     padding: 24px 0;
     transition: transform .25s ease, opacity .2s ease;
 
-    /* Estado visível (desktop) fixo no topo sem necessitar classe extra */
+    /* Estado visível (desktop) sticky no topo sem necessitar classe extra */
     &:not(.is-hidden) {
         @media (min-width: 1025px) {
-            position: fixed;
-            left: 0;
-            right: 0;
-            top: var(--price-widget-offset, 0);
+            position: sticky;
+            top: var(--price-widget-offset, 88px);
             z-index: 120;
             box-shadow: 0 2px 6px rgba(0,0,0,.08);
         }
@@ -97,7 +95,7 @@
         gap: 2px;
 
         .price-label { font-size: 12px; }
-        .total-price-label { font-size: 12px; font-weight: 600; color: var(--text-dark); }
+        .total-price-label { font-size: 12px; }
         .price-value,
         .price-operator {
             font-size: 24px;
@@ -141,7 +139,7 @@
     }
 
 
-    @media (max-width: 1024px) {
+    @media (max-width: 1100px) {
        
 
  

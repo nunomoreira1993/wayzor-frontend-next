@@ -1106,7 +1106,6 @@ button {
 }
 .summary-card .total-price p {
   font-size: 12px;
-  color: var(--color-text-muted);
   margin: 0 0 8px;
 }
 .summary-card .promo-code {
@@ -1161,7 +1160,7 @@ button {
 /* ========================================================================== */
 /* 7. MEDIA QUERIES                                                           */
 /* ========================================================================== */
-@media (max-width: 1024px) {
+@media (max-width: 1254px) {
   .content-grid {
     grid-template-columns: 1fr;
   }
