@@ -26,6 +26,10 @@
   .blog__card .blog__image,
   .blog__card .blog__image,
   .blog__card .blog__image { width:auto; }
+
+  /* Primeiro card maior com imagem até 526px em ecrãs grandes */
+  .blog__row .blog__card:first-child { flex: 0 0 526px; max-width:526px; }
+  .blog__row .blog__card:first-child .blog__image { max-width:526px; width:100%; margin:0 auto; }
 }
 @media (max-width:1024px){ 
     .blog__row { display:flex; gap:2rem; }
