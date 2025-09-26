@@ -646,9 +646,8 @@ button {
   padding: 24px 0;
   transition: transform 0.25s ease, opacity 0.2s ease;
   /* Estado visível (desktop) fixo no topo sem necessitar classe extra */
-  /* Mobile simplified variant */
 }
-@media (min-width: 769px) {
+@media (min-width: 1025px) {
   .price-widget:not(.is-hidden) {
     position: fixed;
     left: 0;
@@ -730,6 +729,11 @@ button {
 .price-widget .price-item .price-label {
   font-size: 12px;
 }
+.price-widget .price-item .total-price-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-dark);
+}
 .price-widget .price-item .price-value,
 .price-widget .price-item .price-operator {
   font-size: 24px;
@@ -746,6 +750,9 @@ button {
   color: var(--secondary-green);
   font-weight: 600;
 }
+.price-widget .pwm-btn {
+  display: none;
+}
 @media (max-width: 1200px) {
   .price-widget .price-summary {
     gap: 16px;
@@ -761,19 +768,13 @@ button {
     flex-wrap: wrap;
   }
 }
-.price-widget .price-widget-mobile {
-  display: none;
-}
 @media (max-width: 1024px) {
-  .price-widget {
-    padding: 10px 0; /* compact spacing on mobile */
+  .price-widget { /* hide details on mobile */
+    /* hide car class on mobile */
     /* Ensure hidden state still collapses properly */
-    /* Em mobile visível fixa no fundo (sem precisar classe extra) */
+    /* Em  visível fixa no fundo (sem precisar classe extra) */
   }
-  .price-widget-container {
-    display: none;
-  }
-  .price-widget .price-widget-mobile {
+  .price-widget .price-widget {
     display: flex;
     align-items: center;
     justify-content: center; /* center cluster */
@@ -781,36 +782,65 @@ button {
     width: 100%;
     text-align: center;
   }
-  .price-widget .price-widget-mobile .pwm-left {
+  .price-widget .booking-details {
+    display: none;
+  }
+  .price-widget .price-summary {
+    gap: 16px;
+    flex-wrap: nowrap;
+  }
+  .price-widget .car-class {
+    display: none;
+  }
+  .price-widget .car-name {
+    display: none;
+  }
+  .price-widget .car-similar {
+    display: none;
+  }
+  .price-widget .car-value {
+    display: none;
+  }
+  .price-widget .price-value {
+    display: none;
+  }
+  .price-widget .price-label {
+    display: none;
+  }
+  .price-widget .price-vat {
+    display: none;
+  }
+  .price-widget .price-operator {
+    display: none;
+  }
+  .price-widget .price-widget .total-price-label {
+    font-size: 11px;
+    font-weight: 500;
+    line-height: 1.1;
+    align-items: flex-start;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
     padding: 0 12px;
   }
-  .price-widget .price-widget-mobile .pwm-label {
-    font-size: 11px;
-    font-weight: 500;
-    line-height: 1.1;
-  }
-  .price-widget .price-widget-mobile .pwm-total {
+  .price-widget .price-widget .price-value-total {
     font-size: 20px;
     font-weight: 700;
     color: var(--secondary-green);
-  }
-  .price-widget .price-widget-mobile .pwm-center {
-    flex: 0 0 auto;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: flex-end;
+    padding: 0 12px;
   }
-  .price-widget .price-widget-mobile .pwm-car {
+  .price-widget .price-widget .car-image {
     height: 46px;
     -o-object-fit: contain;
        object-fit: contain;
-  }
-  .price-widget .price-widget-mobile .pwm-right {
+    justify-content: center;
     display: flex;
+    flex: 0 0 auto;
   }
-  .price-widget .price-widget-mobile .pwm-btn {
+  .price-widget .price-widget .pwm-btn {
     background: var(--secondary-green);
     color: #fff;
     border: none;
@@ -825,13 +855,13 @@ button {
     min-width: 110px;
     transition: background 0.2s ease, transform 0.2s ease;
   }
-  .price-widget .price-widget-mobile .pwm-btn:active {
+  .price-widget .price-widget .pwm-btn:active {
     transform: scale(0.95);
   }
-  .price-widget .price-widget-mobile .pwm-btn:hover {
+  .price-widget .price-widget .pwm-btn:hover {
     background: #3f6510;
   }
-  .price-widget .price-widget-mobile .pwm-btn:active {
+  .price-widget .price-widget .pwm-btn:active {
     background: #34540d;
   }
   .price-widget.is-hidden {
@@ -848,26 +878,21 @@ button {
     z-index: 120;
   }
 }
-@media (max-width: 320px) {
-  .price-widget .price-widget-mobile .pwm-center {
+@media (max-width: 456px) {
+  .price-widget .car-image {
     display: none;
   }
-  .price-widget .price-widget-mobile {
+  .price-widget .price-widget {
     justify-content: space-between;
     padding: 0 10px;
   }
-  .price-widget .price-widget-mobile .pwm-right .pwm-btn {
+  .price-widget .pwm-btn {
     margin-right: 0;
   }
 }
 
-/* Standalone mobile widget (works even if not wrapped by .price-widget) */
-.price-widget-mobile {
-  display: none; /* hidden by default (desktop) */
-}
-
-@media (max-width: 768px) {
-  .price-widget-mobile {
+@media (max-width: 1024px) {
+  .price-widget {
     position: fixed;
     left: 0;
     right: 0;
@@ -888,37 +913,82 @@ button {
     -webkit-backdrop-filter: blur(0); /* avoid iOS transparency quirks */
     backdrop-filter: blur(0);
   }
-  .price-widget-mobile .pwm-left {
+  .price-widget .pwm-left {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
     padding: 0 12px;
   }
-  .price-widget-mobile .pwm-label {
+  .price-widget .pwm-label {
     font-size: 11px;
     font-weight: 500;
     line-height: 1.1;
     color: var(--text-dark, #1c1c1c);
   }
-  .price-widget-mobile .pwm-total {
+  .price-widget .pwm-total {
     font-size: 20px;
     font-weight: 700;
     color: #528116; /* main price color */
   }
-  .price-widget-mobile .pwm-center {
+  .price-widget .pwm-center {
     flex: 0 0 auto;
     display: flex;
     justify-content: center;
   }
-  .price-widget-mobile .pwm-car {
+  .car-image {
     height: 46px;
     -o-object-fit: contain;
        object-fit: contain;
+    flex: 0 0 auto;
+    display: flex;
+    justify-content: center;
   }
-  .price-widget-mobile .pwm-right {
+  .price-widget .pwm-right {
     display: flex;
   }
-  .price-widget-mobile .pwm-btn {
+  /* Make the row full-width and push the button to the far right */
+  .price-widget-container {
+    width: 100%;
+  }
+  .price-widget .price-summary {
+    width: 100%;
+    display: flex; /* flex only, no grid */
+    align-items: center;
+    justify-content: center; /* center the cluster */
+    gap: 12px;
+    max-width: 520px; /* keep elements close to center */
+    margin: 0 auto;
+  }
+  .price-widget .pwm-right {
+    margin-left: auto;
+  }
+  /* Keep only the TOTAL price item visible; remove other price items/operators on mobile */
+  .price-widget .price-summary > .price-item:not(.total) {
+    display: none;
+  }
+  .price-widget .price-summary > .price-operator {
+    display: none;
+  }
+  /* Placement using flex: TOTAL left, CAR centered, BUTTON right */
+  .price-widget .price-summary > .price-item.total {
+    order: 1;
+    margin-right: auto;
+    text-align: right;
+  }
+  .price-widget .price-summary > .car-summary {
+    order: 2;
+  }
+  .price-widget .price-summary > .pwm-right {
+    order: 3;
+    margin-left: auto;
+  }
+  /* Left-align total label/value on mobile (override earlier flex-end) */
+  .price-widget .price-item.total .total-price-label,
+  .price-widget .price-item.total .price-value-total {
+    align-items: flex-start;
+    text-align: left;
+  }
+  .price-widget .pwm-btn {
     background: #78BE20; /* button background color */
     color: #000;
     border: none;
@@ -934,24 +1004,24 @@ button {
     transition: background 0.2s ease, transform 0.2s ease;
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.06), 0 1px 8px rgba(0, 0, 0, 0.08);
   }
-  .price-widget-mobile .pwm-btn:hover {
+  .price-widget .pwm-btn:hover {
     background: #6AB01B;
   }
-  .price-widget-mobile .pwm-btn:active {
+  .price-widget .pwm-btn:active {
     background: #5EA61A;
     transform: scale(0.97);
   }
   /* Very small screens: hide the car image and space things out */
 }
-@media (max-width: 768px) and (max-width: 320px) {
-  .price-widget-mobile .pwm-center {
+@media (max-width: 1024px) and (max-width: 320px) {
+  .price-widget .pwm-center {
     display: none;
   }
-  .price-widget-mobile {
+  .price-widget {
     justify-content: space-between;
     padding: 10px;
   }
-  .price-widget-mobile .pwm-right .pwm-btn {
+  .price-widget .pwm-right .pwm-btn {
     margin-right: 0;
   }
 }
