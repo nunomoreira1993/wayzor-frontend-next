@@ -1,0 +1,245 @@
+// About page specific styles
+// Uses shared variables, header, layout, footer partials already imported in about.scss
+
+
+.page-about {
+	background:#fff;
+	font-family:$font-base;
+	color:$color-dark-strong;
+}
+
+// Hero
+.about-hero {
+	position:relative;
+	width:100%;
+	height:520px;
+	overflow:hidden;
+
+	&__img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
+	&__overlay { position:absolute; inset:0; background:rgba(0,0,0,.35); }
+	&__content { position:relative; z-index:2; height:100%; display:flex; align-items:flex-end; justify-content:flex-start; }
+	&__inner { width:100%; max-width:$container-max; margin:0 auto; padding:0 2rem; position:relative; display:flex; }
+	&__text { position:relative; display:flex; flex-direction:column; gap:4px; align-self:flex-end; margin-bottom:250px; }
+
+@media (max-width:1023.98px) {
+	.about-hero__text { margin-bottom:160px; padding-right:1rem; }
+	.about-hero__title { font-size:48px; }
+}
+
+@media (max-width:639.98px) {
+	.about-hero__text { margin-bottom:120px; padding-right:0.5rem; }
+	.about-hero__title { font-size:38px; }
+}
+	&__title { font-family:$font-base; font-size:64px; font-weight:700; line-height:110%; color:$color-white; font-feature-settings:'liga' off,'clig' off; margin:0; }
+	&__subtitle { font-family:$font-base; font-size:18px; font-weight:500; line-height:100%; color:$color-white; font-feature-settings:'liga' off,'clig' off; margin:0; }
+}
+
+// Layout container for about content
+.about-main { max-width:1680px; margin:0 auto; padding:4rem 1rem 6rem; }
+@media (min-width:1024px){ .about-main { padding:6rem 3rem 8rem; } }
+
+.about-grid { display:flex; flex-direction:column; }
+@media (min-width:1024px){ .about-grid { flex-direction:column; } }
+
+// Who are we section
+.about-who {
+	width:100%;
+	max-width:880px;
+	margin:0 auto 3rem;
+	padding-right:0;
+	text-align:center;
+	display:flex;
+	flex-direction:column;
+	align-items:center;
+
+	h2 { font-family:$font-base; font-size:40px; font-weight:700; line-height:125%; margin:0 0 1.25rem; color:$color-dark-strong; }
+	p { font-family:$font-base; font-size:20px; font-weight:400; line-height:140%; color:$color-dark-strong; max-width:864px; font-feature-settings:'liga' off,'clig' off; }
+	p + p { margin-top:20px; }
+	&__emphasis { font-weight:700; color:$color-dark-strong; font-feature-settings:'liga' off,'clig' off; }
+	&__cta { margin-top:28px; }
+}
+
+// Outline green button variant (page specific spec)
+.btn-outline-green {
+	display:inline-flex;
+	align-items:center;
+	justify-content:center;
+	height:48px;
+	padding:14px 32px;
+	font-size:16px;
+	line-height:20px;
+	border:2px solid $color-green-dark;
+	border-radius:999px;
+	font-weight:600;
+	color:$color-green-dark;
+	text-decoration:none;
+	transition:.3s;
+	gap:0;
+	background:transparent;
+	&:hover { background:$color-green-dark; color:$color-white; }
+}
+
+// Story (zig-zag) section
+.about-story-wrapper {
+	background:$color-bg-light-soft;
+	width:100vw;
+	position:relative;
+	left:50%; right:50%;
+	margin-left:-50vw; margin-right:-50vw;
+}
+
+.about-story { width:100%; background:transparent; }
+
+.zz-item {
+	display:flex;
+	flex-direction:column;
+	gap:2rem;
+	margin-bottom:4rem;
+	&__media { width:100%; height:320px; border-radius:24px; overflow:hidden; box-shadow:0 2px 6px rgba(0,0,0,.15); img { width:100%; height:100%; object-fit:cover; } }
+	&__body { width:100%; display:flex; flex-direction:column; justify-content:center; gap:1rem; }
+	&__title { font-size:1.75rem; font-weight:700; color:$color-bodytext; }
+	&__text { color:$color-dark-medium; line-height:1.6; }
+	@media (min-width:1024px){
+		flex-direction:row; align-items:center;
+		&__media { width:50%; }
+		&__body { width:50%; }
+		&--rev { flex-direction:row-reverse; }
+	}
+}
+
+// Foundations section
+// Foundations block layout (spec: gap 32px above, internal flex w/ gap 40px)
+.foundation {
+	margin-top:2rem; // 32px gap from previous section
+	display:flex;
+	flex-direction:column;
+	align-items:center;
+	align-self:stretch;
+	gap:40px;
+	padding:80px 0 56px; // top 80px, bottom 56px
+	height:499px; // fixed height per spec (consider making responsive if overflow occurs)
+	width:100%;
+
+	h2 { text-align:center; font-weight:700; font-size:2.25rem; color:$color-bodytext; margin:0; }
+	&__grid { display:grid; gap:3rem; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); max-width:1100px; margin:0 auto; }
+	&__card { text-align:center; display:flex; flex-direction:column; align-items:center; gap:1rem; padding:0 .75rem; }
+	&__icon { width:96px; height:96px; border-radius:50%; background:rgba($color-green-dark,0.10); display:flex; align-items:center; justify-content:center; margin-bottom:.5rem; }
+	&__title { font-weight:700; font-size:1.25rem; color:$color-bodytext; }
+	&__text { font-size:.95rem; color:$color-dark-medium; line-height:1.55; }
+	&__share { text-align:center; }
+}
+
+// Share Button (could reuse btn-outline-green but distinct color spec provided)
+.share-btn {
+	display:inline-flex; align-items:center; padding:1rem 1.75rem; border:2px solid #41620F; border-radius:999px; font-weight:700; color:#41620F; transition:.3s; background:transparent; cursor:pointer;
+	img { margin-right:.5rem; width:20px; height:20px; }
+	&:hover { background:#41620F; color:#fff; }
+}
+
+// Structured story blocks (new layout) -------------------------------------------------
+.story-block {
+	display:flex;
+	flex-direction:column;
+	align-items:flex-start;
+	gap:24px;
+	padding:64px 0 56px;
+	align-self:stretch;
+	&--b { padding:56px 0 64px; }
+
+	&__row {
+		display:flex;
+		width:100%;
+		max-width:1315px;
+		align-items:center;
+		margin:0 auto;
+		&--a { gap:33px; }
+		&--b { gap:16px; }
+	}
+
+	&__text { flex:1; display:flex; flex-direction:column; gap:24px; }
+	&__title { font-size:1.75rem; font-weight:700; color:$color-bodytext; margin:0; }
+	&__body { color:$color-dark-medium; line-height:1.6; font-size:1rem; }
+	&__cta { margin-top:4px; }
+	&__media { flex:1; display:flex; justify-content:center; align-items:center; }
+	&__media img { width:100%; height:100%; object-fit:cover; border-radius:24px; box-shadow:0 2px 6px rgba(0,0,0,.15); }
+}
+
+// Variant-specific overrides per design spec
+.story-block--a {
+	.story-block__text {
+		display:flex;
+		width:607px;
+		padding-left:32px;
+		flex-direction:column;
+		justify-content:center;
+		align-items:flex-start;
+		gap:32px;
+		flex-shrink:0;
+	}
+}
+
+.story-block--b {
+	.story-block__text {
+		display:flex;
+		width:641px;
+		padding-left:32px;
+		flex-direction:column;
+		align-items:flex-start;
+		gap:16px;
+		flex-shrink:0;
+	}
+}
+
+// Shared typography overrides for titles & body inside story blocks (spec H3, Body L)
+.story-block__title {
+	font-family:$font-base;
+	font-size:32px;
+	font-weight:700;
+	line-height:125%;
+	color:$color-dark-strong;
+	font-feature-settings:'liga' off,'clig' off;
+	align-self:stretch;
+}
+
+.story-block__body {
+	font-family:$font-base;
+	font-size:18px;
+	line-height:140%;
+	font-weight:400;
+	color:$color-dark-strong;
+	font-feature-settings:'liga' off,'clig' off;
+	width:562px;
+}
+
+// CTA button inside story blocks (ensures spec layout without affecting global button usage)
+.story-block__cta.btn-outline-green {
+	display:flex;
+	height:48px;
+	padding:14px 32px;
+	flex-direction:column;
+	justify-content:center;
+	align-items:center;
+	gap:0;
+	border-radius:999px;
+	border:2px solid $color-green-dark;
+}
+
+// Ensure paragraph/body widths collapse on small screens to avoid overflow
+@media (max-width:1023.98px) {
+	.story-block--a .story-block__text,
+	.story-block--b .story-block__text { width:100%; padding-left:0; }
+	.story-block__body { width:100%; }
+}
+
+@media (max-width:1023.98px) {
+	.story-block {
+		padding:48px 0; // reduce vertical spacing mobile
+		&--b { padding:48px 0; }
+		&__row { flex-direction:column; gap:24px; }
+		&__media img { height:260px; }
+	}
+}
+
+// Hide inline chevron SVG in language indicator on About page only
+.page-about .header__lang-static svg { display:initial; }
+
