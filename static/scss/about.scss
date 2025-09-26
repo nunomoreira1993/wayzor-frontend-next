@@ -1,0 +1,11 @@
+@import 'variables' ;
+@import 'mixins';
+@import 'buttons';
+@import 'reset';
+@import 'components/hero';
+@import 'components/header';
+@import 'components/layout';
+@import 'components/about';
+@import 'components/footer';
+
+body { background:#fff; font-family:$font-base; color:$color-dark-strong; }
