@@ -46,7 +46,11 @@
   scrollbar-width: none;
   cursor: grab;
   padding-bottom: 4px;
+  /* Right-end breathing room on horizontal scroll */
+  padding-right: 32px;
+  scroll-padding-right: 32px;
 }
+.partners-logos .partners-scroll > .logo-item:last-child { margin-right: 32px; }
 .partners-logos .partners-scroll:active { cursor: grabbing; }
 .partners-logos .partners-scroll::-webkit-scrollbar { display: none; }
 

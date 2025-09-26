@@ -33,9 +33,14 @@
 }
 @media (max-width:1339px){ 
     .blog__row { display:flex; gap:2rem; }
-    .blog__cards { overflow-x:auto; -webkit-overflow-scrolling:touch; padding-bottom:1rem; margin-left:1rem; /* hide scrollbar visually */ -ms-overflow-style:none; scrollbar-width:none; }
+    .blog__cards { overflow-x:auto; -webkit-overflow-scrolling:touch; padding-bottom:1rem; margin-left:1rem; /* hide scrollbar visually */ -ms-overflow-style:none; scrollbar-width:none; padding-right:1rem; scroll-padding-right:1rem; }
     .blog__cards::-webkit-scrollbar { display:none; }
     .blog__card { scroll-snap-align:start; flex:0 0 80%; }
+  /* Give the last item breathing room on the right when horizontally scrolling */
+  .blog__row > .blog__card:last-child,
+  .blog__row > .blog__card:last-of-type { margin-right: 1rem; }
+  /* Fallback/robust spacer to ensure right breathing room */
+  .blog__row::after { content:""; flex: 0 0 1rem; }
     .blog__image { height:240px; }
     .blog__card-title { font-size:1.25rem; }
     .blog__desc { font-size:.875rem; }
