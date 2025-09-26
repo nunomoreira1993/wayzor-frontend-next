@@ -11,6 +11,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./css/personaldata.css">
+  <link rel="stylesheet" href="./css/payment.css">
   <link rel="stylesheet" href="./css/lang-dropdown.css" />
 
   
@@ -170,28 +171,34 @@
 <main id="section-main" class="main-section">
     <div class="container">
         <section class="stepper-section">
-      <div class="stepper">
-        <div class="step completed">
-                    <div class="step-icon"><img src="images/ic_check.svg" alt="Checkmark"></div>
+            <div class="stepper">
+                <div class="step completed">
+                    <div class="step-icon"><img src="images/ic_check_b.svg" alt="Checkmark"></div>
                     <div class="step-label">Select itinerary</div>
                 </div>
-        <div class="step completed">
-                    <div class="step-icon"><img src="images/ic_check.svg" alt="Checkmark"></div>
+                <div class="step completed">
+                    <div class="step-icon"><img src="images/ic_check_b.svg" alt="Checkmark"></div>
                     <div class="step-label">Select Vehicle</div>
                 </div>
-        <div class="step completed">
-                    <div class="step-icon"><img src="images/ic_check.svg" alt="Checkmark"></div>
+                <div class="step completed">
+                    <div class="step-icon"><img src="images/ic_check_b.svg" alt="Checkmark"></div>
                     <div class="step-label">Select options</div>
                 </div>
-    <div class="step completed step--preactive">
-                    <div class="step-icon"><img src="images/ic_check.svg" alt="Checkmark"></div>
+                <div class="step active">
+                  <div class="step-icon" style="position:relative; line-height:1; ">
+                    4
+                    <svg aria-hidden="true" width="12" height="12" viewBox="0 0 26 10" fill="none" style="position:absolute; left:50%; bottom: 3px; transform:translateX(-50%); pointer-events:none;">
+                    <path d="M2 4H24" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+                    </svg>
+                  </div>
                     <div class="step-label">Personal data</div>
                 </div>
-                <div class="step active">
+                <div class="step">
                     <div class="step-icon">5</div>
                     <div class="step-label">Payment</div>
                 </div>
             </div>
+            <div class="stepper__caption" aria-live="polite"></div>
         </section>
 
         <div class="content-grid">
