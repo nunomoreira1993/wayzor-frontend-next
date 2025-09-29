@@ -32,7 +32,15 @@ document.addEventListener('DOMContentLoaded', () => {
                 card.innerHTML = `
                     <figure class="card-image-wrapper">
                         <img src="${station.image}" alt="${station.name}">
-                        <img class="location-icon" src="images/ic_pin_map.svg" alt="Open location in Google Maps" aria-label="Open location in Google Maps" role="button" tabindex="0" data-maps-url="${mapsUrl}">
+                        <button class="location-icon" aria-label="Open location in Google Maps" title="Open location in Google Maps" data-maps-url="${mapsUrl}"></button>
+                        <div class="map-overlay" aria-hidden="true">
+                            <iframe
+                                src="https://www.google.com/maps?q=${encodeURIComponent(mapsQuery)}&output=embed"
+                                loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade"
+                                title="Map for ${station.name}"
+                                aria-label="Map for ${station.name}"></iframe>
+                        </div>
                     </figure>
                     <div class="card-content">
                         <h3>${station.name}</h3>

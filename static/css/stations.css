@@ -892,6 +892,20 @@ body {
      object-fit: cover;
   display: block;
 }
+.card-image-wrapper .map-overlay {
+  position: absolute;
+  inset: 0;
+  border-radius: 0;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+  overflow: hidden;
+}
+.card-image-wrapper .map-overlay iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
 
 .location-icon {
   position: absolute;
@@ -903,15 +917,28 @@ body {
   flex-shrink: 0;
   border-radius: var(--Corner-radius-corner-radius-Full, 9999px);
   background: var(--Content-color-content-overlay-black-30, rgba(0, 0, 0, 0.3));
+  background-image: url("../images/ic_pin_map.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 22px 22px;
   /* Blur */
   -webkit-backdrop-filter: blur(10px);
           backdrop-filter: blur(10px);
   border-radius: 50%;
-  display: flex;
+  display: inline-block;
   color: var(--white);
   font-size: 1.1rem;
   z-index: 1;
   cursor: pointer;
+}
+
+.location-icon:hover {
+  background-image: url("../images/ic_camera.svg");
+}
+
+/* Reveal map when hovering the icon */
+.location-icon:hover ~ .map-overlay {
+  opacity: 1;
 }
 
 .card-content {
