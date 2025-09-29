@@ -9,72 +9,58 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;500;600;700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./css/homepage.css" />
+  <link rel="stylesheet" href="./css/lang-dropdown.css" />
     <link rel="stylesheet" href="./css/about.css" />
 </head>
 <body class="font-lato page-about">
-  <!-- Header (same structure as homepage for scroll behavior) -->
+  <!-- Header (copied exactly from homepage, with About link adjusted) -->
   <header class="header header--transparent" data-header>
     <div class="header__wrap">
       <div class="header__inner">
         <nav class="header__nav">
+          <!-- Logo -->
           <div class="header__logo">
             <a href="/" class="header__logo-link">
               <img data-logo src="https://api.builder.io/api/v1/image/assets/TEMP/c0306462bec75412cd241fde2cd6b9540e4b7321?width=301" alt="Wayzor" class="header__logo-img" />
             </a>
           </div>
+
           <div class="header__menu">
             <div class="header__links">
               <a href="./fleet.html" class="header__link" data-active-link="fleet">Vehicles<span class="header__underline u-hidden" data-active-underline></span></a>
               <a href="#" class="header__link">Stations</a>
-              <a href="./about.html" class="header__link header__link--active">About us</a>
+              <a href="./about.html" class="header__link" data-active-link="about">About us<span class="header__underline u-hidden" data-active-underline></span></a>
             </div>
             <div class="header__actions">
               <button class="header__btn">Fast Check-in</button>
-              <a class="header__phone" href="callto:+351296301805">+351 296 301 805</a>
+              <a class="header__phone" href="callto:+351296301805" aria-label="Call Wayzor support +351 296 301 805">+351 296 301 805</a>
               <div class="header__user">
                 <img id="user-icon" src="images/ic_user_white.svg" alt="User" class="icon icon--20">
-                <a href="/login" class="header__auth-link">Login</a>
+                <a href="/login" class="header__auth-link" aria-label="Login">Login</a>
                 <span aria-hidden="true">/</span>
-                <a href="/register" class="header__auth-link">Register</a>
+                <a href="/register" class="header__auth-link" aria-label="Register">Register</a>
               </div>
-                <div class="header__lang">
-                  <div class="header__lang-static" aria-label="Language">
+              <div class="header__lang">
+                <div class="lang-dropdown" data-lang-root>
+                  <button class="lang-dropdown__toggle" data-lang-toggle aria-haspopup="listbox" aria-expanded="false">
                     <img id="global-icon" src="images/ic_global_white.svg" alt="Global" class="icon icon--18">
-                    <span class="header__lang-code" style="margin:0 .25rem;">EN</span>
+                    <span data-lang-current>EN</span>
                     <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M1.24587 4.39238C1.4779 4.11395 1.89171 4.07633 2.17014 4.30835L7.00002 8.33325L11.8299 4.30835C12.1083 4.07633 12.5221 4.11395 12.7542 4.39238C12.9862 4.67081 12.9486 5.08462 12.6701 5.31665L7.42014 9.69165C7.17677 9.89445 6.82326 9.89445 6.5799 9.69164L1.3299 5.31665C1.05146 5.08462 1.01384 4.67081 1.24587 4.39238Z" fill="currentColor"/></svg>
-                  </div>
+                  </button>
+                  <ul class="lang-dropdown__menu" data-lang-menu role="listbox" aria-label="Select language">
+                    <li class="lang-dropdown__item" role="option" data-lang-value="PT">PT</li>
+                    <li class="lang-dropdown__item" role="option" data-lang-value="EN" aria-selected="true">EN</li>
+                    <li class="lang-dropdown__item" role="option" data-lang-value="FR">FR</li>
+                    <li class="lang-dropdown__item" role="option" data-lang-value="ES">ES</li>
+                  </ul>
                 </div>
+              </div>
+              <button class="header__menu-btn" aria-label="Open menu">
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M2 9C2 8.44772 2.44772 8 3 8H26C26.5523 8 27 8.44772 27 9C27 9.55228 26.5523 10 26 10H3C2.44772 10 2 9.55228 2 9ZM2 16C2 15.4477 2.44772 15 3 15H29C29.5523 15 30 15.4477 30 16C30 16.5523 29.5523 17 29 17H3C2.44772 17 2 16.5523 2 16ZM2 23C2 22.4477 2.44772 22 3 22H24C24.5523 22 25 22.4477 25 23C25 23.5523 24.5523 24 24 24H3C2.44772 24 2 23.5523 2 23Z" fill="currentColor"/></svg>
+              </button>
             </div>
-          </div>
-          <div class="header__mobile">
-            <a href="#" class="header__mobile-user">Login</a>
-            <button class="header__menu-btn" data-menu-open aria-label="Open menu">
-              <img id="menu-icon" src="images/ic_menu.svg" alt="Menu" class="icon icon--32">
-            </button>
           </div>
         </nav>
-      </div>
-    </div>
-    <div class="header__overlay" data-header-overlay>
-      <button class="header__close-btn" data-menu-close aria-label="Close menu"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M0.969825 0.969825C1.26272 0.676936 1.73759 0.676936 2.03049 0.969825L6 4.93934L9.96952 0.969825C10.2624 0.676936 10.7373 0.676936 11.0302 0.969825C11.3231 1.26272 11.3231 1.73759 11.0302 2.03049L7.06066 6L11.0302 9.96952C11.3231 10.2624 11.3231 10.7373 11.0302 11.0302C10.7373 11.3231 10.2624 11.3231 9.96952 11.0302L6 7.06066L2.03049 11.0302C1.73759 11.3231 1.26272 11.3231 0.969825 11.0302C0.676936 10.7373 0.676936 10.2624 0.969825 9.96952L4.93934 6L0.969825 2.03049C0.676936 1.73759 0.676936 1.26272 0.969825 0.969825Z" fill="#528116"/></svg></button>
-      <div class="header__overlay-content">
-        <div class="header__overlay-section">
-          <a href="./fleet.html" class="header__overlay-link">Vehicles</a>
-          <a href="#" class="header__overlay-link">Stations</a>
-          <a href="./about.html" class="header__overlay-link">About us</a>
-        </div>
-        <div class="header__overlay-bottom">
-          <div class="header__overlay-link header__overlay-link--plain header__overlay-link--phone u-underline"><a href="callto:+351296301805">+351 296 301 805</a></div>
-          <div class="header__overlay-link header__overlay-link--plain"><img src="images/ic_check.svg" alt="Fast Check-in" class="header__overlay-icon icon icon--18">Fast Check in</div>
-          <div class="header__overlay-link header__overlay-link--plain"><img src="images/ic_user.svg" alt="User" class="header__overlay-icon icon icon--18"><a href="/login" class="header__auth-link">Login</a><span aria-hidden="true">/</span><a href="/register" class="header__auth-link">Register</a></div>
-          <div class="header__overlay-link header__overlay-link--plain">
-            <div class="header__lang-static" aria-label="Language">
-              <img src="images/ic_global.svg" alt="Language" class="header__overlay-icon icon icon--18">
-              <span style="margin:0 .25rem;">EN</span>
-              <img src="images/ic_chevron_down.svg" alt="" class="header__overlay-icon icon icon--18" aria-hidden="true">
-            </div>
-          </div>
-        </div>
       </div>
     </div>
   </header>
@@ -146,31 +132,31 @@
         <div class="foundation__grid" role="list">
           <div class="foundation__card" role="listitem">
             <div class="foundation__icon">
-              <img src="images/ic_layers.svg" alt="Reliability icon" width="48" height="48">
+              <img src="images/ic_tour.svg" alt="Purpose icon" width="48" height="48">
             </div>
-            <h3 class="foundation__title">Reliability</h3>
-            <p class="foundation__text">Consistent service excellence across every touchpoint, from booking to return.</p>
+            <h3 class="foundation__title">Purpose</h3>
+            <p class="foundation__text">Freedom of choice and movement for a better mobility experience.</p>
           </div>
           <div class="foundation__card" role="listitem">
             <div class="foundation__icon">
-              <img src="images/ic_check_circle.svg" alt="Trust icon" width="48" height="48">
+              <img src="images/ic_call.svg" alt="Essence icon" width="48" height="48">
             </div>
-            <h3 class="foundation__title">Trust</h3>
-            <p class="foundation__text">Transparent pricing, no surprises—just honest guidance and support.</p>
+            <h3 class="foundation__title">Essence</h3>
+            <p class="foundation__text">A solution available anytime — for any distance, any need.</p>
           </div>
           <div class="foundation__card" role="listitem">
             <div class="foundation__icon">
-              <img src="images/ic_pin.svg" alt="Local roots icon" width="48" height="48">
+              <img src="images/mobile_vibrate.svg" alt="Mission icon" width="48" height="48">
             </div>
-            <h3 class="foundation__title">Local Roots</h3>
-            <p class="foundation__text">Deeply connected to the Azores—supporting culture, community, and environment.</p>
+            <h3 class="foundation__title">Mission</h3>
+            <p class="foundation__text">Mobility is our reason for being. Customer satisfaction drives us forward.</p>
           </div>
           <div class="foundation__card" role="listitem">
             <div class="foundation__icon">
-              <img src="images/ic_plus.svg" alt="Innovation icon" width="48" height="48">
+              <img src="images/distance.svg" alt="Vision icon" width="48" height="48">
             </div>
-            <h3 class="foundation__title">Innovation</h3>
-            <p class="foundation__text">Smart tools and digital journeys that make mobility feel effortless.</p>
+            <h3 class="foundation__title">Vision</h3>
+            <p class="foundation__text">Lead in customer satisfaction and grow sustainably.</p>
           </div>
         </div>
         <div style="text-align:center;">
@@ -220,6 +206,7 @@
   </footer>
 
   <script src="./js/lang-dropdown.js"></script>
+  <script src="./js/header.js"></script>
   <script src="./js/homepage.js"></script>
 </body>
 </html>

@@ -925,7 +925,6 @@ button {
 .about-hero__overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.35);
 }
 .about-hero__content {
   position: relative;
@@ -996,7 +995,7 @@ button {
 
 @media (min-width: 1024px) {
   .about-main {
-    padding: 6rem 3rem 8rem;
+    padding: 80px 3rem 74px;
   }
 }
 .about-grid {
@@ -1011,8 +1010,8 @@ button {
 }
 .about-who {
   width: 100%;
-  max-width: 880px;
-  margin: 0 auto 3rem;
+  max-width: 864px;
+  margin: 0 auto 82px;
   padding-right: 0;
   text-align: center;
   display: flex;
@@ -1045,9 +1044,27 @@ button {
   font-feature-settings: "liga" off, "clig" off;
 }
 .about-who__cta {
-  margin-top: 28px;
+  margin-top: 32px;
 }
 
+/* Align 'Who are we' width with foundation/story components on tablet */
+@media (max-width: 1023.98px) {
+  .about-who {
+    max-width: 563px;
+    margin: 0 auto 72px;
+    padding: 0 16px;
+  }
+  .about-who p {
+    max-width: 100%;
+  }
+}
+/* Very small / single-column alignment (matches single foundation card width) */
+@media (max-width: 604px) {
+  .about-who {
+    margin: 0 auto 64px;
+    padding: 0;
+  }
+}
 .btn-outline-green {
   display: inline-flex;
   align-items: center;
@@ -1143,9 +1160,12 @@ button {
   align-items: center;
   align-self: stretch;
   gap: 40px;
-  padding: 80px 0 56px;
-  height: 499px;
+  padding: 80px 0 0;
+  /* Use auto height so additional rows (2x2) expand naturally */
+  height: auto;
   width: 100%;
+  /* Heading centered and width-aligned with grid for consistent vertical stack */
+  /* Force grid to respect viewport width and not expand based on intrinsic track sizing */
 }
 .foundation h2 {
   text-align: center;
@@ -1153,13 +1173,19 @@ button {
   font-size: 2.25rem;
   color: #171C1D;
   margin: 0;
+  width: 100%;
+  max-width: 1311px;
 }
 .foundation__grid {
   display: grid;
-  gap: 3rem;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  max-width: 1100px;
+  gap: 33px;
+  grid-template-columns: repeat(auto-fit, minmax(255px, 1fr));
+  max-width: 1311px;
   margin: 0 auto;
+}
+.foundation__grid {
+  width: 100%;
+  box-sizing: border-box;
 }
 .foundation__card {
   text-align: center;
@@ -1167,7 +1193,9 @@ button {
   flex-direction: column;
   align-items: center;
   gap: 1rem;
-  padding: 0 0.75rem;
+  margin: 24px;
+  width: 255px;
+  box-sizing: border-box;
 }
 .foundation__icon {
   width: 96px;
@@ -1188,13 +1216,96 @@ button {
   font-size: 0.95rem;
   color: #363F41;
   line-height: 1.55;
+  width: 255px;
+  max-width: 255px;
+  max-height: 93px;
+  margin: 0 auto;
 }
 .foundation__share {
   text-align: center;
 }
 
+@media (max-width: 900px) {
+  .foundation {
+    padding: 72px 0 56px;
+  }
+}
+@media (max-width: 640px) {
+  .foundation {
+    padding: 64px 0 52px;
+  }
+  .foundation__grid {
+    gap: 33px;
+    grid-template-columns: repeat(auto-fit, minmax(255px, 1fr));
+    width: 100%;
+    max-width: 100%;
+    justify-content: center;
+  }
+  .foundation__icon {
+    width: 84px;
+    height: 84px;
+  }
+  .foundation__title {
+    font-size: 1.15rem;
+  }
+  .foundation__text {
+    font-size: 0.9rem;
+  }
+}
+@media (max-width: 480px) {
+  .foundation {
+    padding: 56px 0 48px;
+  }
+  .foundation__grid {
+    gap: 33px;
+    grid-template-columns: repeat(auto-fit, minmax(255px, 1fr));
+    width: 100%;
+    max-width: 100%;
+    justify-content: center;
+  }
+  .foundation__icon {
+    width: 72px;
+    height: 72px;
+  }
+  .foundation__title {
+    font-size: 1.05rem;
+  }
+  .foundation__text {
+    font-size: 0.85rem;
+  }
+}
+@media (max-width: 360px) {
+  .foundation__grid {
+    grid-template-columns: repeat(auto-fit, minmax(255px, 1fr));
+    gap: 33px;
+    max-width: 100%;
+    width: 100%;
+    justify-content: center;
+  }
+  .foundation__card {
+    width: 255px;
+  }
+  .foundation__icon {
+    width: 64px;
+    height: 64px;
+  }
+}
+@media (max-width: 320px) {
+  .foundation {
+    padding: 48px 0 44px;
+  }
+  .foundation__grid {
+    gap: 33px;
+    max-width: 100%;
+    width: 100%;
+  }
+  .foundation__card {
+    width: 255px;
+  }
+}
 .share-btn {
   display: inline-flex;
+  max-height: 56px;
   align-items: center;
   padding: 1rem 1.75rem;
   border: 2px solid #41620F;
@@ -1276,25 +1387,42 @@ button {
 
 .story-block--a .story-block__text {
   display: flex;
-  width: 607px;
+  /* Replaced fixed width with flexible max-width; allows shrink on narrow screens */
+  max-width: 607px;
+  width: 100%;
   padding-left: 32px;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
   gap: 32px;
-  flex-shrink: 0;
+  flex: 1 1 auto;
 }
 
 .story-block--b .story-block__text {
   display: flex;
-  width: 641px;
+  max-width: 641px;
+  width: 100%;
   padding-left: 32px;
   flex-direction: column;
   align-items: flex-start;
   gap: 16px;
-  flex-shrink: 0;
+  flex: 1 1 auto;
 }
 
+/* Fixed media dimensions on desktop: 640x399 (maintain aspect/crop) */
+@media (min-width: 1024px) {
+  .story-block__media {
+    flex: 0 0 640px;
+    max-width: 640px;
+    height: 399px;
+  }
+  .story-block__media img {
+    width: 640px;
+    height: 399px;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+}
 .story-block__title {
   font-family: "Lato", Arial, sans-serif;
   font-size: 32px;
@@ -1312,7 +1440,11 @@ button {
   font-weight: 400;
   color: #262E2F;
   font-feature-settings: "liga" off, "clig" off;
-  width: 562px;
+  /* Flexible width: shrinks below design max without causing horizontal scroll */
+  max-width: 562px;
+  width: 100%;
+  /* Fluid cap to better adapt mid breakpoints */
+  max-width: clamp(260px, 55vw, 562px);
 }
 
 .story-block__cta.btn-outline-green {
@@ -1335,6 +1467,7 @@ button {
   }
   .story-block__body {
     width: 100%;
+    max-width: 100%;
   }
 }
 @media (max-width: 1023.98px) {
@@ -1349,13 +1482,111 @@ button {
     gap: 24px;
   }
   .story-block__media img {
-    height: 260px;
+    height: 280px;
+  }
+  /* Reorder variant B so text appears above image when stacked */
+  .story-block--b .story-block__row {
+    display: flex;
+  }
+  .story-block--b .story-block__row > .story-block__text {
+    order: 1;
+  }
+  .story-block--b .story-block__row > .story-block__media {
+    order: 2;
   }
 }
-.page-about .header__lang-static svg {
-  display: initial;
+/* Tablet range: enforce 2x2 (only below 1024px) */
+@media (min-width: 699px) and (max-width: 1023.98px) {
+  .foundation__grid {
+    grid-template-columns: repeat(2, 298px) !important;
+    max-width: 629px;
+    margin: 0 auto;
+    justify-content: center;
+  }
+  .foundation > h2 {
+    max-width: 543px;
+    white-space: nowrap;
+  }
 }
-
+@media (max-width: 1439px) {
+  .about-story,
+  .about-who {
+    padding: 0 20px 0 20px;
+  }
+  .about-story__grid,
+  .about-who__grid {
+    display: grid;
+    gap: 33px;
+    grid-template-columns: repeat(auto-fit, minmax(255px, 1fr));
+    max-width: 1315px;
+    margin: 0 auto;
+  }
+}
+@media (min-width: 1024px) {
+  .foundation__grid {
+    grid-template-columns: repeat(4, 255px);
+    gap: 33px;
+    max-width: 1311px;
+    margin: 0 auto;
+    justify-content: center;
+  }
+}
+/* Narrow desktop band (1024px–1199.98px): shrink card/text width & gap so 4-up fits viewport (4*238 + 3*24 = 1024) */
+@media (min-width: 1024px) and (max-width: 1199.98px) {
+  .foundation__grid {
+    grid-template-columns: repeat(4, 238px);
+    gap: 4px;
+    max-width: 1024px;
+  }
+  .foundation__card {
+    width: 238px;
+    margin: 16px;
+  }
+  .foundation__text {
+    width: 238px;
+    max-width: 238px;
+  }
+  .foundation__icon {
+    width: 88px;
+    height: 88px;
+  }
+  .foundation > h2 {
+    max-width: 1024px;
+  }
+}
+@media (min-width: 1024px) {
+  .page-about .header__overlay {
+    display: none !important;
+  }
+  .page-about .header__mobile {
+    display: none !important;
+  }
+}
+/* Phone centering: when stacked (<=604px) force a single fixed-width column centered */
+@media (max-width: 604px) {
+  .foundation__grid {
+    grid-template-columns: repeat(1, 255px) !important;
+    justify-content: center;
+  }
+  .foundation__card {
+    width: 255px;
+    margin: 16px 0;
+  }
+  .foundation__text {
+    width: 255px;
+    max-width: 255px;
+  }
+  /* Allow heading to span full width and shrink font so it fits on one line */
+  .foundation > h2 {
+    max-width: 100%;
+    padding: 0 16px;
+    white-space: nowrap;
+    font-size: clamp(24px, 7.2vw, 32px);
+    /* Prevent horizontal scroll if extremely narrow */
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
 .footer {
   background: #332634;
   color: #fff;
