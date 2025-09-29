@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Reservations - Wayzor</title>
+  <link rel="stylesheet" href="./css/homepage.css" />
+  <link rel="stylesheet" href="./css/reservations.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+</head>
+<body class="font-lato">
+  <header class="header header--white" data-header>
+    <div class="header__wrap">
+      <div class="header__inner">
+        <nav class="header__nav">
+          <!-- Logo -->
+          <div class="header__logo">
+            <a href="/" class="header__logo-link">
+              <img data-logo src="images/new_log.svg" alt="Wayzor" class="header__logo-img" />
+            </a>
+          </div>
+
+          <!-- Desktop Menu -->
+          <div class="header__menu">
+            <div class="header__links">
+              <a href="./fleet.html" class="header__link" data-active-link="fleet">Vehicles<span class="header__underline u-hidden" data-active-underline></span></a>
+              <a href="#" class="header__link">Stations</a>
+              <a href="#" class="header__link">About us</a>
+            </div>
+            <div class="header__actions">
+              <button class="header__btn">Fast Check-in</button>
+              <span class="header__phone">+351 296 301 805</span>
+              <div class="header__user">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M4.25 15C4.25 12.9289 5.92893 11.25 8 11.25H12C14.0711 11.25 15.75 12.9289 15.75 15V17C15.75 17.4142 15.4142 17.75 15 17.75C14.5858 17.75 14.25 17.4142 14.25 17V15C14.25 13.7574 13.2426 12.75 12 12.75H8C6.75736 12.75 5.75 13.7574 5.75 15V17C5.75 17.4142 5.41421 17.75 5 17.75C4.58579 17.75 4.25 17.4142 4.25 17V15Z" fill="currentColor"/><path fill-rule="evenodd" clip-rule="evenodd" d="M10 3.75C8.75736 3.75 7.75 4.75736 7.75 6C7.75 7.24264 8.75736 8.25 10 8.25C11.2426 8.25 12.25 7.24264 12.25 6C12.25 4.75736 11.2426 3.75 10 3.75ZM6.25 6C6.25 3.92893 7.92893 2.25 10 2.25C12.0711 2.25 13.75 3.92893 13.75 6C13.75 8.07107 12.0711 9.75 10 9.75C7.92893 9.75 6.25 8.07107 6.25 6Z" fill="currentColor"/></svg>
+                <span>Login / Register</span>
+              </div>
+              <div class="header__lang">EN
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M1.24587 4.39238C1.4779 4.11395 1.89171 4.07633 2.17014 4.30835L7.00002 8.33325L11.8299 4.30835C12.1083 4.07633 12.5221 4.11395 12.7542 4.39238C12.9862 4.67081 12.9486 5.08462 12.6701 5.31665L7.42014 9.69165C7.17677 9.89445 6.82326 9.89445 6.5799 9.69164L1.3299 5.31665C1.05146 5.08462 1.01384 4.67081 1.24587 4.39238Z" fill="currentColor"/></svg>
+              </div>
+              <button class="header__menu-btn" data-menu-open aria-label="Open menu">
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M2 9C2 8.44772 2.44772 8 3 8H26C26.5523 8 27 8.44772 27 9C27 9.55228 26.5523 10 26 10H3C2.44772 10 2 9.55228 2 9ZM2 16C2 15.4477 2.44772 15 3 15H29C29.5523 15 30 15.4477 30 16C30 16.5523 29.5523 17 29 17H3C2.44772 17 2 16.5523 2 16ZM2 23C2 22.4477 2.44772 22 3 22H24C24.5523 22 25 22.4477 25 23C25 23.5523 24.5523 24 24 24H3C2.44772 24 2 23.5523 2 23Z" fill="currentColor"/></svg>
+              </button>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main class="page-main" style="padding-top:120px;">
+    <section class="myres-page" aria-labelledby="myres-title">
+      <div class="myres-page__head">
+        <h1 id="myres-title" class="myres-page__title">My Reservations</h1>
+        <p class="myres-page__subtitle">All your trips in one place, easy to find and easy to manage.</p>
+      </div>
+  <div class="myres-table-wrap">
+  <table class="myres-table" aria-label="List of reservations">
+          <thead>
+            <tr>
+              <th scope="col"><span class="myres-th">Number</span></th>
+              <th scope="col"><span class="myres-th">Pick-up</span></th>
+              <th scope="col"><span class="myres-th">Drop-off</span></th>
+              <th scope="col"><span class="myres-th">Reservation Date</span></th>
+              <th scope="col"><span class="myres-th">Grand Total</span></th>
+              <th scope="col"><span class="myres-th">Documents</span></th>
+              <th scope="col"><span class="myres-th">State</span></th>
+              <th scope="col" aria-hidden="true"><span class="myres-th"></span></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td data-label="Number">05832352</td>
+              <td data-label="Pick-up">
+                <div class="myres-loc">
+                  <div class="myres-loc__place">PDL Marina Atlântico</div>
+                  <div class="myres-loc__dt">Wed 23 Jul - 10:00</div>
+                </div>
+              </td>
+              <td data-label="Drop-off">
+                <div class="myres-loc">
+                  <div class="myres-loc__place">PDL Marina Atlântico</div>
+                  <div class="myres-loc__dt">Sun 27 Jul - 15:30</div>
+                </div>
+              </td>
+              <td data-label="Reservation Date"><span class="myres-resdate">2025-07-14 .  22:03:47</span></td>
+              <td data-label="Grand Total">€ 245,80</td>
+              <td data-label="Documents">
+                <div class="myres-docs" aria-label="Documents available">
+                  <a href="#" class="myres-doc" data-doc="credit-note">
+                    <span class="myres-doc__icon" aria-hidden="true"><img src="images/ic_download.svg" alt="" width="16" height="16"></span>
+                    <span class="myres-doc__label">Credit Note</span>
+                  </a>
+                </div>
+              </td>
+              <td data-label="State">Placed</td>
+              <td><button class="myres-cancel-btn">Cancel</button></td>
+            </tr>
+            <tr>
+              <td data-label="Number">05832352</td>
+              <td data-label="Pick-up">
+                <div class="myres-loc">
+                  <div class="myres-loc__place">Horta Airport</div>
+                  <div class="myres-loc__dt">Sat 02 Aug - 10:00</div>
+                </div>
+              </td>
+              <td data-label="Drop-off">
+                <div class="myres-loc">
+                  <div class="myres-loc__place">Horta Airport</div>
+                  <div class="myres-loc__dt">Tue 05 Aug - 18:00</div>
+                </div>
+              </td>
+              <td data-label="Reservation Date"><span class="myres-resdate">2025-07-18 .  09:15:12</span></td>
+              <td data-label="Grand Total">€ 315,40</td>
+              <td data-label="Documents">
+                <div class="myres-docs" aria-label="Documents available">
+                  <a href="#" class="myres-doc" data-doc="rental-agreement">
+                    <span class="myres-doc__icon" aria-hidden="true"><img src="images/ic_download.svg" alt="" width="16" height="16"></span>
+                    <span class="myres-doc__label">Rental Agreement</span>
+                  </a>
+                  <a href="#" class="myres-doc" data-doc="credit-note">
+                    <span class="myres-doc__icon" aria-hidden="true"><img src="images/ic_download.svg" alt="" width="16" height="16"></span>
+                    <span class="myres-doc__label">Credit Note</span>
+                  </a>
+                </div>
+              </td>
+              <td data-label="State">Placed</td>
+              <td><button class="myres-cancel-btn">Cancel</button></td>
+            </tr>
+            <tr>
+              <td data-label="Number">05832351</td>
+              <td data-label="Pick-up">
+                <div class="myres-loc">
+                  <div class="myres-loc__place">TER Aeroporto</div>
+                  <div class="myres-loc__dt">Fri 12 Sep - 08:00</div>
+                </div>
+              </td>
+              <td data-label="Drop-off">
+                <div class="myres-loc">
+                  <div class="myres-loc__place">TER Aeroporto</div>
+                  <div class="myres-loc__dt">Mon 15 Sep - 20:00</div>
+                </div>
+              </td>
+              <td data-label="Reservation Date"><span class="myres-resdate">2025-08-05 .  11:42:05</span></td>
+              <td data-label="Grand Total">€ 188,00</td>
+              <td data-label="Documents">
+                <div class="myres-docs" aria-label="Documents available">
+                  <a href="#" class="myres-doc" data-doc="rental-agreement">
+                    <span class="myres-doc__icon" aria-hidden="true"><img src="images/ic_download.svg" alt="" width="16" height="16"></span>
+                    <span class="myres-doc__label">Rental Agreement</span>
+                  </a>
+                  <a href="#" class="myres-doc" data-doc="invoice">
+                    <span class="myres-doc__icon" aria-hidden="true"><img src="images/ic_download.svg" alt="" width="16" height="16"></span>
+                    <span class="myres-doc__label">Invoice</span>
+                  </a>
+                  <a href="#" class="myres-doc" data-doc="credit-note">
+                    <span class="myres-doc__icon" aria-hidden="true"><img src="images/ic_download.svg" alt="" width="16" height="16"></span>
+                    <span class="myres-doc__label">Credit Note</span>
+                  </a>
+                </div>
+              </td>
+              <td data-label="State">Placed</td>
+              <td><button class="myres-cancel-btn" disabled style="opacity:.4; cursor:default;">Cancel</button></td>
+            </tr>
+            <tr>
+              <td data-label="Number">05832350</td>
+              <td data-label="Pick-up">
+                <div class="myres-loc">
+                  <div class="myres-loc__place">PDL Aeroporto</div>
+                  <div class="myres-loc__dt">Wed 01 Oct - 09:00</div>
+                </div>
+              </td>
+              <td data-label="Drop-off">
+                <div class="myres-loc">
+                  <div class="myres-loc__place">PDL Aeroporto</div>
+                  <div class="myres-loc__dt">Tue 07 Oct - 09:00</div>
+                </div>
+              </td>
+              <td data-label="Reservation Date"><span class="myres-resdate">2025-08-10 .  16:08:19</span></td>
+              <td data-label="Grand Total">€ 402,10</td>
+              <td data-label="Documents">
+                <div class="myres-docs" aria-label="Documents available">
+                  <a href="#" class="myres-doc" data-doc="rental-agreement">
+                    <span class="myres-doc__icon" aria-hidden="true"><img src="images/ic_download.svg" alt="" width="16" height="16"></span>
+                    <span class="myres-doc__label">Rental Agreement</span>
+                  </a>
+                </div>
+              </td>
+              <td data-label="State">Placed</td>
+              <td><button class="myres-cancel-btn">Cancel</button></td>
+            </tr>
+            <tr>
+              <td data-label="Number">05832348</td>
+              <td data-label="Pick-up">
+                <div class="myres-loc">
+                  <div class="myres-loc__place">Faial Airport</div>
+                  <div class="myres-loc__dt">Tue 11 Nov - 06:30</div>
+                </div>
+              </td>
+              <td data-label="Drop-off">
+                <div class="myres-loc">
+                  <div class="myres-loc__place">Faial Airport</div>
+                  <div class="myres-loc__dt">Sat 15 Nov - 21:30</div>
+                </div>
+              </td>
+              <td data-label="Reservation Date"><span class="myres-resdate">2025-08-19 .  07:55:33</span></td>
+              <td data-label="Grand Total">€ 255,99</td>
+              <td data-label="Documents">
+                <div class="myres-docs" aria-label="Documents available">
+                  <a href="#" class="myres-doc" data-doc="rental-agreement">
+                    <span class="myres-doc__icon" aria-hidden="true"><img src="images/ic_download.svg" alt="" width="16" height="16"></span>
+                    <span class="myres-doc__label">Rental Agreement</span>
+                  </a>
+                </div>
+              </td>
+              <td data-label="State">Placed</td>
+              <td><button class="myres-cancel-btn">Cancel</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__main">
+        <!-- Logo -->
+        <div class="footer__logo-col">
+          <img src="https://api.builder.io/api/v1/image/assets/TEMP/57a1d4e29a0f3df2a8258ee43ae52904113a8ca4?width=376" alt="Wayzor" class="footer__logo-img">
+        </div>
+
+        <!-- Agrupados -->
+        <div class="footer__nav-group">
+          <!-- Site Map -->
+          <details class="footer__section" data-collapse open>
+            <summary class="footer__title">
+              Site Map
+              <span class="footer__chevron" aria-hidden="true"><img src="images/ic_chevron_white.svg" alt=""></span>
+            </summary>
+            <nav class="footer__links">
+              <a href="#">Booking</a>
+              <a href="#">Personal Area</a>
+              <a href="#">Fast Check-in</a>
+              <a href="#">About Us</a>
+              <a href="#">General Contacts</a>
+            </nav>
+          </details>
+
+          <!-- More Info -->
+          <details class="footer__section" data-collapse open>
+            <summary class="footer__title">
+              More Info
+              <span class="footer__chevron" aria-hidden="true"><img src="images/ic_chevron_white.svg" alt=""></span>
+            </summary>
+            <nav class="footer__links">
+              <a href="#">Privacy Policy</a>
+              <a href="#">Cookie Policy</a>
+              <a href="#">Personal Data Opt-Out</a>
+              <a href="#">Terms & Conditions</a>
+              <a href="#">FAQs</a>
+            </nav>
+          </details>
+
+          <!-- Stations -->
+          <details class="footer__section footer__section--stations" data-collapse open>
+            <summary class="footer__title">
+              Stations
+              <span class="footer__chevron" aria-hidden="true"><img src="images/ic_chevron_white.svg" alt=""></span>
+            </summary>
+            <div class="footer__links">
+              <div class="footer__stations-cols">
+                <div>
+                  <a href="#">PDL Marina Atlântico</a>
+                  <a href="#">PDL Aeroporto</a>
+                  <a href="#">Furnas Terra Nostra</a>
+                  <a href="#">Faial Aeroporto</a>
+                  <a href="#">PDL SEDE</a>
+                  <a href="#">PDL SM Park Hotel</a>
+                </div>
+                <div>
+                  <a href="#">FAIAL Hotel do Canal</a>
+                  <a href="#">TER Aeroporto</a>
+                  <a href="#">PDL Grand Hotel AA</a>
+                  <a href="#">PDL Neat HOTEL</a>
+                  <a href="#">TER Mar Hotel</a>
+                </div>
+              </div>
+            </div>
+          </details>
+        </div>
+
+        <!-- Social (static) -->
+        <div class="footer__section footer__section--static">
+          <h3 class="footer__title footer__title--static">Follow Us</h3>
+          <div class="footer__social-icons">
+            <div class="footer__icon"><img src="images/ic_instagram.svg" alt="Instagram" width="20" height="20"></div>
+            <div class="footer__icon"><img src="images/ic_facebook.svg" alt="Facebook" width="20" height="20"></div>
+            <div class="footer__icon"><img src="images/linkedin.svg" alt="LinkedIn" width="20" height="20"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <div>Copyright 2025 &copy; Wayzor</div>
+        <div class="footer__payments">Easy and secure payment:
+          <svg width="24" height="17" viewBox="0 0 24 17" fill="none"><g clip-path="url(#c3)"><path d="M14.8667 3.14258H9.11328V13.4805H14.8667V3.14258Z" fill="#FF5F00"/><path d="M9.47942 8.32974C9.47942 6.22928 10.4657 4.36627 11.9817 3.16079C10.8675 2.28407 9.46115 1.75439 7.92691 1.75439C4.2922 1.75439 1.35156 4.69503 1.35156 8.32974C1.35156 11.9644 4.2922 14.9051 7.92691 14.9051C9.46115 14.9051 10.8675 14.3754 11.9817 13.4987C10.4657 12.2932 9.47942 10.4119 9.47942 8.32974Z" fill="#EB001B"/><path d="M22.6301 8.32974C22.6301 11.9644 19.6895 14.9051 16.0548 14.9051C14.5205 14.9051 13.1142 14.3754 12 13.4987C13.5342 12.2932 14.5023 10.4302 14.5023 8.32974C14.5023 6.22928 13.516 4.36627 12 3.16079C13.1142 2.28407 14.5205 1.75439 16.0548 1.75439C19.6895 1.75439 22.6301 4.69503 22.6301 8.32974Z" fill="#F79E1B"/></g><defs><clipPath id="c3"><rect width="24" height="15.8721" fill="white" transform="translate(0 0.384766)"/></clipPath></defs></svg>
+          <svg width="24" height="17" viewBox="0 0 24 17" fill="none"><g clip-path="url(#c4)"><path d="M-0.5 1.04004V15.7308H23.5V1.04004H-0.5ZM5.71046 10.8356L5.1583 6.87812L6.49832 7.71989L4.24289 5.93512H6.41066L6.62997 8.26294C6.65755 8.53939 6.67978 8.81094 6.70073 9.09033C6.81345 8.82289 6.94469 8.53039 7.09653 8.20782L8.17037 5.93512H9.59598L7.06779 10.8356L5.71046 10.8356ZM9.29311 10.8356L10.2242 5.93517H11.5L10.5702 10.8356H9.29311ZM12.726 10.9052C12.1439 10.9052 11.6177 10.7714 11.319 10.5472L11.2313 10.4806L11.6625 9.41705L11.8069 9.50345C12.0966 9.67665 12.4664 9.77788 12.8219 9.77788C13.0934 9.77788 13.4123 9.67255 13.4123 9.37879C13.4123 9.22532 13.323 9.09038 12.8667 8.85462C12.3829 8.59335 11.8304 8.20417 11.8304 7.50271C11.8304 6.53627 12.6384 5.86072 13.7949 5.86072C14.2681 5.86072 14.647 5.94343 14.9514 6.11126L15.0592 6.17053L14.6515 7.26285L14.5058 7.18303C14.4491 7.15134 14.1409 6.9954 13.7414 6.9954C13.3308 6.9954 13.1564 7.17397 13.1564 7.33892C13.1564 7.51582 13.3823 7.65612 13.7558 7.8647C14.4203 8.21359 14.7444 8.65383 14.7444 9.20882C14.7445 10.2234 13.934 10.9052 12.726 10.9052ZM17.7249 10.8356L17.6294 9.63879H16.524L15.9755 10.8356H14.608L16.9934 5.93517H18.4762L19.0505 10.8356H17.7249Z" fill="white"/><path d="M17.4606 7.44238C17.4096 7.57363 17.3574 7.69829 17.3059 7.80853L16.9414 8.60049H17.5618L17.4853 7.76242C17.4791 7.66787 17.4701 7.55885 17.4606 7.44238Z" fill="white"/></g><defs><clipPath id="c4"><rect width="24" height="15.8721" fill="white" transform="translate(0 0.384766)"/></clipPath></defs></svg>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
