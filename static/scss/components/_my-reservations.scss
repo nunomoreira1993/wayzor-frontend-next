@@ -1,0 +1,169 @@
+
+// Full-height layout so the reservations card can stretch and footer stays pinned
+html, body { height:100%; }
+body { background:#fff; font-family:$font-base; min-height:100vh; display:flex; flex-direction:column; }
+
+// Main wrapper (shared class used in markup) should grow
+.page-main { flex:1 0 auto; display:flex; flex-direction:column; }
+
+// Page section fills remaining vertical space inside main
+.myres-page { flex:1 0 auto; display:flex; width:100%; max-width:1315px; padding:41px 0 40px; flex-direction:column; align-items:center; margin:0 auto; }
+.myres-page__head { text-align:center; width:100%; max-width:1256px; margin:0 auto; }
+.myres-page__title { font-family:$font-base; font-size:48px; line-height:110%; font-weight:700; margin:0; }
+.myres-page__subtitle { margin:12px 0 0; font-size:16px; line-height:150%; color: #000; }
+
+// Standalone table (removed outer card)
+// Fluid table up to 1256px; can shrink above mobile without horizontal scroll
+.myres-table { margin-top:100px; margin-bottom:48px; width:1256px; max-width:100%; border-collapse:collapse; font-size:14px; background:#FFFFFF; border-radius:12px; overflow:hidden; box-shadow:0 4px 24px rgba(0,0,0,0.08); table-layout:auto; }
+.myres-table thead {
+  background:#4B384C;
+  position:sticky; /* keep visible on vertical scroll if content grows */
+  top:0; z-index:2;
+}
+.myres-table thead tr { height:40px; }
+.myres-table thead th {
+  text-align:left;
+  font-family:$font-base;
+  font-size:14px;
+  font-style:normal;
+  font-weight:700;
+  line-height:150%; /* 21px */
+  font-feature-settings:'liga' off, 'clig' off;
+  color:#FFFFFF;
+  padding:16px 16px; /* keep symmetric; text left aligns */
+  white-space:nowrap;
+  text-transform:none;
+  letter-spacing:0;
+}
+.myres-th { display:inline-flex; height:21px; align-items:center; gap:10px; justify-content:flex-start; box-sizing:border-box; padding:0; width:auto; }
+.myres-table thead th:first-child { border-top-left-radius:8px; }
+.myres-table thead th:last-child { border-top-right-radius:8px; }
+
+// Cell content wrapper approach optional—here keep direct cell styling
+// Body row / cell styling (row backgrounds handle zebra)
+.myres-table tbody tr { background:#FFFFFF; }
+.myres-table tbody tr:nth-child(even) { background:#F8FAFA; }
+.myres-table tbody tr td {
+  height:92px;
+  padding:16px;
+  align-items:center;
+  gap:10px;
+  background:transparent;
+  font-size:14px;
+  font-weight:500;
+  line-height:150%;
+  box-sizing:border-box;
+  text-align:left;
+  justify-content:flex-start;
+  border:0;
+}
+// Right-most cell alignment (if textual)
+.myres-table tbody tr td:last-child { text-align:right; justify-content:flex-end; }
+
+// Grand Total column (5th) formatting color
+.myres-table tbody tr td:nth-child(5) {
+  color:#528116;
+  font-feature-settings:'liga' off, 'clig' off;
+}
+
+// State column now plain text 'Placed'
+.myres-table tbody td:nth-child(7) {
+  color: var(--Content-color-content-bodytext, #171C1D);
+  font-feature-settings:'liga' off, 'clig' off;
+  font-family:$font-base;
+  font-size:14px;
+  font-style:normal;
+  font-weight:400;
+  line-height:150%;
+}
+
+.myres-docs-link { color:#2F7D00; font-weight:600; text-decoration:none; }
+.myres-docs-link:hover { text-decoration:underline; }
+
+// Cancel button spec
+.myres-cancel-btn {
+  display:flex;
+  height:32px;
+  padding:10px var(--Padding-padding-small-2, 20px);
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  gap:var(--Spacing---Gap-spacing-00, 0);
+  border-radius:var(--Corner-radius-corner-radius-Full, 999px);
+  border:var(--Stroke-stroke-M, 1.5px) solid var(--Content-Button-Green-Button-Line, #528116);
+  background:transparent;
+  color:var(--Content-Button-Green-Button-Line, #528116);
+  font-size:12px;
+  font-weight:700;
+  line-height:1; /* keep height tight */
+  cursor:pointer;
+  transition:background .25s ease, color .25s ease, box-shadow .25s ease;
+}
+.myres-cancel-btn:hover { background:var(--Content-Button-Green-Button-Line, #528116); color:#FFFFFF; }
+.myres-cancel-btn:disabled { opacity:.45; cursor:default; background:transparent; color:var(--Content-Button-Green-Button-Line, #528116); }
+
+// Pickup / Drop-off structured text
+.myres-loc { display:flex; flex-direction:column; gap:4px; }
+.myres-loc__place {
+  color: var(--Content-color-content-bodytext, #171C1D);
+  font-feature-settings:'liga' off, 'clig' off;
+  font-family:$font-base;
+  font-size:14px;
+  font-style:normal;
+  font-weight:700; // bold for location line
+  line-height:150%;
+}
+.myres-loc__dt {
+  color: var(--Content-color-content-bodytext, #171C1D);
+  font-feature-settings:'liga' off, 'clig' off;
+  font-family:$font-base;
+  font-size:14px;
+  font-style:normal;
+  font-weight:400; // regular for date/time line
+  line-height:150%;
+}
+
+// Reservation date (ISO + time)
+.myres-resdate {
+  color: var(--Content-color-content-bodytext, #171C1D);
+  font-feature-settings:'liga' off, 'clig' off;
+  font-family:$font-base;
+  font-size:14px;
+  font-style:normal;
+  font-weight:400;
+  line-height:150%;
+  white-space:nowrap; // keep date/time together
+}
+
+// Documents list styling
+.myres-docs { display:flex; flex-direction:column; gap:6px; align-items:flex-start; }
+.myres-doc { display:inline-flex; align-items:center; gap:8px; font-size:14px; font-weight:400; line-height:150%; color:#000000; text-decoration:none; font-family:$font-base; }
+.myres-doc:hover { text-decoration:underline; }
+.myres-doc__icon { display:inline-flex; width:16px; height:16px; color:#000000; }
+// Optional: neutral text color variant if needed later
+.myres-doc--neutral { color: var(--Content-color-content-bodytext, #171C1D); }
+
+// Let table shrink with viewport under its max width (no extra rules needed up to 768)
+@media (max-width:1256px){
+  .myres-page { padding:41px 24px 40px; }
+  .myres-table { width:100%; }
+  .myres-table thead th, .myres-table tbody tr td { white-space:normal; }
+}
+
+// Below 768px: enable horizontal scroll container to prevent overly narrow columns
+@media (max-width:768px){
+  .myres-table-wrap { width:100%; overflow-x:auto; -webkit-overflow-scrolling:touch; }
+  .myres-table-wrap::-webkit-scrollbar { display:none; }
+  .myres-table { min-width:880px; }
+  .myres-table thead th { white-space:nowrap; }
+  .myres-table tbody td:nth-child(2), .myres-table tbody td:nth-child(3) { white-space:normal; }
+}
+// Tablet & below: keep full table layout and allow horizontal scroll instead of stacking
+@media (max-width:960px){
+  .myres-page { width:100%; align-items:flex-start; margin:0; padding-left:20px; padding-right:20px; }
+  .myres-table-wrap { width:100%; overflow-x:auto; -webkit-overflow-scrolling:touch; }
+  .myres-table-wrap::-webkit-scrollbar { display:none; }
+  .myres-table thead th, .myres-table tbody td { white-space:nowrap; }
+  .myres-table tbody td:nth-child(2),
+  .myres-table tbody td:nth-child(3) { white-space:normal; }
+}
