@@ -83,4 +83,33 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Renderização inicial
     renderStations(stationsData);
+
+    // Share button handler (match homepage behavior)
+    const shareBtn = document.querySelector('.social__share-btn');
+    if (shareBtn) {
+        shareBtn.addEventListener('click', async () => {
+            const shareData = {
+                title: document.title || 'Wayzor',
+                text: 'Explore Wayzor stations in the Azores',
+                url: window.location.href
+            };
+            if (navigator.share) {
+                try {
+                    await navigator.share(shareData);
+                } catch (_) {
+                    // user cancelled or error; ignore
+                }
+            } else {
+                try {
+                    await navigator.clipboard.writeText(shareData.url);
+                    shareBtn.innerHTML = '<img src="images/ic_share.svg" class="social__share-icon" alt="Share">Link copied!';
+                    setTimeout(() => {
+                        shareBtn.innerHTML = '<img src="images/ic_share.svg" class="social__share-icon" alt="Share">Share';
+                    }, 1600);
+                } catch (_) {
+                    window.open(shareData.url, '_blank');
+                }
+            }
+        });
+    }
 });

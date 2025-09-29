@@ -853,8 +853,7 @@ body {
 .filter-btn.active {
   background-color: var(--brand-green);
   border-color: var(--brand-green);
-  color: var(--white);
-  font-weight: bold;
+  font-weight: 400;
 }
 
 /* ========= STATIONS GRID ========= */
@@ -931,6 +930,8 @@ body {
 .card-content .island-name {
   margin-top: 10px;
   font-style: italic;
+  color: #528116;
+  font-weight: 600;
 }
 
 /* ========= SHOW MORE BUTTON ========= */
@@ -952,6 +953,46 @@ body {
 .show-more-btn:hover {
   background-color: var(--light-grey);
   color: var(--dark-grey);
+}
+
+/* Share button (match homepage styles) */
+.social__share {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.social__share-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Lato", Arial, sans-serif;
+  font-weight: 700;
+  font-size: 0.875rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 9999px;
+  border: 2px solid #78BE20;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-color: #528116;
+  color: #528116;
+  gap: 0.5rem;
+}
+
+.social__share-btn:hover {
+  background: #528116;
+  color: #fff;
+}
+
+.social__share-btn .social__share-icon {
+  width: 18px;
+  height: 18px;
+  display: inline-block;
+  transition: filter 0.25s, opacity 0.25s;
+}
+
+.social__share-btn:hover .social__share-icon {
+  filter: brightness(0) invert(1);
 }
 
 /* ========= RESPONSIVE STYLES ========= */
