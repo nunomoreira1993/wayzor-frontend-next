@@ -949,9 +949,10 @@ button {
 .summary-card .car-info .cornerwrap {
   position: absolute;
   top: 0;
-  right: 0;
-  width: 62px;
-  height: 179px;
+  right: 0%;
+  left: auto;
+  width: 55.571px;
+  height: 162.25px;
   overflow: hidden;
   pointer-events: none;
 }
