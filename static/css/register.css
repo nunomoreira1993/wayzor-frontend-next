@@ -1671,11 +1671,11 @@ input[type=checkbox] {
     font-size: 0.875rem;
     padding: 0.75rem 1.5rem;
     border-radius: 9999px;
-    border: 2px solid #528116;
-    background: transparent;
+    border: 2px solid #78BE20;
+    background-color: #78BE20;
     cursor: pointer;
     transition: color 0.25s, background 0.25s, box-shadow 0.25s, filter 0.25s;
-    color: #528116;
+    color: #000;
     position: relative;
     left: 50%;
     transform: translate(-50%);
