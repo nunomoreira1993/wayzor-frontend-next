@@ -1,0 +1,41 @@
+/* Logged-in homepage specific styles */
+
+.user-menu-wrapper { position:relative; }
+.user-trigger { display:inline-flex; align-items:center; gap:8px; cursor:pointer; color:#FFF; font-weight:600; background:none; border:0; font-family:inherit; }
+.user-trigger img { width:20px; height:20px; }
+.user-trigger svg { color:#FFF; transition:transform .25s ease; }
+.user-trigger[aria-expanded="true"] svg { transform:rotate(180deg); }
+
+.user-dropdown { position:fixed; top: 99px !important; width:310px; height:418px; display:inline-flex; padding:16px 24px 24px 24px; flex-direction:column; align-items:center; gap:0; border-radius:18px; background:#FFF; box-shadow:0 8px 24px 0 rgba(0,0,0,0.10); font-family:'Lato', sans-serif; z-index:40; opacity:0; transform:translateY(-8px); pointer-events:none; transition:opacity .28s ease, transform .32s cubic-bezier(.22,.61,.36,1); }
+.user-dropdown.is-open { opacity:1; transform:translateY(0); pointer-events:auto; }
+.user-dropdown[hidden] { display:none; }
+.user-dropdown__header { display:flex; width:310px; padding:16px 32px 16px 24px; align-items:center; gap:10px; justify-content:space-between; margin-bottom: 20px; }
+.user-dropdown__title { margin:0; flex:1; color:#262E2F; font-feature-settings:'liga' off,'clig' off; font-family:'Lato', sans-serif; font-size:24px; font-style:normal; font-weight:700; line-height:130%; }
+.user-dropdown__close { background:none; border:0; cursor:pointer; color:#6D7679; font-size:18px; line-height:1; padding:4px; }
+.user-dropdown__list { list-style:none; padding:0; margin:0; width:100%; }
+.user-dropdown__item { width:100%; }
+.user-dropdown__link { display:block; width:100%; text-align:left; padding:12px 0; font-size:16px; font-weight:600; text-decoration:none; color:#2F7D00; line-height:1.3; }
+.user-dropdown__link:hover, .user-dropdown__link:focus { text-decoration:underline; }
+.user-dropdown__divider { height:1px; background:#E6E6E6; width:100%; margin:0; border:0; }
+.user-dropdown__spacer { height:71px; width:100%; }
+.user-dropdown__danger, .user-dropdown__logout { display:flex; align-items:center; gap:4px; width:100%; padding:12px 0; font-size:16px; font-weight:600; background:none; border:0; text-align:left; cursor:pointer; font-family:inherit; }
+.user-dropdown__danger { color:#000; }
+.user-dropdown__danger:hover, .user-dropdown__danger:focus { text-decoration:underline; }
+.user-dropdown__logout { color:#222; padding-top:12px; }
+.user-dropdown__logout:hover, .user-dropdown__logout:focus { text-decoration:underline; }
+/* Removed placeholder icon box styles; real SVGs used (ic_trash.svg, logout.svg) */
+
+/* Mobile full width adjustments */
+@media (max-width:640px) {
+  .user-dropdown { right:6% !important; transform:translateX(50%); width:calc(100vw - 40px); max-width:310px; }
+}
+
+/* Header state driven adjustments */
+.header--transparent .user-trigger { color:#FFF; }
+.header--transparent .user-trigger svg { color:#FFF; }
+.header--white .user-trigger { color:#262E2F; }
+.header--white .user-trigger svg { color:#262E2F; }
+
+/* On scroll (white header) the user icon needs to be black. We can target the img via filter if only white asset is available */
+.header--white .user-trigger img { filter: invert(0); } /* assume black or colored asset swap optional */
+.header--transparent .user-trigger img { filter:none; }
