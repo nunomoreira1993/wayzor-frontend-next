@@ -12,7 +12,7 @@
 .blog__category { font-size:.75rem; font-weight:700; text-transform:uppercase; letter-spacing:.05em; color:$color-green; }
 .blog__card-title { font-size:1.5rem; font-weight:700; margin:0; }
 .blog__desc { font-size:1rem; line-height:1.5; }
-.blog__readmore { font-size:1rem; font-weight:600; color:$color-green; background:none; border:none; padding:0; text-align:left; cursor:pointer; transition:color .3s; }
+.blog__readmore { font-size:1rem; font-weight:600; color:$color-green; background:none; border:none; padding:0; text-align:left; cursor:pointer; transition:color .3s; padding-top:10px; }
 .blog__readmore:hover { color:$color-green-dark; }
 /* Mobile stack */
 /* Mobile horizontal scroller (mirrors social section behavior) */
