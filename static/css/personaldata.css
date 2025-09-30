@@ -1095,6 +1095,11 @@ button {
   min-width: 48px;
   height: auto;
 }
+@media (max-width: 352px) {
+  .warning-banner .warning-icon-wrapper {
+    display: none;
+  }
+}
 .warning-banner .warning-icon-wrapper .img {
   min-width: 32px;
   min-height: 32px;
@@ -1113,11 +1118,16 @@ button {
   line-height: 1.5;
 }
 .warning-banner .warning-text .warning-cta-text {
-  margin-top: 25px !important;
-  font-size: 15px !important;
+  margin-top: 25px;
+  font-size: 15px;
 }
 .warning-banner .warning-text .warning-cta-text strong {
   font-weight: 700;
+}
+@media (max-width: 472px) {
+  .warning-banner .warning-text .warning-cta-text {
+    margin-top: 10px;
+  }
 }
 .warning-banner .btn-primary-outline {
   border: 1.5px solid var(--color-primary);
