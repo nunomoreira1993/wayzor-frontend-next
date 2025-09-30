@@ -914,14 +914,22 @@ button {
 .checkbox-container input[type=checkbox] {
   width: 18px;
   height: 18px;
-  accent-color: var(--color-primary-darker);
-  border: 1.35px solid var(--color-primary-darker);
+  min-width: 18px;
+  min-height: 18px;
+  accent-color: var(--color-primary);
+  border: 1.35px solid var(--color-primary);
   border-radius: 4px;
+  vertical-align: middle;
 }
 .checkbox-container label {
   font-size: 12px;
   font-weight: 500;
   color: var(--color-text-muted);
+}
+.checkbox-container label a {
+  color: var(--color-primary-darker);
+  text-decoration: underline;
+  font-weight: 600;
 }
 
 .form-agreements label {

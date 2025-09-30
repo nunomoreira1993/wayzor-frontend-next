@@ -235,17 +235,26 @@
     gap: 8px;
 
     input[type='checkbox'] {
-        width: 18px;
-        height: 18px;
-        accent-color: var(--color-primary-darker);
-        border: 1.35px solid var(--color-primary-darker);
+    width: 18px;
+    height: 18px;
+    min-width: 18px; // ensure consistent square sizing
+    min-height: 18px;
+        accent-color: var(--color-primary);
+        border: 1.35px solid var(--color-primary);
         border-radius: 4px;
+    vertical-align: middle;
     }
 
     label {
         font-size: 12px;
         font-weight: 500;
         color: var(--color-text-muted);
+
+        a {
+            color: var(--color-primary-darker);
+            text-decoration: underline;
+            font-weight: 600;
+        }
     }
 }
 
