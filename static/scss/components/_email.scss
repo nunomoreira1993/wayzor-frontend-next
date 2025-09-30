@@ -1,0 +1,22 @@
+// Simple Email Header (email.html)
+.email-header {
+	background: #332634;
+	display: flex;
+	justify-content: center;
+	padding: 32px 0; // outer vertical padding
+
+	&__container {
+		display: flex;
+		width: 600px;
+		padding: 32px;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		gap: 32px;
+	}
+
+	&__logo {
+		width: 180px;
+		height: auto;
+	}
+}
