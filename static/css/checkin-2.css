@@ -825,7 +825,7 @@ button {
   top: 0;
   right: 0; /* ensure right corner */
   left: auto;
-  width: 80px; /* larger visual footprint */
+  width: 70px; /* larger visual footprint */
   height: 230px; /* increased height */
   z-index: 0; /* behind content */
   line-height: 0; /* remove inline gap */
