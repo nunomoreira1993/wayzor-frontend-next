@@ -913,11 +913,7 @@ button {
     margin-top: 2rem;
   }
 }
-.search-widget__desktop {
-  display: none;
-}
-
-@media (min-width: 1024px) {
+@media (min-width: 768px) {
   .search-widget__desktop {
     display: block;
   }
@@ -988,7 +984,7 @@ button {
   display: block;
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 768px) {
   .search-widget__mobile {
     display: none;
   }
@@ -1084,11 +1080,6 @@ button {
   background: #528116;
 }
 
-@media (max-width: 1023px) {
-  .search-widget__desktop {
-    display: none;
-  }
-}
 @media (min-width: 1024px) {
   .search-widget__mobile {
     display: none;
@@ -1123,10 +1114,16 @@ button {
   max-width: 1312px;
   margin: 0 auto;
   padding: 0 1.5rem;
+  /* Ensure proper padding in the 980px-1100px range */
 }
 @media (min-width: 1024px) {
   .search-widget__container {
     padding: 0 2rem;
+  }
+}
+@media (min-width: 980px) and (max-width: 1100px) {
+  .search-widget__container {
+    padding: 0 1.75rem;
   }
 }
 
@@ -1136,11 +1133,26 @@ button {
   border-radius: 20px;
   padding: 28px 32px 32px;
   box-shadow: 0 8px 32px -4px rgba(16, 24, 40, 0.08);
+  /* Adjust padding for medium screens to prevent white space */
+}
+@media (min-width: 980px) and (max-width: 1100px) {
+  .searchw--panel {
+    padding: 24px 24px 28px;
+    width: 100%;
+  }
 }
 
 .searchw__group {
   display: flex;
+  flex-wrap: wrap;
   gap: 24px;
+  transition: all 0.3s ease; /* Smooth transition for layout changes */
+  /* Adjust gap for medium screens */
+}
+@media (min-width: 980px) and (max-width: 1100px) {
+  .searchw__group {
+    gap: 16px;
+  }
 }
 
 .searchw__group--row1 {
@@ -1153,12 +1165,14 @@ button {
   background: #fff;
   border: 1px solid #D5DCDD;
   border-radius: 14px;
-  padding: 14px 18px 10px;
+  padding: 14px 0px 10px 18px;
+  transition: all 0.3s ease; /* Smooth transition for width changes */
 }
 
 .searchw__field--narrow {
   flex: 0 0 277px;
   height: 50px !important;
+  transition: all 0.3s ease; /* Smooth transition for width changes */
 }
 
 .searchw__floating-label {
@@ -1236,16 +1250,87 @@ button {
   color: #6D7679;
 }
 
-@media (max-width: 1100px) {
+/* Equal width for fields between 1100px and 769px */
+@media (max-width: 1100px) and (min-width: 769px) {
   .searchw__group {
     flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  /* Make all fields equal width in rows */
+  .searchw__field {
+    flex: 0 0 calc(33.333% - 16px); /* Equal width with gap consideration */
+    max-width: calc(33.333% - 16px);
+    width: calc(33.333% - 16px);
+  }
+  /* Specific override for the narrow field (Driver Age) */
+  .searchw__field--narrow {
+    flex: 0 0 calc(33.333% - 16px);
+    max-width: calc(33.333% - 16px);
+    width: calc(33.333% - 16px);
   }
   .searchw__submit {
     margin-top: 12px;
     width: 100%;
   }
 }
-@media (max-width: 860px) {
+/* Special case for smaller screens but still above tablet */
+@media (max-width: 1100px) and (min-width: 769px) {
+  .searchw__field {
+    flex: 0 0 calc(50% - 12px);
+    max-width: calc(50% - 12px);
+    width: calc(50% - 12px);
+  }
+  .searchw__field--narrow {
+    flex: 0 0 calc(50% - 12px);
+    max-width: calc(50% - 12px);
+    width: calc(50% - 12px);
+  }
+  /* Specific adjustments for 980-1100px range */
+}
+@media (max-width: 1100px) and (min-width: 769px) and (min-width: 980px) and (max-width: 1100px) {
+  .searchw__field {
+    flex: 0 0 calc(50% - 8px); /* Smaller gap compensation */
+    max-width: calc(50% - 8px);
+    width: calc(50% - 8px);
+  }
+  .searchw__field--date {
+    margin-bottom: 0;
+  }
+}
+/* Mobile styles (768px and below) */
+@media (max-width: 768px) {
+  .searchw__group {
+    flex-wrap: wrap;
+  }
+  .searchw__field {
+    margin-bottom: 10px;
+    flex: 0 0 100%;
+    max-width: 100%;
+    width: 100%;
+  }
+  .searchw__field--narrow {
+    flex: 0 0 100%;
+    max-width: 100%;
+    width: 100%;
+  }
+  .searchw__submit {
+    margin-top: 12px;
+    width: 100%;
+  }
+}
+@media (max-width: 860px) and (min-width: 769px) {
+  .searchw--panel {
+    padding: 20px 20px 24px;
+  }
+  .searchw__group--row1 {
+    margin-bottom: 18px;
+  }
+  .searchw__mobile-note {
+    display: block;
+  }
+}
+/* Only apply these changes for tablet mode and below */
+@media (max-width: 768px) {
   .searchw--panel {
     padding: 20px 20px 24px;
   }
@@ -1253,10 +1338,10 @@ button {
     margin-bottom: 18px;
   }
   .searchw__field {
-    height: 66px;
+    height: 50px;
   }
   .searchw__submit {
-    height: 66px;
+    height: 50px;
   }
   .searchw__mobile-note {
     display: block;
@@ -1331,6 +1416,264 @@ button {
     height: 20px;
   }
 }
+.searchw__inner--input {
+  padding: 0;
+  gap: 8px;
+}
+
+.searchw__input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  font-family: "Lato", Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.2;
+  padding: 4px 0 2px;
+  color: #262E2F;
+  min-width: 0;
+  outline: none;
+}
+
+.searchw__input::-moz-placeholder {
+  overflow: hidden;
+  color: var(--Content-color-content-label, #6D7679);
+  text-overflow: ellipsis;
+  font-family: Lato;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0.107px;
+}
+
+.searchw__input::placeholder {
+  overflow: hidden;
+  color: var(--Content-color-content-label, #6D7679);
+  text-overflow: ellipsis;
+  font-family: Lato;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0.107px;
+}
+
+.searchw__field:focus-within {
+  border-color: #78BE20;
+}
+
+/* Change separator color when any datetime input is focused */
+.searchw__datetime-group:focus-within .searchw__datetime-separator {
+  background: #78BE20;
+}
+
+/* Date/time pair (50/50) */
+.searchw__datetime-group {
+  display: flex;
+  position: relative;
+  width: 100%;
+  align-items: center;
+  margin-left: -15px;
+}
+
+.searchw__datetime-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex: 1;
+  margin-left: 10px;
+}
+
+.searchw__datetime-item:first-child .searchw__input {
+  padding-left: 0;
+}
+
+.searchw__datetime-item .searchw__icon {
+  flex-shrink: 0;
+}
+
+.searchw__datetime-separator {
+  position: absolute;
+  left: 50%;
+  top: -15px;
+  transform: translateX(-50%);
+  width: 1px;
+  height: 201%;
+  background: #E0E0E0;
+  margin-left: 5px;
+}
+
+.searchw__input--date, .searchw__input--time {
+  width: 100%;
+}
+
+/* Ensure equal halves even if first icon present */
+.searchw__datetime-group .searchw__datetime-item {
+  flex: 1 1 50%;
+}
+
+/* Ensure consistent sizing between desktop and tablet */
+@media (min-width: 769px) and (max-width: 1439px) {
+  .searchw__field {
+    height: 50px; /* Consistent height for all inputs until tablet breakpoint */
+  }
+  .searchw__input {
+    font-size: 16px; /* Maintain consistent font size */
+  }
+}
+/* Remove previous rule that was changing separator height */
+.searchw__inner--age {
+  position: relative;
+  padding-right: 28px;
+}
+
+.searchw__age-dropdown {
+  position: absolute;
+  right: 4px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  padding: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease;
+}
+
+.searchw__age-dropdown:focus-visible {
+  outline: none;
+}
+
+.searchw__age-dropdown[aria-expanded=true] svg {
+  transform: rotate(180deg);
+}
+
+/* Age dropdown styling */
+.age-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 100;
+  overflow: hidden;
+}
+
+.age-dropdown__list {
+  padding: 16px;
+}
+
+.age-dropdown__range {
+  margin-bottom: 12px;
+}
+
+.age-dropdown__label {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+.age-dropdown__slider {
+  width: 100%;
+  height: 5px;
+  background: #ddd;
+  outline: none;
+  opacity: 0.7;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+       appearance: none;
+  transition: opacity 0.2s;
+  margin: 10px 0;
+}
+
+.age-dropdown__slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #78BE20;
+  cursor: pointer;
+}
+
+.age-dropdown__slider::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #78BE20;
+  cursor: pointer;
+}
+
+.age-dropdown__range-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  color: #666;
+  margin-top: 4px;
+}
+
+.age-dropdown__common {
+  margin-top: 16px;
+  border-top: 1px solid #eee;
+  padding-top: 12px;
+}
+
+.age-dropdown__common-label {
+  font-size: 12px;
+  color: #666;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.age-dropdown__common-ages {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.age-dropdown__quick-age {
+  padding: 6px 12px;
+  background: #f5f5f5;
+  border: none;
+  border-radius: 16px;
+  font-size: 14px;
+  cursor: pointer;
+  color: #333;
+}
+
+.age-dropdown__quick-age:hover {
+  background: #e9e9e9;
+}
+
+/* Position for the age dropdown */
+.searchw__field--narrow {
+  position: relative;
+}
+
+.searchw__input--age {
+  text-align: left;
+}
+
+.searchw__inner--promo img {
+  flex-shrink: 0;
+}
+
+.searchw__input--promo {
+  flex: 1;
+}
+
+.searchw__field--narrow .searchw__input {
+  font-size: 16px;
+}
+
 .features {
   background: #fff;
   padding: 5rem 0;

@@ -1,0 +1,23 @@
+// Hero section modifications to accommodate search widget in mobile view
+// This file adds additional styles to position the search widget inside the hero
+
+// Mobile adjustments (320px - 768px)
+@media (max-width: 768px) {
+  .hero {
+    position: relative;
+    
+    // Add some extra bottom padding to accommodate the search widget
+    padding-bottom: 120px;
+  }
+  
+  // Hide the default search widget section on mobile
+  #section-search {
+    visibility: visible; // We position it absolutely within hero
+    margin-top: 0;
+  }
+  
+  // Adjust the hero pagination position to avoid overlap with search widget
+  .hero .swiper-pagination.swiper-pagination-bullets.hero__pagination {
+    bottom: 220px !important;
+  }
+}

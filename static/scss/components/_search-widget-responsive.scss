@@ -1,0 +1,94 @@
+// Override for search widget responsive behavior
+// This ensures the search widget remains visible until 768px (tablet mode)
+// and adjusts layout at 1250px to stack date fields below location fields
+
+// Ensure search widget remains visible until 768px
+@media (min-width: 768px) {
+  .search-widget__desktop {
+    display: block !important; // Override any existing display rules
+  }
+  
+  .search-widget__mobile {
+    display: none !important; // Hide mobile widget when desktop is visible
+  }
+}
+
+// Between 1250px and 1000px, ensure all fields remain in one row with equal widths
+@media (max-width: 1250px) and (min-width: 1000px) {
+  .searchw__group--row1 {
+    flex-wrap: nowrap;
+    margin-bottom: 16px;
+  }
+  
+  .searchw__group--row1 .searchw__field {
+    flex: 1 1 0;
+    min-width: 0;
+  }
+}
+
+// Special rule for 980px-1100px to ensure no white space
+@media (min-width: 980px) and (max-width: 1100px) {
+  .searchw__group--row1 {
+    flex-wrap: nowrap;
+    gap: 16px; // Smaller gap between fields
+  }
+  
+  .searchw__group--row1 .searchw__field {
+    flex: 1 1 0;
+    min-width: 0;
+  }
+}
+
+// When screen is narrower than 1000px, move BOTH date fields to second row together
+@media (max-width: 1000px) and (min-width: 769px) {
+  .searchw__group--row1 {
+    flex-wrap: wrap;
+    margin-bottom: 16px;
+  }
+
+  // Location fields take full width on top row
+  .searchw__group--row1 .searchw__field:nth-child(1),
+  .searchw__group--row1 .searchw__field:nth-child(2) {
+    flex: 0 0 48%;
+  }
+
+  .searchw__group {
+    gap: 16px;
+  }
+  
+  // Date fields go below
+  .searchw__group--row1 .searchw__field--date {
+    flex: 0 0 48%;
+    margin-bottom: 0;
+  }
+}
+
+// Ensure equal field widths for a consistent look and feel
+@media (min-width: 769px) {
+  // All fields should have consistent width and height
+  .searchw__field {
+    height: 50px;
+  }
+  
+  // Ensure fields in row1 maintain equal widths
+  .searchw__group--row1 .searchw__field {
+    min-width: 0;
+    width: auto;
+  }
+}
+
+// Ensure green separator lines when date fields are focused
+.searchw__datetime-item input:focus ~ .searchw__datetime-separator,
+.searchw__datetime-item input:focus-visible ~ .searchw__datetime-separator {
+  background-color: #78BE20;
+}
+
+// Make dropdown position follow its parent as screen size changes
+@media (min-width: 769px) {
+  #age-dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+  }
+}
