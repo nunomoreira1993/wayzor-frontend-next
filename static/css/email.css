@@ -1,4 +1,35 @@
 @charset "UTF-8";
+.email-header {
+  background: #332634;
+  display: flex;
+  justify-content: center;
+  padding: 32px 0;
+}
+.email-header__container {
+  display: flex;
+  width: 600px;
+  padding: 32px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 32px;
+}
+.email-header__logo {
+  width: 180px;
+  height: auto;
+}
+
+/* Responsive placement of summary card without extra classes */
+/* Inline summary-card (inside confirmation) is hidden on desktop, shown on mobile */
+section.confirmation > .summary-card { display: none; }
+@media (max-width: 766px) {
+  section.confirmation > .summary-card { display: block; margin: 24px 0; position: static; top: auto; }
+}
+/* Aside summary-column is shown on desktop, hidden on mobile */
+@media (max-width: 766px) {
+  aside.summary-column { display: none; }
+}
+
 /* Confirmation Component */
 .confirmation {
   background: #fff;
