@@ -1463,12 +1463,18 @@ button {
   border-color: #78BE20;
 }
 
+/* Change separator color when any datetime input is focused */
+.searchw__datetime-group:focus-within .searchw__datetime-separator {
+  background: #78BE20;
+}
+
 /* Date/time pair (50/50) */
 .searchw__datetime-group {
   display: flex;
   position: relative;
   width: 100%;
   align-items: center;
+  margin-left: -15px;
 }
 
 .searchw__datetime-item {
@@ -1477,6 +1483,7 @@ button {
   align-items: center;
   gap: 6px;
   flex: 1;
+  margin-left: 10px;
 }
 
 .searchw__datetime-item:first-child .searchw__input {
@@ -1490,11 +1497,12 @@ button {
 .searchw__datetime-separator {
   position: absolute;
   left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
+  top: -15px;
+  transform: translateX(-50%);
   width: 1px;
-  height: 60%;
+  height: 201%;
   background: #E0E0E0;
+  margin-left: 5px;
 }
 
 .searchw__input--date, .searchw__input--time {
@@ -1506,11 +1514,16 @@ button {
   flex: 1 1 50%;
 }
 
-@media (max-width: 860px) {
-  .searchw__datetime-separator {
-    height: 50%;
+/* Ensure consistent sizing between desktop and tablet */
+@media (min-width: 769px) and (max-width: 1439px) {
+  .searchw__field {
+    height: 50px; /* Consistent height for all inputs until tablet breakpoint */
+  }
+  .searchw__input {
+    font-size: 16px; /* Maintain consistent font size */
   }
 }
+/* Remove previous rule that was changing separator height */
 .searchw__inner--age {
   position: relative;
   padding-right: 28px;

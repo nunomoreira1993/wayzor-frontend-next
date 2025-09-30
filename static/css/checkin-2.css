@@ -821,6 +821,7 @@ button {
   gap: 12px;
   color: var(--color-footer-text);
   max-height: 268px;
+  max-width: 740px;
   /* ensure content sits above decorative svg */
 }
 .warning-banner .warning-icon-wrapper {
