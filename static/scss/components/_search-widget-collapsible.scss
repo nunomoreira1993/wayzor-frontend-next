@@ -1,0 +1,175 @@
+// Collapsible search widget for tablet and mobile views
+// This component extends the search widget with collapsible functionality
+
+// Filter toggle button (only shows on tablet and below)
+.searchw__filter-toggle {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+  margin-bottom: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  
+  &--active {
+    .searchw__toggle-icon {
+      svg {
+        transform: rotate(180deg);
+      }
+    }
+  }
+}
+
+.searchw__toggle-icon {
+  display: flex;
+  align-items: center;
+  
+  svg {
+    transition: transform 0.3s ease;
+    
+    path {
+      fill: #000; // Make the icon black
+    }
+  }
+  
+  span {
+    display: none; // Hide the text
+  }
+}
+
+// Mobile-first view (always visible)
+.searchw__mobile-first {
+  display: flex;
+  gap: 8px;
+  width: 100%;
+}
+
+// Advanced search options (hidden on mobile by default)
+.searchw__advanced {
+  display: block;
+}
+
+// Submit button styles specific to mobile/desktop
+.searchw__submit {
+  &--mobile {
+    min-width: 130px;
+  }
+}
+
+// Desktop submit button
+.searchw__submit--desktop {
+  width: auto; // Ensure proper width in desktop mode
+}
+
+// Tablet and below styles
+@media (max-width: 768px) {
+  // Position search widget inside hero for mobile view
+  .section.search-widget {
+    position: absolute;
+    bottom: 265px;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    padding: 0 16px;
+    margin-top: 0;
+    
+    .search-widget__container {
+      margin: 0;
+      padding: 0;
+    }
+    
+    .searchw--panel {
+      box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2);
+    }
+  }
+  
+  .searchw {
+    // Default state: show simplified layout
+    .searchw__filter-toggle {
+      display: flex;
+      padding: 0px;
+    }
+    
+    .searchw__mobile-first {
+      display: flex;
+    }
+    
+    .searchw__advanced {
+      display: none;
+      margin-top: 16px;
+    }
+    
+    .searchw__submit--desktop {
+      display: none;
+    }
+    
+    // Expanded state: show all fields
+    &.searchw--expanded {
+      .searchw__advanced {
+        display: block;
+      }
+      
+      .searchw__submit--mobile {
+        display: none;
+      }
+      
+      .searchw__submit--desktop {
+        display: flex;
+        width: 100%;
+        margin-top: 4px;
+      }
+    }
+  }
+  
+  // Adjust field layouts for mobile
+  .searchw__mobile-first {
+    flex-wrap: wrap;
+    
+    .searchw__field {
+      flex: 1 1 auto;
+      min-width: 0;
+    }
+    
+    .searchw__submit--mobile {
+      flex: 0 0 auto;
+    }
+  }
+  
+  // Stack fields in the expanded view
+  .searchw__advanced {
+    .searchw__group--row1,
+    .searchw__group--row2 {
+      flex-direction: column;
+      gap: 6px;
+    }
+    
+    .searchw__field,
+    .searchw__field--narrow {
+      width: 100%;
+      flex: 1 1 auto;
+    }
+  }
+}
+
+// Desktop styles - hide mobile elements
+@media (min-width: 769px) {
+  .searchw__filter-toggle {
+    display: none !important;
+  }
+  
+  .searchw__mobile-first {
+    display: none !important;
+  }
+  
+  .searchw__advanced {
+    display: block !important;
+  }
+  
+  .searchw__submit--mobile {
+    display: none !important;
+  }
+  
+  .searchw__submit--desktop {
+    display: flex !important;
+  }
+}
