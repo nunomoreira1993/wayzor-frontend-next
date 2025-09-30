@@ -1067,10 +1067,6 @@ button {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
   gap: 0.25rem;
   font-family: "Lato", Arial, sans-serif;
   font-size: 0.875rem;
@@ -1320,22 +1316,11 @@ button {
   border: 1px solid #D5DCDD;
   border-radius: 14px;
   padding: 14px 18px 10px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
 }
 
 .searchw__field--narrow {
-  -webkit-box-flex: 0;
-      -ms-flex: 0 0 220px;
-          flex: 0 0 220px;
+  flex: 0 0 277px;
+  height: 50px !important;
 }
 
 .searchw__floating-label {
@@ -1344,7 +1329,7 @@ button {
   left: 14px;
   background: #fff;
   padding: 0 6px;
-  font-size: 12px;
+  font-size: 14px;
   line-height: 18px;
   font-weight: 600;
   color: #2E3132;
@@ -1362,7 +1347,7 @@ button {
   font-size: 15px;
   line-height: 24px;
   font-weight: 500;
-  color: #2E3132;
+  color: #6D7679;
 }
 
 .searchw__inner--split {
@@ -1390,24 +1375,20 @@ button {
 
 .searchw__value {
   white-space: nowrap;
-  font-weight: 600;
+  font-weight: 200;
   font-size: 15px;
   letter-spacing: 0.2px;
 }
 
 .searchw__submit {
-  -ms-flex-item-align: end;
-      align-self: flex-end;
   background: #78BE20;
-  color: #fff;
+  color: #000;
   border: none;
-  border-radius: 14px;
-  padding: 0 34px;
+  border-radius: 999px;
+  padding: 19px 34px;
   font-size: 16px;
   font-weight: 600;
-  height: 72px;
-  display: -webkit-box;
-  display: -ms-flexbox;
+  height: 54px;
   display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
@@ -1439,11 +1420,6 @@ button {
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
   }
-  .searchw__field--narrow {
-    -webkit-box-flex: 1;
-        -ms-flex: 1 1 180px;
-            flex: 1 1 180px;
-  }
   .searchw__submit {
     margin-top: 12px;
     width: 100%;
@@ -1464,6 +1440,75 @@ button {
   }
   .searchw__mobile-note {
     display: block;
+  }
+}
+/* DateTime inline combined control */
+.datetime-inline {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  background: #fff;
+  font-family: "Lato", Arial, sans-serif;
+  position: relative;
+  gap: 1rem;
+}
+
+.searchw__field--date .searchw__floating-label {
+  position: absolute;
+  top: -9px;
+  left: 14px;
+  background: #fff;
+  padding: 0 6px;
+  font-size: 12px;
+  line-height: 18px;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+  z-index: 2;
+}
+
+.datetime-inline__segment {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.875rem;
+  font-weight: 200;
+  color: #6D7679;
+  line-height: 1;
+  white-space: nowrap;
+  margin-right: 27px;
+}
+
+.datetime-inline__icon {
+  flex: 0 0 auto;
+}
+
+.datetime-inline__value {
+  display: inline-block;
+}
+
+.datetime-inline__divider {
+  width: 1px;
+  height: 24px;
+  background: #E0E0E0;
+  flex: 0 0 auto;
+  display: inline-block;
+}
+
+/* Hover / focus mimic (future interactive) */
+.datetime-inline:hover {
+  border-color: #78BE20;
+}
+
+@media (max-width: 640px) {
+  .datetime-inline {
+    gap: 0.5rem;
+    padding: 0.75rem 0.625rem;
+  }
+  .datetime-inline__segment {
+    font-size: 0.8125rem;
+  }
+  .datetime-inline__divider {
+    height: 20px;
   }
 }
 .features {

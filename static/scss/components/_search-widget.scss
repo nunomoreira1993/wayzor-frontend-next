@@ -7,7 +7,7 @@
 @media (min-width:1024px){ .search-widget__desktop { display:block; } }
 .search-widget__panel { background:#fff; box-shadow:0 10px 40px -10px rgba(0,0,0,.15); border-radius:24px; padding:2rem; }
 .search-widget__row { display:flex; gap:1rem; flex-wrap:nowrap; }
-.search-widget__field { flex:1; background:#F5F7F6; border:1px solid #E2E5E4; border-radius:16px; padding:1rem; display:flex; flex-direction:column; gap:.25rem; font-family:$font-base; font-size:.875rem; }
+.search-widget__field { flex:1; background:#F5F7F6; border:1px solid #E2E5E4; border-radius:16px; padding:1rem; display:flex; gap:.25rem; font-family:$font-base; font-size:.875rem; }
 .search-widget__field--highlight { border:2px solid $color-green; background:#fff; }
 .search-widget__label { font-weight:600; font-size:.75rem; color:#636F71; text-transform:uppercase; letter-spacing:.5px; }
 .search-widget__btn { @include button-base; height:56px; padding:0 2rem; font-size:1rem; font-weight:600; }
