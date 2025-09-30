@@ -134,22 +134,6 @@
 }
 
 /* Responsive adjustments */
-@media (max-width: 768px) {
-  .confirmation {
-    padding: 24px 24px 32px;
-  }
-  .confirmation__title {
-    font-size: 26px;
-    line-height: 34px;
-  }
-  .confirmation__cols {
-    flex-direction: column;
-    gap: 24px;
-  }
-  .confirmation__col--narrow {
-    max-width: none;
-  }
-}
 @media (max-width: 480px) {
   .confirmation {
     padding: 20px 20px 28px;
@@ -1731,7 +1715,7 @@ button {
 /* ========================================================================== */
 /* 7. MEDIA QUERIES                                                           */
 /* ========================================================================== */
-@media (max-width: 1254px) {
+@media (max-width: 512px) {
   .content-grid {
     grid-template-columns: 1fr;
   }
