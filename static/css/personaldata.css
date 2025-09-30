@@ -1070,14 +1070,35 @@ button {
 /* 4. BANNER DE AVISO                                                         */
 /* ========================================================================== */
 .warning-banner {
+  position: relative; /* for cornerwrap positioning */
+  overflow: hidden; /* keep svg inside rounded corners */
   background-color: var(--color-warning-bg);
   background-size: cover;
   border-radius: 12px;
-  padding: 24px;
+  padding: 32px;
   display: flex;
   align-items: center;
   gap: 12px;
   color: var(--color-footer-text);
+  max-height: 320px;
+  /* ensure content sits above decorative svg */
+}
+.warning-banner .cornerwrap {
+  position: absolute; /* anchor to container */
+  top: 0;
+  right: 0; /* ensure right corner */
+  left: auto;
+  width: 80px; /* larger visual footprint */
+  height: 230px; /* increased height */
+  z-index: 0; /* behind content */
+  line-height: 0; /* remove inline gap */
+  overflow: hidden;
+  pointer-events: none;
+}
+.warning-banner .cornerwrap svg {
+  display: block;
+  height: 100%;
+  width: auto;
 }
 .warning-banner .warning-icon-wrapper {
   background-color: #685869;
@@ -1121,6 +1142,10 @@ button {
 .warning-banner .btn-primary-outline:hover {
   background-color: var(--color-primary);
   color: var(--color-text-dark);
+}
+.warning-banner > *:not(.cornerwrap) {
+  position: relative;
+  z-index: 1;
 }
 
 /* ========================================================================== */
