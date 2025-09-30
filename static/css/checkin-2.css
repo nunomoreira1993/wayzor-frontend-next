@@ -832,6 +832,11 @@ button {
   min-width: 48px;
   height: auto;
 }
+@media (max-width: 352px) {
+  .warning-banner .warning-icon-wrapper {
+    display: none;
+  }
+}
 .warning-banner .warning-icon-wrapper .img {
   min-width: 32px;
   min-height: 32px;
@@ -850,11 +855,16 @@ button {
   line-height: 1.5;
 }
 .warning-banner .warning-text .warning-cta-text {
-  margin-top: 25px !important;
-  font-size: 15px !important;
+  margin-top: 25px;
+  font-size: 15px;
 }
 .warning-banner .warning-text .warning-cta-text strong {
   font-weight: 700;
+}
+@media (max-width: 472px) {
+  .warning-banner .warning-text .warning-cta-text {
+    margin-top: 10px;
+  }
 }
 .warning-banner .btn-primary-outline {
   border: 1.5px solid var(--color-primary);
@@ -1244,18 +1254,6 @@ button {
   .form-row {
     grid-template-columns: 1fr;
   }
-  /* Banner de aviso */
-  .warning-banner {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 16px;
-    gap: 16px;
-    background-size: auto 80%;
-    background-position: right -8px top;
-  }
-  .warning-banner .warning-text h3 {
-    font-size: 16px;
-  }
   /* Pagamento */
   .payment-options {
     grid-template-columns: 1fr !important;
@@ -1276,10 +1274,6 @@ button {
   .summary-card .car-image-container .car-photo {
     width: clamp(160px, 45vw, 240px);
   }
-  .warning-banner {
-    background-size: auto 70%;
-    background-position: right -12px top;
-  }
 }
 .stepper__caption {
   display: none;
@@ -1288,6 +1282,45 @@ button {
 @media (max-width: 768px) {
   .stepper__caption {
     display: block;
+  }
+}
+/* Slightly tighter spacing on medium screens */
+@media (max-width: 888px) {
+  .stepper-section {
+    margin: 36px;
+  }
+  .content-grid {
+    gap: 24px;
+  }
+  .form-column, .summary-column {
+    gap: 24px;
+  }
+  .details-form {
+    padding: 24px;
+    gap: 32px;
+  }
+  .form-section {
+    gap: 20px;
+  }
+  .form-row {
+    gap: 16px;
+  }
+  .warning-banner {
+    padding: 24px;
+    gap: 10px;
+  }
+  .payment-section {
+    padding: 20px 24px 24px;
+    gap: 20px;
+  }
+  .summary-card {
+    gap: 20px;
+  }
+  .summary-card .booking-details {
+    gap: 10px 16px;
+  }
+  .summary-card .inclusions .inclusion-item {
+    padding: 10px 20px;
   }
 }
 :root {
