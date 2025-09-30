@@ -289,7 +289,7 @@
 .searchw__datetime-item { position:relative; display:flex; align-items:center; gap:6px; flex:1; margin-left: 10px;}
 .searchw__datetime-item:first-child .searchw__input { padding-left:0; }
 .searchw__datetime-item .searchw__icon { flex-shrink:0; }
-.searchw__datetime-separator { position:absolute; left:50%; top:-15px; transform:translateX(-50%); width:1px; height:201%; background:#E0E0E0; margin-left: 5px;}
+.searchw__datetime-separator { position:absolute; left:50%; top:-15px; transform:translateX(-50%); width:1px; height:199%; background:#E0E0E0; margin-left: 5px;}
 .searchw__input--date, .searchw__input--time { width:100%; }
 
 /* Ensure equal halves even if first icon present */
