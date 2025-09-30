@@ -807,35 +807,21 @@ button {
 /* 4. BANNER DE AVISO                                                         */
 /* ========================================================================== */
 .warning-banner {
-  position: relative; /* for cornerwrap positioning */
-  overflow: hidden; /* keep svg inside rounded corners */
+  position: relative;
+  overflow: hidden;
   background-color: var(--color-warning-bg);
-  background-size: cover;
+  background-image: url("../images/bkg_banner.svg");
+  background-repeat: no-repeat;
+  background-size: auto 100%; /* scale height to container */
+  background-position: right top; /* effect on top-right */
   border-radius: 12px;
   padding: 32px;
   display: flex;
   align-items: center;
   gap: 12px;
   color: var(--color-footer-text);
-  max-height: 320px;
+  max-height: 268px;
   /* ensure content sits above decorative svg */
-}
-.warning-banner .cornerwrap {
-  position: absolute; /* anchor to container */
-  top: 0;
-  right: 0; /* ensure right corner */
-  left: auto;
-  width: 70px; /* larger visual footprint */
-  height: 230px; /* increased height */
-  z-index: 0; /* behind content */
-  line-height: 0; /* remove inline gap */
-  overflow: hidden;
-  pointer-events: none;
-}
-.warning-banner .cornerwrap svg {
-  display: block;
-  height: 100%;
-  width: auto;
 }
 .warning-banner .warning-icon-wrapper {
   background-color: #685869;
@@ -1264,6 +1250,8 @@ button {
     align-items: flex-start;
     padding: 16px;
     gap: 16px;
+    background-size: auto 80%;
+    background-position: right -8px top;
   }
   .warning-banner .warning-text h3 {
     font-size: 16px;
@@ -1287,6 +1275,10 @@ button {
   /* Telas muito pequenas (<=500px): reduzir mais para evitar overflow */
   .summary-card .car-image-container .car-photo {
     width: clamp(160px, 45vw, 240px);
+  }
+  .warning-banner {
+    background-size: auto 70%;
+    background-position: right -12px top;
   }
 }
 .stepper__caption {
