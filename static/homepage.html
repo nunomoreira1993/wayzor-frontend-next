@@ -59,10 +59,59 @@
                   </ul>
                 </div>
               </div>
-              <button class="header__menu-btn" aria-label="Open menu">
+              <button class="header__menu-btn" type="button" aria-label="Abrir menu"aria-expanded="false" data-menu-open>
                 <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M2 9C2 8.44772 2.44772 8 3 8H26C26.5523 8 27 8.44772 27 9C27 9.55228 26.5523 10 26 10H3C2.44772 10 2 9.55228 2 9ZM2 16C2 15.4477 2.44772 15 3 15H29C29.5523 15 30 15.4477 30 16C30 16.5523 29.5523 17 29 17H3C2.44772 17 2 16.5523 2 16ZM2 23C2 22.4477 2.44772 22 3 22H24C24.5523 22 25 22.4477 25 23C25 23.5523 24.5523 24 24 24H3C2.44772 24 2 23.5523 2 23Z" fill="currentColor"/></svg>
               </button>
-              
+              <div class="header-overlay" data-header-overlay aria-hidden="true">
+                <div class="header-overlay__panel">
+                  <button class="header-overlay__close" type="button" aria-label="Fechar menu" data-menu-close>&times;</button>
+
+                  <!-- Aqui metes os teus links de navegação mobile -->
+                  <nav class="header-overlay__nav">
+                    <ul class="menu-group menu-group--primary">
+                      <li><a class="header__link" href="./fleet.html" aria-label="Vehicles">Vehicles</a></li>
+                      <li><a class="header__link" href="./stations.html" aria-label="Stations">Stations</a></li>
+                      <li><a class="header__link" href="./about.html" aria-label="About us">About us</a></li>
+                    </ul>
+                    <ul class="menu-group menu-group--secondary">
+                      <li>
+                        <a class="header__link" href="tel:+351210000000" aria-label="Ligar para +351 210 000 000">
+                          +351 210 000 000
+                        </a>
+                      </li>
+                      <li>
+                        <a class="header__link" href="/fast-check-in" aria-label="Fast Check in">Fast Check in</a>
+                      </li>
+                      <li>
+                        <div class="header__user">
+                          <img id="user-icon" src="images/ic_user_bb.svg" alt="User" class="icon icon--20">
+                          <a href="./login.html" class="header__auth-link" aria-label="Login">Login</a>
+                          <span class="break" aria-hidden="true">/</span>
+                          <a href="./register.html" class="header__auth-link" aria-label="Register">Register</a>
+                        </div>
+                      </li>
+
+                      <li>
+                         <div class="header__lang">
+                          <div class="lang-dropdown" data-lang-root>
+                            <button class="lang-dropdown__toggle" data-lang-toggle aria-haspopup="listbox" aria-expanded="false">
+                              <img id="global-icon" src="images/ic_global.svg" alt="Global" class="icon icon--18">
+                              <span data-lang-current>EN</span>
+                              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M1.24587 4.39238C1.4779 4.11395 1.89171 4.07633 2.17014 4.30835L7.00002 8.33325L11.8299 4.30835C12.1083 4.07633 12.5221 4.11395 12.7542 4.39238C12.9862 4.67081 12.9486 5.08462 12.6701 5.31665L7.42014 9.69165C7.17677 9.89445 6.82326 9.89445 6.5799 9.69164L1.3299 5.31665C1.05146 5.08462 1.01384 4.67081 1.24587 4.39238Z" fill="currentColor"/></svg>
+                            </button>
+                            <ul class="lang-dropdown__menu" data-lang-menu role="listbox" aria-label="Select language">
+                              <li class="lang-dropdown__item" role="option" data-lang-value="PT">PT</li>
+                              <li class="lang-dropdown__item" role="option" data-lang-value="EN" aria-selected="true">EN</li>
+                              <li class="lang-dropdown__item" role="option" data-lang-value="FR">FR</li>
+                              <li class="lang-dropdown__item" role="option" data-lang-value="ES">ES</li>
+                            </ul>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                  </nav>
+                </div>
+              </div>
             </div>
           </div>
         </nav>
@@ -550,6 +599,6 @@
   <!-- Swiper JS -->
   <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
   <script src="./js/homepage.js"></script>
-
+  <script src="./js/header.js"></script>
 </body>
 </html>
