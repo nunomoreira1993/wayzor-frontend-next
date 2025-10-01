@@ -409,7 +409,6 @@ button {
   top: 0;
 }
 
-/* 0) Por defeito: escondido */
 .header-overlay {
   display: none;
 }
@@ -451,7 +450,7 @@ button {
         -ms-flex-direction: column;
             flex-direction: column;
     padding: 16px;
-    overflow: hidden; /* sem scroll no painel */
+    overflow: hidden;
     background: #fff;
   }
   .header-overlay__close {
@@ -525,13 +524,12 @@ button {
   .header-overlay .lang-dropdown__menu {
     position: absolute;
     top: 50%;
-    left: calc(100% + 8px); /* desloca para a direita */
+    left: calc(100% + 8px);
     -webkit-transform: translateY(-50%);
         -ms-transform: translateY(-50%);
-            transform: translateY(-50%); /* centra verticalmente junto ao toggle */
+            transform: translateY(-50%);
   }
 }
-/* 2) Desktop (>768px): garantir escondido */
 @media (min-width: 769px) {
   .header-overlay {
     display: none !important;
