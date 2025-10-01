@@ -3,7 +3,7 @@
 /* Hero base */
 /* Hero container now full viewport height; use block to let internal slide manage centering */
 /* Reduced height so elementos abaixo (ex: search widget) ganham visibilidade e tudo fica mais equilibrado */
-.hero { position:relative; min-height:720px; height:clamp(640px, 85vh, 860px); display:block; overflow:hidden; }
+.hero { position:relative; min-height:720px; height:clamp(640px, 85vh, 860px); display:block;  }
 /* Slider e slides passam a herdar a altura definida no container (em vez de forçar 100vh) */
 .hero__slider.swiper { position:relative; width:100%; height:100%; touch-action:pan-y; }
 .hero__slide { position:relative; width:100%; height:100%; display:flex; }
@@ -119,3 +119,57 @@
 }
 
 
+
+.hero {
+    &.hero--inside {
+      height:400px;
+      min-height:400px;
+      margin-top: 88px;
+        .image {
+            position: absolute;
+            top:0;
+            left:0;
+            z-index:0;
+            width:100%;
+            height:100%;
+            overflow: hidden;
+            img {
+              width:100%;
+              object-fit:cover;
+            }
+        }
+        .search-widget {
+            margin: 0;
+            bottom: -83px;
+            position: absolute;
+            width: 100%;
+        }
+        .hero__content {
+          height: auto;
+          margin-top:60px;
+          .container {
+            max-width: 1312px;
+            padding: 0 1.5rem;
+            margin: 0 auto;
+            color: #FFFFFF;
+
+            .titulo__text {
+              font-family: Lato;
+              font-size: 56px;
+              font-style: normal;
+              font-weight: 700;
+              line-height: 125%;
+              max-width: 542px;
+            }
+            .descricao__text {
+              font-family: Lato;
+              font-size: 16px;
+              font-style: normal;
+              font-weight: 600;
+              line-height: 150%;
+              max-width: 542px;
+            }
+          }
+        }
+    }
+}

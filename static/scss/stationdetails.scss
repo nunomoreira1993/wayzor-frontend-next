@@ -1,0 +1,295 @@
+@import 'variables' ;
+@import 'mixins';
+@import 'buttons';
+@import 'reset';
+@import 'components/hero';
+@import 'components/header';
+@import 'components/layout';
+@import 'components/search-widget';
+@import 'components/search-widget-fidelity';
+@import 'components/search-widget-responsive';
+@import 'components/search-widget-collapsible';
+@import 'components/hero-searchwidget';
+@import 'components/breadcrumbs';
+
+@import 'components/footer';
+
+// Background
+.page-station-details {
+  background-color: var(--color-bg-light-soft, #F8F8F8);
+}
+
+/* Main station details container */
+.station-details {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.station-details__container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.station-details__content {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+/* Header section with title and description */
+.station-details__header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 88px 0 64px;
+  min-height: 499px;
+    margin: 0 auto;
+}
+
+.station-details__header-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+    padding-top: 88px;
+}
+
+.station-details__header-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.station-details__title-container {
+  max-width: 864px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.station-details__title {
+  font-family: 'Lato', sans-serif;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 125%;
+  color: var(--color-content-dark-strong, #1A1A1A);
+  margin: 0;
+}
+
+.station-details__description {
+  font-family: 'Lato', sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 140%;
+  color: var(--color-content-dark-strong, #1A1A1A);
+  margin: 0;
+}
+
+/* Info cards section */
+.station-details__info-cards {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 33px;
+  margin-top: 40px;
+}
+
+.info-card {
+  display: flex;
+  width: 303px;
+  padding: 24px;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  border-radius: 12px;
+}
+
+.info-card__content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  width: 100%;
+}
+
+.info-card__icon-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 4px;
+}
+
+.info-card__title {
+  font-family: 'Lato', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 140%;
+  color: var(--color-content-dark-strong, #1A1A1A);
+  text-align: center;
+  margin: 0;
+  width: 100%;
+}
+
+.info-card__text {
+  width: 100%;
+  font-family: 'Lato', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 150%;
+  color: var(--color-content-dark-medium, #333333);
+  text-align: center;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  
+  &--underline {
+    text-decoration: underline;
+  }
+}
+
+/* Map section */
+.station-details__map {
+    position: relative;
+    width: 100%;
+        .container {
+            position: relative;
+            height: 533px;
+            margin: 0 auto;
+            iframe {
+                width: calc(100% + ((100vw - 100%) / 2));
+                height: 533px;
+                border-top-right-radius: 20px;
+                border-bottom-right-radius: 20px;
+                border: none;
+                -o-object-fit: cover;
+                object-fit: cover;
+                position: absolute;
+                right: 0px;
+            }
+        }
+    }
+
+.station-details__map-image {
+  width: 100%;
+  height: 533px;
+  border-top-right-radius: 20px;
+  object-fit: cover;
+}
+
+.station-details__map-pin {
+  position: absolute;
+  left: 50%;
+  bottom: 164px;
+  transform: translateX(-50%);
+  display: flex;
+  width: 64px;
+  height: 64px;
+  padding: 36.923px;
+  justify-content: center;
+  align-items: center;
+  gap: 12.308px;
+  border-radius: 50%;
+  background-color: #4B384C;
+  backdrop-filter: blur(12.307692527770996px);
+}
+
+/* Share button (match homepage styles) */
+.social__share {
+    text-align: center;
+    margin-top: 2rem;
+}
+.social__share-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Lato', Arial, sans-serif;
+    font-weight: 700;
+    font-size: 0.875rem;
+    padding: 0.75rem 1.5rem;
+    border-radius: 9999px;
+    border: 2px solid #78BE20;
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-color: #528116;
+    color: #528116;
+    gap: 0.5rem;
+}
+.social__share-btn:hover {
+    background: #528116;
+    color: #fff;
+}
+.social__share-btn .social__share-icon {
+    width: 18px;
+    height: 18px;
+    display: inline-block;
+    transition: filter 0.25s, opacity 0.25s;
+}
+.social__share-btn:hover .social__share-icon {
+    filter: brightness(0) invert(1);
+}
+
+/* Responsive styles */
+@media (max-width: 1200px) {
+  .station-details__info-cards {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .station-details__map-image {
+    height: auto;
+    min-height: 400px;
+  }
+}
+
+@media (max-width: 768px) {
+  .station-details__header {
+    padding: 60px 16px 40px;
+    min-height: auto;
+  }
+  
+  .station-details__title {
+    font-size: 32px;
+  }
+  
+  .station-details__description {
+    font-size: 16px;
+  }
+  
+  .station-details__info-cards {
+    gap: 16px;
+    margin-top: 24px;
+    padding: 0 16px;
+  }
+  
+  .info-card {
+    width: 100%;
+    max-width: 320px;
+  }
+  
+  .station-details__map-pin {
+    bottom: 80px;
+    width: 48px;
+    height: 48px;
+  }
+}
+
+@media (max-width: 480px) {
+  .station-details__title {
+    font-size: 28px;
+  }
+  
+  .info-card__text {
+    height: auto;
+    min-height: 70px;
+  }
+}
