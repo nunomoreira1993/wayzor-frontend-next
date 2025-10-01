@@ -40,7 +40,7 @@
 // Mobile-first view (always visible)
 .searchw__mobile-first {
   display: flex;
-  gap: 8px;
+  gap: 2px;
   width: 100%;
 }
 
@@ -65,8 +65,7 @@
 @media (max-width: 768px) {
   // Position search widget inside hero for mobile view
   .section.search-widget {
-    position: absolute;
-    bottom: 265px;
+    bottom: 200px;
     left: 0;
     right: 0;
     z-index: 100;
@@ -84,39 +83,46 @@
   }
   
   .searchw {
-    // Default state: show simplified layout
+    display:flex;
+    flex-direction:column-reverse; // so advanced panel visually grows upward
+    position:relative;
+
     .searchw__filter-toggle {
       display: flex;
-      padding: 0px;
+      padding: 0;
+      order:3; // keep toggle at visual bottom (since column-reverse)
     }
-    
+
     .searchw__mobile-first {
-      display: flex;
+      display:flex;
+      order:2;
     }
-    
+
     .searchw__advanced {
-      display: none;
-      margin-top: 16px;
+      order:1;
+      overflow:hidden;
+      max-height:0; // collapsed
+      opacity:0;
+      transform:translateY(8px); // subtle slide
+      transition:max-height .45s ease, opacity .35s ease, transform .45s ease;
+      will-change:max-height, opacity, transform;
+      margin-top:0; // we animate internally
     }
-    
-    .searchw__submit--desktop {
-      display: none;
-    }
-    
-    // Expanded state: show all fields
+
+    .searchw__submit--desktop { display:none; }
+
     &.searchw--expanded {
       .searchw__advanced {
-        display: block;
+        max-height:1400px; // sufficiently large to reveal all content
+        opacity:1;
+        transform:translateY(0);
+        padding-top:12px; // spacing appears only when open
       }
-      
-      .searchw__submit--mobile {
-        display: none;
-      }
-      
+      .searchw__submit--mobile { display:none; }
       .searchw__submit--desktop {
-        display: flex;
-        width: 100%;
-        margin-top: 4px;
+        display:flex;
+        width:100%;
+        margin-top:4px;
       }
     }
   }

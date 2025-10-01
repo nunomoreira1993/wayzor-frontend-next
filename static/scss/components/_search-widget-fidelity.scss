@@ -5,7 +5,6 @@
 
 .search-widget { // adjust vertical offset for hero overlay
   margin-top:-70px;
-  @media (max-width:1023px){ margin-top:24px; }
 }
 
 .search-widget__container {
@@ -182,14 +181,14 @@
 }
 
 @media (max-width:860px) and (min-width:769px){
-  .searchw--panel { padding:20px 20px 24px; }
+  .searchw--panel { padding:5px 20px 20px; }
   .searchw__group--row1 { margin-bottom:18px; }
   .searchw__mobile-note { display:block; }
 }
 
 /* Only apply these changes for tablet mode and below */
 @media (max-width:768px){
-  .searchw--panel { padding:20px 20px 24px; }
+  .searchw--panel { padding:5px 20px 20px; }
   .searchw__group--row1 { margin-bottom:18px; }
   .searchw__field { height:50px; }
   .searchw__submit { height:50px; }
