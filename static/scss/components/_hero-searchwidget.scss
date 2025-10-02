@@ -3,9 +3,16 @@
 
 @media (max-width: 768px) {
   .hero {
-    position: relative;
     // Reserve vertical space visually above the fold so hero text doesn't clash
-    padding-bottom: 180px; // approximate collapsed widget height + safe gap
+    padding-bottom: 200px; // reduced since advanced overlay no longer pushes layout
+  }
+
+  .hide-pickup {
+    width: 100%;
+  }
+
+  .features {
+    padding: 48px 0 !important;
   }
 
   #section-search {
@@ -15,6 +22,14 @@
     padding: 0 16px 0; // horizontal breathing room
     z-index: 40; // above hero content but below nav overlays
   }
+
+  // When the internal widget is expanded we want the whole section raised (bottom:400px requirement)
+  .search-widget.search-widget--expanded #section-search,
+  .search-widget.search-widget--expanded { 
+    .hide-pickup {
+    display: none;
+  }
+    bottom: 545px; }
 
   // Adjust pagination so bullets are not obscured by widget
   .hero .swiper-pagination.swiper-pagination-bullets.hero__pagination {
