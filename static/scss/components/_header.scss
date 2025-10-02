@@ -123,9 +123,6 @@
 .header__lang .icon { position:relative; top:0; }
 
 
-
-.header-overlay { display: none; }
-
 /* 1) Mobile (até 768px): estilos + mostrar quando aberto */
 @media (max-width: 768px) {
   
@@ -137,6 +134,7 @@
     pointer-events: none;
     transition: opacity .2s;
     z-index: 10000;
+    display: block;
 
      .menu-group--primary li {
       border-bottom: 1px solid rgba(0,0,0,.12);
@@ -162,7 +160,15 @@
       padding: 16px;
       overflow: hidden;   
       background: #fff;
+       transition: transform .28s ease;
+       transform: translateX(100%);  
+        will-change: transform;
     }
+        &.is-closing { 
+        display: block;
+        opacity: 0;
+        pointer-events: auto;
+        }
 
     &__close {
       position: absolute;
@@ -200,6 +206,9 @@
       left: calc(100% + 8px);
       transform: translateY(-50%); 
     }
+
+     &.is-open   &__panel { transform: translateX(0); }
+    &.is-closing &__panel { transform: translateX(100%); }
 }
 }
 
